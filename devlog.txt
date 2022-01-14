@@ -53,7 +53,9 @@ Lauren Lee :: Added v0 and Woo.java
 
 2022-1-14
 --------------------------------------------------------------
-Diana Akhmedova ::
+Diana Akhmedova :: Created .java files for Pokemon, Human, and Player
+                   Created .java files for Human and Pokemon subclasses
+
 Lauren Lee :: Created UML Diagrams for Pokemon, Human, and Player
 
 
