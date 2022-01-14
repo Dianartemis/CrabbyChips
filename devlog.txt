@@ -54,7 +54,7 @@ Lauren Lee :: Added v0 and Woo.java
 2022-1-14
 --------------------------------------------------------------
 Diana Akhmedova ::
-Lauren Lee ::
+Lauren Lee :: Created UML Diagrams for Pokemon, Human, and Player
 
 
 2022-1-15
