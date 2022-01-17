@@ -59,22 +59,10 @@ Diana Akhmedova :: Created .java files for Pokemon, Human, and Player
 Lauren Lee :: Created UML Diagrams for Pokemon, Human, and Player
 
 
-2022-1-15
---------------------------------------------------------------
-Diana Akhmedova ::
-Lauren Lee ::
-
-
-2022-1-16
---------------------------------------------------------------
-Diana Akhmedova ::
-Lauren Lee ::
-
-
 2022-1-17
 --------------------------------------------------------------
-Diana Akhmedova ::
-Lauren Lee ::
+Diana Akhmedova :: Updated Fire.java and Pokemon.java
+Lauren Lee :: Updated Pokemon.java, Human.java, and Player.java
 
 
 2022-1-18
