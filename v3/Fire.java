@@ -8,11 +8,12 @@ public class Fire extends Pokemon implements Types{
   int _defense;
   int _mana;
 
-  public Fire(int lvl, int exp){
+  public Fire(String name, int lvl, int exp){
     _hp = 7;
     _attack = 8;
     _defense = 7;
     _mana = 10;
+    _name = name;
     _lvl = lvl;
     _exp = exp;
   }

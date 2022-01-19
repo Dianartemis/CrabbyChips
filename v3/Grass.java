@@ -8,11 +8,12 @@ public class Grass extends Pokemon implements Types{
   int _defense;
   int _mana;
 
-  public Grass(int lvl, int exp){
+  public Grass(String name, int lvl, int exp){
     _hp = 6;
     _attack = 8;
     _defense = 7;
     _mana = 10;
+    _name = name;
     _lvl = lvl;
     _exp = exp;
   }
