@@ -13,15 +13,9 @@ public class Pokemon {
     public Pokemon(){
       _lvl = 0;
       _exp = 0;
-      _name = "Pokemon";
-      _hp = 1;
-      _attack = 1;
-      _defense = 1;
-      _mana = 1;
     }
 
-    public Pokemon(String name, int level, int experience){
-      _name = name;
+    public Pokemon(int level, int experience){
       _lvl = level;
       _exp = experience;
     }
@@ -32,6 +26,18 @@ public class Pokemon {
 
     public int getExp(){
       return _exp;
+    }
+
+    public void lvlUp(){
+      if((_exp % 100 == 0) && (_exp >= 100)){
+        System.out.println("Congrats! You leveled up! You are now level " + (_exp / 100) + "!");
+        _lvl = _exp / 100;
+      }
+    }
+
+    public void increaseExp(){
+      _exp += 20;
+      System.out.println("Your EXP has increased by 20!");
     }
 
     public boolean runaway(Pokemon opponent){

@@ -1,24 +1,24 @@
-// Add instance variables to Pokemon.java
-
 import java.util.*;
 
-public class Fire extends Pokemon{
+public class Fire extends Pokemon implements Types{
 
-  String _fireName;
-  int _fireHp;
-  int _fireAttack;
-  int _fireDefense;
-  int _fireMana;
+  String _name;
+  int _hp;
+  int _attack;
+  int _defense;
+  int _mana;
 
-  public Fire(){
-    _fireHp = 7;
-    _fireAttack = 8;
-    _fireDefense = 7;
-    _fireMana = 10;
+  public Fire(int lvl, int exp){
+    _hp = 7;
+    _attack = 8;
+    _defense = 7;
+    _mana = 10;
+    _lvl = lvl;
+    _exp = exp;
   }
 
-  public int getHP (){
-    _fireHp = _hp * _lvl;
+  public int getHP(){
+    _hp = _hp * _lvl;
     return _hp;
   }
 
@@ -49,24 +49,25 @@ public class Fire extends Pokemon{
     System.out.println("Mana: " + _mana);
   }
 
-  public void move(String moveName, Pokemon name, String type;){
+  // FIRE
+  public void move(String moveName, Fire name, String type){
     // Ember
-    if
-    name = new 
     if(moveName.equals("Ember") || moveName.equals("ember")){
       if(_mana < 20){
         System.out.println("You cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 25;
-        name._hp = (name.getHP() + name.getDefense()) - (0.4 * getAttack());
+        name._hp = (int)((name.getHP() + name.getDefense()) - (0.4 * getAttack()));
         System.out.println(name + " has casted Ember!");
         if(name.isAlive() == false){
           System.out.println("You have defeated your opponent!");
+          increaseExp();
+          lvlUp();
         }
       }
-      System.out.println(display());
-      System.out.println(name.display());
+      display();
+      name.display();
     }
     // Bulk Up
     if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
@@ -78,15 +79,97 @@ public class Fire extends Pokemon{
         _defense += 10;
         System.out.println("Defense increased by 10!");
       }
-      System.out.println(display());
-      System.out.println(name.display());
+      display();
+      name.display();
     }
     // Restore
     if(moveName.equals("Restore") || moveName.equals("restore")){
       _mana += 20;
       System.out.println("Mana increased by 20!");
     }
-    System.out.println(display());
-    System.out.println(name.display());
+    display();
+    name.display();
+  }
+
+
+  // WATER
+  public void move(String moveName, Water name, String type){
+    // Ember
+    if(moveName.equals("Ember") || moveName.equals("ember")){
+      if(_mana < 20){
+        System.out.println("You cannot use " + moveName + ".");
+      }
+      else{
+        _mana = getMana() - 25;
+        name._hp = (int)((name.getHP() + name.getDefense()) - (0.3 * getAttack()));
+        System.out.println(name + " has casted Ember!");
+        if(name.isAlive() == false){
+          System.out.println("You have defeated your opponent!");
+        }
+      }
+      display();
+      name.display();
+    }
+    // Bulk Up
+    if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
+      if(_mana < 20){
+        System.out.println("You cannot use " + moveName + ".");
+      }
+      else{
+        _mana = getMana() - 20;
+        _defense += 10;
+        System.out.println("Defense increased by 10!");
+      }
+      display();
+      name.display();
+    }
+    // Restore
+    if(moveName.equals("Restore") || moveName.equals("restore")){
+      _mana += 20;
+      System.out.println("Mana increased by 20!");
+    }
+    display();
+    name.display();
+  }
+
+
+  // GRASS
+  public void move(String moveName, Grass name, String type){
+    // Ember
+    if(moveName.equals("Ember") || moveName.equals("ember")){
+      if(_mana < 20){
+        System.out.println("You cannot use " + moveName + ".");
+      }
+      else{
+        _mana = getMana() - 25;
+        name._hp = (int)((name.getHP() + name.getDefense()) - (0.5 * getAttack()));
+        System.out.println(name + " has casted Ember!");
+        if(name.isAlive() == false){
+          System.out.println("You have defeated your opponent!");
+        }
+      }
+      display();
+      name.display();
+    }
+    // Bulk Up
+    if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
+      if(_mana < 20){
+        System.out.println("You cannot use " + moveName + ".");
+      }
+      else{
+        _mana = getMana() - 20;
+        _defense += 10;
+        System.out.println("Defense increased by 10!");
+      }
+      display();
+      name.display();
+    }
+    // Restore
+    if(moveName.equals("Restore") || moveName.equals("restore")){
+      _mana += 20;
+      System.out.println("Mana increased by 20!");
+    }
+    display();
+    name.display();
   }
 }
