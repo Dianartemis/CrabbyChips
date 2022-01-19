@@ -20,7 +20,7 @@ public class Woo{
   public static void main(String[] args) {
       isr = new InputStreamReader(System.in);
       in = new BufferedReader(isr);
-      System.out.println("Welcome trainer to Pokemon Shining Pearl!");
+      System.out.println("\nWelcome trainer to Pokemon Shining Pearl!");
 
       System.out.println("\nWhat is your name?");
       String name = "";
@@ -28,28 +28,28 @@ public class Woo{
         name = in.readLine();
       } catch (IOException e) { }
 
-      System.out.println("Hello " + name + ", are you a boy or a girl?" );
+      System.out.println("\nHello " + name + ", are you a boy or a girl?" );
       String gender = "";
       try{
         gender = in.readLine();
         Player player = new Player(name, gender);
       } catch (IOException e) { }
 
-      System.out.println("\n" + "**RING RING**" + "wake up " + name + "!" + " Make sure you get to Dr. Footstep's clinic to get your first starter pokemon mom said.");
+      System.out.println("\n *RING RING* Wake up " + name + "!" + " Make sure you get to Dr. Footstep's clinic to get your first starter pokemon.");
       wait(1);
-      System.out.println("You totally forgot. Today is your 10th birthday. You are finally old enough to become a Pokemon trainer");
+      System.out.println("\nYou totally forgot. Today is your 10th birthday. You are finally old enough to become a Pokemon trainer");
       wait(1);
-      System.out.println("You rush over to the pokemon clinic and luckly the line isn't long.");
+      System.out.println("\nYou rush over to the pokemon clinic and luckly the line isn't long.");
       wait(1);
-      System.out.println("A");
+      System.out.println("\nA");
       wait(2);
-      System.out.println("few");
+      System.out.print(" few");
       wait(2);
-      System.out.println("minutes");
+      System.out.print(" minutes");
       wait(2);
-      System.out.println("later");
+      System.out.print(" later");
       wait(2);
-      System.out.println("...");
+      System.out.print(" ...");
       wait(3);
       System.out.println("Its finally your turn!");
       //wake up, go to drs place to pick Pokemon
