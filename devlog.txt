@@ -61,13 +61,37 @@ Lauren Lee :: Created UML Diagrams for Pokemon, Human, and Player
 
 2022-1-17
 --------------------------------------------------------------
-Diana Akhmedova :: Updated Fire.java and Pokemon.java
-Lauren Lee :: Updated Pokemon.java, Human.java, and Player.java
+Diana Akhmedova :: Updated Fire.java and Pokemon.java with instance variables and methods
+
+Lauren Lee :: Updated Pokemon.java, Human.java, and Player.java with instance variables and methods
 
 
 2022-1-18
 --------------------------------------------------------------
+Diana Akhmedova :: Updated Fire.java, Water.java, Grass.java move() method and instance variables
+                   Updated Woo.java with displaying and choosing starter Pokemon
+
+Lauren Lee :: Updated Woo.java with main methods and added more storyline
+              Updated Fire.java move() method
+
+
+==============================================================
+
+
+2022-1-19
+--------------------------------------------------------------
 Diana Akhmedova ::
+
+Lauren Lee ::
+
+
+==============================================================
+
+
+2022-1-20
+--------------------------------------------------------------
+Diana Akhmedova ::
+
 Lauren Lee ::
 
 
