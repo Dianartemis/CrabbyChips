@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Fire extends Pokemon implements Types{
+public class Water extends Pokemon implements Types{
 
   String _name;
   int _hp;
@@ -8,9 +8,9 @@ public class Fire extends Pokemon implements Types{
   int _defense;
   int _mana;
 
-  public Fire(int lvl, int exp){
+  public Water(int lvl, int exp){
     _hp = 7;
-    _attack = 8;
+    _attack = 7;
     _defense = 7;
     _mana = 10;
     _lvl = lvl;
@@ -51,15 +51,15 @@ public class Fire extends Pokemon implements Types{
 
   // FIRE
   public void move(String moveName, Fire name, String type){
-    // Ember
-    if(moveName.equals("Ember") || moveName.equals("ember")){
+    // Water Gun
+    if(moveName.equals("Water Gun") || moveName.equals("water gun")){
       if(_mana < 20){
         System.out.println("You cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - (0.4 * getAttack()));
-        System.out.println(name + " has casted Ember!");
+        name._hp = (int)((name.getHP() + name.getDefense()) - (0.5 * getAttack()));
+        System.out.println(name + " has casted Water Gun!");
         if(name.isAlive() == false){
           System.out.println("You have defeated your opponent!");
           increaseExp();
@@ -69,8 +69,8 @@ public class Fire extends Pokemon implements Types{
       display();
       name.display();
     }
-    // Bulk Up
-    if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
+    // Rain Dance
+    if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
       if(_mana < 20){
         System.out.println("You cannot use " + moveName + ".");
       }
@@ -82,8 +82,8 @@ public class Fire extends Pokemon implements Types{
       display();
       name.display();
     }
-    // Restore
-    if(moveName.equals("Restore") || moveName.equals("restore")){
+    // Rest
+    if(moveName.equals("Rest") || moveName.equals("rest")){
       _mana += 20;
       System.out.println("Mana increased by 20!");
     }
@@ -94,15 +94,15 @@ public class Fire extends Pokemon implements Types{
 
   // WATER
   public void move(String moveName, Water name, String type){
-    // Ember
-    if(moveName.equals("Ember") || moveName.equals("ember")){
+    // Water Gun
+    if(moveName.equals("Water Gun") || moveName.equals("water gun")){
       if(_mana < 20){
         System.out.println("You cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - (0.3 * getAttack()));
-        System.out.println(name + " has casted Ember!");
+        name._hp = (int)((name.getHP() + name.getDefense()) - (0.4 * getAttack()));
+        System.out.println(name + " has casted Water Gun!");
         if(name.isAlive() == false){
           System.out.println("You have defeated your opponent!");
         }
@@ -110,8 +110,8 @@ public class Fire extends Pokemon implements Types{
       display();
       name.display();
     }
-    // Bulk Up
-    if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
+    // Rain Dance
+    if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
       if(_mana < 20){
         System.out.println("You cannot use " + moveName + ".");
       }
@@ -123,8 +123,8 @@ public class Fire extends Pokemon implements Types{
       display();
       name.display();
     }
-    // Restore
-    if(moveName.equals("Restore") || moveName.equals("restore")){
+    // Rest
+    if(moveName.equals("Rest") || moveName.equals("rest")){
       _mana += 20;
       System.out.println("Mana increased by 20!");
     }
@@ -135,15 +135,15 @@ public class Fire extends Pokemon implements Types{
 
   // GRASS
   public void move(String moveName, Grass name, String type){
-    // Ember
-    if(moveName.equals("Ember") || moveName.equals("ember")){
+    // Water Gun
+    if(moveName.equals("Water Gun") || moveName.equals("water gun")){
       if(_mana < 20){
         System.out.println("You cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - (0.5 * getAttack()));
-        System.out.println(name + " has casted Ember!");
+        name._hp = (int)((name.getHP() + name.getDefense()) - (0.3 * getAttack()));
+        System.out.println(name + " has casted Water Gun!");
         if(name.isAlive() == false){
           System.out.println("You have defeated your opponent!");
         }
@@ -151,8 +151,8 @@ public class Fire extends Pokemon implements Types{
       display();
       name.display();
     }
-    // Bulk Up
-    if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
+    // Rain Dance
+    if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
       if(_mana < 20){
         System.out.println("You cannot use " + moveName + ".");
       }
@@ -164,12 +164,13 @@ public class Fire extends Pokemon implements Types{
       display();
       name.display();
     }
-    // Restore
-    if(moveName.equals("Restore") || moveName.equals("restore")){
+    // Rest
+    if(moveName.equals("Rest") || moveName.equals("rest")){
       _mana += 20;
       System.out.println("Mana increased by 20!");
     }
     display();
     name.display();
   }
+
 }
