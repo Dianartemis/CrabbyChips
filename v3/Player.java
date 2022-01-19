@@ -1,9 +1,9 @@
 public class Player {
   String _name;
   boolean _gender;
-  int _numPokemon;
-  int _numPokeball;
-  int _numBerries;
+  static int _numPokemon;
+  static int _numPokeball;
+  static int _numBerries;
 
   public Player(){
     _name = "Dawn";
