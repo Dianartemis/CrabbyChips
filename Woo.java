@@ -107,7 +107,7 @@ Scanner in = new Scanner(System.in);
                       nurse = in.nextLine().toLowerCase();
                       while (nurse.equals("yes") == false && nurse.equals("no") == false){
                         if (response.equals("yes")){
-                          gotoNurse(name, starter, region);
+                          goToNurse(name, starter, region);
                         }
                         else if (response.equals("no")){
                           System.out.println("You will have to catch pokemon.");
@@ -129,7 +129,7 @@ Scanner in = new Scanner(System.in);
                   }
                 }
                 else {
-                  gymBattle();
+                  gymBattleFire(name, starter, region);
                 }
           } else if (response.equals("nurse")){
             goToNurse(name, starter, region);
@@ -162,66 +162,66 @@ Scanner in = new Scanner(System.in);
             String pokemon = generatePokemon(0);
             if (pokemon.equals("vulpix")){
               Pokemon vulpix = new Fire("vulpix", level, 0);
-              battle(name, vulpix);
+              battle(name, vulpix, starter, region);
             } else if (pokemon.equals("slugma")){
               Pokemon slugma = new Fire("slugma", level, 0);
-              battle(name, slugma);
+              battle(name, slugma, starter, region);
             } else if (pokemon.equals("numel")){
               Pokemon numel = new Fire("numel", level, 0);
-              battle(name, numel);
+              battle(name, numel, starter, region);
             } else if (pokemon.equals("charmander")){
               Pokemon charmander = new Fire("charmander", level, 0);
-              battle(name, charmander);
+              battle(name, charmander, starter, region);
             } else if (pokemon.equals("cyndaquil")){
               Pokemon cyndaquil = new Fire("cyndadquil", level, 0);
-              battle(name, cyndaquil);
+              battle(name, cyndaquil, starter, region);
             } else if (pokemon.equals("torchic")){
               Pokemon torchic = new Fire("torchic", level, 0);
-              battle(name, torchic);
+              battle(name, torchic, starter, region);
             }
           }
           else if (type == 1){
             String pokemon = generatePokemon(1);
             if (pokemon.equals("feebas")){
               Pokemon feebas = new Water("feebas", level, 0);
-              battle(name, feebas);
+              battle(name, feebas, starter, region);
             } else if (pokemon.equals("wooper")){
               Pokemon wooper = new Water("wooper", level, 0);
-              battle(name, wooper);
+              battle(name, wooper, starter, region);
             } else if (pokemon.equals("lotad")){
               Pokemon lotad = new Water("lotad", level, 0);
-              battle(name, lotad);
+              battle(name, lotad, starter, region);
             } else if (pokemon.equals("marill")){
               Pokemon marill = new Water("marill", level, 0);
-              battle(name, marill);
+              battle(name, marill, starter, region);
             } else if (pokemon.equals("wingull")){
               Pokemon wingull = new Water("wingull", level, 0);
-              battle(name, wingull);
+              battle(name, wingull, starter, region);
             } else if (pokemon.equals("poliwag")){
               Pokemon poliwag = new Water("poliwag", level, 0);
-              battle(name, poliwag);
+              battle(name, poliwag, starter, region);
             }
           }
           else{
             String pokemon = generatePokemon(2);
             if (pokemon.equals("cherubi")){
               Pokemon cherubi = new Grass("cherubi", level, 0);
-              battle(name, cherubi);
+              battle(name, cherubi, starter, region);
             } else if (pokemon.equals("seedot")){
               Pokemon seedot = new Grass("seedot", level, 0);
-              battle(name, seedot);
+              battle(name, seedot, starter, region);
             }else if (pokemon.equals("bulbasaur")){
               Pokemon bulbasaur = new Grass("bulbasaur", level, 0);
-              battle(name, bulbasaur);
+              battle(name, bulbasaur, starter, region);
             } else if (pokemon.equals("chikorita")){
               Pokemon chikorita = new Grass("chikorita", level, 0);
-              battle(name, chikorita);
+              battle(name, chikorita, starter, region);
             }else if (pokemon.equals("treecko")){
               Pokemon treecko = new Grass("treecko", level, 0);
-              battle(name, treecko);
+              battle(name, treecko, starter, region);
             }else if (pokemon.equals("bellsprout")){
               Pokemon bellsprout= new Grass("bellsprout", level, 0);
-              battle(name, bellsprout);
+              battle(name, bellsprout, starter, region);
           }
         }
       }
@@ -238,66 +238,66 @@ Scanner in = new Scanner(System.in);
           String pokemon = generatePokemon(0);
           if (pokemon.equals("vulpix")){
             Pokemon vulpix = new Fire("vulpix", level, 0);
-            battle(name, vulpix);
+            battle(name, vulpix, starter, region);
           } else if (pokemon.equals("slugma")){
             Pokemon slugma = new Fire("slugma", level, 0);
-            battle(name, slugma);
+            battle(name, slugma, starter, region);
           } else if (pokemon.equals("numel")){
             Pokemon numel = new Fire("numel", level, 0);
-            battle(name, numel);
+            battle(name, numel, starter, region);
           } else if (pokemon.equals("charmander")){
             Pokemon charmander = new Fire("charmander", level, 0);
-            battle(name, charmander);
+            battle(name, charmander, starter, region);
           } else if (pokemon.equals("cyndaquil")){
             Pokemon cyndaquil = new Fire("cyndadquil", level, 0);
-            battle(name, cyndaquil);
+            battle(name, cyndaquil, starter, region);
           } else if (pokemon.equals("torchic")){
             Pokemon torchic = new Fire("torchic", level, 0);
-            battle(name, torchic);
+            battle(name, torchic, starter, region);
           }
         }
         else if (type == 1){
           String pokemon = generatePokemon(1);
           if (pokemon.equals("feebas")){
             Pokemon feebas = new Water("feebas", level, 0);
-            battle(name, feebas);
+            battle(name, feebas, starter, region);
           } else if (pokemon.equals("wooper")){
             Pokemon wooper = new Water("wooper", level, 0);
-            battle(name, wooper);
+            battle(name, wooper, starter, region);
           } else if (pokemon.equals("lotad")){
             Pokemon lotad = new Water("lotad", level, 0);
-            battle(name, lotad);
+            battle(name, lotad, starter, region);
           } else if (pokemon.equals("marill")){
             Pokemon marill = new Water("marill", level, 0);
-            battle(name, marill);
+            battle(name, marill, starter, region);
           } else if (pokemon.equals("wingull")){
             Pokemon wingull = new Water("wingull", level, 0);
-            battle(name, wingull);
+            battle(name, wingull, starter, region);
           } else if (pokemon.equals("poliwag")){
             Pokemon poliwag = new Water("poliwag", level, 0);
-            battle(name, poliwag);
+            battle(name, poliwag, starter, region);
           }
         }
         else{
           String pokemon = generatePokemon(2);
           if (pokemon.equals("cherubi")){
             Pokemon cherubi = new Grass("cherubi", level, 0);
-            battle(name, cherubi);
+            battle(name, cherubi, starter, region);
           } else if (pokemon.equals("seedot")){
             Pokemon seedot = new Grass("seedot", level, 0);
-            battle(name, seedot);
+            battle(name, seedot, starter, region);
           }else if (pokemon.equals("bulbasaur")){
             Pokemon bulbasaur = new Grass("bulbasaur", level, 0);
-            battle(name, bulbasaur);
+            battle(name, bulbasaur, starter, region);
           } else if (pokemon.equals("chikorita")){
             Pokemon chikorita = new Grass("chikorita", level, 0);
-            battle(name, chikorita);
+            battle(name, chikorita, starter, region);
           }else if (pokemon.equals("treecko")){
             Pokemon treecko = new Grass("treecko", level, 0);
-            battle(name, treecko);
+            battle(name, treecko, starter, region);
           }else if (pokemon.equals("bellsprout")){
             Pokemon bellsprout= new Grass("bellsprout", level, 0);
-            battle(name, bellsprout);
+            battle(name, bellsprout, starter, region);
         }
       }
     } else {
@@ -334,37 +334,37 @@ Scanner in = new Scanner(System.in);
             String pokemon = generatePokemon(0);
             if (pokemon.equals("vulpix")){
               Pokemon vulpix = new Fire("vulpix", level, 0);
-              battle(name, vulpix);
+              battle(name, vulpix, starter, region);
               if (vulpix.isAlive() == false) {
                 catchP(vulpix);
               }
             } else if (pokemon.equals("slugma")){
               Pokemon slugma = new Fire("slugma", level, 0);
-              battle(name, slugma);
+              battle(name, slugma, starter, region);
               if (slugma.isAlive() == false) {
                 catchP(slugma);
               }
             } else if (pokemon.equals("numel")){
               Pokemon numel = new Fire("numel", level, 0);
-              battle(name, numel);
+              battle(name, numel, starter, region);
               if (numel.isAlive() == false) {
                 catchP(numel);
               }
             } else if (pokemon.equals("charmander")){
               Pokemon charmander = new Fire("charmander", level, 0);
-              battle(name, charmander);
+              battle(name, charmander, starter, region);
               if (charmander.isAlive() == false) {
                 catchP(charmander);
               }
             } else if (pokemon.equals("cyndaquil")){
               Pokemon cyndaquil = new Fire("cyndadquil", level, 0);
-              battle(name, cyndaquil);
+              battle(name, cyndaquil, starter, region);
               if (cyndaquil.isAlive() == false) {
                 catchP(cyndaquil);
               }
             } else if (pokemon.equals("torchic")){
               Pokemon torchic = new Fire("torchic", level, 0);
-              battle(name, torchic);
+              battle(name, torchic, starter, region);
               if (torchic.isAlive() == false) {
                 catchP(torchic);
               }
@@ -374,34 +374,34 @@ Scanner in = new Scanner(System.in);
             String pokemon = generatePokemon(1);
             if (pokemon.equals("feebas")){
               Pokemon feebas = new Water("feebas", level, 0);
-              battle(name, feebas);
+              battle(name, feebas, starter, region);
               if (feebas.isAlive() == false) {
                 catchP(feebas);
               }
             } else if (pokemon.equals("wooper")){
               Pokemon wooper = new Water("wooper", level, 0);
-              battle(name, wooper);
+              battle(name, wooper, starter, region);
               if (wooper.isAlive() == false) {
                 catchP(wooper);
               }
             } else if (pokemon.equals("lotad")){
               Pokemon lotad = new Water("lotad", level, 0);
-              battle(name, lotad);
+              battle(name, lotad, starter, region);
             } else if (pokemon.equals("marill")){
               Pokemon marill = new Water("marill", level, 0);
-              battle(name, marill);
+              battle(name, marill, starter, region);
               if (marill.isAlive() == false) {
                 catchP(marill);
               }
             } else if (pokemon.equals("wingull")){
               Pokemon wingull = new Water("wingull", level, 0);
-              battle(name, wingull);
+              battle(name, wingull, starter, region);
               if (wingull.isAlive() == false) {
                 catchP(wingull);
               }
             } else if (pokemon.equals("poliwag")){
               Pokemon poliwag = new Water("poliwag", level, 0);
-              battle(name, poliwag);
+              battle(name, poliwag, starter, region);
               if (poliwag.isAlive() == false) {
                 catchP(poliwag);
               }
@@ -411,37 +411,37 @@ Scanner in = new Scanner(System.in);
             String pokemon = generatePokemon(2);
             if (pokemon.equals("cherubi")){
               Pokemon cherubi = new Grass("cherubi", level, 0);
-              battle(name, cherubi);
+              battle(name, cherubi, starter, region);
               if (cherubi.isAlive() == false) {
                 catchP(cherubi);
               }
             } else if (pokemon.equals("seedot")){
               Pokemon seedot = new Grass("seedot", level, 0);
-              battle(name, seedot);
+              battle(name, seedot, starter, region);
               if (seedot.isAlive() == false) {
                 catchP(seedot);
               }
             }else if (pokemon.equals("bulbasaur")){
               Pokemon bulbasaur = new Grass("bulbasaur", level, 0);
-              battle(name, bulbasaur);
+              battle(name, bulbasaur, starter, region);
               if (bulbasaur.isAlive() == false) {
                 catchP(bulbasaur);
               }
             } else if (pokemon.equals("chikorita")){
               Pokemon chikorita = new Grass("chikorita", level, 0);
-              battle(name, chikorita);
+              battle(name, chikorita, starter, region);
               if (chikorita.isAlive() == false) {
                 catchP(chikorita);
               }
             } else if (pokemon.equals("treecko")){
               Pokemon treecko = new Grass("treecko", level, 0);
-              battle(name, treecko);
+              battle(name, treecko, starter, region);
               if (treecko.isAlive() == false) {
                 catchP(treecko);
               }
             } else if (pokemon.equals("bellsprout")){
               Pokemon bellsprout= new Grass("bellsprout", level, 0);
-              battle(name, bellsprout);
+              battle(name, bellsprout, starter, region);
               if (bellsprout.isAlive() == false) {
                 catchP(bellsprout);
               }
@@ -460,37 +460,37 @@ Scanner in = new Scanner(System.in);
           String pokemon = generatePokemon(0);
           if (pokemon.equals("vulpix")){
             Pokemon vulpix = new Fire("vulpix", level, 0);
-            battle(name, vulpix);
+            battle(name, vulpix, starter, region);
             if (vulpix.isAlive() == false) {
               catchP(vulpix);
             }
           } else if (pokemon.equals("slugma")){
             Pokemon slugma = new Fire("slugma", level, 0);
-            battle(name, slugma);
+            battle(name, slugma, starter, region);
             if (slugma.isAlive() == false) {
               catchP(slugma);
             }
           } else if (pokemon.equals("numel")){
             Pokemon numel = new Fire("numel", level, 0);
-            battle(name, numel);
+            battle(name, numel, starter, region);
             if (numel.isAlive() == false) {
               catchP(numel);
             }
           } else if (pokemon.equals("charmander")){
             Pokemon charmander = new Fire("charmander", level, 0);
-            battle(name, charmander);
+            battle(name, charmander, starter, region);
             if (charmander.isAlive() == false) {
               catchP(charmander);
             }
           } else if (pokemon.equals("cyndaquil")){
             Pokemon cyndaquil = new Fire("cyndadquil", level, 0);
-            battle(name, cyndaquil);
+            battle(name, cyndaquil, starter, region);
             if (cyndaquil.isAlive() == false) {
               catchP(cyndaquil);
             }
           } else if (pokemon.equals("torchic")){
             Pokemon torchic = new Fire("torchic", level, 0);
-            battle(name, torchic);
+            battle(name, torchic, starter, region);
             if (torchic.isAlive() == false) {
               catchP(torchic);
             }
@@ -500,37 +500,37 @@ Scanner in = new Scanner(System.in);
           String pokemon = generatePokemon(1);
           if (pokemon.equals("feebas")){
             Pokemon feebas = new Water("feebas", level, 0);
-            battle(name, feebas);
+            battle(name, feebas, starter, region);
             if (feebas.isAlive() == false) {
               catchP(feebas);
             }
           } else if (pokemon.equals("wooper")){
             Pokemon wooper = new Water("wooper", level, 0);
-            battle(name, wooper);
+            battle(name, wooper, starter, region);
             if (wooper.isAlive() == false) {
               catchP(wooper);
             }
           } else if (pokemon.equals("lotad")){
             Pokemon lotad = new Water("lotad", level, 0);
-            battle(name, lotad);
+            battle(name, lotad, starter, region);
             if (lotad.isAlive() == false) {
               catchP(lotad);
             }
           } else if (pokemon.equals("marill")){
             Pokemon marill = new Water("marill", level, 0);
-            battle(name, marill);
+            battle(name, marill, starter, region);
             if (marill.isAlive() == false) {
               catchP(marill);
             }
           } else if (pokemon.equals("wingull")){
             Pokemon wingull = new Water("wingull", level, 0);
-            battle(name, wingull);
+            battle(name, wingull, starter, region);
             if (wingull.isAlive() == false) {
               catchP(wingull);
             }
           } else if (pokemon.equals("poliwag")){
             Pokemon poliwag = new Water("poliwag", level, 0);
-            battle(name, poliwag);
+            battle(name, poliwag, starter, region);
             if (poliwag.isAlive() == false) {
               catchP(poliwag);
             }
@@ -540,37 +540,37 @@ Scanner in = new Scanner(System.in);
           String pokemon = generatePokemon(2);
           if (pokemon.equals("cherubi")){
             Pokemon cherubi = new Grass("cherubi", level, 0);
-            battle(name, cherubi);
+            battle(name, cherubi, starter, region);
             if (cherubi.isAlive() == false) {
               catchP(cherubi);
             }
           } else if (pokemon.equals("seedot")){
             Pokemon seedot = new Grass("seedot", level, 0);
-            battle(name, seedot);
+            battle(name, seedot, starter, region);
             if (seedot.isAlive() == false) {
               catchP(seedot);
             }
           }else if (pokemon.equals("bulbasaur")){
             Pokemon bulbasaur = new Grass("bulbasaur", level, 0);
-            battle(name, bulbasaur);
+            battle(name, bulbasaur, starter, region);
             if (bulbasaur.isAlive() == false) {
               catchP(bulbasaur);
             }
           } else if (pokemon.equals("chikorita")){
             Pokemon chikorita = new Grass("chikorita", level, 0);
-            battle(name, chikorita);
+            battle(name, chikorita, starter, region);
             if (chikorita.isAlive() == false) {
               catchP(chikorita);
             }
           } else if (pokemon.equals("treecko")){
             Pokemon treecko = new Grass("treecko", level, 0);
-            battle(name, treecko);
+            battle(name, treecko, starter, region);
             if (treecko.isAlive() == false) {
               catchP(treecko);
             }
           } else if (pokemon.equals("bellsprout")){
             Pokemon bellsprout= new Grass("bellsprout", level, 0);
-            battle(name, bellsprout);
+            battle(name, bellsprout, starter, region);
             if (bellsprout.isAlive() == false) {
               catchP(bellsprout);
             }
@@ -656,7 +656,7 @@ public static String generateMove(Pokemon name) {
   return true;
 }
 
-  public static void goToNurse(Player name, Pokemon starter, String region){
+  public void goToNurse(Player name, Pokemon starter, String region){
     System.out.println("You have arrived at the clinic.");
     System.out.println("The Nurse has restored all of your Pokemon's health.");
     for (Pokemon p : name._pokedex) {
@@ -686,11 +686,11 @@ public static String generateMove(Pokemon name) {
       else if (answer.equals("no")) {
         System.out.println("You enter the gym and prepare to battle Flint.");
         Pokemon infernape = new Fire("Infernape", 25, 3818);
-        boolean firstBattle = battle(name, infernape);
+        boolean firstBattle = battle(name, infernape, starter, region);
         if (firstBattle == true) {
           System.out.println("Prepare to fight Flint's next Pokemon!");
           Pokemon rapidash = new Fire("Rapidash", 27, 2739);
-          boolean secondBattle = battle(name, rapidash);
+          boolean secondBattle = battle(name, rapidash, starter, region);
           if (secondBattle == true) {
             System.out.println("Congratulations! You have successfully defeated Flint!");
             System.out.println("You have earned the Fire Badge!");
