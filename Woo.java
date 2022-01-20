@@ -5,39 +5,45 @@ import java.util.*;
 
 public class Woo {
 
-  static Player player = new Player();
   static Scanner in = new Scanner(System.in);
 
-  public static Pokemon generatePokemon(int type) {
-    int random = (int) ((Math.random() * 10) - 5);
+  public static Pokemon generatePokemon(Player name, int type) {
+    int random = (int) ((Math.random() * 6)); //0-5
+    //why does it work with negative index
+    System.out.println(random);
     String[] fire = new String[] { "vulpix", "slugma", "numel", "charmander", "cyndaquil", "torchic" };
     String[] water = new String[] { "feebas", "wooper", "lotad", "marill", "wingull", "poliwag" };
     String[] grass = new String[] { "cherubi", "seedot", "bulbasaur", "chikorita", "treecko", "bellsprout" };
-    int level = generateLvl(player);
+    int level = generateLvl(name);
+    System.out.println(level);
 
     if (type == 0) {
-      String name = fire[random];
-      Pokemon pok = new Fire(name, level, 0);
+      String pokemon = fire[random];
+      System.out.println("pokemon");
+      Pokemon pok = new Fire(pokemon, level, 0);
+      //to string for pokemon
       return pok;
     } else if (type == 1) {
-      String name = water[random];
-      Pokemon pok = new Water(name, level, 0);
+      String pokemon = water[random];
+      System.out.println("pokemon");
+      Pokemon pok = new Water(pokemon, level, 0);
       return pok;
     } else {
-      String name = grass[random];
-      Pokemon pok = new Grass(name, level, 0);
+      String pokemon = grass[random];
+      System.out.println("pokemon");
+      Pokemon pok = new Grass(pokemon, level, 0);
       return pok;
     }
 
   }
 
   public static int generateLvl(Player name) {
-    int random = (int) ((Math.random() * 10) + (name._pokedex[0].getLvl() - 3));
+    int random = (int) ((Math.random() * 5+ (name._pokedex[0].getLvl() + 1)));
     return random;
   }
 
   public static int generateType() {
-    int random = (int) ((Math.random() * 10) - 8);
+    int random = (int) ((Math.random() * 3));
     if (random == 0) {
       // type is Fire
       return 0;
@@ -61,7 +67,7 @@ public class Woo {
 
   public static String generateName() {
     String[] name = new String[] { "Dawn", "Lucas", "Barry", "Riley", "Rowen", "Cynthia" };
-    int random = (int) (Math.random() * 10 - (10 - 5));
+    int random = (int) ((Math.random() *6));
     return name[random];
   }
 
@@ -83,86 +89,46 @@ public class Woo {
   }
 
   public static boolean walk(Player name, String region) {
+    System.out.println("You went on a walk");
     boolean cont = false;
     int random = (int) (Math.random() * 10);
     if (random <= 2) {
       System.out.println("Nothing has appeared");
-      System.out.println("Walk again?");
+      System.out.println("Walk again ir go to a gym? (walk/gym)");
       String response = "";
       response = in.nextLine().toLowerCase();
-      while (response.equals("yes") == false && response.equals("no") == false) {
-        if (response.equals("yes")) {
-          walk(name, region);
-        } else if (response.equals("no")) {
-          System.out.println("Do you want to go to a gym or the nurse? (gym/nurse)");
-          String gymOrNurse = "";
-          gymOrNurse = in.nextLine().toLowerCase();
-          while (gymOrNurse.equals("gym") == false && gymOrNurse.equals("nurse") == false) {
-            if (response.equals("gym")) {
-              if (player._numPokemon < 7) {
-                System.out
-                    .println("You need at least six pokemon to go to the gym. Do you want to talk to catch pokemon?");
-                String yOrN = "";
-                yOrN = in.nextLine().toLowerCase();
-                while (yOrN.equals("yes") == false && yOrN.equals("no") == false) {
-                  if (response.equals("yes")) {
-                    walk(name, region);
-                  } else if (response.equals("no")) {
-                    System.out.println("Do you want to go to the nurse?");
-                    String nurse = "";
-                    nurse = in.nextLine().toLowerCase();
-                    while (nurse.equals("yes") == false && nurse.equals("no") == false) {
-                      if (response.equals("yes")) {
-                        goToNurse(name, region);
-                      } else if (response.equals("no")) {
-                        System.out.println("You will have to catch pokemon.");
-                        System.out.println("You walked");
-                        walk(name, region);
-                      } else {
-                        System.out.println("input a valid response (yes/no)");
-                        nurse = in.nextLine().toLowerCase();
-                      }
-                    }
-                  } else {
-                    System.out.println("input a valid response (yes/no)");
-                    yOrN = in.nextLine().toLowerCase();
-                    // while
-                  }
-
-                }
-              } else {
-                boolean win = goToGym(name, region);
-                if (win = true){
-                  return true;
-                }
-              }
-            } else if (response.equals("nurse")) {
-              goToNurse(name, region);
-            } else {
-              System.out.println("input a valid response");
-              gymOrNurse = in.nextLine().toLowerCase();
-              // while
-            }
-          }
-        } else {
-          System.out.println("input a valid response");
-          response = in.nextLine().toLowerCase();
-        }
-      }
-    } else if (random >= 3 && random <= 4) {
+        if (response.equals("walk")) {
+         return false;
+       } else if (response.equals("gym")){
+          if (name._numPokemon < 7){
+            System.out.println("You can not go to the gym with less than six pokemon. You walk again");
+            return false;
+          } else {
+             boolean win = goToGym(name, region);
+             if (win == true){
+               cont = true;
+             }
+           }
+       } else {
+         while (!response.equals("walk") && !response.equals("gym")){
+           System.out.println("input a valid response (gym/walk)");
+           response = in.nextLine().toLowerCase();
+         }
+       }
+     }
+     else if (random >= 3 && random <= 4) {
       // meet someone battle
       System.out.println("A fellow pokemon trainer has appeared. They challenge you to a pokemon battle.");
       System.out.println("Do you want to battle or runaway? (battle/runaway)");
       String runawayOr = "";
       runawayOr = in.nextLine().toLowerCase();
-      while (runawayOr.equals("runaway") == false && runawayOr.equals("battle") == false) {
         if (runawayOr.equals("runaway")) {
           boolean run = runaway();
           if (run == false) {
             System.out.println("running away failed. You must engage in battle");
             int type = generateType();
-            int level = generateLvl(name);
-            Pokemon pok = generatePokemon(type);
+            Pokemon pok = new Pokemon();
+            pok = generatePokemon(name, type);
             battle(name, pok, region);
           } else {
             System.out.println("You've sucessfullly runaway");
@@ -172,14 +138,16 @@ public class Woo {
         } else if (runawayOr.equals("battle")) {
           System.out.println("You accept the challenge and engage in battle");
           int type = generateType();
-          int level = generateLvl(name);
-          Pokemon pok = generatePokemon(type);
+          Pokemon pok = new Pokemon ();
+          pok = generatePokemon(name, type);
           battle(name, pok, region);
         } else {
-          System.out.println("input a valid response (runaway/battle)");
-          runawayOr = in.nextLine().toLowerCase();
+          while (runawayOr.equals("runaway") == false && runawayOr.equals("battle") == false){
+            System.out.println("input a valid response (runaway/battle)");
+            runawayOr = in.nextLine().toLowerCase();
+          }
         }
-      }
+
 
     } else if (random >= 5 && random <= 6) {
       // civilian
@@ -196,15 +164,14 @@ public class Woo {
       System.out.println("Would you like to battle or run away? (battle/runaway)");
       String encounterPokemon = "";
       encounterPokemon = in.nextLine().toLowerCase();
-      while (encounterPokemon.equals("runaway") == false && encounterPokemon.equals("battle") == false) {
         if (encounterPokemon.equals("runaway")) {
           boolean run = runaway();
           if (run == false) {
             System.out.println("running away failed. You must engage in battle");
             int type = generateType();
-            int level = generateLvl(name);
-            Pokemon pok = generatePokemon(type);
-            battle(name, pok, region);
+            Pokemon pok = new Pokemon();
+            pok = generatePokemon(name, type);
+            boolean win = battle(name, pok, region);
           } else {
             System.out.println("You've sucessfully runaway");
             System.out.println("You walked");
@@ -213,15 +180,16 @@ public class Woo {
         } else if (encounterPokemon.equals("battle")) {
           System.out.println("You accept the challenge and engage in battle");
           int type = generateType();
-          int level = generateLvl(name);
-          Pokemon pok = generatePokemon(type);
+          Pokemon pok = new Pokemon();
+          pok = generatePokemon(name, type);
           battle(name, pok, region);
         } else {
-          System.out.println("input a valid response (runaway/battle)");
-          String runawayOr = "";
-          runawayOr = in.nextLine().toLowerCase();
+          while(encounterPokemon.equals("runaway") == false && encounterPokemon.equals("battle") == false){
+            System.out.println("input a valid response (runaway/battle)");
+            String runawayOr = "";
+            runawayOr = in.nextLine().toLowerCase();
+          }
         }
-      }
     }
     return cont;
   }
@@ -232,7 +200,7 @@ public class Woo {
     String[] fireMoves = new String[] { "ember", "bulk up", "restore" };
     String[] waterMoves = new String[] { "water gun", "rain dance", "rest" };
     String[] grassMoves = new String[] { "razor leaf", "safe guard", "rest" };
-    int randMove = (int) (((Math.random()) * 10) - 8);
+    int randMove = (int) (((Math.random()) * 6));
     if (name instanceof Fire) {
       return fireMoves[randMove];
     } else if (name instanceof Water) {
@@ -269,7 +237,6 @@ public class Woo {
           System.out.println("Do you want to use a Berry? (yes/no)");
           String berry = "";
           berry = in.nextLine().toLowerCase();
-          while (!berry.equals("yes") && !berry.equals("no")) {
             if (berry.equals("yes")) {
               if (Player._numBerries <= 0) {
                 System.out.println("You cannot use a Berry.");
@@ -283,11 +250,12 @@ public class Woo {
                 Player.displayInventory();
               }
             }
-            if (!berry.equals("yes") && !berry.equals("no")) {
-              System.out.println("Input a valid answer:");
-              berry = in.nextLine();
+            else{
+              while (!berry.equals("yes") && !berry.equals("no")){
+                System.out.println("Input a valid answer:");
+                berry = in.nextLine();
+              }
             }
-          }
         }
       }
       System.out.println("All of your Pokemon have fainted!");
@@ -350,7 +318,6 @@ public class Woo {
     wait(1);
     System.out.println("Do you wish to visit the Nurse before battling Flint?");
     answer = in.nextLine().toLowerCase();
-    while (answer.equals("yes") == false && answer.equals("no") == false) {
       if (answer.equals("yes")) {
         System.out.println("You take a quick visit to the Nurse...");
         goToNurse(name, region);
@@ -369,10 +336,11 @@ public class Woo {
           }
         }
       } else {
-        System.out.println("Please input a valid response (yes/no):");
-        answer = in.nextLine();
+        while (answer.equals("yes") == false && answer.equals("no") == false) {
+          System.out.println("Please input a valid response (yes/no):");
+          answer = in.nextLine();
+        }
       }
-    }
     return badge;
   }
 
@@ -384,7 +352,6 @@ public class Woo {
     wait(1);
     System.out.println("Do you wish to visit the Nurse before battling CrasherWake?");
     answer = in.nextLine().toLowerCase();
-    while (answer.equals("yes") == false && answer.equals("no") == false) {
       if (answer.equals("yes")) {
         System.out.println("You take a quick visit to the Nurse...");
         goToNurse(name, region);
@@ -408,10 +375,11 @@ public class Woo {
         }
       }
     } else {
-        System.out.println("Please input a valid response (yes/no):");
-        answer = in.nextLine();
+        while (answer.equals("yes") == false && answer.equals("no") == false) {
+          System.out.println("Please input a valid response (yes/no):");
+          answer = in.nextLine();
+        }
     }
-  }
   return badge;
 }
     public static boolean gymBattleGrass(Player name, String region) {
@@ -422,7 +390,6 @@ public class Woo {
       wait(1);
       System.out.println("Do you wish to visit the Nurse before battling Gardenia?");
       answer = in.nextLine().toLowerCase();
-      while (answer.equals("yes") == false && answer.equals("no") == false) {
         if (answer.equals("yes")) {
           System.out.println("You take a quick visit to the Nurse...");
           goToNurse(name, region);
@@ -446,13 +413,14 @@ public class Woo {
           }
         }
       } else {
-          System.out.println("Please input a valid response (yes/no):");
-          answer = in.nextLine();
+          while (answer.equals("yes") == false && answer.equals("no") == false) {
+            System.out.println("Please input a valid response (yes/no):");
+            answer = in.nextLine();
+          }
       }
-    }
     return badge;
   }
-  public static void gameSetup(){
+  public static void gameSetup(Player player){
     System.out.println("Welcome, Trainer, to Pokemon Shining Pearl!");
     wait(1);
     System.out.println("\nWhat is your name?");
@@ -462,8 +430,9 @@ public class Woo {
     wait(1);
   }
 
-  public static void chooseStarter(){
+  public static void chooseStarter(Player player){
     wait(2);
+    /*
     System.out.println("\nRING RING! Wake up " + player._name + "!"
         + " Your mom told you to go to Dr. Footstep's clinic to get your first starter Pokemon.");
     wait(2);
@@ -698,7 +667,7 @@ public class Woo {
     // Instance of Pokemon
 
     // CHOOSING POKEMON
-
+*/
     wait(1);
     System.out.println("\nWhich starter Pokemon do you want?");
     String response = "";
@@ -720,18 +689,18 @@ public class Woo {
       wait(1);
       System.out.println("\nCongrats, you got your first Pokemon! It's a Turtwig!");
     } else if (!response.equals("chimchar") && !response.equals("piplup") && !response.equals("turtwig")) {
-      int random = (int) ((Math.random() * 10) - 8);
-      if (random == 1) {
+      int random = (int) ((Math.random() * 3));
+      if (random == 0) {
         Fire starter = new Fire("Chimchar", 5, 40);
         Player.add(starter);
         wait(1);
         System.out.println("\nYou responded too late! The only Pokemon left is Chimchar!");
-      } else if (random == 2) {
+      } else if (random == 1) {
         Water starter = new Water("Piplup", 5, 40);
         Player.add(starter);
         wait(1);
         System.out.println("\nYou responded too late! The only Pokemon left is Piplup!");
-      } else if (random == 3) {
+      } else if (random == 2) {
         Grass starter = new Grass("Turtwig", 5, 40);
         Player.add(starter);
         wait(1);
@@ -752,17 +721,18 @@ public class Woo {
   Woo game = new Woo();
 
   public static void main(String[] args) {
+    Player player = new Player();
   //  gameSetup();
-    //chooseStarter();
+    chooseStarter(player);
     String[] regions = new String[] {"Eterna City", "Pastoria City", "Sunyshore City"};
     int i = 0;
     while (i < 3){
       if (walk(player, regions[i]) == true){
         System.out.println("You beat " + regions[i]);
       }
+    }
       System.out.println("\nYou beat the game. Congragulations!");
 
     //response = in.nextLine().toLowerCase();
-    }
   }
 }
