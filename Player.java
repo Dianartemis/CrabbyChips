@@ -13,7 +13,7 @@ public class Player {
     _numPokemon = 0;
     _numPokeball = 0;
     _numBerries = 0;
-    _pokedex = new Pokemon[_numPokemon];
+    _pokedex = new Pokemon[1];
     _pokedexSize = 0;
   }
 

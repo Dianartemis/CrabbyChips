@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Fire extends Pokemon implements Types{
 
   String _name;
