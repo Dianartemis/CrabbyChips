@@ -20,6 +20,22 @@ public class Pokemon {
       _exp = experience;
     }
 
+    public int getHP(){
+      return 0;
+    }
+
+    public int getAttack(){
+      return 0;
+    }
+
+    public int getDefense(){
+      return 0;
+    }
+
+    public int getMana(){
+      return 0;
+    }
+
     public int getLvl(){
       return _lvl;
     }
@@ -38,6 +54,22 @@ public class Pokemon {
     public void increaseExp(){
       _exp += 20;
       System.out.println("Your EXP has increased by 20!");
+    }
+
+    public boolean isAlive(){
+      return true;
+    }
+
+    public void display(){
+      System.out.println();
+    }
+
+    public void displayMove() {
+      System.out.println();
+    }
+
+    public void move(String moveName, Pokemon name){
+      System.out.println();
     }
 
     public boolean runaway(Pokemon opponent){

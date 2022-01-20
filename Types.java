@@ -5,7 +5,6 @@ public interface Types {
   public int getMana();
   public boolean isAlive();
   public void display();
-  public void move(String moveName, Fire name, String type);
-  public void move(String moveName, Water name, String type);
-  public void move(String moveName, Grass name, String type);
+  public void displayMove();
+  public void move(String moveName, Pokemon name);
 }

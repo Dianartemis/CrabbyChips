@@ -53,11 +53,11 @@ false -- male
     return _name;
   }
 
-  public void greet(Human name){
-    System.out.println("Hello " + name.getName() + ", " + "my name is " + _name + ". I am a " + getRole() + ".");
+  public void greet(Player name){
+    System.out.println("Hello " + name._name + ", " + "my name is " + _name + ". I am a " + getRole() + ".");
   }
 
-  public void goodbye(Human name){
-    System.out.println("Goodbye " + name.getName() + "! See you next time.");
+  public void goodbye(Player name){
+    System.out.println("Goodbye " + name._name + "! See you next time.");
   }
 }
