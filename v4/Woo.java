@@ -734,6 +734,7 @@ public static String generateMove(Pokemon name) {
         gender = in.nextLine().toLowerCase();
       }
     }
+    /**
     wait(2);
     System.out.println("\nRING RING! Wake up " + name + "!" + " Your mom told you to go to Dr. Footstep's clinic to get your first starter Pokemon.");
     wait(2);
@@ -783,7 +784,7 @@ public static String generateMove(Pokemon name) {
     else if (pokemonOne.equals("piplup")) {
       Pokemon piplup = new Water("Piplup", 5, 40);
       wait(1);
-      System.out.println("\nA Penguin Pokémon.");
+      System.out.println("\nA Penguin Pokemon.");
       wait(2);
       System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       wait(2);
@@ -853,7 +854,7 @@ public static String generateMove(Pokemon name) {
     else if (pokemonTwo.equals("piplup")) {
       Pokemon piplup = new Water("Piplup", 5, 40);
       wait(1);
-      System.out.println("\nA Penguin Pokémon.");
+      System.out.println("\nA Penguin Pokemon.");
       wait(1);
       System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       wait(1);
@@ -885,7 +886,7 @@ public static String generateMove(Pokemon name) {
       System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Piplup.");
       Pokemon piplup = new Water("Piplup", 5, 40);
       wait(1);
-      System.out.println("A Penguin Pokémon.");
+      System.out.println("A Penguin Pokemon.");
       wait(1);
       System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       wait(1);
@@ -921,7 +922,7 @@ public static String generateMove(Pokemon name) {
     else if (pokemonThree.equals("piplup")) {
       Pokemon piplup = new Water("Piplup", 5, 40);
       wait(1);
-      System.out.println("\nA Penguin Pokémon.");
+      System.out.println("\nA Penguin Pokemon.");
       wait(1);
       System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       wait(1);
@@ -966,7 +967,7 @@ public static String generateMove(Pokemon name) {
       turtwig.display();
     }
     // Instance of Pokemon
-
+**/
 
     // CHOOSING POKEMON
     wait(1);
