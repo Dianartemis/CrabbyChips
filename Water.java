@@ -17,7 +17,9 @@ public class Water extends Pokemon implements Types{
     _lvl = lvl;
     _exp = exp;
   }
-
+  public void setName(String name){
+    _name = name;
+  }
   public int getHP(){
     _hp = _hp * _lvl;
     return _hp;

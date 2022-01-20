@@ -13,13 +13,16 @@ public class Pokemon {
     public Pokemon(){
       _lvl = 0;
       _exp = 0;
+      _name = "snorlax";
     }
 
     public Pokemon(int level, int experience){
       _lvl = level;
       _exp = experience;
     }
-
+    public void setName(String name){
+      _name = name;
+    }
     public String getName(){
       return _name;
     }

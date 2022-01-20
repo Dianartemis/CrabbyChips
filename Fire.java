@@ -1,6 +1,5 @@
 public class Fire extends Pokemon implements Types{
 
-  String _name;
   int _hp;
   int _attack;
   int _defense;
@@ -14,6 +13,10 @@ public class Fire extends Pokemon implements Types{
     _name = name;
     _lvl = lvl;
     _exp = exp;
+  }
+
+  public void setName(String name){
+    _name = name;
   }
 
   public int getHP(){

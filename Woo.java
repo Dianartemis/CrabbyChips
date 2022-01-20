@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Woo {
 
+  //tests
   static Scanner in = new Scanner(System.in);
 
   public static Pokemon generatePokemon(Player name, int type) {
@@ -19,19 +20,25 @@ public class Woo {
 
     if (type == 0) {
       String pokemon = fire[random];
-      System.out.println("pokemon");
+      System.out.println(pokemon + "should be firetype");
       Pokemon pok = new Fire(pokemon, level, 0);
-      //to string for pokemon
+      //to string for pokem;on
+      pok.setName(pokemon);
+      System.out.println(pok._name);
       return pok;
     } else if (type == 1) {
       String pokemon = water[random];
-      System.out.println("pokemon");
+      System.out.println(pokemon + "should be wtype");
       Pokemon pok = new Water(pokemon, level, 0);
+      pok.setName(pokemon);
+            System.out.println(pok._name);
       return pok;
     } else {
       String pokemon = grass[random];
-      System.out.println("pokemon");
+      System.out.println(pokemon + "should be gtype");
       Pokemon pok = new Grass(pokemon, level, 0);
+      pok.setName(pokemon);
+            System.out.println(pok._name);
       return pok;
     }
 
@@ -127,10 +134,14 @@ public class Woo {
           if (run == false) {
             System.out.println("running away failed. You must engage in battle");
             int type = generateType();
-            Pokemon pok = new Pokemon();
-            pok = generatePokemon(name, type);
-            battle(name, pok, region);
-          } else {
+            Pokemon pok = generatePokemon(name, type);
+            boolean win = battle(name, pok, region);
+              if(win == false){
+                goToNurse(name, region);
+              } else {
+                cont = false;
+              }
+            } else {
             System.out.println("You've sucessfullly runaway");
             System.out.println("You walked");
             // ask
@@ -138,9 +149,13 @@ public class Woo {
         } else if (runawayOr.equals("battle")) {
           System.out.println("You accept the challenge and engage in battle");
           int type = generateType();
-          Pokemon pok = new Pokemon ();
-          pok = generatePokemon(name, type);
-          battle(name, pok, region);
+          Pokemon pok = generatePokemon(name, type);
+          boolean win = battle(name, pok, region);
+          if (win == true){
+            cont = false;
+          } else {
+            goToNurse(name, region);
+          }
         } else {
           while (runawayOr.equals("runaway") == false && runawayOr.equals("battle") == false){
             System.out.println("input a valid response (runaway/battle)");
@@ -169,9 +184,13 @@ public class Woo {
           if (run == false) {
             System.out.println("running away failed. You must engage in battle");
             int type = generateType();
-            Pokemon pok = new Pokemon();
-            pok = generatePokemon(name, type);
+            Pokemon pok = generatePokemon(name, type);
             boolean win = battle(name, pok, region);
+            if (win == false){
+              goToNurse(name, region);
+            } else {
+              catchP(name, pok, region);
+            }
           } else {
             System.out.println("You've sucessfully runaway");
             System.out.println("You walked");
@@ -180,9 +199,14 @@ public class Woo {
         } else if (encounterPokemon.equals("battle")) {
           System.out.println("You accept the challenge and engage in battle");
           int type = generateType();
-          Pokemon pok = new Pokemon();
-          pok = generatePokemon(name, type);
-          battle(name, pok, region);
+          Pokemon pok = generatePokemon(name, type);
+          System.out.println(pok._name);
+          boolean win = battle(name, pok, region);
+          if(win == false){
+            goToNurse(name, region);
+          } else {
+            cont = false;
+          }
         } else {
           while(encounterPokemon.equals("runaway") == false && encounterPokemon.equals("battle") == false){
             System.out.println("input a valid response (runaway/battle)");
@@ -216,6 +240,7 @@ public class Woo {
     name.displayPokedex();
     System.out.println("Here are the Stats of your opponent's Pokemon:");
     opponent.display();
+    System.out.println("print?");
     while (opponent.isAlive()) {
       for (Pokemon p : name._pokedex) {
         while (p.isAlive()) {
@@ -260,9 +285,10 @@ public class Woo {
       }
       System.out.println("All of your Pokemon have fainted!");
       System.out.println("Your Pokemon are rushed to the Nurse...");
-      goToNurse(name, region);
+      System.out.println("false");
       return false;
     }
+    System.out.println("true");
     return true;
   }
 
@@ -277,7 +303,7 @@ public class Woo {
     walk(name, region);
   }
 
-  public void catchP(Player name, Pokemon pokName, String region) {
+  public static void catchP(Player name, Pokemon pokName, String region) {
     int random = (int) ((Math.random() * 10));
     if (name._numPokeball <= 0) {
       System.out.println("You do not have enough pokeballs");
@@ -291,6 +317,8 @@ public class Woo {
         name._numPokeball = name._numPokeball - 1;
         name.displayPokedex();
         name.displayInventory();
+        System.out.println("You walk away");
+        walk(name, region);
       } else {
         System.out.println("The pokemon got away");
         name._numPokeball = name._numPokeball - 1;
@@ -719,8 +747,12 @@ public class Woo {
   }
 
   Woo game = new Woo();
-
+  public static void test(){
+    Fire pok = new Fire ("name", 2, 0);
+    System.out.println(pok._name);
+  }
   public static void main(String[] args) {
+    test();
     Player player = new Player();
   //  gameSetup();
     chooseStarter(player);
