@@ -81,7 +81,7 @@ Lauren Lee :: Updated Woo.java with main methods and added more storyline
 2022-1-19
 --------------------------------------------------------------
 Diana Akhmedova :: Updated Pokemon.java, Types.java, Water.java, Fire.java, and Grass.java so that Pokemon.java had the overrided methods of the type files
-                   Finished Woo.java so that it could compile cause Lauren's hands were cramping from the enormous whille/if statements. 
+                   Finished Woo.java so that it could compile cause Lauren's hands were cramping from the enormous while/if statements
 
 Lauren Lee :: Updated Woo.java to create walk(), goToNurse(), gym method, generateLvl(), generatePokemon(), generateType();
 
@@ -94,6 +94,6 @@ Lauren Lee :: Updated Woo.java to create walk(), goToNurse(), gym method, genera
 Diana Akhmedova ::
 
 Lauren Lee ::
-To do: Catchp(), music, visuals, level up
+To do: catchP(), music, visuals, level up
 
 ==============================================================
