@@ -617,7 +617,7 @@ public static String generateMove(Pokemon name) {
           answer = in.nextLine().toLowerCase();
           while (!answer.equals("ember") && !answer.equals("bulk up") && !answer.equals("restore")
               && !answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("rest")
-              && !answer.equals("razor leaf") &&& !answer.equals("safe guard")) {
+              && !answer.equals("razor leaf") && !answer.equals("safe guard")) {
             System.out.println("Input a valid move:");
             answer = in.nextLine().toLowerCase();
           }
