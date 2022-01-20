@@ -61,7 +61,7 @@ public class Woo {
 
   public static String generateName() {
     String[] name = new String[] { "Dawn", "Lucas", "Barry", "Riley", "Rowen", "Cynthia" };
-    int random = (int) (Math.random() * 10 - (10 - name.length));
+    int random = (int) (Math.random() * 10 - (10 - 5));
     return name[random];
   }
 
@@ -73,7 +73,7 @@ public class Woo {
     }
   }
 
-  public boolean runaway() {
+  public static boolean runaway() {
     int random = (int) (Math.random() * 10);
     if (random <= 5) {
       return true;
@@ -82,7 +82,8 @@ public class Woo {
     }
   }
 
-  public static void walk(Player name, String region) {
+  public static boolean walk(Player name, String region) {
+    boolean cont = false;
     int random = (int) (Math.random() * 10);
     if (random <= 2) {
       System.out.println("Nothing has appeared");
@@ -130,7 +131,10 @@ public class Woo {
 
                 }
               } else {
-                goToGym(region);
+                boolean win = goToGym(name, region);
+                if (win = true){
+                  return true;
+                }
               }
             } else if (response.equals("nurse")) {
               goToNurse(name, region);
@@ -219,7 +223,10 @@ public class Woo {
         }
       }
     }
+    return cont;
   }
+
+
 
   public static String generateMove(Pokemon name) {
     String[] fireMoves = new String[] { "ember", "bulk up", "restore" };
@@ -235,7 +242,7 @@ public class Woo {
     }
   }
 
-  public boolean battle(Player name, Pokemon opponent, String region) {
+  public static boolean battle(Player name, Pokemon opponent, String region) {
     System.out.println("You begin your battle with " + opponent._name + "...");
     System.out.println("Here are the Stats of your Pokemon:");
     name.displayPokedex();
@@ -291,7 +298,7 @@ public class Woo {
     return true;
   }
 
-  public void goToNurse(Player name, String region) {
+  public static void goToNurse(Player name, String region) {
     System.out.println("You have arrived at the clinic.");
     System.out.println("The Nurse has restored all of your Pokemon's health.");
     for (Pokemon p : name._pokedex) {
@@ -325,17 +332,18 @@ public class Woo {
       }
     }
   }
-  public void gotoGym(String region){
+  public static boolean goToGym(Player name, String region){
     if (region.equals("Eterna City")) {
-      gymBattleGrass();
+      return gymBattleGrass(name, region);
     } else if (region.equals("Pastria City")){
-      gymBattleWater();
+      return gymBattleWater(name, region);
     } else {
-      gymBattleFire();
+      return gymBattleFire(name, region);
     }
   }
 
-  public void gymBattleFire(Player name, String region) {
+  public static boolean gymBattleFire(Player name, String region) {
+    boolean badge = false;
     String answer = "";
     wait(1);
     System.out.println("You enter the gym and prepare to fight Flint.");
@@ -357,6 +365,7 @@ public class Woo {
           if (secondBattle == true) {
             System.out.println("Congratulations! You have successfully defeated Flint!");
             System.out.println("You have earned the Fire Badge!");
+            badge = true;
           }
         }
       } else {
@@ -364,9 +373,11 @@ public class Woo {
         answer = in.nextLine();
       }
     }
+    return badge;
   }
 
-  public void gymBattleWater(Player name, String region) {
+  public static boolean gymBattleWater(Player name, String region) {
+    boolean badge = false;
     String answer = "";
     wait(1);
     System.out.println("You enter the gym and prepare to fight Crasher Wake.");
@@ -392,6 +403,7 @@ public class Woo {
             if (thirdBattle == true){
               System.out.println("Congratulations! You have successfully defeated Crasher Wake!");
               System.out.println("You have earned the Water Badge!");
+              badge = true;
           }
         }
       }
@@ -400,8 +412,10 @@ public class Woo {
         answer = in.nextLine();
     }
   }
+  return badge;
 }
-    public void gymBattleGrass(Player name, String region) {
+    public static boolean gymBattleGrass(Player name, String region) {
+      boolean badge = false;
       String answer = "";
       wait(1);
       System.out.println("You enter the gym and prepare to fight Gardeniae.");
@@ -427,6 +441,7 @@ public class Woo {
               if (thirdBattle == true){
                 System.out.println("Congratulations! You have successfully defeated Gardenia!");
                 System.out.println("You have earned the Water Badge!");
+                badge = true;
             }
           }
         }
@@ -435,6 +450,7 @@ public class Woo {
           answer = in.nextLine();
       }
     }
+    return badge;
   }
   public static void gameSetup(){
     System.out.println("Welcome, Trainer, to Pokemon Shining Pearl!");
@@ -736,12 +752,16 @@ public class Woo {
   Woo game = new Woo();
 
   public static void main(String[] args) {
-    gameSetup();
-    chooseStarter();
+  //  gameSetup();
+    //chooseStarter();
     String[] regions = new String[] {"Eterna City", "Pastoria City", "Sunyshore City"};
-    for(String n : regions){
-      System.out.println("\nYou go on a walk");
-      walk(player, n);
+    int i = 0;
+    while (i < 3){
+      if (walk(player, regions[i]) == true){
+        System.out.println("You beat " + regions[i]);
+      }
+      System.out.println("\nYou beat the game. Congragulations!");
+
     //response = in.nextLine().toLowerCase();
     }
   }
