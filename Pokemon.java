@@ -20,6 +20,10 @@ public class Pokemon {
       _exp = experience;
     }
 
+    public String getName(){
+      return _name;
+    }
+
     public int getHP(){
       return 0;
     }
