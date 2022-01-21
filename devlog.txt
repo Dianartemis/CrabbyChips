@@ -91,9 +91,15 @@ Lauren Lee :: Updated Woo.java to create walk(), goToNurse(), gym method, genera
 
 2022-1-20
 --------------------------------------------------------------
-Diana Akhmedova ::
+Diana Akhmedova :: Added city.wav and battle.wav audio files
+                   Forced multiple minions to try to break the code
+                   Debugged all bugs found before going to the gym
 
-Lauren Lee ::
+Lauren Lee :: Augmented catchP() and lvlUp()
+              Created a more robust generatePokemon() method, deleted 400 lines of code, returns a Pokemon instead of a String
+              Struggled with inheritence in the Dojo (thank you Senseis)
+              Came home and fixed the inheritence
+              Added StdAudio.java and implemented music (still needs to be fixed)
 To do: catchP(), music, visuals, level up
 
 ==============================================================

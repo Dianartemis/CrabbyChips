@@ -72,7 +72,7 @@ public class Pokemon {
     }
 
     public int getHPMultiplier() {
-      return 0;
+      return 1;
     }
 
     public void display(){
