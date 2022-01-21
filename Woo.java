@@ -8,6 +8,7 @@ public class Woo {
   //tests
   static Scanner in = new Scanner(System.in);
 
+
   public static Pokemon generatePokemon(Player name, int type) {
     int random = (int) ((Math.random() * 6)); //0-5
     //why does it work with negative index
@@ -42,7 +43,7 @@ public class Woo {
   }
 
   public static int generateLvl(Player name) {
-    int random = (int) ((Math.random() * 5 )+ (name._pokedex[0].getLvl() + 1));
+    int random = (int) ((Math.random() * 3 )+ (name._pokedex[0].getLvl()));
     return random;
   }
 
@@ -94,17 +95,20 @@ public class Woo {
 
   public static boolean walk(Player name, String region) {
     System.out.println("You went on a walk");
+    wait(1);
     boolean cont = false;
     int random = (int) (Math.random() * 10);
     if (random <= 2) {
       System.out.println("Nothing has appeared");
-      System.out.println("Walk again ir go to a gym? (walk/gym)");
+      wait(1);
+      System.out.println("Walk again or go to a gym? (walk/gym)");
       String response = "";
       response = in.nextLine().toLowerCase();
         if (response.equals("walk")) {
          return false;
        } else if (response.equals("gym")){
           if (name._numPokemon < 7){
+            wait(1);
             System.out.println("You can not go to the gym with less than six pokemon. You walk again");
             return false;
           } else {
@@ -114,21 +118,22 @@ public class Woo {
              }
            }
        } else {
-         while (!response.equals("walk") && !response.equals("gym")){
-           System.out.println("input a valid response (gym/walk)");
-           response = in.nextLine().toLowerCase();
+         wait(1);
+         System.out.println("That is not a valid response, you go on a walk");
+         return false;
          }
        }
-     }
      else if (random >= 3 && random <= 4) {
       // meet someone battle
       System.out.println("A fellow pokemon trainer has appeared. They challenge you to a pokemon battle.");
+      wait(1);
       System.out.println("Do you want to battle or runaway? (battle/runaway)");
       String runawayOr = "";
       runawayOr = in.nextLine().toLowerCase();
         if (runawayOr.equals("runaway")) {
           boolean run = runaway();
           if (run == false) {
+            wait(1);
             System.out.println("running away failed. You must engage in battle");
             int type = generateType();
             Pokemon pok = generatePokemon(name, type);
@@ -139,11 +144,14 @@ public class Woo {
                 cont = false;
               }
             } else {
+            wait(1);
             System.out.println("You've sucessfullly runaway");
+            wait(1);
             System.out.println("You walked");
             // ask
           }
         } else if (runawayOr.equals("battle")) {
+          wait(1);
           System.out.println("You accept the challenge and engage in battle");
           int type = generateType();
           Pokemon pok = generatePokemon(name, type);
@@ -154,11 +162,18 @@ public class Woo {
             goToNurse(name, region);
           }
         } else {
-          while (runawayOr.equals("runaway") == false && runawayOr.equals("battle") == false){
-            System.out.println("input a valid response (runaway/battle)");
-            runawayOr = in.nextLine().toLowerCase();
+            wait(1);
+            System.out.println("That is not a valid response, you engage in battle");
+            System.out.println("You accept the challenge and engage in battle");
+            int type = generateType();
+            Pokemon pok = generatePokemon(name, type);
+            boolean win = battle(name, pok, region);
+            if (win == true){
+              cont = false;
+            } else {
+              goToNurse(name, region);
+            }
           }
-        }
 
 
     } else if (random >= 5 && random <= 6) {
@@ -205,11 +220,17 @@ public class Woo {
              catchP(name, pok, region);
           }
         } else {
-          while(encounterPokemon.equals("runaway") == false && encounterPokemon.equals("battle") == false){
-            System.out.println("input a valid response (runaway/battle)");
-            String runawayOr = "";
-            runawayOr = in.nextLine().toLowerCase();
-          }
+            wait(1);
+            System.out.println("That is not a valid response, you engage in battle");
+            System.out.println("You accept the challenge and engage in battle");
+            int type = generateType();
+            Pokemon pok = generatePokemon(name, type);
+            boolean win = battle(name, pok, region);
+            if (win == true){
+              cont = false;
+            } else {
+              goToNurse(name, region);
+            }
         }
     }
     return cont;
@@ -237,15 +258,8 @@ public class Woo {
     System.out.println("Here are the Stats of your Pokemon:");
     name.displayPokedex();
     System.out.println("Here are the Stats of your opponent's Pokemon:");
-    opponent.display();
-    System.out.println("print?");
-    if (opponent.isAlive() == true ){
-      System.out.println("this is true");
-    } else {
-      System.out.println("this is false");
-    }
+    opponent.displayt();
     while (opponent.isAlive() == true) {
-      System.out.println("test");
       for (Pokemon p : name._pokedex) {
         System.out.println("You take out " + p._name + "!");
         while (p.isAlive() == true) {
@@ -281,22 +295,19 @@ public class Woo {
               }
             }
             else{
-              while (!berry.equals("yes") && !berry.equals("no")){
-                System.out.println("Input a valid answer:");
-                berry = in.nextLine();
+              wait(1);
+              System.out.println("That is not a valid response, you do not get a berry");
               }
             }
         }
+        System.out.println("All of your Pokemon have fainted!");
+        System.out.println("Your Pokemon are rushed to the Nurse...");
+        return result;
       }
-      System.out.println("All of your Pokemon have fainted!");
-      System.out.println("Your Pokemon are rushed to the Nurse...");
-      System.out.println("false");
+      result = true;
       return result;
     }
-    System.out.println("true");
-    result = true;
-    return result;
-  }
+
 
   public static void goToNurse(Player name, String region) {
     System.out.println("You have arrived at the clinic.");
@@ -370,9 +381,20 @@ public class Woo {
           }
         }
       } else {
-        while (answer.equals("yes") == false && answer.equals("no") == false) {
-          System.out.println("Please input a valid response (yes/no):");
-          answer = in.nextLine();
+        wait(1);
+        System.out.println("That is not a valid response, you will not go to the Nurse");
+        System.out.println("You enter the gym and prepare to battle Flint.");
+        Pokemon infernape = new Fire("Infernape", 25, 3818);
+        boolean firstBattle = battle(name, infernape, region);
+        if (firstBattle == true) {
+          System.out.println("Prepare to fight Flint's next Pokemon!");
+          Pokemon rapidash = new Fire("Rapidash", 27, 2739);
+          boolean secondBattle = battle(name, rapidash, region);
+          if (secondBattle == true) {
+            System.out.println("Congratulations! You have successfully defeated Flint!");
+            System.out.println("You have earned the Fire Badge!");
+            badge = true;
+          }
         }
       }
     return badge;
@@ -409,11 +431,27 @@ public class Woo {
         }
       }
     } else {
-        while (answer.equals("yes") == false && answer.equals("no") == false) {
-          System.out.println("Please input a valid response (yes/no):");
-          answer = in.nextLine();
+      wait(1);
+      System.out.println("That is not a valid response, you will not go to the nurse");
+      System.out.println("You enter the gym and prepare to battle Crasher Wake.");
+      Pokemon gyarados = new Water("Gyarados", 27, 2690);
+      boolean firstBattle = battle(name, gyarados, region);
+      if (firstBattle == true) {
+        System.out.println("Prepare to fight Crasher Wake's next Pokemon!");
+        Pokemon quagsire = new Water("Quagsire", 27, 2630);
+        boolean secondBattle = battle(name, quagsire, region);
+        if (secondBattle == true) {
+          System.out.println("Prepare to fight Crasher Wake's next Pokemon");
+          Pokemon floatzel = new Water("floatzel", 30, 2950);
+          boolean thirdBattle = battle(name, floatzel, region);
+          if (thirdBattle == true){
+            System.out.println("Congratulations! You have successfully defeated Crasher Wake!");
+            System.out.println("You have earned the Water Badge!");
+            badge = true;
+        }
         }
     }
+  }
   return badge;
 }
     public static boolean gymBattleGrass(Player name, String region) {
@@ -447,11 +485,27 @@ public class Woo {
           }
         }
       } else {
-          while (answer.equals("yes") == false && answer.equals("no") == false) {
-            System.out.println("Please input a valid response (yes/no):");
-            answer = in.nextLine();
+        wait(1);
+        System.out.println("That is not a valid response, you will not go to the nurse");
+        System.out.println("You enter the gym and prepare to battle Gardenia.");
+        Pokemon cherubi = new Water("cherubi", 19, 1990);
+        boolean firstBattle = battle(name, cherubi, region);
+        if (firstBattle == true) {
+          System.out.println("Prepare to fight Gardenia's next Pokemon!");
+          Pokemon turtwig = new Water("turtwig", 27, 1930);
+          boolean secondBattle = battle(name, turtwig, region);
+          if (secondBattle == true) {
+            System.out.println("Prepare to fight Gardenia's next Pokemon");
+            Pokemon roserade = new Water("roserade",22, 2250);
+            boolean thirdBattle = battle(name, roserade, region);
+            if (thirdBattle == true){
+              System.out.println("Congratulations! You have successfully defeated Gardenia!");
+              System.out.println("You have earned the Water Badge!");
+              badge = true;
+          }
           }
       }
+    }
     return badge;
   }
   public static void gameSetup(Player player){
@@ -759,7 +813,7 @@ public class Woo {
   }
   public static void main(String[] args) {
     Player player = new Player();
-
+    //StdAudio.loopInBackground
   //  gameSetup();
     chooseStarter(player);
 
