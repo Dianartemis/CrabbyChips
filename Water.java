@@ -51,7 +51,7 @@ static Scanner in = new Scanner(System.in);
       _lvl = _exp / 100;
       _hp = getHPMultiplier() *_lvl;
       _attack += 7;
-      _defense = getDefenseMultiplier()* 7;
+      _defense = getDefenseMultiplier()* _lvl;
       _mana += 10;
     }
   }
@@ -197,7 +197,8 @@ static Scanner in = new Scanner(System.in);
           System.out.println();
           name.displayt();
           System.out.println();
-        }
+
+      }
       // Rain Dance
       if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
         if(_mana < 20){
