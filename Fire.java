@@ -32,7 +32,7 @@ public class Fire extends Pokemon implements Types{
   }
 
   public boolean isAlive(){
-    if (_hp >=(7*_lvl)){
+    if (_hp <= (7 *_lvl) && _hp > 0){
       return true;
     }else {
       return false;

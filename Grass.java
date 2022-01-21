@@ -32,7 +32,7 @@ public class Grass extends Pokemon implements Types{
   }
 
   public boolean isAlive(){
-    if (_hp >=(6*_lvl)){
+    if (_hp <=(6 * _lvl) && _hp > 0){
       return true;
     }else {
       return false;
