@@ -315,14 +315,14 @@ public class Woo {
           //wait(1);
 
           if (opponent.isAlive() == false){
-            result = false;
+            result = true;
+            goToNurseGym(name, region);
             return result;
           }
           System.out.println(opponent._name + " makes a move");
           //wait(1);
           opponent.moveOther(generateMove(opponent), name._pokedex[i]);
           //wait(1);
-<<<<<<< HEAD
         }
           i = i + 1;
         }
@@ -335,7 +335,7 @@ public class Woo {
         }
       //StdAudio.close();
       result = true;
-=======
+
           System.out.println("Do you want to use a Berry? (yes/no)");
           String berry = "";
           berry = in.nextLine().toLowerCase();
@@ -391,20 +391,20 @@ public class Woo {
     System.out.println("You have arrived at the clinic.");
     //wait(1);
     System.out.println("The Nurse has restored all of your Pokemon's health.");
-<<<<<<< HEAD
+
     for (int i = 0 ; i < name._pokedexSize; i++) {
       name._pokedex[i]._hp = name._pokedex[i]._lvl * name._pokedex[i].getHPMultiplier();
       name._pokedex[i]._defense = name._pokedex[i]._lvl*name._pokedex[i].getDefenseMultiplier();
-=======
+
     for (int i = 0; i < name._pokedexSize; i++) {
       name._pokedex[i]._hp = name._pokedex[i]._lvl * name._pokedex[i].getHPMultiplier();
->>>>>>> 8fbe1d4e0d1c9d010b671ee09961508f84a48e41
+
     }
     System.out.println();
     name.displayPokedex();
     System.out.println();
     //wait(1);
-<<<<<<<
+
     walk(name, region);
   }
 
@@ -485,7 +485,7 @@ public class Woo {
         //wait(1);
         System.out.println("You take a quick visit to the Nurse...");
         //wait(1);
-<<<<<<< HEAD
+
       } else if (answer.equals("no")) {
         //wait(1);
         System.out.println("You enter the gym and prepare to battle Flint.");
@@ -546,7 +546,7 @@ public class Woo {
         //wait(1);
         System.out.println("You take a quick visit to the Nurse...");
         //wait(1);
-<<<<<<< HEAD
+
         //StdAudio.close();
         goToNurseGym(name, region);
 } else if (answer.equals("no")) {
@@ -623,9 +623,9 @@ public class Woo {
           //wait(1);
           System.out.println("You take a quick visit to the Nurse...");
           //wait(1);
-<<<<<<< HEAD
+
           //StdAudio.close();
-          goToNurseGym8fbe1d4e0d1c9d010b671ee09961508f84a48e41
+          goToNurseGym(name, region);
         } else if (answer.equals("no")) {
           //wait(1);
           System.out.println("You enter the gym and prepare to battle Gardenia.");
