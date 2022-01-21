@@ -105,9 +105,11 @@ public class Fire extends Pokemon implements Types{
       System.out.println(name._name + " restores its own cells.");
       System.out.println("Mana increased by 20!");
     }
+    System.out.println();
     displayt();
     System.out.println();
     name.displayt();
+    System.out.println();
   }
 /*
   public void move(String moveName, Water name){

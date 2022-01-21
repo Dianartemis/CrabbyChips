@@ -81,9 +81,11 @@ public class Grass extends Pokemon implements Types{
           System.out.println("You have defeated your opponent!");
         }
       }
+      System.out.println();
       displayt();
       System.out.println();
       name.displayt();
+      System.out.println();
     }
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
@@ -96,9 +98,11 @@ public class Grass extends Pokemon implements Types{
         System.out.println(name._name + " creates a protective field.");
         System.out.println("Defense increased by 10!");
       }
+      System.out.println();
       displayt();
       System.out.println();
       name.displayt();
+      System.out.println();
     }
     // Rest
     if(moveName.equals("Rest") || moveName.equals("rest")){
@@ -106,9 +110,11 @@ public class Grass extends Pokemon implements Types{
       System.out.println(name._name + " takes a nap.");
       System.out.println("Mana increased by 20!");
     }
+    System.out.println();
     displayt();
     System.out.println();
     name.displayt();
+    System.out.println();
   }
   /*
   public void move(String moveName, Grass name){
