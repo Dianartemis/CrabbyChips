@@ -49,6 +49,7 @@ Diana Akhmedova :: Created CrabbyChips repo
 
 Lauren Lee :: Added v0 and Woo.java
               Created resources (includes magpie, v3 of YoRPG, TerminallyIll.java)
+==============================================================
 
 
 2022-1-14
@@ -57,6 +58,7 @@ Diana Akhmedova :: Created .java files for Pokemon, Human, and Player
                    Created .java files for Human and Pokemon subclasses
 
 Lauren Lee :: Created UML Diagrams for Pokemon, Human, and Player
+==============================================================
 
 
 2022-1-17
@@ -73,8 +75,6 @@ Diana Akhmedova :: Updated Fire.java, Water.java, Grass.java move() method and i
 
 Lauren Lee :: Updated Woo.java with main methods and added more storyline
               Updated Fire.java move() method
-
-
 ==============================================================
 
 
@@ -84,8 +84,6 @@ Diana Akhmedova :: Updated Pokemon.java, Types.java, Water.java, Fire.java, and 
                    Finished Woo.java so that it could compile cause Lauren's hands were cramping from the enormous while/if statements
 
 Lauren Lee :: Updated Woo.java to create walk(), goToNurse(), gym method, generateLvl(), generatePokemon(), generateType();
-
-
 ==============================================================
 
 
@@ -100,6 +98,38 @@ Lauren Lee :: Augmented catchP() and lvlUp()
               Struggled with inheritence in the Dojo (thank you Senseis)
               Came home and fixed the inheritence
               Added StdAudio.java and implemented music (still needs to be fixed)
-To do: catchP(), music, visuals, level up
+==============================================================
 
+
+2022-1-21
+--------------------------------------------------------------
+Diana Akhmedova ::
+
+Lauren Lee ::
+
+**TO DO: music (works in main, wont stop in battle), visuals, testing, gym battles, (optional: ASCII/text art)**
+==============================================================
+
+
+2022-1-22
+--------------------------------------------------------------
+Diana Akhmedova ::
+
+Lauren Lee ::
+==============================================================
+
+
+2022-1-23
+--------------------------------------------------------------
+Diana Akhmedova ::
+
+Lauren Lee ::
+==============================================================
+
+
+2022-1-24
+--------------------------------------------------------------
+Diana Akhmedova ::
+
+Lauren Lee ::
 ==============================================================
