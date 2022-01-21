@@ -15,7 +15,7 @@ public class Woo {
     String[] fire = new String[] { "Vulpix", "Slugma", "Numel", "Charmander", "Cyndaquil", "Torchic" };
     String[] water = new String[] { "Feebas", "Wooper", "Lotad", "Marill", "Wingull", "Poliwag" };
     String[] grass = new String[] { "Cherubi", "Seedot", "Bulbasaur", "Chikorita", "Treecko", "Bellsprout" };
-    int level = 4;//generateLvl(name);
+    int level = generateLvl(name);
 
     if (type == 0) {
       String pokemon = fire[random];
@@ -316,6 +316,7 @@ public class Woo {
 
             if (opponent.isAlive() == false){
               result = true;
+              goToNurseGym(name, region);
               return result;
             }
             System.out.println(opponent._name + " makes a move");
@@ -343,7 +344,7 @@ public class Woo {
     //wait(1);
     System.out.println("You have arrived at the clinic.");
     //wait(1);
-    System.out.println("The Nurse has restored all of your Pokemon's health.");  
+    System.out.println("The Nurse has restored all of your Pokemon's health.");
 
     for (int i = 0 ; i < name._pokedexSize; i++) {
       name._pokedex[i]._hp = name._pokedex[i]._lvl * name._pokedex[i].getHPMultiplier();
@@ -891,7 +892,7 @@ public class Woo {
       //wait(1);
       System.out.println("\nCongrats, you got your first Pokemon! It's a Chimchar!");
     } else if (response.equals("piplup")) {
-      Water starter = new Water("Piplup", 100, 10000);
+      Water starter = new Water("Piplup", 4, 400);
       Player.add(starter);
       //wait(1);
       System.out.println("\nCongrats, you got your first Pokemon! It's a Piplup!");
