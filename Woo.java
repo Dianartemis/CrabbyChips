@@ -289,14 +289,15 @@ public class Woo {
     opponent.displayt();
     System.out.println();
     while (opponent.isAlive() == true) {
-      for (Pokemon p : name._pokedex) {
+      int i = 0;
+      while (i < name._pokedexSize){
         wait(1);
-        System.out.println("You take out " + p._name + "!");
-        while (p.isAlive() == true) {
+        System.out.println("You take out " + name._pokedex[i]_name + "!");
+        while (name._pokedex[i].isAlive() == true) {
           wait(1);
           System.out.print("Choose a move...");
           wait(1);
-          p.displayMove();
+          name._pokedex[i].displayMove();
           String answer = "";
           answer = in.nextLine().toLowerCase();
           while (!answer.equals("ember") && !answer.equals("bulk up") && !answer.equals("restore")
@@ -306,17 +307,17 @@ public class Woo {
             System.out.println("Input a valid move:");
             answer = in.nextLine().toLowerCase();
           }
-          p.move(answer, opponent);
+          name._pokedex[i].move(answer, opponent);
           wait(1);
-          p._exp = p._exp + 20;
-          p.lvlUp();
+          name._pokedex[i]._exp = name._pokedex[i]._exp + 20;
+          name._pokedex[i].lvlUp();
           wait(1);
           if (opponent.isAlive() == false){
             return true;
           }
           System.out.println(opponent._name + " makes a move");
           wait(1);
-          opponent.move(generateMove(opponent), p);
+          opponent.move(generateMove(opponent), name._pokedex[i]);
           wait(1);
           System.out.println("Do you want to use a Berry? (yes/no)");
           String berry = "";
@@ -329,10 +330,10 @@ public class Woo {
                 System.out.println("You have no Berries left!");
               } else {
                 Player._numBerries -= 1;
-                p._hp += 20;
+                name._pokedex[i]._hp += 20;
                 // probably overrides
                 wait(1);
-                System.out.println(p._name + "'s HP has been restored by 20!");
+                System.out.println(name._pokedex[i]._name + "'s HP has been restored by 20!");
                 wait(1);
                 System.out.println("Here is your inventory:");
                 wait(1);
@@ -349,7 +350,7 @@ public class Woo {
               System.out.println("That is not a valid response, you do not get a berry");
               }
             }
-            if (p.isAlive() == false) {
+            if (name._pokedex[i].isAlive() == false) {
               wait(1);
               System.out.println("All of your Pokemon have fainted!");
               wait(1);
