@@ -106,7 +106,6 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
       }
-    }
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
       if(_mana < 20){
@@ -198,7 +197,6 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
       }
-    }
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
       if(_mana < 20){

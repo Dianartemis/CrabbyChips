@@ -310,7 +310,7 @@ public class Woo {
           name._pokedex[i].move(answer, opponent);
           //wait(1);
           name._pokedex[i]._exp = name._pokedex[i]._exp + 20;
-          name._pokedex[i].lvlUp();
+        //  name._pokedex[i].lvlUp();
           //wait(1);
 
           if (opponent.isAlive() == false){

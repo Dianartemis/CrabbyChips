@@ -108,7 +108,6 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
       }
-    }
     // Bulk Up
     if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
       if(_mana < 20){

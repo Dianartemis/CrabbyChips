@@ -198,7 +198,6 @@ static Scanner in = new Scanner(System.in);
           name.displayt();
           System.out.println();
         }
-      }
       // Rain Dance
       if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
         if(_mana < 20){
