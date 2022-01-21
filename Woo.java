@@ -19,7 +19,6 @@ public class Woo {
     String[] grass = new String[] { "cherubi", "seedot", "bulbasaur", "chikorita", "treecko", "bellsprout" };
     int level = generateLvl(name);
 
-
     if (type == 0) {
       String pokemon = fire[random];
       Pokemon pok = new Fire(pokemon, level, 0);
@@ -34,7 +33,6 @@ public class Woo {
       Pokemon pok = new Grass(pokemon, level, 0);
       return pok;
     }
-
   }
 
   public static int generateLvl(Player name) {
@@ -89,6 +87,7 @@ public class Woo {
   }
 
   public static boolean walk(Player name, String region) {
+    //StdAudio.loopInBackground("city.wav");
     System.out.println();
     System.out.println("You went on a walk");
     //wait(1);
@@ -101,11 +100,13 @@ public class Woo {
       String response = "";
       response = in.nextLine().toLowerCase();
         if (response.equals("walk")) {
-         return false;
+          //StdAudio.close();
+          return false;
        } else if (response.equals("gym")){
           if (name._numPokemon < 4){
             //wait(1);
             System.out.println("You can not go to the gym with less than four pokemon. You walk again");
+            //StdAudio.close();
             return false;
           } else {
              boolean win = goToGym(name, region);
@@ -116,6 +117,7 @@ public class Woo {
        } else {
          //wait(1);
          System.out.println("That is not a valid response, you go on a walk");
+         //StdAudio.close();
          return false;
          }
        }
@@ -135,6 +137,7 @@ public class Woo {
             Pokemon pok = generatePokemon(name, type);
             boolean win = battle(name, pok, region);
               if(win == false){
+                //StdAudio.close();
                 goToNurse(name, region);
               } else {
                 cont = false;
@@ -155,6 +158,7 @@ public class Woo {
           if (win == true){
             cont = false;
           } else {
+            //StdAudio.close();
             goToNurse(name, region);
           }
         } else {
@@ -168,6 +172,7 @@ public class Woo {
             if (win == true){
               cont = false;
             } else {
+              //StdAudio.close();
               goToNurse(name, region);
             }
           }
@@ -202,8 +207,10 @@ public class Woo {
             Pokemon pok = generatePokemon(name, type);
             boolean win = battle(name, pok, region);
             if (win == false){
+              //StdAudio.close();
               goToNurse(name, region);
             } else {
+              //StdAudio.close();
               catchP(name, pok, region);
             }
           } else {
@@ -221,9 +228,11 @@ public class Woo {
           System.out.println(pok._name);
           boolean win = battle(name, pok, region);
           if(win == false){
+            //StdAudio.close();
             goToNurse(name, region);
           } else {
-             catchP(name, pok, region);
+            //StdAudio.close();
+            catchP(name, pok, region);
           }
         } else {
             //wait(1);
@@ -234,12 +243,15 @@ public class Woo {
             Pokemon pok = generatePokemon(name, type);
             boolean win = battle(name, pok, region);
             if (win == true){
+              //StdAudio.close();
               catchP(name, pok, region);
             } else {
+              //StdAudio.close();
               goToNurse(name, region);
             }
         }
     }
+    //StdAudio.close();
     return cont;
   }
 
@@ -261,8 +273,7 @@ public class Woo {
   }
 
   public static boolean battle(Player name, Pokemon opponent, String region) {
-  //  StdAudio.stop();
-    //StdAudio.loopInBackground("battle.wav");
+    StdAudio.loopInBackground("battle.wav");
     boolean result = false;
     //wait(1);
     System.out.println("You begin your battle with " + opponent._name + "...");
@@ -343,36 +354,42 @@ public class Woo {
               System.out.println("All of your Pokemon have fainted!");
               //wait(1);
               System.out.println("Your Pokemon are rushed to the Nurse...");
+              //StdAudio.close();
               return result;
             }
         }
 
       }
       result = true;
+      //StdAudio.close();
       return result;
     }
 
   public static void goToNurse(Player name, String region) {
+    //StdAudio.loopInBackground("city.wav");
     //wait(1);
     System.out.println("You have arrived at the clinic.");
     //wait(1);
     System.out.println("The Nurse has restored all of your Pokemon's health.");
-    for (Pokemon p : name._pokedex) {
+    for (Pokemon p : name._pokedexSize) {
       p._hp = p._lvl * p.getHPMultiplier();
     }
     System.out.println();
     name.displayPokedex();
     System.out.println();
     //wait(1);
+    //StdAudio.close();
     walk(name, region);
   }
 
   public static void catchP(Player name, Pokemon pokName, String region) {
+    //StdAudio.loopInBackground("city.wav");
     int random = (int) ((Math.random() * 10));
     if (name._numPokeball <= 0) {
       //wait(1);
       System.out.println("You do not have enough pokeballs");
       //wait(1);
+      //StdAudio.close();
       walk(name, region);
     } else {
       if (random <= 7) {
@@ -387,6 +404,7 @@ public class Woo {
         name.displayInventory();
         System.out.println();
         //wait(1);
+        //StdAudio.close();
         walk(name, region);
       } else {
         //wait(1);
@@ -396,10 +414,12 @@ public class Woo {
         name.displayInventory();
         System.out.println();
         //wait(1);
+        //StdAudio.close();
         walk(name, region);
       }
     }
   }
+
   public static boolean goToGym(Player name, String region){
     if (region.equals("Eterna City")) {
       return gymBattleGrass(name, region);
@@ -411,6 +431,7 @@ public class Woo {
   }
 
   public static boolean gymBattleFire(Player name, String region) {
+    //StdAudio.loopInBackground("city.wav");
     boolean badge = false;
     String answer = "";
     //wait(1);
@@ -422,6 +443,7 @@ public class Woo {
         //wait(1);
         System.out.println("You take a quick visit to the Nurse...");
         //wait(1);
+        //StdAudio.close();
         goToNurse(name, region);
       } else if (answer.equals("no")) {
         //wait(1);
@@ -466,10 +488,12 @@ public class Woo {
           }
         }
       }
+      //StdAudio.close();
     return badge;
   }
 
   public static boolean gymBattleWater(Player name, String region) {
+    //StdAudio.loopInBackground("city.wav");
     boolean badge = false;
     String answer = "";
     //wait(1);
@@ -481,6 +505,7 @@ public class Woo {
         //wait(1);
         System.out.println("You take a quick visit to the Nurse...");
         //wait(1);
+        //StdAudio.close();
         goToNurse(name, region);
       } else if (answer.equals("no")) {
         //wait(1);
@@ -537,12 +562,14 @@ public class Woo {
             System.out.println("You have earned the Water Badge!");
             badge = true;
         }
-        }
+      }
     }
   }
+  //StdAudio.close();
   return badge;
 }
     public static boolean gymBattleGrass(Player name, String region) {
+      //StdAudio.loopInBackground("city.wav");
       boolean badge = false;
       String answer = "";
       //wait(1);
@@ -554,6 +581,7 @@ public class Woo {
           //wait(1);
           System.out.println("You take a quick visit to the Nurse...");
           //wait(1);
+          //StdAudio.close();
           goToNurse(name, region);
         } else if (answer.equals("no")) {
           //wait(1);
@@ -611,12 +639,14 @@ public class Woo {
               //wait(1);
               badge = true;
           }
-          }
+        }
       }
     }
+    //StdAudio.close();
     return badge;
   }
   public static void gameSetup(Player player){
+    //StdAudio.loopInBackground("city.wav");
     System.out.println("Welcome, Trainer, to Pokemon Shining Pearl!");
     //wait(1);
     System.out.println("\nWhat is your name?");
@@ -624,16 +654,15 @@ public class Woo {
     name = in.nextLine();
     player._name = name;
     //wait(1);
+    //StdAudio.close();
   }
 
   public static void chooseStarter(Player player){
+    //StdAudio.loopInBackground("city.wav");
     //wait(2);
-
-    System.out.println("\nRING RING! Wake up " + player._name + "!"
-        + " Your mom told you to go to Dr. Footstep's clinic to get your first starter Pokemon.");
+    System.out.println("\nRING RING! Wake up " + player._name + "!" + " Your mom told you to go to Dr. Footstep's clinic to get your first starter Pokemon.");
     //wait(2);
-    System.out.println(
-        "\nYou totally forgot. Today is your 10th birthday. You're finally old enough to become a Pokemon trainer!");
+    System.out.println("\nYou totally forgot. Today is your 10th birthday. You're finally old enough to become a Pokemon trainer!");
     //wait(2);
     System.out.println("\nYou rush over to the pokemon clinic and luckily the line isn't long.");
     //wait(2);
@@ -679,8 +708,7 @@ public class Woo {
       //wait(1);
       System.out.println("\nA Penguin Pokemon.");
       //wait(2);
-      System.out.println(
-          "It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       //wait(2);
       System.out.println("It's a Water type, so it's strong versus Rock and Grounds.");
       //wait(2);
@@ -699,8 +727,7 @@ public class Woo {
       //wait(2);
       System.out.println("Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
       //wait(2);
-      System.out.println(
-          "It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      System.out.println("It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
       //wait(2);
       System.out.println();
       turtwig.display();
@@ -748,8 +775,7 @@ public class Woo {
       //wait(1);
       System.out.println("\nA Penguin Pokemon.");
       //wait(1);
-      System.out.println(
-          "It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       //wait(1);
       System.out.println("It's a Water type, so it's strong versus Rock and Grounds.");
       //wait(1);
@@ -768,8 +794,7 @@ public class Woo {
       //wait(1);
       System.out.println("Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
       //wait(1);
-      System.out.println(
-          "It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      System.out.println("It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
       //wait(1);
       System.out.println();
       turtwig.display();
@@ -780,8 +805,7 @@ public class Woo {
       //wait(1);
       System.out.println("A Penguin Pokemon.");
       //wait(1);
-      System.out.println(
-          "It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       //wait(1);
       System.out.println("It's a Water type, so it's strong versus Rock and Grounds.");
       //wait(1);
@@ -816,8 +840,7 @@ public class Woo {
       //wait(1);
       System.out.println("\nA Penguin Pokemon.");
       //wait(1);
-      System.out.println(
-          "It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       //wait(1);
       System.out.println("It's a Water type, so it's strong versus Rock and Grounds.");
       //wait(1);
@@ -836,8 +859,7 @@ public class Woo {
       //wait(1);
       System.out.println("Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
       //wait(1);
-      System.out.println(
-          "It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      System.out.println("It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
       //wait(1);
       System.out.println();
       turtwig.display();
@@ -854,8 +876,7 @@ public class Woo {
       //wait(1);
       System.out.println("Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
       //wait(1);
-      System.out.println(
-          "It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      System.out.println("It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
       //wait(1);
       System.out.println();
       turtwig.display();
@@ -913,19 +934,22 @@ public class Woo {
     //wait(1);
     System.out.println("\nYou thank Dr. Footstep and walk out of the clinic.");
     System.out.println();
+    //StdAudio.close();
   }
 
   Woo game = new Woo();
+
   public static void test(){
     Fire pok = new Fire ("name", 2, 0);
     System.out.println(pok._name);
   }
+
   public static void main(String[] args) {
     Player player = new Player();
-  //  StdAudio.loopInBackground("city.wav");
+    //StdAudio.loopInBackground("city.wav");
     gameSetup(player);
     chooseStarter(player);
-    StdAudio.close();
+    //StdAudio.close();
 
     String[] regions = new String[] {"Eterna City", "Pastoria City", "Sunyshore City"};
     int i = 0;
@@ -935,6 +959,7 @@ public class Woo {
       }
     }
       System.out.println("\nYou beat the game. Congragulations!");
+      StdAudio.close();
 
     //response = in.nextLine().toLowerCase();
   }
