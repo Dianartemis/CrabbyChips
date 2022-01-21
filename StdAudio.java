@@ -72,7 +72,7 @@ public final class StdAudio {
     private static byte[] buffer;         // our internal buffer
     private static int bufferSize = 0;    // number of samples currently in internal buffer
 
-    private StdAudio() {
+    public StdAudio() {
         // can not instantiate
     }
 

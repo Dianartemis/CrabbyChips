@@ -9,7 +9,7 @@ public class Woo {
 
   //tests
   static Scanner in = new Scanner(System.in);
-
+  StdAudio city = new StdAudio();
 
   public static Pokemon generatePokemon(Player name, int type) {
     int random = (int) ((Math.random() * 6)); //0-5
@@ -100,13 +100,13 @@ public class Woo {
       String response = "";
       response = in.nextLine().toLowerCase();
         if (response.equals("walk")) {
-          //StdAudio.close();
+
           return false;
        } else if (response.equals("gym")){
           if (name._numPokemon < 4){
             //wait(1);
             System.out.println("You can not go to the gym with less than four pokemon. You walk again");
-            //StdAudio.close();
+
             return false;
           } else {
              boolean win = goToGym(name, region);
@@ -117,7 +117,7 @@ public class Woo {
        } else {
          //wait(1);
          System.out.println("That is not a valid response, you go on a walk");
-         //StdAudio.close();
+
          return false;
          }
        }
@@ -137,7 +137,7 @@ public class Woo {
             Pokemon pok = generatePokemon(name, type);
             boolean win = battle(name, pok, region);
               if(win == false){
-                //StdAudio.close();
+
                 goToNurse(name, region);
               } else {
                 cont = false;
@@ -158,7 +158,7 @@ public class Woo {
           if (win == true){
             cont = false;
           } else {
-            //StdAudio.close();
+
             goToNurse(name, region);
           }
         } else {
@@ -172,7 +172,7 @@ public class Woo {
             if (win == true){
               cont = false;
             } else {
-              //StdAudio.close();
+
               goToNurse(name, region);
             }
           }
@@ -207,10 +207,10 @@ public class Woo {
             Pokemon pok = generatePokemon(name, type);
             boolean win = battle(name, pok, region);
             if (win == false){
-              //StdAudio.close();
+
               goToNurse(name, region);
             } else {
-              //StdAudio.close();
+
               catchP(name, pok, region);
             }
           } else {
@@ -228,10 +228,10 @@ public class Woo {
           System.out.println(pok._name);
           boolean win = battle(name, pok, region);
           if(win == false){
-            //StdAudio.close();
+
             goToNurse(name, region);
           } else {
-            //StdAudio.close();
+
             catchP(name, pok, region);
           }
         } else {
@@ -243,15 +243,15 @@ public class Woo {
             Pokemon pok = generatePokemon(name, type);
             boolean win = battle(name, pok, region);
             if (win == true){
-              //StdAudio.close();
+
               catchP(name, pok, region);
             } else {
-              //StdAudio.close();
+
               goToNurse(name, region);
             }
         }
     }
-    //StdAudio.close();
+
     return cont;
   }
 
@@ -347,21 +347,21 @@ public class Woo {
             else {
               //wait(1);
               System.out.println("That is not a valid response, you do not get a berry");
-              }
             }
-            if (p.isAlive() == false) {
-              //wait(1);
-              System.out.println("All of your Pokemon have fainted!");
-              //wait(1);
-              System.out.println("Your Pokemon are rushed to the Nurse...");
-              //StdAudio.close();
-              return result;
-            }
+          }
+          if (p.isAlive() == false) {
+            //wait(1);
+            System.out.println("All of your Pokemon have fainted!");
+            //wait(1);
+            System.out.println("Your Pokemon are rushed to the Nurse...");
+            
+            return result;
+          }
         }
 
       }
       result = true;
-      //StdAudio.close();
+
       return result;
     }
 
@@ -371,14 +371,14 @@ public class Woo {
     System.out.println("You have arrived at the clinic.");
     //wait(1);
     System.out.println("The Nurse has restored all of your Pokemon's health.");
-    for (Pokemon p : name._pokedexSize) {
-      p._hp = p._lvl * p.getHPMultiplier();
+    for (int i = 0; i < name._pokedexSize; i++) {
+      name._pokedex[i]._hp = name._pokedex[i]._lvl * name._pokedex[i].getHPMultiplier();
     }
     System.out.println();
     name.displayPokedex();
     System.out.println();
     //wait(1);
-    //StdAudio.close();
+
     walk(name, region);
   }
 
@@ -389,7 +389,7 @@ public class Woo {
       //wait(1);
       System.out.println("You do not have enough pokeballs");
       //wait(1);
-      //StdAudio.close();
+
       walk(name, region);
     } else {
       if (random <= 7) {
@@ -404,7 +404,7 @@ public class Woo {
         name.displayInventory();
         System.out.println();
         //wait(1);
-        //StdAudio.close();
+
         walk(name, region);
       } else {
         //wait(1);
@@ -414,7 +414,7 @@ public class Woo {
         name.displayInventory();
         System.out.println();
         //wait(1);
-        //StdAudio.close();
+
         walk(name, region);
       }
     }
@@ -443,7 +443,7 @@ public class Woo {
         //wait(1);
         System.out.println("You take a quick visit to the Nurse...");
         //wait(1);
-        //StdAudio.close();
+
         goToNurse(name, region);
       } else if (answer.equals("no")) {
         //wait(1);
@@ -488,7 +488,7 @@ public class Woo {
           }
         }
       }
-      //StdAudio.close();
+
     return badge;
   }
 
@@ -505,7 +505,7 @@ public class Woo {
         //wait(1);
         System.out.println("You take a quick visit to the Nurse...");
         //wait(1);
-        //StdAudio.close();
+
         goToNurse(name, region);
       } else if (answer.equals("no")) {
         //wait(1);
@@ -565,7 +565,7 @@ public class Woo {
       }
     }
   }
-  //StdAudio.close();
+
   return badge;
 }
     public static boolean gymBattleGrass(Player name, String region) {
@@ -581,7 +581,7 @@ public class Woo {
           //wait(1);
           System.out.println("You take a quick visit to the Nurse...");
           //wait(1);
-          //StdAudio.close();
+
           goToNurse(name, region);
         } else if (answer.equals("no")) {
           //wait(1);
@@ -642,7 +642,7 @@ public class Woo {
         }
       }
     }
-    //StdAudio.close();
+
     return badge;
   }
   public static void gameSetup(Player player){
@@ -654,7 +654,7 @@ public class Woo {
     name = in.nextLine();
     player._name = name;
     //wait(1);
-    //StdAudio.close();
+
   }
 
   public static void chooseStarter(Player player){
@@ -934,7 +934,7 @@ public class Woo {
     //wait(1);
     System.out.println("\nYou thank Dr. Footstep and walk out of the clinic.");
     System.out.println();
-    //StdAudio.close();
+
   }
 
   Woo game = new Woo();
@@ -949,7 +949,7 @@ public class Woo {
     //StdAudio.loopInBackground("city.wav");
     gameSetup(player);
     chooseStarter(player);
-    //StdAudio.close();
+
 
     String[] regions = new String[] {"Eterna City", "Pastoria City", "Sunyshore City"};
     int i = 0;
