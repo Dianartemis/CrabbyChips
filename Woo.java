@@ -3,6 +3,8 @@ import java.util.concurrent.TimeUnit;
 import java.io.*;
 import java.util.*;
 
+
+
 public class Woo {
 
   //tests
@@ -813,7 +815,7 @@ public class Woo {
   }
   public static void main(String[] args) {
     Player player = new Player();
-    //StdAudio.loopInBackground
+    StdAudio.loopInBackground(city.wav);
   //  gameSetup();
     chooseStarter(player);
 
