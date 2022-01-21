@@ -50,6 +50,10 @@ public class Fire extends Pokemon implements Types{
     }
   }
 
+  public int getHPMultiplier() {
+    return 7;
+  }
+
   public void displayt(){
     System.out.println(_name + " / Stats:");
     System.out.println("HP: " + _hp);
@@ -70,7 +74,7 @@ public class Fire extends Pokemon implements Types{
     // Ember
     if(moveName.equals("Ember") || moveName.equals("ember")){
       if(_mana < 25){
-        System.out.println("You cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 25;
@@ -88,7 +92,7 @@ public class Fire extends Pokemon implements Types{
         System.out.println(getName() + " has casted Ember!");
         System.out.println("The target is attacked with small flames.");
         if(name.isAlive() == false){
-          System.out.println("You have defeated your opponent!");
+          System.out.println(getName() + " has defeated their opponent!");
           increaseExp();
           lvlUp();
         }
@@ -102,7 +106,7 @@ public class Fire extends Pokemon implements Types{
     // Bulk Up
     if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
       if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 20;
@@ -129,97 +133,4 @@ public class Fire extends Pokemon implements Types{
       System.out.println();
     }
   }
-/*
-  public void move(String moveName, Water name){
-    // Ember
-    if(moveName.equals("Ember") || moveName.equals("ember")){
-      if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
-      }
-      else{
-        _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - (getAttack() / 2));
-        System.out.println(name + " has casted Ember!");
-        System.out.println("The target is attacked with small flames.");
-        if(name.isAlive() == false){
-          System.out.println("You have defeated your opponent!");
-          increaseExp();
-          lvlUp();
-        }
-      }
-      displayt();
-      name.displayt();
-    }
-    // Bulk Up
-    if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
-      if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
-      }
-      else{
-        _mana = getMana() - 20;
-        _defense += 10;
-        System.out.println(name._name + " tenses its muscles.");
-        System.out.println("Defense increased by 10!");
-      }
-      displayt();
-      name.displayt();
-    }
-    // Restore
-    if(moveName.equals("Restore") || moveName.equals("restore")){
-      _mana += 20;
-      System.out.println(name._name + " restores its own cells.");
-      System.out.println("Mana increased by 20!");
-    }
-    displayt();
-    System.out.println();
-    name.displayt();
-  }
-  public void move(String moveName, Grass name){
-    // Ember
-    if(moveName.equals("Ember") || moveName.equals("ember")){
-      if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
-      }
-      else{
-        _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - (getAttack() / 2));
-        System.out.println(name + " has casted Ember!");
-        System.out.println("The target is attacked with small flames.");
-        if(name.isAlive() == false){
-          System.out.println("You have defeated your opponent!");
-          increaseExp();
-          lvlUp();
-        }
-      }
-      displayt();
-      System.out.println();
-      name.displayt();
-    }
-    // Bulk Up
-    if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
-      if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
-      }
-      else{
-        _mana = getMana() - 20;
-        _defense += 10;
-        System.out.println(name._name + " tenses its muscles.");
-        System.out.println("Defense increased by 10!");
-      }
-      displayt();
-      System.out.println();
-      name.displayt();
-    }
-    // Restore
-    if(moveName.equals("Restore") || moveName.equals("restore")){
-      _mana += 20;
-      System.out.println(name._name + " restores its own cells.");
-      System.out.println("Mana increased by 20!");
-    }
-    displayt();
-    System.out.println();
-    name.displayt();
-  }
-*/
-
 }

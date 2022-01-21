@@ -103,9 +103,9 @@ public class Woo {
         if (response.equals("walk")) {
          return false;
        } else if (response.equals("gym")){
-          if (name._numPokemon < 7){
+          if (name._numPokemon < 4){
             //wait(1);
-            System.out.println("You can not go to the gym with less than six pokemon. You walk again");
+            System.out.println("You can not go to the gym with less than four pokemon. You walk again");
             return false;
           } else {
              boolean win = goToGym(name, region);
@@ -234,7 +234,7 @@ public class Woo {
             Pokemon pok = generatePokemon(name, type);
             boolean win = battle(name, pok, region);
             if (win == true){
-              cont = false;
+              catchP(name, pok, region);
             } else {
               goToNurse(name, region);
             }
@@ -352,14 +352,13 @@ public class Woo {
       return result;
     }
 
-
   public static void goToNurse(Player name, String region) {
     //wait(1);
     System.out.println("You have arrived at the clinic.");
     //wait(1);
     System.out.println("The Nurse has restored all of your Pokemon's health.");
     for (Pokemon p : name._pokedex) {
-      p._hp = p._lvl * 100;
+      p._hp = p._lvl * p.getHPMultiplier();
     }
     System.out.println();
     name.displayPokedex();

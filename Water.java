@@ -50,6 +50,10 @@ public class Water extends Pokemon implements Types{
     }
   }
 
+  public int getHPMultiplier() {
+    return 7;
+  }
+
   public void displayt(){
     System.out.println(_name + " / Stats:");
     System.out.println("HP: " + _hp);
@@ -70,7 +74,7 @@ public class Water extends Pokemon implements Types{
   public void move(String moveName, Pokemon name){
     if(moveName.equals("Water Gun") || moveName.equals("water gun")){
       if(_mana < 25){
-        System.out.println("You cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 25;
@@ -88,7 +92,7 @@ public class Water extends Pokemon implements Types{
         System.out.println(getName() + " has casted Water Gun!");
         System.out.println("The foe is blasted with a forceful shot of water.");
         if(name.isAlive() == false){
-          System.out.println("You have defeated your opponent!");
+          System.out.println(getName() + " has defeated their opponent!");
         }
       }
       System.out.println();
@@ -100,7 +104,7 @@ public class Water extends Pokemon implements Types{
     // Rain Dance
     if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
       if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 20;
@@ -127,95 +131,4 @@ public class Water extends Pokemon implements Types{
       System.out.println();
     }
   }
-/*
-  public void move(String moveName, Fire name){
-    // Water Gun
-    if(moveName.equals("Water Gun") || moveName.equals("water gun")){
-      if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
-      }
-      else{
-        _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - (getAttack() / 2));
-        System.out.println(name + " has casted Water Gun!");
-        System.out.println("The foe is blasted with a forceful shot of water.");
-        if(name.isAlive() == false){
-          System.out.println("You have defeated your opponent!");
-        }
-      }
-      displayt();
-      System.out.println();
-      name.displayt();
-    }
-    // Rain Dance
-    if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
-      if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
-      }
-      else{
-        _mana = getMana() - 20;
-        _defense += 10;
-        System.out.println("Rain starts to fall.");
-        System.out.println("Defense increased by 10!");
-      }
-      displayt();
-      System.out.println();
-      name.displayt();
-    }
-    // Rest
-    if(moveName.equals("Rest") || moveName.equals("rest")){
-      _mana += 20;
-      System.out.println(name._name + " takes a nap.");
-      System.out.println("Mana increased by 20!");
-    }
-    displayt();
-    System.out.println();
-    name.displayt();
-  }
-  public void move(String moveName, Grass name){
-    // Water Gun
-    if(moveName.equals("Water Gun") || moveName.equals("water gun")){
-      if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
-      }
-      else{
-        _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - (getAttack() / 2));
-        System.out.println(name + " has casted Water Gun!");
-        System.out.println("The foe is blasted with a forceful shot of water.");
-        if(name.isAlive() == false){
-          System.out.println("You have defeated your opponent!");
-        }
-      }
-      displayt();
-      System.out.println();
-      name.displayt();
-    }
-    // Rain Dance
-    if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
-      if(_mana < 20){
-        System.out.println("You cannot use " + moveName + ".");
-      }
-      else{
-        _mana = getMana() - 20;
-        _defense += 10;
-        System.out.println("Rain starts to fall.");
-        System.out.println("Defense increased by 10!");
-      }
-      displayt();
-      System.out.println();
-      name.displayt();
-    }
-    // Rest
-    if(moveName.equals("Rest") || moveName.equals("rest")){
-      _mana += 20;
-      System.out.println(name._name + " takes a nap.");
-      System.out.println("Mana increased by 20!");
-    }
-    displayt();
-    System.out.println();
-    name.displayt();
-  }
-  */
-
 }

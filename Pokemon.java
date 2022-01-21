@@ -71,6 +71,9 @@ public class Pokemon {
       return false;
     }
 
+    public int getHPMultiplier() {
+      return 0;
+    }
 
     public void display(){
       System.out.println();
