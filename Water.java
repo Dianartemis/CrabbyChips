@@ -2,11 +2,6 @@ import java.util.*;
 
 public class Water extends Pokemon implements Types{
 
-  String _name;
-  int _hp;
-  int _attack;
-  int _defense;
-  int _mana;
 
   public Water(String name, int lvl, int exp){
     _hp = 7* lvl;
@@ -15,7 +10,7 @@ public class Water extends Pokemon implements Types{
     _mana = 10* lvl;
     _name = name;
     _lvl = lvl;
-    _exp = exp;
+    _exp = exp*lvl;
   }
   public void setName(String name){
     _name = name;
@@ -61,15 +56,23 @@ public class Water extends Pokemon implements Types{
 
   // WATER
   public void move(String moveName, Pokemon name){
-    // Water Gun
-    displayt();
     if(moveName.equals("Water Gun") || moveName.equals("water gun")){
-      if(_mana < 20){
+      if(_mana < 25){
         System.out.println("You cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - 3);
+        if (name.getDefense() > getAttack()){
+          System.out.print("defense greater");
+          name._defense = (name._defense - (getAttack()));
+        } else{
+          System.out.println("defense lower");
+          if (name._hp > getAttack()){
+            name._hp = (name._hp - (getAttack()));
+          } else {
+            name._hp = 0;
+          }
+        }
         System.out.println(name + " has casted Water Gun!");
         System.out.println("The foe is blasted with a forceful shot of water.");
         if(name.isAlive() == false){

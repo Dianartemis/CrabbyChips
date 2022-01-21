@@ -8,7 +8,7 @@ public class Fire extends Pokemon implements Types{
     _mana = 10* lvl;
     _name = name;
     _lvl = lvl;
-    _exp = exp;
+    _exp = exp*lvl;
   }
 
   public void setName(String name){
@@ -57,14 +57,23 @@ public class Fire extends Pokemon implements Types{
   // FIRE
   public void move(String moveName, Pokemon name){
     // Ember
-    displayt();
     if(moveName.equals("Ember") || moveName.equals("ember")){
-      if(_mana < 20){
+      if(_mana < 25){
         System.out.println("You cannot use " + moveName + ".");
       }
       else{
         _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - 3);
+        if (name.getDefense() > getAttack()){
+          System.out.print("defense greater");
+          name._defense = (name._defense - (getAttack()));
+        } else{
+          System.out.println("defense lower");
+          if (name._hp > getAttack()){
+            name._hp = (name._hp - (getAttack()));
+          } else {
+            name._hp = 0;
+          }
+        }
         System.out.println(name + " has casted Ember!");
         System.out.println("The target is attacked with small flames.");
         if(name.isAlive() == false){

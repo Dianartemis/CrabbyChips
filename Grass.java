@@ -2,11 +2,6 @@ import java.util.*;
 
 public class Grass extends Pokemon implements Types{
 
-  String _name;
-  int _hp;
-  int _attack;
-  int _defense;
-  int _mana;
 
   public Grass(String name, int lvl, int exp){
     _hp = 6* lvl;
@@ -15,7 +10,7 @@ public class Grass extends Pokemon implements Types{
     _mana = 10* lvl;
     _name = name;
     _lvl = lvl;
-    _exp = exp;
+    _exp = exp *lvl;
   }
   public void setName(String name){
     _name = name;
@@ -63,14 +58,23 @@ public class Grass extends Pokemon implements Types{
   // GRASS
   public void move(String moveName, Pokemon name){
     // Razor Leaf
-    displayt();
     if(moveName.equals("Razor Leaf") || moveName.equals("razor leaf")){
-      if(_mana < 20){
+      if(_mana < 25){
         System.out.println("You cannot use " + moveName + ".");
       }
       else{
-        this._mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - 3);
+        _mana = getMana() - 25;
+        if (name.getDefense() > getAttack()){
+          System.out.print("defense greater");
+          name._defense = (name._defense - (getAttack()));
+        } else{
+          System.out.println("defense lower");
+          if (name._hp > getAttack()){
+            name._hp = (name._hp - (getAttack()));
+          } else {
+            name._hp = 0;
+          }
+        }
         System.out.println(name + " has casted Razor Leaf!");
         System.out.println("A sharp-edged leaf is launched to slash at the foe.");
         if(name.isAlive() == false){

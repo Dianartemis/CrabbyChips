@@ -262,6 +262,7 @@ public class Woo {
           p.move(answer, opponent);
           p._exp = p._exp + 20;
           p.lvlUp();
+          System.out.println(opponent._name + " makes a move");
           opponent.move(generateMove(opponent), p);
           System.out.println("Do you want to use a Berry? (yes/no)");
           String berry = "";
