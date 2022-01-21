@@ -71,8 +71,9 @@ public class Pokemon {
     }
 
     public boolean isAlive(){
-      return true;
+      return false;
     }
+
 
     public void display(){
       System.out.println();

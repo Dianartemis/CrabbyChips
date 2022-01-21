@@ -41,10 +41,14 @@ public class Player {
     _pokedexSize += 1;
   }
 
+  public static void dislayt(){
+    System.out.println();
+  }
 
   public static void displayPokedex(){
-    for (Pokemon p : _pokedex) {
-      p.display();
+    for (int i = 0; i <_pokedexSize; i++) {
+      System.out.println();
+      _pokedex[i].displayt();
     }
   }
 

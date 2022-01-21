@@ -14,31 +14,24 @@ public class Woo {
   public static Pokemon generatePokemon(Player name, int type) {
     int random = (int) ((Math.random() * 6)); //0-5
     //why does it work with negative index
-    System.out.println(random);
     String[] fire = new String[] { "vulpix", "slugma", "numel", "charmander", "cyndaquil", "torchic" };
     String[] water = new String[] { "feebas", "wooper", "lotad", "marill", "wingull", "poliwag" };
     String[] grass = new String[] { "cherubi", "seedot", "bulbasaur", "chikorita", "treecko", "bellsprout" };
     int level = generateLvl(name);
-    System.out.println(level);
+
 
     if (type == 0) {
       String pokemon = fire[random];
-      System.out.println(pokemon + "should be firetype");
       Pokemon pok = new Fire(pokemon, level, 0);
       //to string for pokem;on
-      System.out.println(pok._name);
       return pok;
     } else if (type == 1) {
       String pokemon = water[random];
-      System.out.println(pokemon + "should be wtype");
       Pokemon pok = new Water(pokemon, level, 0);
-      System.out.println(pok._name);
       return pok;
     } else {
       String pokemon = grass[random];
-      System.out.println(pokemon + "should be gtype");
       Pokemon pok = new Grass(pokemon, level, 0);
-      System.out.println(pok._name);
       return pok;
     }
 
@@ -96,6 +89,7 @@ public class Woo {
   }
 
   public static boolean walk(Player name, String region) {
+    System.out.println();
     System.out.println("You went on a walk");
     //wait(1);
     boolean cont = false;
@@ -260,9 +254,10 @@ public class Woo {
       return fireMoves[randMove];
     } else if (name instanceof Water) {
       return waterMoves[randMove];
-    } else {
+    } else if (name instanceof Grass){
       return grassMoves[randMove];
     }
+    return "messed up";
   }
 
   public static boolean battle(Player name, Pokemon opponent, String region) {
@@ -304,6 +299,10 @@ public class Woo {
           //wait(1);
           p._exp = p._exp + 20;
           p.lvlUp();
+          if (opponent.isAlive() == false){
+            return true;
+          }
+          p.move(answer, opponent);
           //wait(1);
           System.out.println(opponent._name + " makes a move");
           //wait(1);
@@ -331,7 +330,7 @@ public class Woo {
                 Player.displayInventory();
               }
             }
-            else{
+            else if (!berry.equals("yes") && !berry.equals("no")){
               //wait(1);
               System.out.println("That is not a valid response, you do not get a berry");
               }
@@ -360,8 +359,6 @@ public class Woo {
     name.displayPokedex();
     System.out.println();
     //wait(1);
-    System.out.println("You went on a walk.");
-    //wait(1);
     walk(name, region);
   }
 
@@ -370,8 +367,6 @@ public class Woo {
     if (name._numPokeball <= 0) {
       //wait(1);
       System.out.println("You do not have enough pokeballs");
-      //wait(1);
-      System.out.println("You go on a walk");
       //wait(1);
       walk(name, region);
     } else {
@@ -387,8 +382,6 @@ public class Woo {
         name.displayInventory();
         System.out.println();
         //wait(1);
-        System.out.println("You walk away");
-        //wait(1);
         walk(name, region);
       } else {
         //wait(1);
@@ -397,8 +390,6 @@ public class Woo {
         System.out.println();
         name.displayInventory();
         System.out.println();
-        //wait(1);
-        System.out.println("You walk away");
         //wait(1);
         walk(name, region);
       }
@@ -420,7 +411,7 @@ public class Woo {
     //wait(1);
     System.out.println("You enter the gym and prepare to fight Flint.");
     //wait(1);
-    System.out.println("Do you wish to visit the Nurse before battling Flint?");
+    System.out.println("Do you wish to visit the Nurse before battling Flint? (yes/no)");
     answer = in.nextLine().toLowerCase();
       if (answer.equals("yes")) {
         //wait(1);
@@ -479,7 +470,7 @@ public class Woo {
     //wait(1);
     System.out.println("You enter the gym and prepare to fight Crasher Wake.");
     //wait(1);
-    System.out.println("Do you wish to visit the Nurse before battling CrasherWake?");
+    System.out.println("Do you wish to visit the Nurse before battling CrasherWake? (yes/no)");
     answer = in.nextLine().toLowerCase();
       if (answer.equals("yes")) {
         //wait(1);
@@ -552,7 +543,7 @@ public class Woo {
       //wait(1);
       System.out.println("You enter the gym and prepare to fight Gardeniae.");
       //wait(1);
-      System.out.println("Do you wish to visit the Nurse before battling Gardenia?");
+      System.out.println("Do you wish to visit the Nurse before battling Gardenia? (yes/no)");
       answer = in.nextLine().toLowerCase();
         if (answer.equals("yes")) {
           //wait(1);
@@ -681,7 +672,7 @@ public class Woo {
     } else if (pokemonOne.equals("piplup")) {
       Pokemon piplup = new Water("Piplup", 5, 40);
       //wait(1);
-      System.out.println("\nA Penguin Pokémon.");
+      System.out.println("\nA Penguin Pokemon.");
       //wait(2);
       System.out.println(
           "It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
@@ -750,7 +741,7 @@ public class Woo {
     } else if (pokemonTwo.equals("piplup")) {
       Pokemon piplup = new Water("Piplup", 5, 40);
       //wait(1);
-      System.out.println("\nA Penguin Pokémon.");
+      System.out.println("\nA Penguin Pokemon.");
       //wait(1);
       System.out.println(
           "It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
@@ -782,7 +773,7 @@ public class Woo {
       System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Piplup.");
       Pokemon piplup = new Water("Piplup", 5, 40);
       //wait(1);
-      System.out.println("A Penguin Pokémon.");
+      System.out.println("A Penguin Pokemon.");
       //wait(1);
       System.out.println(
           "It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
@@ -818,7 +809,7 @@ public class Woo {
     } else if (pokemonThree.equals("piplup")) {
       Pokemon piplup = new Water("Piplup", 5, 40);
       //wait(1);
-      System.out.println("\nA Penguin Pokémon.");
+      System.out.println("\nA Penguin Pokemon.");
       //wait(1);
       System.out.println(
           "It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
@@ -869,7 +860,7 @@ public class Woo {
     // CHOOSING POKEMON
 
     //wait(1);
-    System.out.println("\nWhich starter Pokemon do you want?");
+    System.out.println("\nWhich starter Pokemon do you want? (chimchar/piplup/turtig)");
     String response = "";
 
     response = in.nextLine().toLowerCase();
@@ -916,6 +907,7 @@ public class Woo {
     Player.displayInventory();
     //wait(1);
     System.out.println("\nYou thank Dr. Footstep and walk out of the clinic.");
+    System.out.println();
   }
 
   Woo game = new Woo();

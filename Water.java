@@ -63,24 +63,27 @@ public class Water extends Pokemon implements Types{
       else{
         _mana = getMana() - 25;
         if (name.getDefense() > getAttack()){
-          System.out.print("defense greater");
           name._defense = (name._defense - (getAttack()));
-        } else{
-          System.out.println("defense lower");
+        } else if (name.getDefense() < getAttack() && name.getDefense() > 0){
+          name._defense = 0;
+          name._hp = (name._hp - (getAttack()-name.getDefense()));
           if (name._hp > getAttack()){
             name._hp = (name._hp - (getAttack()));
           } else {
             name._hp = 0;
           }
         }
-        System.out.println(name + " has casted Water Gun!");
+        System.out.println(name._name + " has casted Water Gun!");
         System.out.println("The foe is blasted with a forceful shot of water.");
         if(name.isAlive() == false){
           System.out.println("You have defeated your opponent!");
         }
       }
+      System.out.println();
       displayt();
+      System.out.println();
       name.displayt();
+      System.out.println();
     }
     // Rain Dance
     if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
@@ -93,20 +96,24 @@ public class Water extends Pokemon implements Types{
         System.out.println("Rain starts to fall.");
         System.out.println("Defense increased by 10!");
       }
+      System.out.println();
       displayt();
+      System.out.println();
       name.displayt();
+      System.out.println();
     }
     // Rest
     if(moveName.equals("Rest") || moveName.equals("rest")){
       _mana += 20;
-      System.out.println(name._name + " takes a nap.");
+      System.out.println(getName() + " takes a nap.");
       System.out.println("Mana increased by 20!");
+
+      System.out.println();
+      displayt();
+      System.out.println();
+      name.displayt();
+      System.out.println();
     }
-    System.out.println();
-    displayt();
-    System.out.println();
-    name.displayt();
-    System.out.println();
   }
 /*
   public void move(String moveName, Fire name){
