@@ -49,7 +49,7 @@ static Scanner in = new Scanner(System.in);
       _lvl = _exp / 100;
       _hp = getHPMultiplier() *_lvl;
       _attack += 8;
-      _defense = getDefenseMultiplier()* 7;
+      _defense = getDefenseMultiplier()* _lvl;
       _mana += 10;
     }
   }
@@ -106,6 +106,7 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
       }
+
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
       if(_mana < 20){
@@ -122,7 +123,6 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
       }
-    }
     // Rest
     if(moveName.equals("Rest") || moveName.equals("rest")){
       _mana += 20;
@@ -165,6 +165,7 @@ static Scanner in = new Scanner(System.in);
         System.out.println("That is not a valid response, you do not get a berry");
         }
   }
+}
 
   public void moveOther(String moveName, Pokemon name){
     // Razor Leaf

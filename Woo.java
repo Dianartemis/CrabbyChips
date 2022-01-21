@@ -15,7 +15,7 @@ public class Woo {
     String[] fire = new String[] { "Vulpix", "Slugma", "Numel", "Charmander", "Cyndaquil", "Torchic" };
     String[] water = new String[] { "Feebas", "Wooper", "Lotad", "Marill", "Wingull", "Poliwag" };
     String[] grass = new String[] { "Cherubi", "Seedot", "Bulbasaur", "Chikorita", "Treecko", "Bellsprout" };
-    int level = generateLvl(name);
+    int level = 4;//generateLvl(name);
 
     if (type == 0) {
       String pokemon = fire[random];
@@ -274,115 +274,68 @@ public class Woo {
   }
 
   public static boolean battle(Player name, Pokemon opponent, String region) {
-    StdAudio.loopInBackground("battle.wav");
-    boolean result = false;
-    //wait(1);
-    System.out.println("You begin your battle with " + opponent._name + "...");
-    //wait(1);
-    System.out.println("Here are the Stats of your Pokemon:");
-    //wait(1);
-    System.out.println();
-    name.displayPokedex();
-    System.out.println();
-    //wait(1);
-    System.out.println("Here are the Stats of your opponent's Pokemon:");
-    System.out.println();
-    opponent.displayt();
-    System.out.println();
-    while (opponent.isAlive() == true){
-      int i = 0;
-      while ( i < name._pokedexSize){
-        //wait(1);
-        System.out.println("You take out " + name._pokedex[i]._name + "!");
-        while (name._pokedex[i].isAlive() ==true){
+      StdAudio.loopInBackground("battle.wav");
+      boolean result = false;
+      //wait(1);
+      System.out.println("You begin your battle with " + opponent._name + "...");
+      //wait(1);
+      System.out.println("Here are the Stats of your Pokemon:");
+      //wait(1);
+      System.out.println();
+      name.displayPokedex();
+      System.out.println();
+      //wait(1);
+      System.out.println("Here are the Stats of your opponent's Pokemon:");
+      System.out.println();
+      opponent.displayt();
+      System.out.println();
+      while (opponent.isAlive() == true){
+        int i = 0;
+        while ( i < name._pokedexSize){
           //wait(1);
-          System.out.print("Choose a move...");
-          //wait(1);
-          name._pokedex[i].displayMove();
-          String answer = "";
-          answer = in.nextLine().toLowerCase();
-          while (!answer.equals("ember") && !answer.equals("bulk up") && !answer.equals("restore")
-              && !answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("rest")
-              && !answer.equals("razor leaf") && !answer.equals("safe guard")) {
+          System.out.println("You take out " + name._pokedex[i]._name + "!");
+          while (name._pokedex[i].isAlive() ==true){
             //wait(1);
-            System.out.println("Input a valid move:");
+            System.out.print("Choose a move...");
+            //wait(1);
+            name._pokedex[i].displayMove();
+            String answer = "";
             answer = in.nextLine().toLowerCase();
-          }
-          name._pokedex[i].move(answer, opponent);
-          //wait(1);
-          name._pokedex[i]._exp = name._pokedex[i]._exp + 20;
-        //  name._pokedex[i].lvlUp();
-          //wait(1);
-
-          if (opponent.isAlive() == false){
-            result = false;
-            return result;
-          }
-          System.out.println(opponent._name + " makes a move");
-          //wait(1);
-          opponent.moveOther(generateMove(opponent), name._pokedex[i]);
-          //wait(1);
-<<<<<<< HEAD
-        }
-          i = i + 1;
-        }
-          //wait(1);
-          name._pokedex[i-1].displayt();
-          System.out.println("All of your Pokemon have fainted!");
-          //wait(1);
-          System.out.println("Your Pokemon are rushed to the Nurse...");
-          return result;
-        }
-      //StdAudio.close();
-      result = true;
-=======
-          System.out.println("Do you want to use a Berry? (yes/no)");
-          String berry = "";
-          berry = in.nextLine().toLowerCase();
-            if (berry.equals("yes")) {
-              if (Player._numBerries <= 0) {
-                //wait(1);
-                System.out.println("You cannot use a Berry.");
-                //wait(1);
-                System.out.println("You have no Berries left!");
-              } else {
-                Player._numBerries -= 1;
-                p._hp += 20;
-                // probably overrides
-                //wait(1);
-                System.out.println(p._name + "'s HP has been restored by 20!");
-                //wait(1);
-                System.out.println("Here is your inventory:");
-                //wait(1);
-                System.out.println();
-                Player.displayInventory();
-              }
-            }
-            else if (berry.equals("no")) {
+            while (!answer.equals("ember") && !answer.equals("bulk up") && !answer.equals("restore")
+                && !answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("rest")
+                && !answer.equals("razor leaf") && !answer.equals("safe guard")) {
               //wait(1);
-              System.out.println("You choose to not use a berry.");
+              System.out.println("Input a valid move:");
+              answer = in.nextLine().toLowerCase();
             }
-            else {
-              //wait(1);
-              System.out.println("That is not a valid response, you do not get a berry");
-            }
-          }
-          if (p.isAlive() == false) {
+            name._pokedex[i].move(answer, opponent);
             //wait(1);
+            name._pokedex[i]._exp = name._pokedex[i]._exp + 20;
+            name._pokedex[i].lvlUp();
+            //wait(1);
+
+            if (opponent.isAlive() == false){
+              result = true;
+              return result;
+            }
+            System.out.println(opponent._name + " makes a move");
+            //wait(1);
+            opponent.moveOther(generateMove(opponent), name._pokedex[i]);
+            //wait(1);
+          }
+            i = i + 1;
+          }
+            //wait(1);
+            name._pokedex[i-1].displayt();
             System.out.println("All of your Pokemon have fainted!");
             //wait(1);
             System.out.println("Your Pokemon are rushed to the Nurse...");
-
             return result;
           }
-        }
-
+        //StdAudio.close();
+        result = true;
+        return result;
       }
-      result = true;
-
->>>>>>> 8fbe1d4e0d1c9d010b671ee09961508f84a48e41
-      return result;
-    }
 
 
   public static void goToNurse(Player name, String region) {
@@ -390,23 +343,19 @@ public class Woo {
     //wait(1);
     System.out.println("You have arrived at the clinic.");
     //wait(1);
-    System.out.println("The Nurse has restored all of your Pokemon's health.");
-<<<<<<< HEAD
+    System.out.println("The Nurse has restored all of your Pokemon's health.");    walk(name, region);
+
     for (int i = 0 ; i < name._pokedexSize; i++) {
       name._pokedex[i]._hp = name._pokedex[i]._lvl * name._pokedex[i].getHPMultiplier();
       name._pokedex[i]._defense = name._pokedex[i]._lvl*name._pokedex[i].getDefenseMultiplier();
-=======
-    for (int i = 0; i < name._pokedexSize; i++) {
-      name._pokedex[i]._hp = name._pokedex[i]._lvl * name._pokedex[i].getHPMultiplier();
->>>>>>> 8fbe1d4e0d1c9d010b671ee09961508f84a48e41
-    }
+
     System.out.println();
     name.displayPokedex();
     System.out.println();
     //wait(1);
-<<<<<<<
-    walk(name, region);
   }
+    walk(name, region);
+}
 
   public static void catchP(Player name, Pokemon pokName, String region) {
     //StdAudio.loopInBackground("city.wav");
@@ -435,6 +384,8 @@ public class Woo {
       } else {
         //wait(1);
         System.out.println("The pokemon got away");
+        name.add(pokName);
+        name._numPokemon = name._numPokemon + 1;
         name._numPokeball = name._numPokeball - 1;
         System.out.println();
         name.displayInventory();
@@ -485,7 +436,7 @@ public class Woo {
         //wait(1);
         System.out.println("You take a quick visit to the Nurse...");
         //wait(1);
-<<<<<<< HEAD
+
       } else if (answer.equals("no")) {
         //wait(1);
         System.out.println("You enter the gym and prepare to battle Flint.");
@@ -546,7 +497,7 @@ public class Woo {
         //wait(1);
         System.out.println("You take a quick visit to the Nurse...");
         //wait(1);
-<<<<<<< HEAD
+
         //StdAudio.close();
         goToNurseGym(name, region);
 } else if (answer.equals("no")) {
@@ -623,9 +574,9 @@ public class Woo {
           //wait(1);
           System.out.println("You take a quick visit to the Nurse...");
           //wait(1);
-<<<<<<< HEAD
+
           //StdAudio.close();
-          goToNurseGym8fbe1d4e0d1c9d010b671ee09961508f84a48e41
+          goToNurseGym(name, region);
         } else if (answer.equals("no")) {
           //wait(1);
           System.out.println("You enter the gym and prepare to battle Gardenia.");
@@ -688,6 +639,7 @@ public class Woo {
 
     return badge;
   }
+
   public static void gameSetup(Player player){
     //StdAudio.loopInBackground("city.wav");
     System.out.println("Welcome, Trainer, to Pokemon Shining Pearl!");
@@ -939,7 +891,7 @@ public class Woo {
       //wait(1);
       System.out.println("\nCongrats, you got your first Pokemon! It's a Chimchar!");
     } else if (response.equals("piplup")) {
-      Water starter = new Water("Piplup", 5, 40);
+      Water starter = new Water("Piplup", 100, 10000);
       Player.add(starter);
       //wait(1);
       System.out.println("\nCongrats, you got your first Pokemon! It's a Piplup!");
