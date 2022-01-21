@@ -335,6 +335,7 @@ public class Woo {
           }
         //StdAudio.close();
         result = true;
+        goToNurseGym(name,region);
         return result;
       }
 

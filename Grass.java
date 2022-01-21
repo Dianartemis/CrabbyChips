@@ -94,7 +94,6 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
-        }
         System.out.println(getName() + " has casted Razor Leaf!");
         System.out.println("A sharp-edged leaf is launched to slash at the foe.");
         if(name.isAlive() == false){
@@ -106,6 +105,7 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
       }
+    }
 
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
@@ -186,7 +186,6 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
-        }
         System.out.println(getName() + " has casted Razor Leaf!");
         System.out.println("A sharp-edged leaf is launched to slash at the foe.");
         if(name.isAlive() == false){
@@ -198,6 +197,7 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
       }
+    }
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
       if(_mana < 20){

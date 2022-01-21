@@ -94,7 +94,6 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
-        }
         System.out.println(getName() + " has casted Ember!");
         System.out.println("The target is attacked with small flames.");
         if(name.isAlive() == false){
@@ -108,6 +107,7 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
       }
+    }
     // Bulk Up
     if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
       if(_mana < 20){
@@ -189,7 +189,6 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
-        }
         System.out.println(getName() + " has casted Ember!");
         System.out.println("The target is attacked with small flames.");
         if(name.isAlive() == false){
@@ -203,6 +202,7 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
     }
+  }
     // Bulk Up
     if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
       if(_mana < 20){

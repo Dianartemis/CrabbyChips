@@ -95,7 +95,6 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
-        }
         System.out.println(getName() + " has casted Water Gun!");
         System.out.println("The foe is blasted with a forceful shot of water.");
         if(name.isAlive() == false){
@@ -107,6 +106,7 @@ static Scanner in = new Scanner(System.in);
         name.displayt();
         System.out.println();
     }
+  }
     // Rain Dance
     if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
       if(_mana < 20){
@@ -186,7 +186,6 @@ static Scanner in = new Scanner(System.in);
               name._hp = 0;
             }
           }
-          }
           System.out.println(getName() + " has casted Water Gun!");
           System.out.println("The foe is blasted with a forceful shot of water.");
           if(name.isAlive() == false){
@@ -199,6 +198,7 @@ static Scanner in = new Scanner(System.in);
           System.out.println();
 
       }
+    }
       // Rain Dance
       if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
         if(_mana < 20){
