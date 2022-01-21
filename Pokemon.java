@@ -20,6 +20,10 @@ public class Pokemon {
       _lvl = level;
       _exp = experience;
     }
+
+    public int getDefenseMultiplier(){
+      return 0;
+    }
     public void setName(String name){
       _name = name;
     }
@@ -84,6 +88,9 @@ public class Pokemon {
     }
 
     public void move(String moveName, Pokemon name){
+      System.out.println();
+    }
+    public void moveOther(String moveName, Pokemon name){
       System.out.println();
     }
 

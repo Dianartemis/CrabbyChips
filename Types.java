@@ -9,4 +9,6 @@ public interface Types {
   public void displayt();
   public void displayMove();
   public void move(String moveName, Pokemon name);
+  public void moveOther(String moveName, Pokemon name);
+  public int getDefenseMultiplier();
 }
