@@ -2,10 +2,10 @@ public class Fire extends Pokemon implements Types{
 
 
   public Fire(String name, int lvl, int exp){
-    _hp = 7* lvl;
-    _attack = 8* lvl;
-    _defense = 7* lvl;
-    _mana = 10* lvl;
+    _hp = 7 * lvl;
+    _attack = 8 * lvl;
+    _defense = 7 * lvl;
+    _mana = 10 * lvl;
     _name = name;
     _lvl = lvl;
     _exp = exp*lvl;
@@ -36,6 +36,17 @@ public class Fire extends Pokemon implements Types{
       return true;
     }else {
       return false;
+    }
+  }
+
+  public void lvlUp(){
+    if((_exp % 100 == 0) && (_exp >= 100)){
+      System.out.println("Congrats! You leveled up! You are now level " + (_exp / 100) + "!");
+      _lvl = _exp / 100;
+      _hp += 7;
+      _attack += 8;
+      _defense += 7;
+      _mana += 10;
     }
   }
 
@@ -74,7 +85,7 @@ public class Fire extends Pokemon implements Types{
             name._hp = 0;
           }
         }
-        System.out.println(name._name + " has casted Ember!");
+        System.out.println(getName() + " has casted Ember!");
         System.out.println("The target is attacked with small flames.");
         if(name.isAlive() == false){
           System.out.println("You have defeated your opponent!");
@@ -96,7 +107,7 @@ public class Fire extends Pokemon implements Types{
       else{
         _mana = getMana() - 20;
         _defense += 10;
-        System.out.println(name._name + " tenses its muscles.");
+        System.out.println(getName() + " tenses its muscles.");
         System.out.println("Defense increased by 10!");
       }
       System.out.println();
@@ -108,7 +119,7 @@ public class Fire extends Pokemon implements Types{
     // Restore
     if(moveName.equals("Restore") || moveName.equals("restore")){
       _mana += 20;
-      System.out.println(name._name + " restores its own cells.");
+      System.out.println(getName() + " restores its own cells.");
       System.out.println("Mana increased by 20!");
 
       System.out.println();

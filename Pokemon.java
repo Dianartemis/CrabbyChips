@@ -59,10 +59,7 @@ public class Pokemon {
     }
 
     public void lvlUp(){
-      if((_exp % 100 == 0) && (_exp >= 100)){
-        System.out.println("Congrats! You leveled up! You are now level " + (_exp / 100) + "!");
-        _lvl = _exp / 100;
-      }
+      System.out.println();
     }
 
     public void increaseExp(){

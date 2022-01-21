@@ -4,10 +4,10 @@ public class Grass extends Pokemon implements Types{
 
 
   public Grass(String name, int lvl, int exp){
-    _hp = 6* lvl;
-    _attack = 8* lvl;
-    _defense = 7* lvl;
-    _mana = 10* lvl;
+    _hp = 6 * lvl;
+    _attack = 8 * lvl;
+    _defense = 7 * lvl;
+    _mana = 10 * lvl;
     _name = name;
     _lvl = lvl;
     _exp = exp *lvl;
@@ -36,6 +36,17 @@ public class Grass extends Pokemon implements Types{
       return true;
     }else {
       return false;
+    }
+  }
+
+  public void lvlUp(){
+    if((_exp % 100 == 0) && (_exp >= 100)){
+      System.out.println("Congrats! You leveled up! You are now level " + (_exp / 100) + "!");
+      _lvl = _exp / 100;
+      _hp += 6;
+      _attack += 8;
+      _defense += 7;
+      _mana += 10;
     }
   }
 
@@ -75,7 +86,7 @@ public class Grass extends Pokemon implements Types{
             name._hp = 0;
           }
         }
-        System.out.println(name + " has casted Razor Leaf!");
+        System.out.println(getName() + " has casted Razor Leaf!");
         System.out.println("A sharp-edged leaf is launched to slash at the foe.");
         if(name.isAlive() == false){
           System.out.println("You have defeated your opponent!");

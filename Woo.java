@@ -299,11 +299,10 @@ public class Woo {
           //wait(1);
           p._exp = p._exp + 20;
           p.lvlUp();
+          //wait(1);
           if (opponent.isAlive() == false){
             return true;
           }
-          p.move(answer, opponent);
-          //wait(1);
           System.out.println(opponent._name + " makes a move");
           //wait(1);
           opponent.move(generateMove(opponent), p);
@@ -330,17 +329,24 @@ public class Woo {
                 Player.displayInventory();
               }
             }
-            else if (!berry.equals("yes") && !berry.equals("no")){
+            else if (berry.equals("no")) {
+              //wait(1);
+              System.out.println("You choose to not use a berry.");
+            }
+            else {
               //wait(1);
               System.out.println("That is not a valid response, you do not get a berry");
               }
             }
+            if (p.isAlive() == false) {
+              //wait(1);
+              System.out.println("All of your Pokemon have fainted!");
+              //wait(1);
+              System.out.println("Your Pokemon are rushed to the Nurse...");
+              return result;
+            }
         }
-        //wait(1);
-        System.out.println("All of your Pokemon have fainted!");
-        //wait(1);
-        System.out.println("Your Pokemon are rushed to the Nurse...");
-        return result;
+
       }
       result = true;
       return result;

@@ -4,10 +4,10 @@ public class Water extends Pokemon implements Types{
 
 
   public Water(String name, int lvl, int exp){
-    _hp = 7* lvl;
-    _attack = 7* lvl;
-    _defense = 7* lvl;
-    _mana = 10* lvl;
+    _hp = 7 * lvl;
+    _attack = 7 * lvl;
+    _defense = 7 * lvl;
+    _mana = 10 * lvl;
     _name = name;
     _lvl = lvl;
     _exp = exp*lvl;
@@ -38,6 +38,18 @@ public class Water extends Pokemon implements Types{
       return false;
     }
   }
+
+  public void lvlUp(){
+    if((_exp % 100 == 0) && (_exp >= 100)){
+      System.out.println("Congrats! You leveled up! You are now level " + (_exp / 100) + "!");
+      _lvl = _exp / 100;
+      _hp += 7;
+      _attack += 7;
+      _defense += 7;
+      _mana += 10;
+    }
+  }
+
   public void displayt(){
     System.out.println(_name + " / Stats:");
     System.out.println("HP: " + _hp);
@@ -73,7 +85,7 @@ public class Water extends Pokemon implements Types{
             name._hp = 0;
           }
         }
-        System.out.println(name._name + " has casted Water Gun!");
+        System.out.println(getName() + " has casted Water Gun!");
         System.out.println("The foe is blasted with a forceful shot of water.");
         if(name.isAlive() == false){
           System.out.println("You have defeated your opponent!");
