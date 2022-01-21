@@ -74,7 +74,7 @@ public class Water extends Pokemon implements Types{
   public void move(String moveName, Pokemon name){
     if(moveName.equals("Water Gun") || moveName.equals("water gun")){
       if(_mana < 25){
-        System.out.println(getName() + " cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
       }
       else{
         _mana = getMana() - 25;
@@ -94,29 +94,29 @@ public class Water extends Pokemon implements Types{
         if(name.isAlive() == false){
           System.out.println(getName() + " has defeated their opponent!");
         }
+        System.out.println();
+        displayt();
+        System.out.println();
+        name.displayt();
+        System.out.println();
       }
-      System.out.println();
-      displayt();
-      System.out.println();
-      name.displayt();
-      System.out.println();
     }
     // Rain Dance
     if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
       if(_mana < 20){
-        System.out.println(getName() + " cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
       }
       else{
         _mana = getMana() - 20;
         _defense += 10;
         System.out.println("Rain starts to fall.");
         System.out.println("Defense increased by 10!");
+        System.out.println();
+        displayt();
+        System.out.println();
+        name.displayt();
+        System.out.println();
       }
-      System.out.println();
-      displayt();
-      System.out.println();
-      name.displayt();
-      System.out.println();
     }
     // Rest
     if(moveName.equals("Rest") || moveName.equals("rest")){

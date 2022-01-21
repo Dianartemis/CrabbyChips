@@ -75,7 +75,7 @@ public class Grass extends Pokemon implements Types{
     // Razor Leaf
     if(moveName.equals("Razor Leaf") || moveName.equals("razor leaf")){
       if(_mana < 25){
-        System.out.println(getName() + " cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
       }
       else{
         _mana = getMana() - 25;
@@ -95,29 +95,29 @@ public class Grass extends Pokemon implements Types{
         if(name.isAlive() == false){
           System.out.println(getName() + " has defeated their opponent!");
         }
+        System.out.println();
+        displayt();
+        System.out.println();
+        name.displayt();
+        System.out.println();
       }
-      System.out.println();
-      displayt();
-      System.out.println();
-      name.displayt();
-      System.out.println();
     }
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
       if(_mana < 20){
-        System.out.println(getName() + " cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
       }
       else{
         _mana = getMana() - 20;
         _defense += 10;
         System.out.println(getName() + " creates a protective field.");
         System.out.println("Defense increased by 10!");
+        System.out.println();
+        displayt();
+        System.out.println();
+        name.displayt();
+        System.out.println();
       }
-      System.out.println();
-      displayt();
-      System.out.println();
-      name.displayt();
-      System.out.println();
     }
     // Rest
     if(moveName.equals("Rest") || moveName.equals("rest")){

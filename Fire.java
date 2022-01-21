@@ -74,7 +74,7 @@ public class Fire extends Pokemon implements Types{
     // Ember
     if(moveName.equals("Ember") || moveName.equals("ember")){
       if(_mana < 25){
-        System.out.println(getName() + " cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
       }
       else{
         _mana = getMana() - 25;
@@ -96,29 +96,29 @@ public class Fire extends Pokemon implements Types{
           increaseExp();
           lvlUp();
         }
+        System.out.println();
+        displayt();
+        System.out.println();
+        name.displayt();
+        System.out.println();
       }
-      System.out.println();
-      displayt();
-      System.out.println();
-      name.displayt();
-      System.out.println();
     }
     // Bulk Up
     if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
       if(_mana < 20){
-        System.out.println(getName() + " cannot use " + moveName + ".");
+        System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
       }
       else{
         _mana = getMana() - 20;
         _defense += 10;
         System.out.println(getName() + " tenses its muscles.");
         System.out.println("Defense increased by 10!");
+        System.out.println();
+        displayt();
+        System.out.println();
+        name.displayt();
+        System.out.println();
       }
-      System.out.println();
-      displayt();
-      System.out.println();
-      name.displayt();
-      System.out.println();
     }
     // Restore
     if(moveName.equals("Restore") || moveName.equals("restore")){
