@@ -9,10 +9,10 @@ public class Grass extends Pokemon implements Types{
   int _mana;
 
   public Grass(String name, int lvl, int exp){
-    _hp = 6;
-    _attack = 8;
-    _defense = 7;
-    _mana = 10;
+    _hp = 6* lvl;
+    _attack = 8* lvl;
+    _defense = 7* lvl;
+    _mana = 10* lvl;
     _name = name;
     _lvl = lvl;
     _exp = exp;
@@ -21,30 +21,30 @@ public class Grass extends Pokemon implements Types{
     _name = name;
   }
   public int getHP(){
-    _hp = _hp * _lvl;
     return _hp;
   }
 
   public int getAttack(){
-    _attack = _attack * _lvl;
     return _attack;
   }
 
   public int getDefense(){
-    _defense = _defense * _lvl;
     return _defense;
   }
 
   public int getMana(){
-    _mana = _mana * _lvl;
     return _mana;
   }
 
   public boolean isAlive(){
-    return _hp >= (7 * _lvl);
+    if (_hp >=(6*_lvl)){
+      return true;
+    }else {
+      return false;
+    }
   }
 
-  public void display(){
+  public void displayt(){
     System.out.println(_name + " / Stats:");
     System.out.println("HP: " + _hp);
     System.out.println("Attack: " + _attack);
@@ -63,21 +63,23 @@ public class Grass extends Pokemon implements Types{
   // GRASS
   public void move(String moveName, Pokemon name){
     // Razor Leaf
+    displayt();
     if(moveName.equals("Razor Leaf") || moveName.equals("razor leaf")){
       if(_mana < 20){
         System.out.println("You cannot use " + moveName + ".");
       }
       else{
-        _mana = getMana() - 25;
-        name._hp = (int)((name.getHP() + name.getDefense()) - (0.3 * getAttack()));
+        this._mana = getMana() - 25;
+        name._hp = (int)((name.getHP() + name.getDefense()) - 3);
         System.out.println(name + " has casted Razor Leaf!");
         System.out.println("A sharp-edged leaf is launched to slash at the foe.");
         if(name.isAlive() == false){
           System.out.println("You have defeated your opponent!");
         }
       }
-      display();
-      name.display();
+      displayt();
+      System.out.println();
+      name.displayt();
     }
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
@@ -90,8 +92,9 @@ public class Grass extends Pokemon implements Types{
         System.out.println(name._name + " creates a protective field.");
         System.out.println("Defense increased by 10!");
       }
-      display();
-      name.display();
+      displayt();
+      System.out.println();
+      name.displayt();
     }
     // Rest
     if(moveName.equals("Rest") || moveName.equals("rest")){
@@ -99,8 +102,100 @@ public class Grass extends Pokemon implements Types{
       System.out.println(name._name + " takes a nap.");
       System.out.println("Mana increased by 20!");
     }
-    display();
-    name.display();
+    displayt();
+    System.out.println();
+    name.displayt();
   }
+  /*
+  public void move(String moveName, Grass name){
+    // Razor Leaf
+    if(moveName.equals("Razor Leaf") || moveName.equals("razor leaf")){
+      if(_mana < 20){
+        System.out.println("You cannot use " + moveName + ".");
+      }
+      else{
+        _mana = getMana() - 25;
+        name._hp = (int)((name.getHP() + name.getDefense()) - (getAttack() / 2));
+        System.out.println(name + " has casted Razor Leaf!");
+        System.out.println("A sharp-edged leaf is launched to slash at the foe.");
+        if(name.isAlive() == false){
+          System.out.println("You have defeated your opponent!");
+        }
+      }
+      displayt();
+      System.out.println();
+      name.displayt();
+    }
+    // Safe Guard
+    if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
+      if(_mana < 20){
+        System.out.println("You cannot use " + moveName + ".");
+      }
+      else{
+        _mana = getMana() - 20;
+        _defense += 10;
+        System.out.println(name._name + " creates a protective field.");
+        System.out.println("Defense increased by 10!");
+      }
+      displayt();
+      System.out.println();
+      name.displayt();
+    }
+    // Rest
+    if(moveName.equals("Rest") || moveName.equals("rest")){
+      _mana += 20;
+      System.out.println(name._name + " takes a nap.");
+      System.out.println("Mana increased by 20!");
+    }
+    displayt();
+    System.out.println();
+    name.displayt();
+  }
+
+  public void move(String moveName, Fire name){
+    // Razor Leaf
+    if(moveName.equals("Razor Leaf") || moveName.equals("razor leaf")){
+      if(_mana < 20){
+        System.out.println("You cannot use " + moveName + ".");
+      }
+      else{
+        _mana = getMana() - 25;
+        name._hp = (int)((name.getHP() + name.getDefense()) - (getAttack() / 2));
+        System.out.println(name + " has casted Razor Leaf!");
+        System.out.println("A sharp-edged leaf is launched to slash at the foe.");
+        if(name.isAlive() == false){
+          System.out.println("You have defeated your opponent!");
+        }
+      }
+      displayt();
+      System.out.println();
+      name.displayt();
+    }
+    // Safe Guard
+    if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
+      if(_mana < 20){
+        System.out.println("You cannot use " + moveName + ".");
+      }
+      else{
+        _mana = getMana() - 20;
+        _defense += 10;
+        System.out.println(name._name + " creates a protective field.");
+        System.out.println("Defense increased by 10!");
+      }
+      displayt();
+      System.out.println();
+      name.displayt();
+    }
+    // Rest
+    if(moveName.equals("Rest") || moveName.equals("rest")){
+      _mana += 20;
+      System.out.println(name._name + " takes a nap.");
+      System.out.println("Mana increased by 20!");
+    }
+    displayt();
+    System.out.println();
+    name.displayt();
+  }
+*/
 
 }

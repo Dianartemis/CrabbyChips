@@ -50,6 +50,13 @@ public class Pokemon {
     public int getExp(){
       return _exp;
     }
+    public void displayt(){
+      System.out.println(_name + " / Stats:");
+      System.out.println("HP: " + _hp);
+      System.out.println("Attack: " + _attack);
+      System.out.println("Defense:" + _defense);
+      System.out.println("Mana: " + _mana);
+    }
 
     public void lvlUp(){
       if((_exp % 100 == 0) && (_exp >= 100)){

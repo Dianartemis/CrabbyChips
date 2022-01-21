@@ -23,29 +23,26 @@ public class Woo {
       System.out.println(pokemon + "should be firetype");
       Pokemon pok = new Fire(pokemon, level, 0);
       //to string for pokem;on
-      pok.setName(pokemon);
       System.out.println(pok._name);
       return pok;
     } else if (type == 1) {
       String pokemon = water[random];
       System.out.println(pokemon + "should be wtype");
       Pokemon pok = new Water(pokemon, level, 0);
-      pok.setName(pokemon);
-            System.out.println(pok._name);
+      System.out.println(pok._name);
       return pok;
     } else {
       String pokemon = grass[random];
       System.out.println(pokemon + "should be gtype");
       Pokemon pok = new Grass(pokemon, level, 0);
-      pok.setName(pokemon);
-            System.out.println(pok._name);
+      System.out.println(pok._name);
       return pok;
     }
 
   }
 
   public static int generateLvl(Player name) {
-    int random = (int) ((Math.random() * 5+ (name._pokedex[0].getLvl() + 1)));
+    int random = (int) ((Math.random() * 5 )+ (name._pokedex[0].getLvl() + 1));
     return random;
   }
 
@@ -205,7 +202,7 @@ public class Woo {
           if(win == false){
             goToNurse(name, region);
           } else {
-            cont = false;
+             catchP(name, pok, region);
           }
         } else {
           while(encounterPokemon.equals("runaway") == false && encounterPokemon.equals("battle") == false){
@@ -224,7 +221,7 @@ public class Woo {
     String[] fireMoves = new String[] { "ember", "bulk up", "restore" };
     String[] waterMoves = new String[] { "water gun", "rain dance", "rest" };
     String[] grassMoves = new String[] { "razor leaf", "safe guard", "rest" };
-    int randMove = (int) (((Math.random()) * 6));
+    int randMove = (int) (((Math.random()) * 3));
     if (name instanceof Fire) {
       return fireMoves[randMove];
     } else if (name instanceof Water) {
@@ -235,16 +232,23 @@ public class Woo {
   }
 
   public static boolean battle(Player name, Pokemon opponent, String region) {
+    boolean result = false;
     System.out.println("You begin your battle with " + opponent._name + "...");
     System.out.println("Here are the Stats of your Pokemon:");
     name.displayPokedex();
     System.out.println("Here are the Stats of your opponent's Pokemon:");
     opponent.display();
     System.out.println("print?");
-    while (opponent.isAlive()) {
+    if (opponent.isAlive() == true ){
+      System.out.println("this is true");
+    } else {
+      System.out.println("this is false");
+    }
+    while (opponent.isAlive() == true) {
+      System.out.println("test");
       for (Pokemon p : name._pokedex) {
-        while (p.isAlive()) {
-          System.out.println("You take out " + p._name + "!");
+        System.out.println("You take out " + p._name + "!");
+        while (p.isAlive() == true) {
           System.out.print("Choose a move...");
           p.displayMove();
           String answer = "";
@@ -286,10 +290,11 @@ public class Woo {
       System.out.println("All of your Pokemon have fainted!");
       System.out.println("Your Pokemon are rushed to the Nurse...");
       System.out.println("false");
-      return false;
+      return result;
     }
     System.out.println("true");
-    return true;
+    result = true;
+    return result;
   }
 
   public static void goToNurse(Player name, String region) {
@@ -752,10 +757,11 @@ public class Woo {
     System.out.println(pok._name);
   }
   public static void main(String[] args) {
-    test();
     Player player = new Player();
+
   //  gameSetup();
     chooseStarter(player);
+
     String[] regions = new String[] {"Eterna City", "Pastoria City", "Sunyshore City"};
     int i = 0;
     while (i < 3){

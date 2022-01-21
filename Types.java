@@ -4,7 +4,7 @@ public interface Types {
   public int getDefense();
   public int getMana();
   public boolean isAlive();
-  public void display();
+  public void displayt();
   public void displayMove();
   public void move(String moveName, Pokemon name);
 }
