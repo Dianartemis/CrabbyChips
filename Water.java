@@ -13,6 +13,16 @@ static Scanner in = new Scanner(System.in);
     _lvl = lvl;
     _exp = 100*lvl;
   }
+
+  public static void wait(int s) {
+    try {
+      Thread.sleep(s * 500);
+    }
+    catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
+  }
+
   public void setName(String name){
     _name = name;
   }
@@ -47,7 +57,9 @@ static Scanner in = new Scanner(System.in);
 
   public void lvlUp(){
     if((_exp % 100 == 0) && (_exp >= 100)){
+      wait(1);
       System.out.println("Congrats! You leveled up! You are now level " + (_exp / 100) + "!");
+      wait(1);
       _lvl = _exp / 100;
       _hp = getHPMultiplier() *_lvl;
       _attack += 7;
@@ -70,6 +82,7 @@ static Scanner in = new Scanner(System.in);
 
   public void displayMove() {
     System.out.println("Your available moves are: Water Gun, Rain Dance, and Rest.");
+    wait(1);
     System.out.println("Water Gun squirts water to attack.");
     System.out.println("Rain Dance summons rain to increase defense.");
     System.out.println("Rest makes the user take a nap to restore mana.");
@@ -80,7 +93,9 @@ static Scanner in = new Scanner(System.in);
   public void move(String moveName, Pokemon name){
     if(moveName.equals("Water Gun") || moveName.equals("water gun")){
       if(_mana < 25){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        wait(1);
       }
       else{
         _mana = getMana() - 25;
@@ -88,6 +103,11 @@ static Scanner in = new Scanner(System.in);
           name._defense = (name._defense - (getAttack()));
         } else if (name.getDefense() < getAttack() && name.getDefense() > 0){
           name._defense = 0;
+          if ((getAttack() - name._defense) > name._hp){
+            name._hp = 0;
+          } else {
+            name._hp = (name._hp - (getAttack() - name._defense));
+          }
         } else {
           if (name._hp > getAttack()){
             name._hp = (name._hp - (getAttack()));
@@ -95,8 +115,11 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
+        wait(1);
         System.out.println(getName() + " has casted Water Gun!");
+        wait(1);
         System.out.println("The foe is blasted with a forceful shot of water.");
+        wait(1);
         if(name.isAlive() == false){
           System.out.println(getName() + " has defeated their opponent!");
         }
@@ -110,13 +133,18 @@ static Scanner in = new Scanner(System.in);
     // Rain Dance
     if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
       if(_mana < 20){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        wait(1);
       }
       else{
         _mana = getMana() - 20;
         _defense += 10;
+        wait(1);
         System.out.println("Rain starts to fall.");
+        wait(1);
         System.out.println("Defense increased by 10!");
+        wait(1);
         System.out.println();
         displayt();
         System.out.println();
@@ -127,8 +155,11 @@ static Scanner in = new Scanner(System.in);
     // Rest
     if(moveName.equals("Rest") || moveName.equals("rest")){
       _mana += 20;
+      wait(1);
       System.out.println(getName() + " takes a nap.");
+      wait(1);
       System.out.println("Mana increased by 20!");
+      wait(1);
 
       System.out.println();
       displayt();
@@ -136,7 +167,8 @@ static Scanner in = new Scanner(System.in);
       name.displayt();
       System.out.println();
     }
-  System.out.println("Do you want to use a Berry on" + _name + "? (yes/no)");
+  wait(1);
+  System.out.println("Do you want to use a Berry on " + _name + "? (yes/no)");
   String berry = "";
   berry = in.nextLine().toLowerCase();
     if (berry.equals("yes")) {
@@ -171,7 +203,9 @@ static Scanner in = new Scanner(System.in);
     public void moveOther(String moveName, Pokemon name){
       if(moveName.equals("Water Gun") || moveName.equals("water gun")){
         if(_mana < 25){
+          wait(1);
           System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+          wait(1);
         }
         else{
           _mana = getMana() - 25;
@@ -179,6 +213,11 @@ static Scanner in = new Scanner(System.in);
             name._defense = (name._defense - (getAttack()));
           } else if (name.getDefense() < getAttack() && name.getDefense() > 0){
             name._defense = 0;
+            if ((getAttack() - name._defense) > name._hp){
+              name._hp = 0;
+            } else {
+              name._hp = (name._hp - (getAttack() - name._defense));
+            }
           } else {
             if (name._hp > getAttack()){
               name._hp = (name._hp - (getAttack()));
@@ -186,10 +225,16 @@ static Scanner in = new Scanner(System.in);
               name._hp = 0;
             }
           }
+          wait(1);
           System.out.println(getName() + " has casted Water Gun!");
+          wait(1);
           System.out.println("The foe is blasted with a forceful shot of water.");
+          wait(1);
           if(name.isAlive() == false){
+            wait(1);
             System.out.println(getName() + " has defeated their opponent!");
+            System.out.println();
+            wait(1);
           }
           System.out.println();
           displayt();
@@ -202,13 +247,19 @@ static Scanner in = new Scanner(System.in);
       // Rain Dance
       if(moveName.equals("Rain Dance") || moveName.equals("rain dance")){
         if(_mana < 20){
+          wait(1);
           System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+          System.out.println();
+          wait(1);
         }
         else{
           _mana = getMana() - 20;
           _defense += 10;
+          wait(1);
           System.out.println("Rain starts to fall.");
+          wait(1);
           System.out.println("Defense increased by 10!");
+          wait(1);
           System.out.println();
           displayt();
           System.out.println();
@@ -219,8 +270,11 @@ static Scanner in = new Scanner(System.in);
       // Rest
       if(moveName.equals("Rest") || moveName.equals("rest")){
         _mana += 20;
+        wait(1);
         System.out.println(getName() + " takes a nap.");
+        wait(1);
         System.out.println("Mana increased by 20!");
+        wait(1);
 
         System.out.println();
         displayt();

@@ -13,6 +13,16 @@ static Scanner in = new Scanner(System.in);
     _lvl = lvl;
     _exp = 100 *lvl;
   }
+
+  public static void wait(int s) {
+    try {
+      Thread.sleep(s * 500);
+    }
+    catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
+  }
+
   public void setName(String name){
     _name = name;
   }
@@ -45,6 +55,7 @@ static Scanner in = new Scanner(System.in);
 
   public void lvlUp(){
     if((_exp % 100 == 0) && (_exp >= 100)){
+      wait(1);
       System.out.println("Congrats! You leveled up! You are now level " + (_exp / 100) + "!");
       _lvl = _exp / 100;
       _hp = getHPMultiplier() *_lvl;
@@ -68,6 +79,7 @@ static Scanner in = new Scanner(System.in);
 
   public void displayMove() {
     System.out.println("Your available moves are: Razor Leaf, Safe Guard, and Rest.");
+    wait(1);
     System.out.println("Razor Leaf is an attack that sends sharp-edged leaves at the target.");
     System.out.println("Safe Guard is a power that protects the user, increases defense.");
     System.out.println("Rest makes the user take a nap to restore mana.");
@@ -79,7 +91,9 @@ static Scanner in = new Scanner(System.in);
     // Razor Leaf
     if(moveName.equals("Razor Leaf") || moveName.equals("razor leaf")){
       if(_mana < 25){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        wait(1);
       }
       else{
         _mana = getMana() - 25;
@@ -87,6 +101,11 @@ static Scanner in = new Scanner(System.in);
           name._defense = (name._defense - (getAttack()));
         } else if (name.getDefense() < getAttack() && name.getDefense() > 0){
           name._defense = 0;
+          if ((getAttack() - name._defense) > name._hp){
+            name._hp = 0;
+          } else {
+            name._hp = (name._hp - (getAttack() - name._defense));
+          }
         }else{
           if (name._hp > getAttack()){
             name._hp = (name._hp - (getAttack()));
@@ -94,10 +113,15 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
+        wait(1);
         System.out.println(getName() + " has casted Razor Leaf!");
+        wait(1);
         System.out.println("A sharp-edged leaf is launched to slash at the foe.");
+        wait(1);
         if(name.isAlive() == false){
+          wait(1);
           System.out.println(getName() + " has defeated their opponent!");
+          wait(1);
         }
         System.out.println();
         displayt();
@@ -110,31 +134,42 @@ static Scanner in = new Scanner(System.in);
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
       if(_mana < 20){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        wait(1);
       }
       else{
         _mana = getMana() - 20;
         _defense += 10;
+        wait(1);
         System.out.println(getName() + " creates a protective field.");
+        wait(1);
         System.out.println("Defense increased by 10!");
+        wait(1);
         System.out.println();
         displayt();
         System.out.println();
         name.displayt();
         System.out.println();
       }
+    }
     // Rest
     if(moveName.equals("Rest") || moveName.equals("rest")){
       _mana += 20;
+      wait(1);
       System.out.println(getName() + " takes a nap.");
+      wait(1);
       System.out.println("Mana increased by 20!");
+      wait(1);
       System.out.println();
       displayt();
       System.out.println();
       name.displayt();
       System.out.println();
     }
-    System.out.println("Do you want to use a Berry on" + _name + "? (yes/no)");
+    wait(1);
+    System.out.println("Do you want to use a Berry on " + _name + "? (yes/no)");
+    wait(1);
     String berry = "";
     berry = in.nextLine().toLowerCase();
       if (berry.equals("yes")) {
@@ -165,13 +200,14 @@ static Scanner in = new Scanner(System.in);
         System.out.println("That is not a valid response, you do not get a berry");
         }
   }
-}
 
   public void moveOther(String moveName, Pokemon name){
     // Razor Leaf
     if(moveName.equals("Razor Leaf") || moveName.equals("razor leaf")){
       if(_mana < 25){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        wait(1);
       }
       else{
         _mana = getMana() - 25;
@@ -179,6 +215,11 @@ static Scanner in = new Scanner(System.in);
           name._defense = (name._defense - (getAttack()));
         } else if (name.getDefense() <  getAttack() && name.getDefense() > 0){
           name._defense = 0;
+          if ((getAttack() - name._defense) > name._hp){
+            name._hp = 0;
+          } else {
+            name._hp = (name._hp - (getAttack() - name._defense));
+          }
         }else {
           if (name._hp > getAttack()){
             name._hp = (name._hp - (getAttack()));
@@ -186,10 +227,16 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
+        wait(1);
         System.out.println(getName() + " has casted Razor Leaf!");
+        wait(1);
         System.out.println("A sharp-edged leaf is launched to slash at the foe.");
+        wait(1);
         if(name.isAlive() == false){
+          wait(1);
           System.out.println(getName() + " has defeated their opponent!");
+          System.out.println();
+          wait(1);
         }
         System.out.println();
         displayt();
@@ -201,13 +248,19 @@ static Scanner in = new Scanner(System.in);
     // Safe Guard
     if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
       if(_mana < 20){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        System.out.println();
+        wait(1);
       }
       else{
         _mana = getMana() - 20;
         _defense += 10;
+        wait(1);
         System.out.println(getName() + " creates a protective field.");
+        wait(1);
         System.out.println("Defense increased by 10!");
+        wait(1);
         System.out.println();
         displayt();
         System.out.println();
@@ -218,8 +271,11 @@ static Scanner in = new Scanner(System.in);
     // Rest
     if(moveName.equals("Rest") || moveName.equals("rest")){
       _mana += 20;
+      wait(1);
       System.out.println(getName() + " takes a nap.");
+      wait(1);
       System.out.println("Mana increased by 20!");
+      wait(1);
       System.out.println();
       displayt();
       System.out.println();

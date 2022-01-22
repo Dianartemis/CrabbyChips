@@ -58,6 +58,6 @@ false -- male
   }
 
   public void goodbye(Human name){
-    System.out.println("Goodbye " + name.getName() + "! See you next time.");
+    System.out.println("Goodbye" + name.getName() + "! See you next time.");
   }
 }

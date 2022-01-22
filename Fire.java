@@ -13,6 +13,15 @@ static Scanner in = new Scanner(System.in);
     _exp = 100*lvl;
   }
 
+  public static void wait(int s) {
+    try {
+      Thread.sleep(s * 500);
+    }
+    catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
+  }
+
   public void setName(String name){
     _name = name;
   }
@@ -46,7 +55,9 @@ static Scanner in = new Scanner(System.in);
 
   public void lvlUp(){
     if((_exp % 100 == 0) && (_exp >= 100)){
+      wait(1);
       System.out.println("Congrats! You leveled up! You are now level " + (_exp / 100) + "!");
+      wait(1);
       _lvl = _exp / 100;
       _hp = getHPMultiplier() *_lvl;
       _attack += 8;
@@ -69,6 +80,7 @@ static Scanner in = new Scanner(System.in);
 
   public void displayMove() {
     System.out.println("Your available moves are: Ember, Bulk Up, and Restore.");
+    wait(1);
     System.out.println("Ember deals damage and inflicts Burn.");
     System.out.println("Bulk Up bulks up your defense.");
     System.out.println("Restore restores your mana.");
@@ -79,7 +91,9 @@ static Scanner in = new Scanner(System.in);
     // Ember
     if(moveName.equals("Ember") || moveName.equals("ember")){
       if(_mana < 25){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        wait(1);
       }
       else{
         _mana = getMana() - 25;
@@ -87,6 +101,11 @@ static Scanner in = new Scanner(System.in);
           name._defense = (name._defense - (getAttack()));
         } else if (name.getDefense() < getAttack() && name.getDefense() > 0){
           name._defense = 0;
+          if ((getAttack() - name._defense) > name._hp){
+            name._hp = 0;
+          } else {
+            name._hp = (name._hp - (getAttack() - name._defense));
+          }
         }else{
           if (name._hp > getAttack()){
             name._hp = (name._hp - (getAttack()));
@@ -94,11 +113,16 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
+        wait(1);
         System.out.println(getName() + " has casted Ember!");
+        wait(1);
         System.out.println("The target is attacked with small flames.");
+        wait(1);
         if(name.isAlive() == false){
+          wait(1);
           System.out.println(getName() + " has defeated their opponent!");
-          increaseExp();
+          System.out.println();
+          wait(1);
           lvlUp();
         }
         System.out.println();
@@ -111,25 +135,34 @@ static Scanner in = new Scanner(System.in);
     // Bulk Up
     if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
       if(_mana < 20){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        wait(1);
       }
       else{
         _mana = getMana() - 20;
         _defense += 10;
+        wait(1);
         System.out.println(getName() + " tenses its muscles.");
+        wait(1);
         System.out.println("Defense increased by 10!");
+        wait(1);
         System.out.println();
         displayt();
         System.out.println();
         name.displayt();
         System.out.println();
       }
+    }
 
     // Restore
     if(moveName.equals("Restore") || moveName.equals("restore")){
       _mana += 20;
+      wait(1);
       System.out.println(getName() + " restores its own cells.");
+      wait(1);
       System.out.println("Mana increased by 20!");
+      wait(1);
 
       System.out.println();
       displayt();
@@ -137,7 +170,8 @@ static Scanner in = new Scanner(System.in);
       name.displayt();
       System.out.println();
     }
-    System.out.println("Do you want to use a Berry on" + _name + "? (yes/no)");
+    wait(1);
+    System.out.println("Do you want to use a Berry on " + _name + "? (yes/no)");
     String berry = "";
     berry = in.nextLine().toLowerCase();
       if (berry.equals("yes")) {
@@ -167,14 +201,15 @@ static Scanner in = new Scanner(System.in);
         //wait(1);
         System.out.println("That is not a valid response, you do not get a berry");
         }
-  }
 }
 
   public void moveOther(String moveName, Pokemon name){
     // Ember
     if(moveName.equals("Ember") || moveName.equals("ember")){
       if(_mana < 25){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        wait(1);
       }
       else{
         _mana = getMana() - 25;
@@ -182,6 +217,11 @@ static Scanner in = new Scanner(System.in);
           name._defense = (name._defense - (getAttack()));
         } else if (name.getDefense() < getAttack() && name.getDefense() > 0){
           name._defense = 0;
+          if ((getAttack() - name._defense) > name._hp){
+            name._hp = 0;
+          } else {
+            name._hp = (name._hp - (getAttack() - name._defense));
+          }
         } else {
           if (name._hp > getAttack()){
             name._hp = (name._hp - (getAttack()));
@@ -189,11 +229,17 @@ static Scanner in = new Scanner(System.in);
             name._hp = 0;
           }
         }
+        wait(1);
         System.out.println(getName() + " has casted Ember!");
+        wait(1);
         System.out.println("The target is attacked with small flames.");
+        wait(1);
         if(name.isAlive() == false){
+          wait(1);
+          System.out.println();
           System.out.println(getName() + " has defeated their opponent!");
-          increaseExp();
+          System.out.println();
+          wait(1);
           lvlUp();
         }
         System.out.println();
@@ -206,13 +252,19 @@ static Scanner in = new Scanner(System.in);
     // Bulk Up
     if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
       if(_mana < 20){
+        wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        System.out.println();
+        wait(1);
       }
       else{
         _mana = getMana() - 20;
         _defense += 10;
+        wait(1);
         System.out.println(getName() + " tenses its muscles.");
+        wait(1);
         System.out.println("Defense increased by 10!");
+        wait(1);
         System.out.println();
         displayt();
         System.out.println();
@@ -223,8 +275,11 @@ static Scanner in = new Scanner(System.in);
     // Restore
     if(moveName.equals("Restore") || moveName.equals("restore")){
       _mana += 20;
+      wait(1);
       System.out.println(getName() + " restores its own cells.");
+      wait(1);
       System.out.println("Mana increased by 20!");
+      wait(1);
 
       System.out.println();
       displayt();

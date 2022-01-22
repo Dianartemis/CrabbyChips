@@ -66,10 +66,6 @@ public class Pokemon {
       System.out.println();
     }
 
-    public void increaseExp(){
-      _exp += 20;
-      System.out.println("Your EXP has increased by 20!");
-    }
 
     public boolean isAlive(){
       return false;
