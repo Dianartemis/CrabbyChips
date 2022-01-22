@@ -110,7 +110,6 @@ public class Woo {
         return cont;
       }
       else if (response.equals("gym")) {
-        System.out.println(name._numPokemon);
         if (name._numPokemon < 4){ //cannot go to gym if player has less than four pokemon
           //wait(1);
           System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
@@ -425,6 +424,7 @@ public class Woo {
         //wait(1);
         //if there are no more pokemon left, display stats of fainted pokemon
         name._pokedex[i-1].displayt();
+        System.out.println();
         System.out.println("All of your Pokemon have fainted!");
         //wait(1);
         System.out.println("Your Pokemon are rushed to the Nurse...");
