@@ -351,7 +351,7 @@ public class Woo {
             System.out.println();
             name._pokedex[i].move(answer, opponent); //pokemon makes a move
             //wait(1);
-            name._pokedex[i]._exp = name._pokedex[i]._exp + 10; //exp goes up each move
+            name._pokedex[i]._exp = name._pokedex[i]._exp + 20; //exp goes up each move
             name._pokedex[i].lvlUp(); //level up if the exp is full (100 exp)
             //if level up, should make pokemon healthy again
             //wait(1);
