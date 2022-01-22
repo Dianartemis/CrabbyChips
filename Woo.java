@@ -112,7 +112,7 @@ public class Woo {
       else if (response.equals("gym")) {
         if (name._numPokemon  < 4){ // cannot go to gym if player has less than four pokemon
           //wait(1);
-          System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
+          System.out.println("\nYou can not go to the gym with less than four Pokemon. You walk again...");
           return cont;
         }
         else {
@@ -135,10 +135,10 @@ public class Woo {
       // meet someone battle is probability of 20%
       System.out.println("\nA fellow Pokemon trainer appeared. They challenge you to a Pokemon battle.");
       //wait(1);
-      System.out.println("\nDo you want to battle or run away? (battle/runaway)");
+      System.out.println("\nDo you want to battle or run away? (battle/run away)");
       String runawayOr = "";
       runawayOr = in.nextLine().toLowerCase();
-      if (runawayOr.equals("runaway")) {
+      if (runawayOr.equals("run away")) {
         boolean run = runaway(); // runaway opporates on a probability. If it can run away, true is returned
         if (run == false) {
           //wait(1);
@@ -162,7 +162,7 @@ public class Woo {
           else if (response.equals("gym")) {
             if (name._numPokemon < 4) { // cannot go to gym if player has less than four pokemon
               //wait(1);
-              System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
+              System.out.println("\nYou can not go to the gym with less than four Pokemon. You walk again...");
               return cont;
             }
             else {
@@ -172,7 +172,7 @@ public class Woo {
                 walk(name, region);
               }
               else {
-                return true;;
+                return true;
               }
             }
           }
@@ -231,7 +231,7 @@ public class Woo {
         System.out.println(name._numPokemon);
         if (name._numPokemon < 4){ // cannot go to gym if player has less than four pokemon
           //wait(1);
-          System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
+          System.out.println("\nYou can not go to the gym with less than four Pokemon. You walk again...");
           return cont;
         }
         else {
@@ -252,12 +252,12 @@ public class Woo {
     }
     else {
       //wait(1);
-      System.out.println("\nA Pokemon appeared!");
+      System.out.println("\nA wild Pokemon appeared!");
       //wait(1);
-      System.out.println("\nWould you like to battle or run away? (battle/runaway)");
+      System.out.println("\nWould you like to battle or run away? (battle/run away)");
       String encounterPokemon = "";
       encounterPokemon = in.nextLine().toLowerCase();
-      if (encounterPokemon.equals("runaway")) {
+      if (encounterPokemon.equals("run away")) {
         boolean run = runaway();
         if (run == false) {
           //wait(1);
@@ -289,7 +289,7 @@ public class Woo {
             System.out.println(name._numPokemon);
             if (name._numPokemon < 4) { // cannot go to gym if player has less than four pokemon
               //wait(1);
-              System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
+              System.out.println("\nYou can not go to the gym with less than four Pokemon. You walk again...");
               return cont;
             }
             else {
@@ -490,7 +490,7 @@ public class Woo {
     //wait(1);
     System.out.println("\nYou have arrived at the clinic.");
     //wait(1);
-    System.out.println("\nThe Nurse has restored all of your Pokemon's health.");
+    System.out.println("\nNurse Joy has restored all of your Pokemon's health.");
     for (int i = 0 ; i < name._pokedexSize; i++) {
       name._pokedex[i]._hp = name._pokedex[i]._lvl * name._pokedex[i].getHPMultiplier();
       // heals hp
@@ -531,13 +531,13 @@ public class Woo {
       //wait(1);
       goToNurse(name, region);
       //wait(1);
-      System.out.println("\nYou enter the gym and prepare to battle Flint.");
+      System.out.println("\nYou enter the gym and prepare to battle Flint's first Pokemon, Infernape.");
       //wait(1);
       Pokemon infernape = new Fire("Infernape", 25, 3818);
       boolean firstBattle = battle(name, infernape, region);
       if (firstBattle == true) { // if wins first battle, fights next
         //wait(1);
-        System.out.println("\nPrepare to fight Flint's next Pokemon!");
+        System.out.println("\nPrepare to fight Flint's next Pokemon, Rapidash!");
         //wait(1);
         Pokemon rapidash = new Fire("Rapidash", 27, 2739);
         boolean secondBattle = battle(name, rapidash, region);
@@ -554,13 +554,13 @@ public class Woo {
     }
     else if (answer.equals("no")) {
       //wait(1);
-      System.out.println("\nYou enter the gym and prepare to battle Flint.");
+      System.out.println("\nYou enter the gym and prepare to battle Flint's first Pokemon, Infernape.");
       //wait(1);
       Pokemon infernape = new Fire("Infernape", 25, 3818);
       boolean firstBattle = battle(name, infernape, region);
       if (firstBattle == true) { // if wins first battle, fights next
         //wait(1);
-        System.out.println("\nPrepare to fight Flint's next Pokemon!");
+        System.out.println("\nPrepare to fight Flint's next Pokemon, Rapidash!");
         //wait(1);
         Pokemon rapidash = new Fire("Rapidash", 27, 2739);
         boolean secondBattle = battle(name, rapidash, region);
@@ -579,12 +579,12 @@ public class Woo {
         //wait(1);
         System.out.println("\nThat is not a valid response. You do not go to the Nurse.");
         //wait(1);
-        System.out.println("\nYou enter the gym and prepare to battle Flint.");
+        System.out.println("\nYou enter the gym and prepare to battle Flint's first Pokemon, Infernape.");
         //wait(1);
         Pokemon infernape = new Fire("Infernape", 25, 3818);
         boolean firstBattle = battle(name, infernape, region);
         if (firstBattle == true) {
-          System.out.println("\nPrepare to fight Flint's next Pokemon!");
+          System.out.println("\nPrepare to fight Flint's next Pokemon, Rapidash!");
           //wait(1);
           Pokemon rapidash = new Fire("Rapidash", 27, 2739);
           boolean secondBattle = battle(name, rapidash, region);
@@ -615,21 +615,21 @@ public class Woo {
       //wait(1);
       goToNurse(name, region);
       //wait(1);
-      System.out.println("\nYou enter the gym and prepare to battle Crasher Wake.");
+      System.out.println("\nYou enter the gym and prepare to battle Crasher Wake's first Pokemon Gyarados.");
       //wait(1);
       Pokemon gyarados = new Water("Gyarados", 27, 2690);
       boolean firstBattle = battle(name, gyarados, region);
       if (firstBattle == true) {
         //wait(1);
-        System.out.println("\nPrepare to fight Crasher Wake's next Pokemon!");
+        System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Quagsire!");
         //wait(1);
         Pokemon quagsire = new Water("Quagsire", 27, 2630);
         boolean secondBattle = battle(name, quagsire, region);
         if (secondBattle == true) {
           //wait(1);
-          System.out.println("\nPrepare to fight Crasher Wake's next Pokemon!");
+          System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Floatzel!");
           //wait(1);
-          Pokemon floatzel = new Water("floatzel", 30, 2950);
+          Pokemon floatzel = new Water("Floatzel", 30, 2950);
           boolean thirdBattle = battle(name, floatzel, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -645,21 +645,21 @@ public class Woo {
     }
     else if (answer.equals("no")) {
       //wait(1);
-      System.out.println("\nYou enter the gym and prepare to battle Crasher Wake.");
+      System.out.println("\nYou enter the gym and prepare to battle Crasher Wake's first Pokemon Gyarados.");
       //wait(1);
       Pokemon gyarados = new Water("Gyarados", 27, 2690);
       boolean firstBattle = battle(name, gyarados, region);
       if (firstBattle == true) {
         //wait(1);
-        System.out.println("\nPrepare to fight Crasher Wake's next Pokemon!");
+        System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Quagsire!");
         //wait(1);
         Pokemon quagsire = new Water("Quagsire", 27, 2630);
         boolean secondBattle = battle(name, quagsire, region);
         if (secondBattle == true) {
           //wait(1);
-          System.out.println("\nPrepare to fight Crasher Wake's next Pokemon!");
+          System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Floatzel!");
           //wait(1);
-          Pokemon floatzel = new Water("floatzel", 30, 2950);
+          Pokemon floatzel = new Water("Floatzel", 30, 2950);
           boolean thirdBattle = battle(name, floatzel, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -677,21 +677,21 @@ public class Woo {
       //wait(1);
       System.out.println("\nThat is not a valid response. You do not go to the nurse.");
       //wait(1);
-      System.out.println("\nYou enter the gym and prepare to battle Crasher Wake.");
+      System.out.println("\nYou enter the gym and prepare to battle Crasher Wake's first Pokemon Gyarados.");
       //wait(1);
       Pokemon gyarados = new Water("Gyarados", 27, 2690);
       boolean firstBattle = battle(name, gyarados, region);
       if (firstBattle == true) {
         //wait(1);
-        System.out.println("\nPrepare to fight Crasher Wake's next Pokemon!");
+        System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Quagsire!");
         //wait(1);
         Pokemon quagsire = new Water("Quagsire", 27, 2630);
         boolean secondBattle = battle(name, quagsire, region);
         if (secondBattle == true) {
           //wait(1);
-          System.out.println("\nPrepare to fight Crasher Wake's next Pokemon!");
+          System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Floatzel!");
           //wait(1);
-          Pokemon floatzel = new Water("floatzel", 30, 2950);
+          Pokemon floatzel = new Water("Floatzel", 30, 2950);
           boolean thirdBattle = battle(name, floatzel, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -721,21 +721,21 @@ public class Woo {
       //wait(1);
       goToNurse(name, region);
       //wait(1);
-      System.out.println("\nYou enter the gym and prepare to battle Gardenia.");
+      System.out.println("\nYou enter the gym and prepare to battle Gardenia's first Pokemon, Cherubi.");
       //wait(1);
-      Pokemon cherubi = new Water("cherubi", 19, 1990);
+      Pokemon cherubi = new Water("Cherubi", 19, 1990);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         //wait(1);
-        System.out.println("\nPrepare to fight Gardenia's next Pokemon!");
+        System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         //wait(1);
-        Pokemon turtwig = new Water("turtwig", 27, 1930);
+        Pokemon turtwig = new Water("Turtwig", 27, 1930);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           //wait(1);
-          System.out.println("\nPrepare to fight Gardenia's next Pokemon!");
+          System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           //wait(1);
-          Pokemon roserade = new Water("roserade",22, 2250);
+          Pokemon roserade = new Water("Roserade",22, 2250);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -751,21 +751,21 @@ public class Woo {
     }
     else if (answer.equals("no")) {
       //wait(1);
-      System.out.println("\nYou enter the gym and prepare to battle Gardenia.");
+      System.out.println("\nYou enter the gym and prepare to battle Gardenia's First Pokemon, Cherubi.");
       //wait(1);
-      Pokemon cherubi = new Water("cherubi", 19, 1990);
+      Pokemon cherubi = new Water("Cherubi", 19, 1990);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         //wait(1);
-        System.out.println("\nPrepare to fight Gardenia's next Pokemon!");
+        System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         //wait(1);
-        Pokemon turtwig = new Water("turtwig", 27, 1930);
+        Pokemon turtwig = new Water("Rurtwig", 27, 1930);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           //wait(1);
-          System.out.println("\nPrepare to fight Gardenia's next Pokemon!");
+          System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           //wait(1);
-          Pokemon roserade = new Water("roserade",22, 2250);
+          Pokemon roserade = new Water("Roserade",22, 2250);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -783,21 +783,21 @@ public class Woo {
       //wait(1);
       System.out.println("\nThat is not a valid response. You do not go to the nurse.");
       //wait(1);
-      System.out.println("\nYou enter the gym and prepare to battle Gardenia.");
+      System.out.println("\nYou enter the gym and prepare to battle Gardenia's first Pokemon, Cherubi.");
       //wait(1);
       Pokemon cherubi = new Water("cherubi", 19, 1990);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         //wait(1);
-        System.out.println("\nPrepare to fight Gardenia's next Pokemon!");
+        System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         //wait(1);
-        Pokemon turtwig = new Water("turtwig", 27, 1930);
+        Pokemon turtwig = new Water("Turtwig", 27, 1930);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           //wait(1);
-          System.out.println("\nPrepare to fight Gardenia's next Pokemon!");
+          System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           //wait(1);
-          Pokemon roserade = new Water("roserade",22, 2250);
+          Pokemon roserade = new Water("Roserade",22, 2250);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -825,12 +825,12 @@ public class Woo {
   }
 
   public static void chooseStarter(Player player) {
-    //wait(2);
+    //wait(1);
     System.out.println("\nRING RING! Wake up " + player._name + "!" + " Your mom told you to go to Dr. Footstep's clinic to get your first starter Pokemon.");
-    //wait(2);
+    //wait(1);
     System.out.println("\nYou totally forgot. Today is your 10th birthday. You're finally old enough to become a Pokemon trainer!");
-    //wait(2);
-    System.out.println("\nYou rush over to the pokemon clinic and luckily the line isn't long.");
+    //wait(1);
+    System.out.println("\nYou rush over to the Pokemon clinic and luckily the line isn't long.");
     //wait(2);
     System.out.print("\nA");
     //wait(2);
@@ -849,7 +849,7 @@ public class Woo {
     System.out.println("\nThere are three starter Pokemons: Chimchar, Piplup, and Turtwig.");
     //wait(1);
 
-    System.out.println("\nInput the pokemon that you want to know more about:");
+    System.out.println("\nInput the Pokemon that you want to know more about:");
     String pokemonOne = "";
 
     // POKEMON DESCRIPTIONS
@@ -874,13 +874,13 @@ public class Woo {
       Pokemon piplup = new Water("Piplup", 5, 40);
       //wait(1);
       System.out.println("\nA Penguin Pokemon.");
-      //wait(2);
+      //wait(1);
       System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
-      //wait(2);
+      //wait(1);
       System.out.println("It's a Water type, so it's strong versus Rock and Grounds.");
-      //wait(2);
+      //wait(1);
       System.out.println("It's very cute but filled with pride--it hates to accept food from people.");
-      //wait(2);
+      //wait(1);
       System.out.println();
       piplup.display();
     }
@@ -888,15 +888,15 @@ public class Woo {
       Pokemon turtwig = new Grass("Turtwig", 5, 40);
       //wait(1);
       System.out.println("\nA Tiny Leaf Pokemon.");
-      //wait(2);
+      //wait(1);
       System.out.println("Despite its animal appearance, Turtwig actually has vegetation sprouting from its head.");
-      //wait(2);
+      //wait(1);
       System.out.println("The shell on its back is made of soil and hardens when it drinks water.");
-      //wait(2);
+      //wait(1);
       System.out.println("Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
-      //wait(2);
+      //wait(1);
       System.out.println("It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
-      //wait(2);
+      //wait(1);
       System.out.println();
       turtwig.display();
     }
@@ -920,7 +920,7 @@ public class Woo {
     }
 
     //wait(2);
-    System.out.println("\nInput another pokemon that you want to know more about:");
+    System.out.println("\nInput another Pokemon that you want to know more about:");
     String pokemonTwo = "";
 
     pokemonTwo = in.nextLine().toLowerCase();
@@ -988,7 +988,7 @@ public class Woo {
     }
 
     //wait(2);
-    System.out.println("\nInput the last pokemon:");
+    System.out.println("\nInput the last Pokemon:");
     String pokemonThree = "";
 
     pokemonThree = in.nextLine().toLowerCase();
@@ -1126,8 +1126,13 @@ public class Woo {
     String[] regions = new String[] {"Eterna City", "Pastoria City", "Sunyshore City"};
     int i = 0;
     while (i < 3) {
-      if (walk(player, regions[i]) == true){
+      boolean nextGym = walk(player,regions[i]);
+      if (nextGym == true){
+        System.out.println();
+        //wait(1)
         System.out.println("\nYou beat " + regions[i]);
+        //wait(1);
+        System.out.println();
         i++;
       }
     }

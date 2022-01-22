@@ -237,7 +237,7 @@ static Scanner in = new Scanner(System.in);
     }
     else {
       //wait(1);
-      System.out.println("That is not a valid response, you do not get a berry");
+      System.out.println("That is not a valid response, you do not get a berry.");
       }
     }
 
