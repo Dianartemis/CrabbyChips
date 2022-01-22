@@ -111,7 +111,7 @@ public class Woo {
       }
       else if (response.equals("gym")) {
         System.out.println(name._numPokemon);
-        if (name._numPokemon < 4){ //cannot go to gym if player has less than four pokemon
+        if (name._numPokemon < 1){ //cannot go to gym if player has less than four pokemon
           //wait(1);
           System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
           return cont;
@@ -412,7 +412,7 @@ public class Woo {
             //wait(1);
             if (opponent.isAlive() == false){
               result = true;
-              goToNurseGym(name, region); // after battle, heal pokemon
+              goToNurseNull(name, region); // after battle, heal pokemon
               return result; //if the opponent dies, battle terminated, returns true
             }
             System.out.println();
@@ -437,7 +437,7 @@ public class Woo {
         // if pokemon is not alive, it is fainted, you go to the nurse to recover and them return true
         //StdAudio.close();
         result = true;
-        goToNurseGym(name,region);
+        goToNurseNull(name,region);
         return result;
     }
 
@@ -495,6 +495,22 @@ public class Woo {
     //wait(1);
     System.out.println("You leave the nurse.");
     goToGym(name, region);
+  }
+
+  public static void goToNurseNull(Player name, String region){
+    //wait(1);
+    System.out.println("You have arrived at the clinic.");
+    //wait(1);
+    System.out.println("The Nurse has restored all of your Pokemon's health.");
+    for (int i = 0 ; i < name._pokedexSize; i++) {
+      name._pokedex[i]._hp = name._pokedex[i]._lvl * name._pokedex[i].getHPMultiplier();
+      name._pokedex[i]._defense = name._pokedex[i]._lvl*name._pokedex[i].getDefenseMultiplier();
+    }
+    System.out.println();
+    name.displayPokedex();
+    System.out.println();
+    //wait(1);
+    System.out.println("You leave the nurse.");
   }
 
   public static boolean goToGym(Player name, String region) {
