@@ -110,14 +110,19 @@ public class Woo {
         return cont;
       }
       else if (response.equals("gym")) {
-        System.out.println(name._numPokemon);
-        if (name._numPokemon < 1){ //cannot go to gym if player has less than four pokemon
+        if (name._numPokemon  < 4){ //cannot go to gym if player has less than four pokemon
           //wait(1);
           System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
           return cont;
         }
         else {
-          return goToGym(name, region);
+          boolean gym = goToGym(name, region)
+          if (gym == false){
+            goToNurse(name, region);
+            walk(name, region);
+          } else {
+            return gym;
+          }
         }
       }
       else {
@@ -155,13 +160,19 @@ public class Woo {
             return cont;
           }
           else if (response.equals("gym")) {
-            if (name._numPokemon < 1){ //cannot go to gym if player has less than four pokemon
+            if (name._numPokemon < 4){ //cannot go to gym if player has less than four pokemon
               //wait(1);
               System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
               return cont;
             }
             else {
-              return goToGym(name, region);
+              boolean gym = goToGym(name, region)
+              if (gym == false){
+                goToNurse(name, region);
+                walk(name, region);
+              } else {
+                return gym;
+              }
             }
           }
           else {
@@ -223,7 +234,13 @@ public class Woo {
             return cont;
           }
           else {
-            return goToGym(name, region);
+            boolean gym = goToGym(name, region)
+            if (gym == false){
+              goToNurse(name, region);
+              walk(name, region);
+            } else {
+              return gym;
+            }
           }
         }
         else {
@@ -275,7 +292,13 @@ public class Woo {
                   return cont;
                 }
                 else {
-                  return goToGym(name, region);
+                  boolean gym = goToGym(name, region)
+                  if (gym == false){
+                    goToNurse(name, region);
+                    walk(name, region);
+                  } else {
+                    return gym;
+                  }
                 }
               }
               else {
@@ -327,13 +350,13 @@ public class Woo {
     public static void catchP(Player name, Pokemon pokName, String region) {
       //StdAudio.loopInBackground("city.wav");
       int random = (int) ((Math.random() * 10));
+      System.out.println();
       System.out.println("You try to catch a " + pokName._name + "...");
         //wait(1);
       if (name._numPokeball <= 0) {
         //wait(1);
         System.out.println("You do not have enough pokeballs."); //need pokeball to catch
         //wait(1);
-        walk(name, region);
       }
       else {
         if (random <= 7) { //catching is very likely
@@ -350,7 +373,6 @@ public class Woo {
           name.displayInventory(); //print out inventory
           System.out.println();
           //wait(1);
-          walk(name, region);
         } else {
           //wait(1);
           System.out.println("The pokemon got away");
@@ -359,7 +381,6 @@ public class Woo {
           name.displayInventory();
           System.out.println();
           //wait(1);
-          walk(name, region);
         }
       }
     }
@@ -422,7 +443,6 @@ public class Woo {
         }
         //wait(1);
         //if there are no more pokemon left, display stats of fainted pokemon
-        name._pokedex[i-1].displayt();
         System.out.println();
         System.out.println("All of your Pokemon have fainted!");
         //wait(1);
@@ -464,13 +484,12 @@ public class Woo {
         //heals hp
         name._pokedex[i]._defense = name._pokedex[i]._lvl*name._pokedex[i].getDefenseMultiplier();
         //heals defense
-
-        //displays newly healed pokemon
-        System.out.println();
-        name.displayPokedex();
-        System.out.println();
-        //wait(1);
       }
+      //displays newly healed pokemon
+      System.out.println();
+      name.displayPokedex();
+      System.out.println();
+      //wait(1);
     }
 
 

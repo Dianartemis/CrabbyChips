@@ -99,21 +99,61 @@ static Scanner in = new Scanner(System.in);
       }
       else{
         _mana = getMana() - 25;
-        if (name._defense >= getAttack()){
-          name._defense = (name._defense - (getAttack()));
-        } else if (name._defense < getAttack() && name._defense > 0){
-          int old = name._defense;
-          name._defense = 0;
-          if ((getAttack() - old) > name._hp){
-            name._hp = 0;
-          } else {
-            name._hp = (name._hp - (getAttack() - old));
+        if (name instanceof Water){
+          if (name._defense >= getAttack()){
+            name._defense = (name._defense - (getAttack()));
+          } else if (name._defense < getAttack() && name._defense > 0){
+            int old = name._defense;
+            name._defense = 0;
+            if ((getAttack() - old) > name._hp){
+              name._hp = 0;
+            } else {
+              name._hp = (name._hp - (getAttack() - old));
+            }
+          } else if (name._defense == 0){
+            if (name._hp > getAttack()){
+              name._hp = (name._hp - (getAttack()));
+            } else {
+              name._hp = 0;
+            }
           }
-        } else if (name._defense == 0){
-          if (name._hp > getAttack()){
-            name._hp = (name._hp - (getAttack()));
-          } else {
-            name._hp = 0;
+        } else if(name instanceof Fire){
+          double newAttack = getAttack()*1.5;
+          if (name._defense >= newAttack){
+            name._defense = (int)(name._defense - (newAttack));
+          } else if (name._defense < newAttack && name._defense > 0){
+            int old = name._defense;
+            name._defense = 0;
+            if ((newAttack - old) > name._hp){
+              name._hp = 0;
+            } else {
+              name._hp = (int) (name._hp - (newAttack - old));
+            }
+          } else if (name._defense == 0){
+            if (name._hp > newAttack){
+              name._hp = (int) (name._hp - (newAttack));
+            } else {
+              name._hp = 0;
+            }
+          }
+        } else if (name instanceof Grass){
+          double newAttack = getAttack()*0.5;
+          if (name._defense >= newAttack){
+            name._defense = (int)(name._defense - (newAttack));
+          } else if (name._defense < newAttack && name._defense > 0){
+            int old = name._defense;
+            name._defense = 0;
+            if ((newAttack - old) > name._hp){
+              name._hp = 0;
+            } else {
+              name._hp = (int) (name._hp - (newAttack - old));
+            }
+          } else if (name._defense == 0){
+            if (name._hp > newAttack){
+              name._hp = (int) (name._hp - (newAttack));
+            } else {
+              name._hp = 0;
+            }
           }
         }
         wait(1);
@@ -210,21 +250,61 @@ static Scanner in = new Scanner(System.in);
         }
         else{
           _mana = getMana() - 25;
-          if (name._defense >= getAttack()){
-            name._defense = (name._defense - (getAttack()));
-          } else if (name._defense < getAttack() && name._defense > 0){
-            int old = name._defense;
-            name._defense = 0;
-            if ((getAttack() - old) > name._hp){
-              name._hp = 0;
-            } else {
-              name._hp = (name._hp - (getAttack() - old));
+          if (name instanceof Water){
+            if (name._defense >= getAttack()){
+              name._defense = (name._defense - (getAttack()));
+            } else if (name._defense < getAttack() && name._defense > 0){
+              int old = name._defense;
+              name._defense = 0;
+              if ((getAttack() - old) > name._hp){
+                name._hp = 0;
+              } else {
+                name._hp = (name._hp - (getAttack() - old));
+              }
+            } else if (name._defense == 0){
+              if (name._hp > getAttack()){
+                name._hp = (name._hp - (getAttack()));
+              } else {
+                name._hp = 0;
+              }
             }
-          } else if (name._defense == 0){
-            if (name._hp > getAttack()){
-              name._hp = (name._hp - (getAttack()));
-            } else {
-              name._hp = 0;
+          } else if(name instanceof Fire){
+            double newAttack = getAttack()*1.5;
+            if (name._defense >= newAttack){
+              name._defense = (int)(name._defense - (newAttack));
+            } else if (name._defense < newAttack && name._defense > 0){
+              int old = name._defense;
+              name._defense = 0;
+              if ((newAttack - old) > name._hp){
+                name._hp = 0;
+              } else {
+                name._hp = (int) (name._hp - (newAttack - old));
+              }
+            } else if (name._defense == 0){
+              if (name._hp > newAttack){
+                name._hp = (int) (name._hp - (newAttack));
+              } else {
+                name._hp = 0;
+              }
+            }
+          } else if (name instanceof Grass){
+            double newAttack = getAttack()*0.5;
+            if (name._defense >= newAttack){
+              name._defense = (int)(name._defense - (newAttack));
+            } else if (name._defense < newAttack && name._defense > 0){
+              int old = name._defense;
+              name._defense = 0;
+              if ((newAttack - old) > name._hp){
+                name._hp = 0;
+              } else {
+                name._hp = (int) (name._hp - (newAttack - old));
+              }
+            } else if (name._defense == 0){
+              if (name._hp > newAttack){
+                name._hp = (int) (name._hp - (newAttack));
+              } else {
+                name._hp = 0;
+              }
             }
           }
           wait(1);
@@ -233,17 +313,13 @@ static Scanner in = new Scanner(System.in);
           System.out.println("The foe is blasted with a forceful shot of water.");
           wait(1);
           if(name.isAlive() == false){
-            wait(1);
             System.out.println(getName() + " has defeated their opponent!");
-            System.out.println();
-            wait(1);
           }
           System.out.println();
           displayt();
           System.out.println();
           name.displayt();
           System.out.println();
-
       }
     }
       // Rain Dance
