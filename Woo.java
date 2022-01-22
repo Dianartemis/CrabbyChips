@@ -449,6 +449,8 @@ public class Woo {
           System.out.println();
           //wait(1);
           opponent.moveOther(generateMove(opponent), name._pokedex[i]); // opponents move is random
+          opponent._exp = opponent._exp + 20;
+          opponent.lvlUp();
           //wait(1);
         }
           i = i + 1; // If by this time, the opponent is still alive but the battling pokemon is dead after the opponent move is case, increment to pull out new pokemon
@@ -533,13 +535,13 @@ public class Woo {
       //wait(1);
       System.out.println("\nYou enter the gym and prepare to battle Flint's first Pokemon, Infernape.");
       //wait(1);
-      Pokemon infernape = new Fire("Infernape", 25, 3818);
+      Pokemon infernape = new Fire("Infernape", 23, 2310);
       boolean firstBattle = battle(name, infernape, region);
       if (firstBattle == true) { // if wins first battle, fights next
         //wait(1);
         System.out.println("\nPrepare to fight Flint's next Pokemon, Rapidash!");
         //wait(1);
-        Pokemon rapidash = new Fire("Rapidash", 27, 2739);
+        Pokemon rapidash = new Fire("Rapidash", 25, 2530);
         boolean secondBattle = battle(name, rapidash, region);
         if (secondBattle == true) {
           //wait(1);
@@ -556,13 +558,13 @@ public class Woo {
       //wait(1);
       System.out.println("\nYou enter the gym and prepare to battle Flint's first Pokemon, Infernape.");
       //wait(1);
-      Pokemon infernape = new Fire("Infernape", 25, 3818);
+      Pokemon infernape = new Fire("Infernape", 23, 2310);
       boolean firstBattle = battle(name, infernape, region);
       if (firstBattle == true) { // if wins first battle, fights next
         //wait(1);
         System.out.println("\nPrepare to fight Flint's next Pokemon, Rapidash!");
         //wait(1);
-        Pokemon rapidash = new Fire("Rapidash", 27, 2739);
+        Pokemon rapidash = new Fire("Rapidash", 25, 2530);
         boolean secondBattle = battle(name, rapidash, region);
         if (secondBattle == true) {
           //wait(1);
@@ -581,12 +583,12 @@ public class Woo {
         //wait(1);
         System.out.println("\nYou enter the gym and prepare to battle Flint's first Pokemon, Infernape.");
         //wait(1);
-        Pokemon infernape = new Fire("Infernape", 25, 3818);
+        Pokemon infernape = new Fire("Infernape", 23, 2310);
         boolean firstBattle = battle(name, infernape, region);
         if (firstBattle == true) {
           System.out.println("\nPrepare to fight Flint's next Pokemon, Rapidash!");
           //wait(1);
-          Pokemon rapidash = new Fire("Rapidash", 27, 2739);
+          Pokemon rapidash = new Fire("Rapidash", 25, 2530);
           boolean secondBattle = battle(name, rapidash, region);
           if (secondBattle == true) {
             System.out.println("\nCongratulations! You have successfully defeated Flint!");
@@ -617,19 +619,19 @@ public class Woo {
       //wait(1);
       System.out.println("\nYou enter the gym and prepare to battle Crasher Wake's first Pokemon Gyarados.");
       //wait(1);
-      Pokemon gyarados = new Water("Gyarados", 27, 2690);
+      Pokemon gyarados = new Water("Gyarados", 19, 1990);
       boolean firstBattle = battle(name, gyarados, region);
       if (firstBattle == true) {
         //wait(1);
         System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Quagsire!");
         //wait(1);
-        Pokemon quagsire = new Water("Quagsire", 27, 2630);
+        Pokemon quagsire = new Water("Quagsire", 20, 2030);
         boolean secondBattle = battle(name, quagsire, region);
         if (secondBattle == true) {
           //wait(1);
           System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Floatzel!");
           //wait(1);
-          Pokemon floatzel = new Water("Floatzel", 30, 2950);
+          Pokemon floatzel = new Water("Floatzel", 21, 2150);
           boolean thirdBattle = battle(name, floatzel, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -647,19 +649,19 @@ public class Woo {
       //wait(1);
       System.out.println("\nYou enter the gym and prepare to battle Crasher Wake's first Pokemon Gyarados.");
       //wait(1);
-      Pokemon gyarados = new Water("Gyarados", 27, 2690);
+      Pokemon gyarados = new Water("Gyarados", 19, 1990);
       boolean firstBattle = battle(name, gyarados, region);
       if (firstBattle == true) {
         //wait(1);
         System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Quagsire!");
         //wait(1);
-        Pokemon quagsire = new Water("Quagsire", 27, 2630);
+        Pokemon quagsire = new Water("Quagsire", 20, 2030);
         boolean secondBattle = battle(name, quagsire, region);
         if (secondBattle == true) {
           //wait(1);
           System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Floatzel!");
           //wait(1);
-          Pokemon floatzel = new Water("Floatzel", 30, 2950);
+          Pokemon floatzel = new Water("Floatzel", 21, 2150);
           boolean thirdBattle = battle(name, floatzel, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -679,19 +681,19 @@ public class Woo {
       //wait(1);
       System.out.println("\nYou enter the gym and prepare to battle Crasher Wake's first Pokemon Gyarados.");
       //wait(1);
-      Pokemon gyarados = new Water("Gyarados", 27, 2690);
+      Pokemon gyarados = new Water("Gyarados", 19, 1990);
       boolean firstBattle = battle(name, gyarados, region);
       if (firstBattle == true) {
         //wait(1);
         System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Quagsire!");
         //wait(1);
-        Pokemon quagsire = new Water("Quagsire", 27, 2630);
+        Pokemon quagsire = new Water("Quagsire", 20, 2030);
         boolean secondBattle = battle(name, quagsire, region);
         if (secondBattle == true) {
           //wait(1);
           System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Floatzel!");
           //wait(1);
-          Pokemon floatzel = new Water("Floatzel", 30, 2950);
+          Pokemon floatzel = new Water("Floatzel", 21, 2150);
           boolean thirdBattle = battle(name, floatzel, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -723,19 +725,19 @@ public class Woo {
       //wait(1);
       System.out.println("\nYou enter the gym and prepare to battle Gardenia's first Pokemon, Cherubi.");
       //wait(1);
-      Pokemon cherubi = new Water("Cherubi", 19, 1990);
+      Pokemon cherubi = new Water("Cherubi", 14, 1490);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         //wait(1);
         System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         //wait(1);
-        Pokemon turtwig = new Water("Turtwig", 27, 1930);
+        Pokemon turtwig = new Water("Turtwig", 16, 1630);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           //wait(1);
           System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           //wait(1);
-          Pokemon roserade = new Water("Roserade",22, 2250);
+          Pokemon roserade = new Water("Roserade",17, 1750);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -753,19 +755,19 @@ public class Woo {
       //wait(1);
       System.out.println("\nYou enter the gym and prepare to battle Gardenia's First Pokemon, Cherubi.");
       //wait(1);
-      Pokemon cherubi = new Water("Cherubi", 19, 1990);
+      Pokemon cherubi = new Water("Cherubi", 14, 1490);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         //wait(1);
         System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         //wait(1);
-        Pokemon turtwig = new Water("Rurtwig", 27, 1930);
+        Pokemon turtwig = new Water("Turtwig", 16, 1630);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           //wait(1);
           System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           //wait(1);
-          Pokemon roserade = new Water("Roserade",22, 2250);
+          Pokemon roserade = new Water("Roserade",17, 1750);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -785,19 +787,19 @@ public class Woo {
       //wait(1);
       System.out.println("\nYou enter the gym and prepare to battle Gardenia's first Pokemon, Cherubi.");
       //wait(1);
-      Pokemon cherubi = new Water("cherubi", 19, 1990);
+      Pokemon cherubi = new Water("Cherubi", 14, 1490);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         //wait(1);
         System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         //wait(1);
-        Pokemon turtwig = new Water("Turtwig", 27, 1930);
+        Pokemon turtwig = new Water("Turtwig", 16, 1630);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           //wait(1);
           System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           //wait(1);
-          Pokemon roserade = new Water("Roserade",22, 2250);
+          Pokemon roserade = new Water("Roserade",17, 1750);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -855,7 +857,7 @@ public class Woo {
     // POKEMON DESCRIPTIONS
     pokemonOne = in.nextLine().toLowerCase();
     if (pokemonOne.equals("chimchar")) {
-      Fire chimchar = new Fire("Chimchar", 5, 40);
+      Fire chimchar = new Fire("Chimchar", 5, 500);
       //wait(1);
       System.out.println("\nA Chimp Pokemon.");
       //wait(1);
@@ -871,7 +873,7 @@ public class Woo {
       chimchar.display();
     }
     else if (pokemonOne.equals("piplup")) {
-      Pokemon piplup = new Water("Piplup", 5, 40);
+      Pokemon piplup = new Water("Piplup", 5, 500);
       //wait(1);
       System.out.println("\nA Penguin Pokemon.");
       //wait(1);
@@ -885,7 +887,7 @@ public class Woo {
       piplup.display();
     }
     else if (pokemonOne.equals("turtwig")) {
-      Pokemon turtwig = new Grass("Turtwig", 5, 40);
+      Pokemon turtwig = new Grass("Turtwig", 5, 500);
       //wait(1);
       System.out.println("\nA Tiny Leaf Pokemon.");
       //wait(1);
@@ -903,7 +905,7 @@ public class Woo {
     else {
       //wait(1);
       System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Chimchar.");
-      Pokemon chimchar = new Fire("Chimchar", 5, 40);
+      Pokemon chimchar = new Fire("Chimchar", 5, 500);
       //wait(1);
       System.out.println("\nA Chimp Pokemon.");
       //wait(1);
@@ -925,7 +927,7 @@ public class Woo {
 
     pokemonTwo = in.nextLine().toLowerCase();
     if (pokemonTwo.equals("chimchar")) {
-      Pokemon chimchar = new Fire("Chimchar", 5, 40);
+      Pokemon chimchar = new Fire("Chimchar", 5, 500);
       //wait(1);
       System.out.println("\nA Chimp Pokemon.");
       //wait(1);
@@ -941,7 +943,7 @@ public class Woo {
       chimchar.display();
     }
     else if (pokemonTwo.equals("piplup")) {
-      Pokemon piplup = new Water("Piplup", 5, 40);
+      Pokemon piplup = new Water("Piplup", 5, 500);
       //wait(1);
       System.out.println("\nA Penguin Pokemon.");
       //wait(1);
@@ -955,7 +957,7 @@ public class Woo {
       piplup.display();
     }
     else if (pokemonTwo.equals("turtwig")) {
-      Pokemon turtwig = new Grass("Turtwig", 5, 40);
+      Pokemon turtwig = new Grass("Turtwig", 5, 500);
       //wait(1);
       System.out.println("\nA Tiny Leaf Pokemon.");
       //wait(1);
@@ -973,7 +975,7 @@ public class Woo {
     else {
       //wait(1);
       System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Piplup.");
-      Pokemon piplup = new Water("Piplup", 5, 40);
+      Pokemon piplup = new Water("Piplup", 5, 500);
       //wait(1);
       System.out.println("A Penguin Pokemon.");
       //wait(1);
@@ -993,7 +995,7 @@ public class Woo {
 
     pokemonThree = in.nextLine().toLowerCase();
     if (pokemonThree.equals("chimchar")) {
-      Pokemon chimchar = new Fire("Chimchar", 5, 40);
+      Pokemon chimchar = new Fire("Chimchar", 5, 500);
       //wait(1);
       System.out.println("\nA Chimp Pokemon.");
       //wait(1);
@@ -1009,7 +1011,7 @@ public class Woo {
       chimchar.display();
     }
     else if (pokemonThree.equals("piplup")) {
-      Pokemon piplup = new Water("Piplup", 5, 40);
+      Pokemon piplup = new Water("Piplup", 5, 500);
       //wait(1);
       System.out.println("\nA Penguin Pokemon.");
       //wait(1);
@@ -1023,7 +1025,7 @@ public class Woo {
       piplup.display();
     }
     else if (pokemonThree.equals("turtwig")) {
-      Pokemon turtwig = new Grass("Turtwig", 5, 40);
+      Pokemon turtwig = new Grass("Turtwig", 5, 500);
       //wait(1);
       System.out.println("\nA Tiny Leaf Pokemon.");
       //wait(1);
@@ -1041,7 +1043,7 @@ public class Woo {
     else {
       //wait(1);
       System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Turtwig.");
-      Pokemon turtwig = new Grass("Turtwig", 5, 40);
+      Pokemon turtwig = new Grass("Turtwig", 5, 500);
       //wait(1);
       System.out.println("\nA Tiny Leaf Pokemon.");
       //wait(1);

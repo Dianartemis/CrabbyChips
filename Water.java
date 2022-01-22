@@ -56,9 +56,10 @@ static Scanner in = new Scanner(System.in);
   }
 
   public void lvlUp(){
-    if((_exp % 100 == 0) && (_exp >= 100)){
+    if((_exp - (_lvl*100)) == 100){
       wait(1);
-      System.out.println("Congrats! You leveled up! You are now level " + (_exp / 100) + "!");
+      System.out.println();
+      System.out.println(getName() + " has leveled up! " + getName() + " is now level " + (_exp / 100) + "!");
       wait(1);
       _lvl = _exp / 100;
       _hp = getHPMultiplier() *_lvl;
