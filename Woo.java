@@ -494,6 +494,7 @@ public class Woo {
     System.out.println();
     //wait(1);
     System.out.println("You leave the nurse.");
+    goToGym(name, region);
   }
 
   public static boolean goToGym(Player name, String region) {
