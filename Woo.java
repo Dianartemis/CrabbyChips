@@ -215,8 +215,8 @@ public class Woo {
         //wait(1);
         System.out.println("\n" + civilian._name + " gives you a Berry and a Pokeball for your efforts!");
         System.out.println();
-        Player._numBerries += 1;
-        Player._numPokeball += 1;
+        name._numBerries += 1;
+        name._numPokeball += 1;
         //civilian gives player pokeball and berries
         //wait(1);
         civilian.goodbye(name); //civilian leaves
@@ -357,7 +357,6 @@ public class Woo {
         } else {
           //wait(1);
           System.out.println("The pokemon got away");
-          name._numPokemon = name._numPokemon - 1;
           name._numPokeball = name._numPokeball - 1;
           System.out.println();
           name.displayInventory();
@@ -988,47 +987,47 @@ public class Woo {
     response = in.nextLine().toLowerCase();
     if (response.equals("chimchar")) {
       Fire starter = new Fire("Chimchar", 4, 400);
-      Player.add(starter);
+      player.add(starter);
       //wait(1);
       System.out.println("\nCongrats, you got your first Pokemon! It's a Chimchar!");
     } else if (response.equals("piplup")) {
       Water starter = new Water("Piplup", 4, 400);
-      Player.add(starter);
+      player.add(starter);
       //wait(1);
       System.out.println("\nCongrats, you got your first Pokemon! It's a Piplup!");
     } else if (response.equals("turtwig")) {
       Grass starter = new Grass("Turtwig", 4, 400);
-      Player.add(starter);
+      player.add(starter);
       //wait(1);
       System.out.println("\nCongrats, you got your first Pokemon! It's a Turtwig!");
     } else if (!response.equals("chimchar") && !response.equals("piplup") && !response.equals("turtwig")) {
       int random = (int) ((Math.random() * 3));
       if (random == 0) {
         Fire starter = new Fire("Chimchar", 4, 400);
-        Player.add(starter);
+        player.add(starter);
         //wait(1);
         System.out.println("\nYou responded too late! The only Pokemon left is Chimchar!");
       } else if (random == 1) {
         Water starter = new Water("Piplup", 4, 400);
-        Player.add(starter);
+        player.add(starter);
         //wait(1);
         System.out.println("\nYou responded too late! The only Pokemon left is Piplup!");
       } else if (random == 2) {
         Grass starter = new Grass("Turtwig", 4, 400);
-        Player.add(starter);
+        player.add(starter);
         //wait(1);
         System.out.println("\nYou responded too late! The only Pokemon left is Turtwig!");
       }
     }
-    Player._numPokemon += 1;
-    Player.displayPokedex();
+    player._numPokemon += 1;
+    player.displayPokedex();
     System.out.println();
     //wait(1);
     System.out.println("\nYou also receive 5 Pokeballs and 5 berries from Dr. Footstep.");
-    Player._numPokeball += 5;
-    Player._numBerries += 5;
+    player._numPokeball += 5;
+    player._numBerries += 5;
     System.out.println();
-    Player.displayInventory();
+    player.displayInventory();
     //wait(1);
     System.out.println();
     System.out.println("\nYou thank Dr. Footstep and walk out of the clinic.");
@@ -1036,24 +1035,6 @@ public class Woo {
 
   }
 
-  Woo game = new Woo();
-
-  public static void test(){
-    Fire pok = new Fire ("name", 2, 0);
-    System.out.println(pok._name);
-  }
-
-  public static Player play(){
-    Player player = new Player();
-    return player;
-  }
-
-  public static Player addinmine(){
-    Player player = new Player();
-    Pokemon pok = generatePokemon(player, 0);
-    player.add(pok);
-    return player;
-  }
   public static void main(String[] args) {
     Player player = new Player();
 
