@@ -100,7 +100,7 @@ public class Woo {
     //wait(1);
     boolean cont = false;
     int random = (int) (Math.random() * 10); //random number from 0-9
-    if (random <= 10) { // 30% chance that nothing appears
+    if (random <= 2) { // 30% chance that nothing appears
       System.out.println("\nNothing appeared.");
       //wait(1);
       System.out.println("\nWalk again or go to a gym? (walk/gym)"); //if nothing appears, can go to gym or walk again
@@ -110,7 +110,7 @@ public class Woo {
         return cont;
       }
       else if (response.equals("gym")) {
-        if (name._numPokemon < 1){ //cannot go to gym if player has less than four pokemon
+        if (name._numPokemon < 4){ //cannot go to gym if player has less than four pokemon
           //wait(1);
           System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
           return cont;
@@ -151,7 +151,27 @@ public class Woo {
           //wait(1);
           System.out.println("\nYou sucessfully escaped!");
           //wait(1);
-          System.out.println("\nYou walk...");
+          System.out.println("\nWalk again or go to a gym? (walk/gym)"); //if nothing appears, can go to gym or walk again
+          String response = "";
+          response = in.nextLine().toLowerCase();
+          if (response.equals("walk")) {
+            return cont;
+          }
+          else if (response.equals("gym")) {
+            if (name._numPokemon < 4){ //cannot go to gym if player has less than four pokemon
+              //wait(1);
+              System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
+              return cont;
+            }
+            else {
+              return goToGym(name, region);
+            }
+          }
+          else {
+           //wait(1);
+             System.out.println("\nThat is not a valid response. You go on a walk...");
+             return false;
+          }
           // ask
           }
         }
@@ -199,6 +219,27 @@ public class Woo {
         //wait(1);
         civilian.goodbye(name); //civilian leaves
         // add extra talking functionality for stretch
+        System.out.println("Do you want to walk or go to the gym? (walk/gym)");
+        String res = "";
+        res = in.nextLine().toLowerCase();
+        if (res.equals("walk")) {
+          return cont;
+        }
+        else if (res.equals("gym")) {
+          if (name._numPokemon < 4){ //cannot go to gym if player has less than four pokemon
+            //wait(1);
+            System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
+            return cont;
+          }
+          else {
+            return goToGym(name, region);
+          }
+        }
+        else {
+         //wait(1);
+           System.out.println("\nThat is not a valid response. You go on a walk...");
+           return false;
+        }
       }
       else {
         //wait(1);
@@ -226,8 +267,27 @@ public class Woo {
               //wait(1);
               System.out.println("\nYou sucessfully escaped!");
               //wait(1);
-              System.out.println("\nYou walk...");
-              // ask them
+              System.out.println("\nWalk again or go to a gym? (walk/gym)"); //if nothing appears, can go to gym or walk again
+              String response = "";
+              response = in.nextLine().toLowerCase();
+              if (response.equals("walk")) {
+                return cont;
+              }
+              else if (response.equals("gym")) {
+                if (name._numPokemon < 4){ //cannot go to gym if player has less than four pokemon
+                  //wait(1);
+                  System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
+                  return cont;
+                }
+                else {
+                  return goToGym(name, region);
+                }
+              }
+              else {
+               //wait(1);
+                 System.out.println("\nThat is not a valid response. You go on a walk...");
+                 return false;
+              }
             }
           }
           else if (encounterPokemon.equals("battle")) {
@@ -344,7 +404,7 @@ public class Woo {
             System.out.println();
             name._pokedex[i].move(answer, opponent); //pokemon makes a move
             //wait(1);
-            //name._pokedex[i]._exp = name._pokedex[i]._exp + 20; //exp goes up each move
+            name._pokedex[i]._exp = name._pokedex[i]._exp + 20; //exp goes up each move
             name._pokedex[i].lvlUp(); //level up if the exp is full (100 exp)
             //if level up, should make pokemon healthy again
             //wait(1);
