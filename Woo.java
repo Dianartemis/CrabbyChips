@@ -691,7 +691,7 @@ public class Woo {
               //wait(1);
               System.out.println("Congratulations! You have successfully defeated Gardenia!");
               //wait(1);
-              System.out.println("You have earned the Water Badge!");
+              System.out.println("You have earned the Grass Badge!");
               //wait(1);
               badge = true;
               return badge;
