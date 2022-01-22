@@ -49,6 +49,7 @@ public class Player {
     for (int i = 0; i <_pokedexSize; i++) {
       System.out.println();
       System.out.println(_pokedex[i]);
+      System.out.println();
       _pokedex[i].displayt();
     }
   }
