@@ -100,11 +100,12 @@ static Scanner in = new Scanner(System.in);
         if (name._defense >= getAttack()){
           name._defense = (name._defense - (getAttack()));
         } else if (name._defense < getAttack() && name._defense > 0){
+          int old = name._defense;
           name._defense = 0;
-          if ((getAttack() - name._defense) > name._hp){
+          if ((getAttack() - old) > name._hp){
             name._hp = 0;
           } else {
-            name._hp = (name._hp - (getAttack() - name._defense));
+            name._hp = (name._hp - (getAttack() - old));
           }
         } else if (name._defense == 0){
           if (name._hp > getAttack()){
@@ -214,11 +215,12 @@ static Scanner in = new Scanner(System.in);
         if (name._defense >= getAttack()){
           name._defense = (name._defense - (getAttack()));
         } else if (name._defense < getAttack() && name._defense > 0){
+          int old = name._defense;
           name._defense = 0;
-          if ((getAttack() - name._defense) > name._hp){
+          if ((getAttack() - old) > name._hp){
             name._hp = 0;
           } else {
-            name._hp = (name._hp - (getAttack() - name._defense));
+            name._hp = (name._hp - (getAttack() - old));
           }
         } else if (name._defense == 0){
           if (name._hp > getAttack()){
