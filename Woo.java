@@ -326,7 +326,7 @@ public class Woo {
         while ( i < name._pokedexSize) { //will go through each pokemon in order of catching to try to faint opponent
           //wait(1);
           System.out.println("You take out " + name._pokedex[i]._name + "!");
-          System.out.println();
+          System.out.println("You try to catch a " + pokName._name + "...");
           while (name._pokedex[i].isAlive() ==true) { //if the pokemon you took out is still alive, it will continue to attack
             //wait(1);
             System.out.print("Choose a move...");
