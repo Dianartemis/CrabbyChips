@@ -17,7 +17,7 @@ public class Woo {
     int level = generateLvl(name);
 
     if (type == 0) { // 0 is fire
-      String pokemon = "cyndaquil";//fire[random];
+      String pokemon = fire[random];
       Pokemon pok = new Fire(pokemon, 5, level*100);
       return pok;
     }
@@ -100,7 +100,7 @@ public class Woo {
     //wait(1);
     boolean cont = false;
     int random = (int) (Math.random() * 10); //random number from 0-9
-    if (random <= 2) { // 30% chance that nothing appears
+    if (random <= 10) { // 30% chance that nothing appears
       System.out.println("\nNothing appeared.");
       //wait(1);
       System.out.println("\nWalk again or go to a gym? (walk/gym)"); //if nothing appears, can go to gym or walk again
@@ -110,17 +110,13 @@ public class Woo {
         return cont;
       }
       else if (response.equals("gym")) {
-        if (name._numPokemon < 4){ //cannot go to gym if player has less than four pokemon
+        if (name._numPokemon < 1){ //cannot go to gym if player has less than four pokemon
           //wait(1);
           System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
           return cont;
         }
         else {
-          boolean win = goToGym(name, region);
-          if (win == true){
-            cont = true;
-            return cont;
-          }
+          return goToGym(name, region);
         }
       }
       else {
@@ -298,8 +294,7 @@ public class Woo {
         } else {
           //wait(1);
           System.out.println("The pokemon got away");
-          name.add(pokName); //should be deleted
-          name._numPokemon = name._numPokemon + 1; //should be changed
+          name._numPokemon = name._numPokemon - 1;
           name._numPokeball = name._numPokeball - 1;
           System.out.println();
           name.displayInventory();
@@ -312,7 +307,7 @@ public class Woo {
     }
   //start and end battle. If win, true; lose, false
   public static boolean battle(Player name, Pokemon opponent, String region) {
-      StdAudio.loopInBackground("battle.wav"); // start some smashing battle music
+    //  StdAudio.loopInBackground("battle.wav"); // start some smashing battle music
       boolean result = false;
       //wait(1);
       System.out.println("You begin your battle with " + opponent._name + "...");
@@ -351,7 +346,7 @@ public class Woo {
             System.out.println();
             name._pokedex[i].move(answer, opponent); //pokemon makes a move
             //wait(1);
-            name._pokedex[i]._exp = name._pokedex[i]._exp + 20; //exp goes up each move
+            //name._pokedex[i]._exp = name._pokedex[i]._exp + 20; //exp goes up each move
             name._pokedex[i].lvlUp(); //level up if the exp is full (100 exp)
             //if level up, should make pokemon healthy again
             //wait(1);
@@ -445,7 +440,7 @@ public class Woo {
     //gym depends on region
     if (region.equals("Eterna City")) {
       return gymBattleGrass(name, region);
-    } else if (region.equals("Pastria City")){
+    } else if (region.equals("Pastoria City")){
       return gymBattleWater(name, region);
     } else {
       return gymBattleFire(name, region);
@@ -454,7 +449,7 @@ public class Woo {
 
   public static boolean gymBattleFire(Player name, String region) {
     //StdAudio.loopInBackground("city.wav");
-    boolean badge = false;
+    boolean badge = true;
     String answer = "";
     //wait(1);
     System.out.println("You enter the gym and prepare to fight Flint.");
@@ -487,12 +482,22 @@ public class Woo {
           //wait(1);
           badge = true; //if win both, then return true
           }
+          else if (secondBattle == false){
+            System.out.println("here 1");
+            return badge;
+            //System.out.println("here 1");
+          }
+        } else if(firstBattle == false) {
+          System.out.println("here two");
+          return badge;
+        //  System.out.println("here two");
         }
       } else {
         //wait(1);
         System.out.println("That is not a valid response, you will not go to the Nurse");
         //wait(1);
         System.out.println("You enter the gym and prepare to battle Flint.");
+
         //wait(1);
         Pokemon infernape = new Fire("Infernape", 25, 3818);
         boolean firstBattle = battle(name, infernape, region);
@@ -507,9 +512,17 @@ public class Woo {
             System.out.println("You have earned the Fire Badge!");
             //wait(1);
             badge = true;
+          } else {
+            System.out.println("it was here");
+            return badge;
           }
         }
+        else{
+          System.out.println("or here");
+          return badge;
+        }
       }
+      System.out.println("mayube");
     return badge;
   }
 
@@ -597,7 +610,7 @@ public class Woo {
       boolean badge = false;
       String answer = "";
       //wait(1);
-      System.out.println("You enter the gym and prepare to fight Gardeniae.");
+      System.out.println("You enter the gym and prepare to fight Gardenia.");
       //wait(1);
       System.out.println("Do you wish to visit the Nurse before battling Gardenia? (yes/no)");
       answer = in.nextLine().toLowerCase();
@@ -1001,6 +1014,7 @@ public class Woo {
     while (i < 3){
       if (walk(player, regions[i]) == true){
         System.out.println("You beat " + regions[i]);
+        i++;
       }
     }
       System.out.println("\nYou beat the game. Congragulations!");

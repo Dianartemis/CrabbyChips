@@ -68,7 +68,7 @@ public class Pokemon {
 
 
     public boolean isAlive(){
-      return false;
+      return true;
     }
 
     public int getHPMultiplier() {

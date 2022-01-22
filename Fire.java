@@ -97,16 +97,16 @@ static Scanner in = new Scanner(System.in);
       }
       else{
         _mana = getMana() - 25;
-        if (name.getDefense() >= getAttack()){
+        if (name._defense >= getAttack()){
           name._defense = (name._defense - (getAttack()));
-        } else if (name.getDefense() < getAttack() && name.getDefense() > 0){
+        } else if (name._defense < getAttack() && name._defense > 0){
           name._defense = 0;
           if ((getAttack() - name._defense) > name._hp){
             name._hp = 0;
           } else {
             name._hp = (name._hp - (getAttack() - name._defense));
           }
-        }else{
+        } else if (name._defense == 0){
           if (name._hp > getAttack()){
             name._hp = (name._hp - (getAttack()));
           } else {
@@ -213,16 +213,16 @@ static Scanner in = new Scanner(System.in);
       }
       else{
         _mana = getMana() - 25;
-        if (name.getDefense() >= getAttack()){
+        if (name._defense >= getAttack()){
           name._defense = (name._defense - (getAttack()));
-        } else if (name.getDefense() < getAttack() && name.getDefense() > 0){
+        } else if (name._defense < getAttack() && name._defense > 0){
           name._defense = 0;
           if ((getAttack() - name._defense) > name._hp){
             name._hp = 0;
           } else {
             name._hp = (name._hp - (getAttack() - name._defense));
           }
-        } else {
+        } else if (name._defense == 0){
           if (name._hp > getAttack()){
             name._hp = (name._hp - (getAttack()));
           } else {
