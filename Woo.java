@@ -545,7 +545,8 @@ public class Woo {
           return badge;
           }
         }
-      } else {
+      }
+       else {
         //wait(1);
         System.out.println("That is not a valid response, you will not go to the Nurse");
         //wait(1);
@@ -566,12 +567,7 @@ public class Woo {
             //wait(1);
             badge = true;
             return badge;
-          } else {
-            return badge;
           }
-        }
-        else{
-          return badge;
         }
       }
     return badge;
@@ -673,7 +669,6 @@ public class Woo {
 
         //StdAudio.close();
         goToNurseGym(name, region);
-        gymBattleGrass(name, region);
       } else if (answer.equals("no")) {
         //wait(1);
         System.out.println("You enter the gym and prepare to battle Gardenia.");
