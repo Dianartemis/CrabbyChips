@@ -121,7 +121,7 @@ public class Woo {
             goToNurse(name, region);
             walk(name, region);
           } else {
-            return gym;
+            return true;
           }
         }
       }
@@ -172,7 +172,7 @@ public class Woo {
                 walk(name, region);
               }
               else {
-                return gym;
+                return true;;
               }
             }
           }
@@ -240,7 +240,7 @@ public class Woo {
             goToNurse(name, region);
             walk(name, region);
           } else {
-            return gym;
+            return true;
           }
         }
       }
@@ -299,7 +299,7 @@ public class Woo {
                 walk(name, region);
               }
               else {
-                return gym;
+                return true;
               }
             }
           }
@@ -415,12 +415,24 @@ public class Woo {
           name._pokedex[i].displayMove(); // allows user to see moves
           String answer = "";
           answer = in.nextLine().toLowerCase();
-          while (!answer.equals("ember") && !answer.equals("bulk up") && !answer.equals("restore")
-              && !answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("rest")
-              && !answer.equals("razor leaf") && !answer.equals("safe guard")) { // if input not valid, asks for another input until it is valid
-            //wait(1);
-            System.out.println("\nInput a valid move:");
-            answer = in.nextLine().toLowerCase();
+          if (name._pokedex[i] instanceof Water){
+            while (!answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("rest")) { // if input not valid, asks for another input until it is valid
+              //wait(1);
+              System.out.println("\nInput a valid move:");
+              answer = in.nextLine().toLowerCase();
+            }
+          } else if (name._pokedex[i] instanceof Fire){
+            while (!answer.equals("ember") && !answer.equals("bulk up") && !answer.equals("restore")) { // if input not valid, asks for another input until it is valid
+              //wait(1);
+              System.out.println("\nInput a valid move:");
+              answer = in.nextLine().toLowerCase();
+            }
+          } else{
+            while (!answer.equals("razor leaf") && !answer.equals("safe guard") && !answer.equals("rest")) { // if input not valid, asks for another input until it is valid
+              //wait(1);
+              System.out.println("\nInput a valid move:");
+              answer = in.nextLine().toLowerCase();
+            }
           }
           System.out.println();
           name._pokedex[i].move(answer, opponent); // pokemon makes a move
