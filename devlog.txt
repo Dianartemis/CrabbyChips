@@ -14,14 +14,17 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
+meaning ?
+warning: LF will be replaced by CRLF in v6/Human.java.
+warning: LF will be replaced by CRLF in v6/Player.java.                                                                 The file will have its original line endings in your working directory
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 gym => multiple gym methods
+3 nurse => 1 nurse method
 
 
 LESSONS LEARNED
@@ -105,7 +108,7 @@ Lauren Lee :: Augmented catchP() and lvlUp()
 --------------------------------------------------------------
 Diana Akhmedova ::
 
-Lauren Lee ::
+Lauren Lee :: Fixed gyms bugs, fixed defense shielding 
 
 **TO DO: music (works in main, wont stop in battle), visuals, testing, gym battles, (optional: ASCII/text art)**
 ==============================================================
@@ -115,7 +118,7 @@ Lauren Lee ::
 --------------------------------------------------------------
 Diana Akhmedova ::
 
-Lauren Lee ::
+Lauren Lee :: Coded in toString method for pokemon and type advantages
 ==============================================================
 
 
