@@ -159,8 +159,7 @@ public class Woo {
             return cont;
           }
           else if (response.equals("gym")) {
-            System.out.println(name._numPokemon);
-            if (name._numPokemon < 4){ //cannot go to gym if player has less than four pokemon
+            if (name._numPokemon < 1){ //cannot go to gym if player has less than four pokemon
               //wait(1);
               System.out.println("\nYou can not go to the gym with less than four pokemon. You walk again...");
               return cont;

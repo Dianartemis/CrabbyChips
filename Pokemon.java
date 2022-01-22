@@ -21,6 +21,7 @@ public class Pokemon {
       _exp = experience;
     }
 
+
     public int getDefenseMultiplier(){
       return 0;
     }
@@ -54,6 +55,7 @@ public class Pokemon {
     public int getExp(){
       return _exp;
     }
+
     public void displayt(){
       System.out.println(_name + " / Stats:");
       System.out.println("HP: " + _hp);
