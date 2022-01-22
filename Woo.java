@@ -116,7 +116,7 @@ public class Woo {
           return cont;
         }
         else {
-          boolean gym = goToGym(name, region)
+          boolean gym = goToGym(name, region);
           if (gym == false){
             goToNurse(name, region);
             walk(name, region);
@@ -166,7 +166,7 @@ public class Woo {
               return cont;
             }
             else {
-              boolean gym = goToGym(name, region)
+              boolean gym = goToGym(name, region);
               if (gym == false){
                 goToNurse(name, region);
                 walk(name, region);
@@ -234,7 +234,7 @@ public class Woo {
             return cont;
           }
           else {
-            boolean gym = goToGym(name, region)
+            boolean gym = goToGym(name, region);
             if (gym == false){
               goToNurse(name, region);
               walk(name, region);
@@ -292,7 +292,7 @@ public class Woo {
                   return cont;
                 }
                 else {
-                  boolean gym = goToGym(name, region)
+                  boolean gym = goToGym(name, region);
                   if (gym == false){
                     goToNurse(name, region);
                     walk(name, region);
@@ -368,6 +368,8 @@ public class Woo {
           name._numPokemon = name._numPokemon + 1;
           name._numPokeball = name._numPokeball - 1;
           System.out.println();
+          System.out.println("You now have " + name._numPokemon + " pokemon");
+          System.out.println();
           name.displayPokedex(); //print out pokemon
           System.out.println();
           name.displayInventory(); //print out inventory
@@ -395,7 +397,7 @@ public class Woo {
       System.out.println("Here are the Stats of your Pokemon:");
       //wait(1);
       System.out.println();
-      name.displayPokedex();
+      name.displayPokemon();
       System.out.println();
       //wait(1);
       System.out.println("Here are the Stats of your opponent's Pokemon:");
@@ -487,7 +489,7 @@ public class Woo {
       }
       //displays newly healed pokemon
       System.out.println();
-      name.displayPokedex();
+      name.displayPokemon();
       System.out.println();
       //wait(1);
     }
@@ -1052,7 +1054,7 @@ public class Woo {
     // CHOOSING POKEMON
 
     //wait(1);
-    System.out.println("\nWhich starter Pokemon do you want? (chimchar/piplup/turtig)");
+    System.out.println("\nWhich starter Pokemon do you want? (chimchar/piplup/turtwig)");
     String response = "";
 
     response = in.nextLine().toLowerCase();
@@ -1114,7 +1116,6 @@ public class Woo {
 
     gameSetup(player);
     chooseStarter(player);
-
 
     String[] regions = new String[] {"Eterna City", "Pastoria City", "Sunyshore City"};
     int i = 0;

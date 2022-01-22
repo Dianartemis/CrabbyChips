@@ -118,7 +118,7 @@ static Scanner in = new Scanner(System.in);
             }
           }
         } else if(name instanceof Fire){
-          double newAttack = getAttack()*1.5;
+          double newAttack = getAttack()*1.3;
           if (name._defense >= newAttack){
             name._defense = (int)(name._defense - (newAttack));
           } else if (name._defense < newAttack && name._defense > 0){
@@ -137,7 +137,7 @@ static Scanner in = new Scanner(System.in);
             }
           }
         } else if (name instanceof Grass){
-          double newAttack = getAttack()*0.5;
+          double newAttack = getAttack()*0.7;
           if (name._defense >= newAttack){
             name._defense = (int)(name._defense - (newAttack));
           } else if (name._defense < newAttack && name._defense > 0){
@@ -288,7 +288,7 @@ static Scanner in = new Scanner(System.in);
               }
             }
           } else if (name instanceof Grass){
-            double newAttack = getAttack()*0.5;
+            double newAttack = getAttack()*0.7;
             if (name._defense >= newAttack){
               name._defense = (int)(name._defense - (newAttack));
             } else if (name._defense < newAttack && name._defense > 0){

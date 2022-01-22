@@ -48,10 +48,17 @@ public class Player {
   public static void displayPokedex(){
     for (int i = 0; i <_pokedexSize; i++) {
       System.out.println();
+      System.out.println(_pokedex[i]);
       _pokedex[i].displayt();
     }
   }
 
+  public static void displayPokemon(){
+    for (int i = 0; i <_pokedexSize; i++) {
+      System.out.println();
+      _pokedex[i].displayt();
+    }
+  }
     public static void displayInventory(){
       System.out.println("In your bag:");
       System.out.println("Pokeballs: " + _numPokeball);
