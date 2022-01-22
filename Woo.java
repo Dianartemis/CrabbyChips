@@ -293,9 +293,9 @@ public class Woo {
         //wait(1);
         System.out.println("You do not have enough pokeballs"); //need pokeball to catch
         //wait(1);
-
         walk(name, region);
-      } else {
+      }
+      else {
         if (random <= 7) { //catching is very likely
           //wait(1);
           System.out.println("Congratulations, you have successfullly caught a " + pokName._name);
@@ -310,7 +310,6 @@ public class Woo {
           name.displayInventory(); //print out inventory
           System.out.println();
           //wait(1);
-
           walk(name, region);
         } else {
           //wait(1);
@@ -321,7 +320,6 @@ public class Woo {
           name.displayInventory();
           System.out.println();
           //wait(1);
-
           walk(name, region);
         }
       }
@@ -344,13 +342,13 @@ public class Woo {
       System.out.println();
       opponent.displayt();
       System.out.println();
-      while (opponent.isAlive() == true){ //continue to attack if opponent is alive
+      while (opponent.isAlive() == true) { //continue to attack if opponent is alive
         int i = 0;
-        while ( i < name._pokedexSize){ //will go through each pokemon in order of catching to try to faint opponent
+        while ( i < name._pokedexSize) { //will go through each pokemon in order of catching to try to faint opponent
           //wait(1);
           System.out.println("You take out " + name._pokedex[i]._name + "!");
           System.out.println();
-          while (name._pokedex[i].isAlive() ==true){ //if the pokemon you took out is still alive, it will continue to attack
+          while (name._pokedex[i].isAlive() ==true) { //if the pokemon you took out is still alive, it will continue to attack
             //wait(1);
             System.out.print("Choose a move...");
             //wait(1);
@@ -371,12 +369,11 @@ public class Woo {
             name._pokedex[i].lvlUp(); //level up if the exp is full (100 exp)
             //if level up, should make pokemon healthy again
             //wait(1);
-
-              if (opponent.isAlive() == false){
-                result = true;
-                goToNurseGym(name, region); // after battle, heal pokemon
-                return result; //if the opponent dies, battle terminated, returns true
-              }
+            if (opponent.isAlive() == false){
+              result = true;
+              goToNurseGym(name, region); // after battle, heal pokemon
+              return result; //if the opponent dies, battle terminated, returns true
+            }
             System.out.println();
             System.out.println(opponent._name + " makes a move"); //opponent makes a move
             System.out.println();
@@ -457,13 +454,15 @@ public class Woo {
     System.out.println("You leave the nurse.");
   }
 
-  public static boolean goToGym(Player name, String region){
+  public static boolean goToGym(Player name, String region) {
     //gym depends on region
     if (region.equals("Eterna City")) {
       return gymBattleGrass(name, region);
-    } else if (region.equals("Pastoria City")){
+    }
+    else if (region.equals("Pastoria City")){
       return gymBattleWater(name, region);
-    } else {
+    }
+    else {
       return gymBattleFire(name, region);
     }
   }
