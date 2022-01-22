@@ -520,7 +520,6 @@ public class Woo {
       System.out.println("You take a quick visit to the Nurse...");
       //wait(1);
       goToNurseGym(name, region);
-      gymBattleWater(name, region);
     } else if (answer.equals("no")) {
       //wait(1);
       System.out.println("You enter the gym and prepare to battle Flint.");
@@ -540,6 +539,7 @@ public class Woo {
           System.out.println("You have earned the Fire Badge!");
           //wait(1);
           badge = true; //if win both, then return true
+          return badge;
           }
         }
       } else {
@@ -562,6 +562,7 @@ public class Woo {
             System.out.println("You have earned the Fire Badge!");
             //wait(1);
             badge = true;
+            return badge;
           } else {
             return badge;
           }
@@ -589,7 +590,6 @@ public class Woo {
 
       //StdAudio.close();
       goToNurseGym(name, region);
-      gymBattleWater(name, region);
     } else if (answer.equals("no")) {
       //wait(1);
       System.out.println("You enter the gym and prepare to battle Crasher Wake.");
@@ -615,6 +615,7 @@ public class Woo {
             System.out.println("You have earned the Water Badge!");
             //wait(1);
             badge = true;
+            return badge;
           }
         }
       }
@@ -645,6 +646,7 @@ public class Woo {
             //wait(1);
             System.out.println("You have earned the Water Badge!");
             badge = true;
+            return badge;
           }
         }
       }
@@ -694,6 +696,7 @@ public class Woo {
               System.out.println("You have earned the Water Badge!");
               //wait(1);
               badge = true;
+              return badge;
             }
           }
         }
@@ -722,9 +725,10 @@ public class Woo {
               //wait(1);
               System.out.println("Congratulations! You have successfully defeated Gardenia!");
               //wait(1);
-              System.out.println("You have earned the Water Badge!");
+              System.out.println("You have earned the Grass Badge!");
               //wait(1);
               badge = true;
+              return badge;
             }
           }
         }
