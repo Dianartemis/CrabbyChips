@@ -449,7 +449,7 @@ public class Woo {
 
   public static boolean gymBattleFire(Player name, String region) {
     //StdAudio.loopInBackground("city.wav");
-    boolean badge = true;
+    boolean badge = false;
     String answer = "";
     //wait(1);
     System.out.println("You enter the gym and prepare to fight Flint.");
@@ -482,15 +482,6 @@ public class Woo {
           //wait(1);
           badge = true; //if win both, then return true
           }
-          else if (secondBattle == false){
-            System.out.println("here 1");
-            return badge;
-            //System.out.println("here 1");
-          }
-        } else if(firstBattle == false) {
-          System.out.println("here two");
-          return badge;
-        //  System.out.println("here two");
         }
       } else {
         //wait(1);
@@ -513,16 +504,13 @@ public class Woo {
             //wait(1);
             badge = true;
           } else {
-            System.out.println("it was here");
             return badge;
           }
         }
         else{
-          System.out.println("or here");
           return badge;
         }
       }
-      System.out.println("mayube");
     return badge;
   }
 
