@@ -1,9 +1,9 @@
 import java.util.Scanner;
 import java.util.*;
-public class Fire extends Pokemon implements Types{
+public class Fire extends Pokemon implements Types {
 static Scanner in = new Scanner(System.in);
 
-  public Fire(String name, int lvl, int exp){
+  public Fire(String name, int lvl, int exp) {
     _hp = 7 * lvl;
     _attack = 8 * lvl;
     _defense = 7 * lvl;
@@ -22,30 +22,31 @@ static Scanner in = new Scanner(System.in);
     }
   }
 
-  public void setName(String name){
+  public void setName(String name) {
     _name = name;
   }
 
-  public int getHP(){
+  public int getHP() {
     return _hp;
   }
 
-  public int getAttack(){
+  public int getAttack() {
     return _attack;
   }
 
-  public int getDefense(){
+  public int getDefense() {
     return _defense;
   }
 
-  public int getMana(){
+  public int getMana() {
     return _mana;
   }
 
-  public boolean isAlive(){
+  public boolean isAlive() {
     if (_hp <= 0){
       return false;
-    }else {
+    }
+    else {
       return true;
     }
   }
@@ -53,8 +54,8 @@ static Scanner in = new Scanner(System.in);
     return 7;
   }
 
-  public void lvlUp(){
-    if((_exp - (_lvl*100)) == 100){
+  public void lvlUp() {
+    if ((_exp - (_lvl*100)) == 100) {
       wait(1);
       System.out.println();
       System.out.println(getName() + " has leveled up! " + getName() + " is now level " + (_exp / 100) + "!");
@@ -71,7 +72,8 @@ static Scanner in = new Scanner(System.in);
     return 7;
   }
 
-  public void displayt(){
+  public void displayt() {
+    System.out.print("\u001b[38;2;255;229;204m");
     System.out.println(_name + " / Stats:");
     System.out.println("HP: " + _hp);
     System.out.println("Attack: " + _attack);
@@ -80,6 +82,7 @@ static Scanner in = new Scanner(System.in);
   }
 
   public void displayMove() {
+    System.out.print("\u001b[38;2;255;229;204m");
     System.out.println("Your available moves are: Ember, Bulk Up, and Restore.");
     wait(1);
     System.out.println("Ember deals damage and inflicts Burn.");
@@ -88,28 +91,28 @@ static Scanner in = new Scanner(System.in);
   }
 
   // FIRE
-  public void move(String moveName, Pokemon name){
+  public void move(String moveName, Pokemon name) {
     // Ember
-    if(moveName.equals("Ember") || moveName.equals("ember")){
-      if(_mana < 25){
+    if (moveName.equals("Ember") || moveName.equals("ember")) {
+      if (_mana < 25){
         wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
         wait(1);
       }
-      else{
+      else {
         _mana = getMana() - 25;
-        if (name instanceof Fire){
-          if (name._defense >= getAttack()){
+        if (name instanceof Fire) {
+          if (name._defense >= getAttack()) {
             name._defense = (name._defense - (getAttack()));
-          } else if (name._defense < getAttack() && name._defense > 0){
+          } else if (name._defense < getAttack() && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((getAttack() - old) > name._hp){
+            if ((getAttack() - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (name._hp - (getAttack() - old));
             }
-          } else if (name._defense == 0){
+          } else if (name._defense == 0) {
             if (name._hp > getAttack()){
               name._hp = (name._hp - (getAttack()));
             } else {
@@ -118,12 +121,12 @@ static Scanner in = new Scanner(System.in);
           }
         } else if(name instanceof Grass){
           double newAttack = getAttack()*1.3;
-          if (name._defense >= newAttack){
+          if (name._defense >= newAttack) {
             name._defense = (int)(name._defense - (newAttack));
-          } else if (name._defense < newAttack && name._defense > 0){
+          } else if (name._defense < newAttack && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((newAttack - old) > name._hp){
+            if ((newAttack - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (int) (name._hp - (newAttack - old));
@@ -135,19 +138,19 @@ static Scanner in = new Scanner(System.in);
               name._hp = 0;
             }
           }
-        } else if (name instanceof Water){
+        } else if (name instanceof Water) {
           double newAttack = getAttack()*0.7;
           if (name._defense >= newAttack){
             name._defense = (int)(name._defense - (newAttack));
           } else if (name._defense < newAttack && name._defense > 0){
             int old = name._defense;
             name._defense = 0;
-            if ((newAttack - old) > name._hp){
+            if ((newAttack - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (int) (name._hp - (newAttack - old));
             }
-          } else if (name._defense == 0){
+          } else if (name._defense == 0) {
             if (name._hp > newAttack){
               name._hp = (int) (name._hp - (newAttack));
             } else {
@@ -160,7 +163,7 @@ static Scanner in = new Scanner(System.in);
         wait(1);
         System.out.println("The target is attacked with small flames.");
         wait(1);
-        if(name.isAlive() == false){
+        if (name.isAlive() == false) {
           wait(1);
           System.out.println(getName() + " has defeated their opponent!");
           System.out.println();
@@ -175,13 +178,13 @@ static Scanner in = new Scanner(System.in);
       }
     }
     // Bulk Up
-    if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
-      if(_mana < 20){
+    if (moveName.equals("Bulk Up") || moveName.equals("bulk up")) {
+      if (_mana < 20){
         wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
         wait(1);
       }
-      else{
+      else {
         _mana = getMana() - 20;
         _defense += 10;
         wait(1);
@@ -198,7 +201,7 @@ static Scanner in = new Scanner(System.in);
     }
 
     // Restore
-    if(moveName.equals("Restore") || moveName.equals("restore")){
+    if (moveName.equals("Restore") || moveName.equals("restore")) {
       _mana += 20;
       wait(1);
       System.out.println(getName() + " restores its own cells.");
@@ -243,69 +246,69 @@ static Scanner in = new Scanner(System.in);
         //wait(1);
         System.out.println("That is not a valid response, you do not get a berry.");
         }
-}
+  }
 
-  public void moveOther(String moveName, Pokemon name){
+  public void moveOther(String moveName, Pokemon name) {
     // Ember
-    if(moveName.equals("Ember") || moveName.equals("ember")){
-      if(_mana < 25){
+    if (moveName.equals("Ember") || moveName.equals("ember")) {
+      if (_mana < 25){
         wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
         wait(1);
       }
-      else{
+      else {
         _mana = getMana() - 25;
-        if (name instanceof Fire){
-          if (name._defense >= getAttack()){
+        if (name instanceof Fire) {
+          if (name._defense >= getAttack()) {
             name._defense = (name._defense - (getAttack()));
-          } else if (name._defense < getAttack() && name._defense > 0){
+          } else if (name._defense < getAttack() && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((getAttack() - old) > name._hp){
+            if ((getAttack() - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (name._hp - (getAttack() - old));
             }
           } else if (name._defense == 0){
-            if (name._hp > getAttack()){
+            if (name._hp > getAttack()) {
               name._hp = (name._hp - (getAttack()));
             } else {
               name._hp = 0;
             }
           }
-        } else if(name instanceof Grass){
+        } else if(name instanceof Grass) {
           double newAttack = getAttack()*1.3;
-          if (name._defense >= newAttack){
+          if (name._defense >= newAttack) {
             name._defense = (int)(name._defense - (newAttack));
-          } else if (name._defense < newAttack && name._defense > 0){
+          } else if (name._defense < newAttack && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((newAttack - old) > name._hp){
+            if ((newAttack - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (int) (name._hp - (newAttack - old));
             }
-          } else if (name._defense == 0){
+          } else if (name._defense == 0) {
             if (name._hp > newAttack){
               name._hp = (int) (name._hp - (newAttack));
             } else {
               name._hp = 0;
             }
           }
-        } else if (name instanceof Water){
+        } else if (name instanceof Water) {
           double newAttack = getAttack()*0.7;
-          if (name._defense >= newAttack){
+          if (name._defense >= newAttack) {
             name._defense = (int)(name._defense - (newAttack));
-          } else if (name._defense < newAttack && name._defense > 0){
+          } else if (name._defense < newAttack && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((newAttack - old) > name._hp){
+            if ((newAttack - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (int) (name._hp - (newAttack - old));
             }
-          } else if (name._defense == 0){
-            if (name._hp > newAttack){
+          } else if (name._defense == 0) {
+            if (name._hp > newAttack) {
               name._hp = (int) (name._hp - (newAttack));
             } else {
               name._hp = 0;
@@ -317,7 +320,7 @@ static Scanner in = new Scanner(System.in);
         wait(1);
         System.out.println("The target is attacked with small flames.");
         wait(1);
-        if(name.isAlive() == false){
+        if(name.isAlive() == false) {
           wait(1);
           System.out.println();
           System.out.println(getName() + " has defeated their opponent!");
@@ -330,17 +333,17 @@ static Scanner in = new Scanner(System.in);
         System.out.println();
         name.displayt();
         System.out.println();
+      }
     }
-  }
     // Bulk Up
-    if(moveName.equals("Bulk Up") || moveName.equals("bulk up")){
-      if(_mana < 20){
+    if (moveName.equals("Bulk Up") || moveName.equals("bulk up")) {
+      if (_mana < 20){
         wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
         System.out.println();
         wait(1);
       }
-      else{
+      else {
         _mana = getMana() - 20;
         _defense += 10;
         wait(1);
@@ -356,20 +359,18 @@ static Scanner in = new Scanner(System.in);
       }
     }
     // Restore
-    if(moveName.equals("Restore") || moveName.equals("restore")){
+    if (moveName.equals("Restore") || moveName.equals("restore")) {
       _mana += 20;
       wait(1);
       System.out.println(getName() + " restores its own cells.");
       wait(1);
       System.out.println("Mana increased by 20!");
       wait(1);
-
       System.out.println();
       displayt();
       System.out.println();
       name.displayt();
       System.out.println();
+    }
   }
-}
-
 }

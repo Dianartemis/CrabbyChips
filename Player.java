@@ -41,28 +41,38 @@ public class Player {
     _pokedexSize += 1;
   }
 
-  public static void dislayt(){
+  public static void dislayt() {
     System.out.println();
   }
 
-  public static void displayPokedex(){
+  public static void displayPokedex() {
+    System.out.print("\u001b[38;2;64;64;64m");
+    System.out.print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    System.out.print("\u001b[38;2;255;204;204m");
     for (int i = 0; i <_pokedexSize; i++) {
-      System.out.println();
       System.out.println(_pokedex[i]);
       System.out.println();
       _pokedex[i].displayt();
     }
+    System.out.print("\u001b[38;2;64;64;64m");
+    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
   }
 
-  public static void displayPokemon(){
+  public static void displayPokemon() {
     for (int i = 0; i <_pokedexSize; i++) {
       System.out.println();
       _pokedex[i].displayt();
     }
   }
-    public static void displayInventory(){
-      System.out.println("In your bag:");
-      System.out.println("Pokeballs: " + _numPokeball);
-      System.out.println("Berries: " + _numBerries);
-    }
+
+  public static void displayInventory() {
+    System.out.print("\u001b[38;2;64;64;64m");
+    System.out.println("\n===============");
+    System.out.print("\u001b[38;2;255;153;153m");
+    System.out.println("In your bag...");
+    System.out.println("Pokeballs: " + _numPokeball);
+    System.out.println("Berries: " + _numBerries);
+    System.out.print("\u001b[38;2;64;64;64m");
+    System.out.println("===============");
+  }
 }

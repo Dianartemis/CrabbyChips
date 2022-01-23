@@ -104,6 +104,8 @@ public class Woo {
       System.out.println("\nNothing appeared.");
       //wait(1);
       System.out.println("\nWalk again or go to a gym? (walk/gym)"); // if nothing appears, can go to gym or walk again
+      System.out.print("\u001b[38;2;255;255;255m");
+      System.out.print("> ");
       String response = "";
       response = in.nextLine().toLowerCase();
       if (response.equals("walk")) {
@@ -137,6 +139,8 @@ public class Woo {
       System.out.println("\nA fellow Pokemon trainer appeared. They challenge you to a Pokemon battle.");
       //wait(1);
       System.out.println("\nDo you want to battle or run away? (battle/run away)");
+      System.out.print("\u001b[38;2;255;255;255m");
+      System.out.print("> ");
       String runawayOr = "";
       runawayOr = in.nextLine().toLowerCase();
       if (runawayOr.equals("run away")) {
@@ -155,6 +159,8 @@ public class Woo {
           System.out.println("\nYou sucessfully escaped!");
           //wait(1);
           System.out.println("\nWalk again or go to a gym? (walk/gym)"); // if nothing appears, can go to gym or walk again
+          System.out.print("\u001b[38;2;255;255;255m");
+          System.out.print("> ");
           String response = "";
           response = in.nextLine().toLowerCase();
           if (response.equals("walk")) {
@@ -223,6 +229,8 @@ public class Woo {
       civilian.goodbye(name); // civilian leaves
       // add extra talking functionality for stretch
       System.out.println("\nDo you want to walk or go to the gym? (walk/gym)");
+      System.out.print("\u001b[38;2;255;255;255m");
+      System.out.print("> ");
       String res = "";
       res = in.nextLine().toLowerCase();
       if (res.equals("walk")) {
@@ -256,6 +264,8 @@ public class Woo {
       System.out.println("\nA wild Pokemon appeared!");
       //wait(1);
       System.out.println("\nWould you like to battle or run away? (battle/run away)");
+      System.out.print("\u001b[38;2;255;255;255m");
+      System.out.print("> ");
       String encounterPokemon = "";
       encounterPokemon = in.nextLine().toLowerCase();
       if (encounterPokemon.equals("run away")) {
@@ -281,6 +291,8 @@ public class Woo {
           System.out.println("\nYou sucessfully escaped!");
           //wait(1);
           System.out.println("\nWalk again or go to a gym? (walk/gym)"); // if nothing appears, can go to gym or walk again
+          System.out.print("\u001b[38;2;255;255;255m");
+          System.out.print("> ");
           String response = "";
           response = in.nextLine().toLowerCase();
           if (response.equals("walk")) {
@@ -412,24 +424,32 @@ public class Woo {
           System.out.println("\nChoose a move...");
           //wait(1);
           name._pokedex[i].displayMove(); // allows user to see moves
+          System.out.print("\u001b[38;2;255;255;255m");
+          System.out.print("> ");
           String answer = "";
           answer = in.nextLine().toLowerCase();
           if (name._pokedex[i] instanceof Water){
             while (!answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("rest")) { // if input not valid, asks for another input until it is valid
               //wait(1);
               System.out.println("\nInput a valid move:");
+              System.out.print("\u001b[38;2;255;255;255m");
+              System.out.print("> ");
               answer = in.nextLine().toLowerCase();
             }
           } else if (name._pokedex[i] instanceof Fire){
             while (!answer.equals("ember") && !answer.equals("bulk up") && !answer.equals("restore")) { // if input not valid, asks for another input until it is valid
               //wait(1);
               System.out.println("\nInput a valid move:");
+              System.out.print("\u001b[38;2;255;255;255m");
+              System.out.print("> ");
               answer = in.nextLine().toLowerCase();
             }
           } else{
             while (!answer.equals("razor leaf") && !answer.equals("safe guard") && !answer.equals("rest")) { // if input not valid, asks for another input until it is valid
               //wait(1);
               System.out.println("\nInput a valid move:");
+              System.out.print("\u001b[38;2;255;255;255m");
+              System.out.print("> ");
               answer = in.nextLine().toLowerCase();
             }
           }
@@ -525,6 +545,8 @@ public class Woo {
     System.out.println("\nYou enter the gym and prepare to fight Flint.");
     //wait(1);
     System.out.println("\nDo you wish to visit the Nurse before battling Flint? (yes/no)");
+    System.out.print("\u001b[38;2;255;255;255m");
+    System.out.print("> ");
     answer = in.nextLine().toLowerCase();
     if (answer.equals("yes")) {
       //wait(1);
@@ -609,6 +631,8 @@ public class Woo {
     System.out.println("\nYou enter the gym and prepare to fight Crasher Wake.");
     //wait(1);
     System.out.println("\nDo you wish to visit the Nurse before battling Crasher Wake? (yes/no)");
+    System.out.print("\u001b[38;2;255;255;255m");
+    System.out.print("> ");
     answer = in.nextLine().toLowerCase();
     if (answer.equals("yes")) {
       //wait(1);
@@ -715,6 +739,8 @@ public class Woo {
     System.out.println("\nYou enter the gym and prepare to fight Gardenia.");
     //wait(1);
     System.out.println("\nDo you wish to visit the Nurse before battling Gardenia? (yes/no)");
+    System.out.print("\u001b[38;2;255;255;255m");
+    System.out.print("> ");
     answer = in.nextLine().toLowerCase();
     if (answer.equals("yes")) {
       //wait(1);
@@ -798,7 +824,7 @@ public class Woo {
           //wait(1);
           System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           //wait(1);
-          Pokemon roserade = new Water("Roserade",17, 1750);
+          Pokemon roserade = new Water("Roserade", 17, 1750);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             //wait(1);
@@ -815,10 +841,15 @@ public class Woo {
     return badge;
   }
 
-  public static void gameSetup(Player player){
+  public static void gameSetup(Player player) {
+    System.out.print("\u001b[0m");
+    System.out.print("\u001B[0m");
+    System.out.print("\u001b[38;2;180;180;180m");
     System.out.println("Welcome, Trainer, to Pokemon Shining Pearl!");
     //wait(1);
     System.out.println("\nWhat is your name?");
+    System.out.print("\u001b[38;2;255;255;255m");
+    System.out.print("> ");
     String name = "";
     name = in.nextLine();
     player._name = name;
@@ -826,7 +857,9 @@ public class Woo {
   }
 
   public static void chooseStarter(Player player) {
+    System.out.println();
     //wait(1);
+    System.out.print("\u001b[38;2;180;180;180m");
     System.out.println("\nRING RING! Wake up " + player._name + "!" + " Your mom told you to go to Dr. Footstep's clinic to get your first starter Pokemon.");
     //wait(1);
     System.out.println("\nYou totally forgot. Today is your 10th birthday. You're finally old enough to become a Pokemon trainer!");
@@ -847,10 +880,13 @@ public class Woo {
     // wake up, go to drs place to pick Pokemon
     //wait(1);
 
-    System.out.println("\nThere are three starter Pokemons: Chimchar, Piplup, and Turtwig.");
+    System.out.println();
+    System.out.println("\nThere are three starter Pokemons: \u001b[38;2;243;113;66mChimchar\u001b[38;2;180;180;180m, \u001b[38;2;103;179;201mPiplup\u001b[38;2;180;180;180m, and \u001b[38;2;119;221;118mTurtwig\u001b[38;2;180;180;180m.");
     //wait(1);
 
     System.out.println("\nInput the Pokemon that you want to know more about:");
+    System.out.print("\u001b[38;2;255;255;255m");
+    System.out.print("> ");
     String pokemonOne = "";
 
     // POKEMON DESCRIPTIONS
@@ -858,228 +894,335 @@ public class Woo {
     if (pokemonOne.equals("chimchar")) {
       Fire chimchar = new Fire("Chimchar", 5, 500);
       //wait(1);
-      System.out.println("\nA Chimp Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("With a flaming tail, Chimchar is skilled in Fire-type moves.");
+      System.out.print("\u001b[38;2;243;113;66m");
+      System.out.println("\n  * A Chimp Pokemon.");
       //wait(1);
-      System.out.println("Its light body affords it the ability to scale steep cliffs and live atop rocky mountains.");
+      System.out.print("\u001b[38;2;255;160;1m");
+      System.out.println("  * With a flaming tail, Chimchar is skilled in Fire-type moves.");
       //wait(1);
-      System.out.println("Some say that the fiery tail is fueled by gas made in its stomach.");
+      System.out.print("\u001b[38;2;255;184;79m");
+      System.out.println("  * Its light body affords it the ability to scale steep cliffs and live atop rocky mountains.");
       //wait(1);
-      System.out.println("Not even rain can put out the flames, but Chimchar always puts out the fire when asleep.");
+      System.out.print("\u001b[38;2;255;160;1m");
+      System.out.println("  * Some say that the fiery tail is fueled by gas made in its stomach.");
       //wait(1);
-      System.out.println();
-      chimchar.display();
+      System.out.print("\u001b[38;2;243;113;66m");
+      System.out.println("  * Not even rain can put out the flames, but Chimchar always puts out the fire when asleep.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     else if (pokemonOne.equals("piplup")) {
       Pokemon piplup = new Water("Piplup", 5, 500);
       //wait(1);
-      System.out.println("\nA Penguin Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.print("\u001b[38;2;103;179;201m");
+      System.out.println("\n  * A Penguin Pokemon.");
       //wait(1);
-      System.out.println("It's a Water type, so it's strong versus Rock and Grounds.");
+      System.out.print("\u001b[38;2;172;229;238m");
+      System.out.println("  * It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       //wait(1);
-      System.out.println("It's very cute but filled with pride--it hates to accept food from people.");
+      System.out.print("\u001b[38;2;103;179;201m");
+      System.out.println("  * It's a Water type, so it's strong versus Rock and Grounds.");
       //wait(1);
-      System.out.println();
-      piplup.display();
+      System.out.print("\u001b[38;2;34;130;164m");
+      System.out.println("  * It's very cute but filled with pride--it hates to accept food from people.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     else if (pokemonOne.equals("turtwig")) {
       Pokemon turtwig = new Grass("Turtwig", 5, 500);
       //wait(1);
-      System.out.println("\nA Tiny Leaf Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("Despite its animal appearance, Turtwig actually has vegetation sprouting from its head.");
+      System.out.print("\u001b[38;2;119;221;118m");
+      System.out.println("\n  * A Tiny Leaf Pokemon.");
       //wait(1);
-      System.out.println("The shell on its back is made of soil and hardens when it drinks water.");
+      System.out.print("\u001b[38;2;166;236;168m");
+      System.out.println("  * Despite its animal appearance, Turtwig actually has vegetation sprouting from its head.");
       //wait(1);
-      System.out.println("Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
+      System.out.print("\u001b[38;2;210;253;187m");
+      System.out.println("  * The shell on its back is made of soil and hardens when it drinks water.");
       //wait(1);
-      System.out.println("It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      System.out.print("\u001b[38;2;166;236;168m");
+      System.out.println("  * Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
       //wait(1);
-      System.out.println();
-      turtwig.display();
+      System.out.print("\u001b[38;2;119;221;118m");
+      System.out.println("  * It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     else {
       //wait(1);
+      System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Chimchar.");
       Pokemon chimchar = new Fire("Chimchar", 5, 500);
       //wait(1);
-      System.out.println("\nA Chimp Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("With a flaming tail, Chimchar is skilled in Fire-type moves.");
+      System.out.print("\u001b[38;2;243;113;66m");
+      System.out.println("\n  * A Chimp Pokemon.");
       //wait(1);
-      System.out.println("Its light body affords it the ability to scale steep cliffs and live atop rocky mountains.");
+      System.out.print("\u001b[38;2;255;160;1m");
+      System.out.println("  * With a flaming tail, Chimchar is skilled in Fire-type moves.");
       //wait(1);
-      System.out.println("Some say that the fiery tail is fueled by gas made in its stomach.");
+      System.out.print("\u001b[38;2;255;184;79m");
+      System.out.println("  * Its light body affords it the ability to scale steep cliffs and live atop rocky mountains.");
       //wait(1);
-      System.out.println("Not even rain can put out the flames, but Chimchar always puts out the fire when asleep.");
+      System.out.print("\u001b[38;2;255;160;1m");
+      System.out.println("  * Some say that the fiery tail is fueled by gas made in its stomach.");
       //wait(1);
-      System.out.println();
-      chimchar.display();
+      System.out.print("\u001b[38;2;243;113;66m");
+      System.out.println("  * Not even rain can put out the flames, but Chimchar always puts out the fire when asleep.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
 
     //wait(2);
+    System.out.print("\u001b[38;2;180;180;180m");
     System.out.println("\nInput another Pokemon that you want to know more about:");
+    System.out.print("\u001b[38;2;255;255;255m");
+    System.out.print("> ");
     String pokemonTwo = "";
 
     pokemonTwo = in.nextLine().toLowerCase();
     if (pokemonTwo.equals("chimchar")) {
       Pokemon chimchar = new Fire("Chimchar", 5, 500);
       //wait(1);
-      System.out.println("\nA Chimp Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("With a flaming tail, Chimchar is skilled in Fire-type moves.");
+      System.out.print("\u001b[38;2;243;113;66m");
+      System.out.println("\n  * A Chimp Pokemon.");
       //wait(1);
-      System.out.println("Its light body affords it the ability to scale steep cliffs and live atop rocky mountains.");
+      System.out.print("\u001b[38;2;255;160;1m");
+      System.out.println("  * With a flaming tail, Chimchar is skilled in Fire-type moves.");
       //wait(1);
-      System.out.println("Some say that the fiery tail is fueled by gas made in its stomach.");
+      System.out.print("\u001b[38;2;255;184;79m");
+      System.out.println("  * Its light body affords it the ability to scale steep cliffs and live atop rocky mountains.");
       //wait(1);
-      System.out.println("Not even rain can put out the flames, but Chimchar always puts out the fire when asleep.");
+      System.out.print("\u001b[38;2;255;160;1m");
+      System.out.println("  * Some say that the fiery tail is fueled by gas made in its stomach.");
       //wait(1);
-      System.out.println();
-      chimchar.display();
+      System.out.print("\u001b[38;2;243;113;66m");
+      System.out.println("  * Not even rain can put out the flames, but Chimchar always puts out the fire when asleep.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     else if (pokemonTwo.equals("piplup")) {
       Pokemon piplup = new Water("Piplup", 5, 500);
       //wait(1);
-      System.out.println("\nA Penguin Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.print("\u001b[38;2;103;179;201m");
+      System.out.println("\n  * A Penguin Pokemon.");
       //wait(1);
-      System.out.println("It's a Water type, so it's strong versus Rock and Grounds.");
+      System.out.print("\u001b[38;2;172;229;238m");
+      System.out.println("  * It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       //wait(1);
-      System.out.println("It's very cute but filled with pride--it hates to accept food from people.");
+      System.out.print("\u001b[38;2;103;179;201m");
+      System.out.println("  * It's a Water type, so it's strong versus Rock and Grounds.");
       //wait(1);
-      System.out.println();
-      piplup.display();
+      System.out.print("\u001b[38;2;34;130;164m");
+      System.out.println("  * It's very cute but filled with pride--it hates to accept food from people.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     else if (pokemonTwo.equals("turtwig")) {
       Pokemon turtwig = new Grass("Turtwig", 5, 500);
       //wait(1);
-      System.out.println("\nA Tiny Leaf Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("Despite its animal appearance, Turtwig actually has vegetation sprouting from its head.");
+      System.out.print("\u001b[38;2;119;221;118m");
+      System.out.println("\n  * A Tiny Leaf Pokemon.");
       //wait(1);
-      System.out.println("The shell on its back is made of soil and hardens when it drinks water.");
+      System.out.print("\u001b[38;2;166;236;168m");
+      System.out.println("  * Despite its animal appearance, Turtwig actually has vegetation sprouting from its head.");
       //wait(1);
-      System.out.println("Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
+      System.out.print("\u001b[38;2;210;253;187m");
+      System.out.println("  * The shell on its back is made of soil and hardens when it drinks water.");
       //wait(1);
-      System.out.println("It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      System.out.print("\u001b[38;2;166;236;168m");
+      System.out.println("  * Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
       //wait(1);
-      System.out.println();
-      turtwig.display();
+      System.out.print("\u001b[38;2;119;221;118m");
+      System.out.println("  * It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     else {
       //wait(1);
+      System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Piplup.");
       Pokemon piplup = new Water("Piplup", 5, 500);
       //wait(1);
-      System.out.println("A Penguin Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.print("\u001b[38;2;103;179;201m");
+      System.out.println("\n  * A Penguin Pokemon.");
       //wait(1);
-      System.out.println("It's a Water type, so it's strong versus Rock and Grounds.");
+      System.out.print("\u001b[38;2;172;229;238m");
+      System.out.println("  * It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       //wait(1);
-      System.out.println("It's very cute but filled with pride--it hates to accept food from people.");
+      System.out.print("\u001b[38;2;103;179;201m");
+      System.out.println("  * It's a Water type, so it's strong versus Rock and Grounds.");
       //wait(1);
-      System.out.println();
-      piplup.display();
+      System.out.print("\u001b[38;2;34;130;164m");
+      System.out.println("  * It's very cute but filled with pride--it hates to accept food from people.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
 
     //wait(2);
+    System.out.print("\u001b[38;2;180;180;180m");
     System.out.println("\nInput the last Pokemon:");
+    System.out.print("\u001b[38;2;255;255;255m");
+    System.out.print("> ");
     String pokemonThree = "";
 
     pokemonThree = in.nextLine().toLowerCase();
     if (pokemonThree.equals("chimchar")) {
       Pokemon chimchar = new Fire("Chimchar", 5, 500);
       //wait(1);
-      System.out.println("\nA Chimp Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("With a flaming tail, Chimchar is skilled in Fire-type moves.");
+      System.out.print("\u001b[38;2;243;113;66m");
+      System.out.println("\n  * A Chimp Pokemon.");
       //wait(1);
-      System.out.println("Its light body affords it the ability to scale steep cliffs and live atop rocky mountains.");
+      System.out.print("\u001b[38;2;255;160;1m");
+      System.out.println("  * With a flaming tail, Chimchar is skilled in Fire-type moves.");
       //wait(1);
-      System.out.println("Some say that the fiery tail is fueled by gas made in its stomach.");
+      System.out.print("\u001b[38;2;255;184;79m");
+      System.out.println("  * Its light body affords it the ability to scale steep cliffs and live atop rocky mountains.");
       //wait(1);
-      System.out.println("Not even rain can put out the flames, but Chimchar always puts out the fire when asleep.");
+      System.out.print("\u001b[38;2;255;160;1m");
+      System.out.println("  * Some say that the fiery tail is fueled by gas made in its stomach.");
       //wait(1);
-      System.out.println();
-      chimchar.display();
+      System.out.print("\u001b[38;2;243;113;66m");
+      System.out.println("  * Not even rain can put out the flames, but Chimchar always puts out the fire when asleep.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     else if (pokemonThree.equals("piplup")) {
       Pokemon piplup = new Water("Piplup", 5, 500);
       //wait(1);
-      System.out.println("\nA Penguin Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.print("\u001b[38;2;103;179;201m");
+      System.out.println("\n  * A Penguin Pokemon.");
       //wait(1);
-      System.out.println("It's a Water type, so it's strong versus Rock and Grounds.");
+      System.out.print("\u001b[38;2;172;229;238m");
+      System.out.println("  * It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
       //wait(1);
-      System.out.println("It's very cute but filled with pride--it hates to accept food from people.");
+      System.out.print("\u001b[38;2;103;179;201m");
+      System.out.println("  * It's a Water type, so it's strong versus Rock and Grounds.");
       //wait(1);
-      System.out.println();
-      piplup.display();
+      System.out.print("\u001b[38;2;34;130;164m");
+      System.out.println("  * It's very cute but filled with pride--it hates to accept food from people.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     else if (pokemonThree.equals("turtwig")) {
       Pokemon turtwig = new Grass("Turtwig", 5, 500);
       //wait(1);
-      System.out.println("\nA Tiny Leaf Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("Despite its animal appearance, Turtwig actually has vegetation sprouting from its head.");
+      System.out.print("\u001b[38;2;119;221;118m");
+      System.out.println("\n  * A Tiny Leaf Pokemon.");
       //wait(1);
-      System.out.println("The shell on its back is made of soil and hardens when it drinks water.");
+      System.out.print("\u001b[38;2;166;236;168m");
+      System.out.println("  * Despite its animal appearance, Turtwig actually has vegetation sprouting from its head.");
       //wait(1);
-      System.out.println("Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
+      System.out.print("\u001b[38;2;210;253;187m");
+      System.out.println("  * The shell on its back is made of soil and hardens when it drinks water.");
       //wait(1);
-      System.out.println("It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      System.out.print("\u001b[38;2;166;236;168m");
+      System.out.println("  * Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
       //wait(1);
-      System.out.println();
-      turtwig.display();
+      System.out.print("\u001b[38;2;119;221;118m");
+      System.out.println("  * It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     else {
       //wait(1);
+      System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Turtwig.");
       Pokemon turtwig = new Grass("Turtwig", 5, 500);
       //wait(1);
-      System.out.println("\nA Tiny Leaf Pokemon.");
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
       //wait(1);
-      System.out.println("Despite its animal appearance, Turtwig actually has vegetation sprouting from its head.");
+      System.out.print("\u001b[38;2;119;221;118m");
+      System.out.println("\n  * A Tiny Leaf Pokemon.");
       //wait(1);
-      System.out.println("The shell on its back is made of soil and hardens when it drinks water.");
+      System.out.print("\u001b[38;2;166;236;168m");
+      System.out.println("  * Despite its animal appearance, Turtwig actually has vegetation sprouting from its head.");
       //wait(1);
-      System.out.println("Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
+      System.out.print("\u001b[38;2;210;253;187m");
+      System.out.println("  * The shell on its back is made of soil and hardens when it drinks water.");
       //wait(1);
-      System.out.println("It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      System.out.print("\u001b[38;2;166;236;168m");
+      System.out.println("  * Much like a plant, Turtwig performs photosynthesis, absorbing sunlight and making oxygen.");
       //wait(1);
-      System.out.println();
-      turtwig.display();
+      System.out.print("\u001b[38;2;119;221;118m");
+      System.out.println("  * It also relies heavily on water to keep its plant healthy and thus spends a lot of time near lakes.");
+      //wait(1);
+      System.out.print("\u001b[38;2;96;96;96m");
+      System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     // Instance of Pokemon
 
     // CHOOSING POKEMON
     //wait(1);
-    System.out.println("\nWhich starter Pokemon do you want? (chimchar/piplup/turtwig)");
+    System.out.print("\u001b[38;2;180;180;180m");
+    System.out.println("\nWhich starter Pokemon do you want? (\u001b[38;2;243;113;66mChimchar\u001b[38;2;180;180;180m/\u001b[38;2;103;179;201mPiplup\u001b[38;2;180;180;180m/\u001b[38;2;119;221;118mTurtwig\u001b[38;2;180;180;180m)");
+    System.out.print("\u001b[38;2;255;255;255m");
+    System.out.print("> ");
     String response = "";
     response = in.nextLine().toLowerCase();
     if (response.equals("chimchar")) {
       Fire starter = new Fire("Chimchar", 4, 400);
       player.add(starter);
       //wait(1);
-      System.out.println("\nCongrats, you got your first Pokemon! It's a Chimchar!");
+      System.out.print("\u001b[38;2;180;180;180m");
+      System.out.println("\nCongrats, you got your first Pokemon! It's a \u001b[38;2;243;113;66mChimchar!");
     }
     else if (response.equals("piplup")) {
-      Water starter = new Water("Piplup", 100, 40000);
+      Water starter = new Water("Piplup", 4, 400);
       player.add(starter);
       //wait(1);
-      System.out.println("\nCongrats, you got your first Pokemon! It's a Piplup!");
+      System.out.print("\u001b[38;2;180;180;180m");
+      System.out.println("\nCongrats, you got your first Pokemon! It's a \u001b[38;2;34;130;164mPiplup!");
     }
     else if (response.equals("turtwig")) {
       Grass starter = new Grass("Turtwig", 4, 400);
       player.add(starter);
       //wait(1);
+      System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nCongrats, you got your first Pokemon! It's a Turtwig!");
     }
     else if (!response.equals("chimchar") && !response.equals("piplup") && !response.equals("turtwig")) {
@@ -1088,34 +1231,41 @@ public class Woo {
         Fire starter = new Fire("Chimchar", 4, 400);
         player.add(starter);
         //wait(1);
-        System.out.println("\nYou responded too late! The only Pokemon left is Chimchar!");
+        System.out.print("\u001b[38;2;180;180;180m");
+        System.out.println("\nYou responded too late! The only Pokemon left is \u001b[38;2;251;224;169mChimchar!");
       }
       else if (random == 1) {
         Water starter = new Water("Piplup", 4, 400);
         player.add(starter);
         //wait(1);
-        System.out.println("\nYou responded too late! The only Pokemon left is Piplup!");
+        System.out.print("\u001b[38;2;180;180;180m");
+        System.out.println("\nYou responded too late! The only Pokemon left is \u001b[38;2;34;130;164mPiplup!");
       }
       else if (random == 2) {
         Grass starter = new Grass("Turtwig", 4, 400);
         player.add(starter);
         //wait(1);
-        System.out.println("\nYou responded too late! The only Pokemon left is Turtwig!");
+        System.out.print("\u001b[38;2;180;180;180m");
+        System.out.println("\nYou responded too late! The only Pokemon left is \u001b[38;2;119;221;118mTurtwig!");
       }
     }
     player._numPokemon += 1;
     player.displayPokedex();
     System.out.println();
     //wait(1);
-    System.out.println("\nYou also receive 5 Pokeballs and 5 berries from Dr. Footstep.");
+    System.out.print("\u001b[38;2;180;180;180m");
+    System.out.println("You also receive 5 Pokeballs and 5 berries from Dr. Footstep.");
     player._numPokeball += 5;
     player._numBerries += 5;
     System.out.println();
     player.displayInventory();
     //wait(1);
     System.out.println();
+    System.out.print("\u001b[38;2;180;180;180m");
     System.out.println("\nYou thank Dr. Footstep and walk out of the clinic.");
-    System.out.println();
+    System.out.print("\u001b[38;2;96;96;96m");
+    System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+    System.out.print("\u001b[38;2;180;180;180m");
   }
 
   public static void main(String[] args) {
@@ -1127,11 +1277,10 @@ public class Woo {
     String[] regions = new String[] {"Eterna City", "Pastoria City", "Sunyshore City"};
     int i = 0;
     while (i < 3) {
-      System.out.println(i);
       boolean nextGym = walk(player, regions[i]);
-      System.out.println(i);
       if (nextGym == true) {
         //wait(1);
+        System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nYou beat " + regions[i] + "!");
         //wait(1);
         System.out.println();
@@ -1140,6 +1289,8 @@ public class Woo {
     }
     //wait(1);
     System.out.println("\nYou beat the game. Congratulations!");
+    System.out.print("\u001b[0m");
+    System.out.print("\u001B[0m");
     StdAudio.close();
   }
 }

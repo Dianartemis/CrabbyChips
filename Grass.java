@@ -1,10 +1,10 @@
 import java.util.*;
 import java.util.Scanner;
 
-public class Grass extends Pokemon implements Types{
+public class Grass extends Pokemon implements Types {
 static Scanner in = new Scanner(System.in);
 
-  public Grass(String name, int lvl, int exp){
+  public Grass(String name, int lvl, int exp) {
     _hp = 6 * lvl;
     _attack = 8 * lvl;
     _defense = 7 * lvl;
@@ -23,30 +23,30 @@ static Scanner in = new Scanner(System.in);
     }
   }
 
-  public void setName(String name){
+  public void setName(String name) {
     _name = name;
   }
-  public int getHP(){
+  public int getHP() {
     return _hp;
   }
-  public int getDefenseMultiplier(){
+  public int getDefenseMultiplier() {
     return 7;
   }
 
-  public int getAttack(){
+  public int getAttack() {
     return _attack;
   }
 
-  public int getDefense(){
+  public int getDefense() {
     return _defense;
   }
 
-  public int getMana(){
+  public int getMana() {
     return _mana;
   }
 
-  public boolean isAlive(){
-    if (_hp <= 0){
+  public boolean isAlive() {
+    if (_hp <= 0) {
       return false;
     }else {
       return true;
@@ -54,7 +54,7 @@ static Scanner in = new Scanner(System.in);
   }
 
   public void lvlUp(){
-    if ((_exp - (_lvl*100)) == 100){
+    if ((_exp - (_lvl*100)) == 100) {
       wait(1);
       System.out.println();
       System.out.println(getName() + " has leveled up! " + getName() + " is now level " + (_exp / 100) + "!");
@@ -71,7 +71,8 @@ static Scanner in = new Scanner(System.in);
     return 6;
   }
 
-  public void displayt(){
+  public void displayt() {
+    System.out.print("\u001b[38;2;229;255;204m");
     System.out.println(_name + " / Stats:");
     System.out.println("HP: " + _hp);
     System.out.println("Attack: " + _attack);
@@ -80,6 +81,7 @@ static Scanner in = new Scanner(System.in);
   }
 
   public void displayMove() {
+    System.out.print("\u001b[38;2;229;255;204m");
     System.out.println("Your available moves are: Razor Leaf, Safe Guard, and Rest.");
     wait(1);
     System.out.println("Razor Leaf is an attack that sends sharp-edged leaves at the target.");
@@ -89,67 +91,67 @@ static Scanner in = new Scanner(System.in);
 
 
   // GRASS
-  public void move(String moveName, Pokemon name){
+  public void move(String moveName, Pokemon name) {
     // Razor Leaf
-    if(moveName.equals("Razor Leaf") || moveName.equals("razor leaf")){
-      if(_mana < 25){
+    if (moveName.equals("Razor Leaf") || moveName.equals("razor leaf")) {
+      if (_mana < 25) {
         wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
         wait(1);
       }
-      else{
+      else {
         _mana = getMana() - 25;
-        if (name instanceof Grass){
-          if (name._defense >= getAttack()){
+        if (name instanceof Grass) {
+          if (name._defense >= getAttack()) {
             name._defense = (name._defense - (getAttack()));
-          } else if (name._defense < getAttack() && name._defense > 0){
+          } else if (name._defense < getAttack() && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((getAttack() - old) > name._hp){
+            if ((getAttack() - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (name._hp - (getAttack() - old));
             }
-          } else if (name._defense == 0){
-            if (name._hp > getAttack()){
+          } else if (name._defense == 0) {
+            if (name._hp > getAttack()) {
               name._hp = (name._hp - (getAttack()));
             } else {
               name._hp = 0;
             }
           }
-        } else if(name instanceof Water){
+        } else if(name instanceof Water) {
           double newAttack = getAttack()*1.3;
-          if (name._defense >= newAttack){
+          if (name._defense >= newAttack) {
             name._defense = (int)(name._defense - (newAttack));
-          } else if (name._defense < newAttack && name._defense > 0){
+          } else if (name._defense < newAttack && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((newAttack - old) > name._hp){
+            if ((newAttack - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (int) (name._hp - (newAttack - old));
             }
-          } else if (name._defense == 0){
+          } else if (name._defense == 0) {
             if (name._hp > newAttack){
               name._hp = (int) (name._hp - (newAttack));
             } else {
               name._hp = 0;
             }
           }
-        } else if (name instanceof Fire){
+        } else if (name instanceof Fire) {
           double newAttack = getAttack()*0.7;
-          if (name._defense >= newAttack){
+          if (name._defense >= newAttack) {
             name._defense = (int)(name._defense - (newAttack));
-          } else if (name._defense < newAttack && name._defense > 0){
+          } else if (name._defense < newAttack && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((newAttack - old) > name._hp){
+            if ((newAttack - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (int) (name._hp - (newAttack - old));
             }
-          } else if (name._defense == 0){
-            if (name._hp > newAttack){
+          } else if (name._defense == 0) {
+            if (name._hp > newAttack) {
               name._hp = (int) (name._hp - (newAttack));
             } else {
               name._hp = 0;
@@ -161,7 +163,7 @@ static Scanner in = new Scanner(System.in);
         wait(1);
         System.out.println("A sharp-edged leaf is launched to slash at the foe.");
         wait(1);
-        if(name.isAlive() == false){
+        if(name.isAlive() == false) {
           wait(1);
           System.out.println(getName() + " has defeated their opponent!");
           wait(1);
@@ -175,13 +177,13 @@ static Scanner in = new Scanner(System.in);
     }
 
     // Safe Guard
-    if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
-      if(_mana < 20){
+    if (moveName.equals("Safe Guard") || moveName.equals("safe guard")) {
+      if (_mana < 20) {
         wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
         wait(1);
       }
-      else{
+      else {
         _mana = getMana() - 20;
         _defense += 10;
         wait(1);
@@ -197,7 +199,7 @@ static Scanner in = new Scanner(System.in);
       }
     }
     // Rest
-    if(moveName.equals("Rest") || moveName.equals("rest")){
+    if (moveName.equals("Rest") || moveName.equals("rest")) {
       _mana += 20;
       wait(1);
       System.out.println(getName() + " takes a nap.");
@@ -244,66 +246,66 @@ static Scanner in = new Scanner(System.in);
         }
   }
 
-  public void moveOther(String moveName, Pokemon name){
+  public void moveOther(String moveName, Pokemon name) {
     // Razor Leaf
-    if(moveName.equals("Razor Leaf") || moveName.equals("razor leaf")){
-      if(_mana < 25){
+    if (moveName.equals("Razor Leaf") || moveName.equals("razor leaf")) {
+      if (_mana < 25) {
         wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
         wait(1);
       }
-      else{
+      else {
         _mana = getMana() - 25;
-        if (name instanceof Grass){
-          if (name._defense >= getAttack()){
+        if (name instanceof Grass) {
+          if (name._defense >= getAttack()) {
             name._defense = (name._defense - (getAttack()));
-          } else if (name._defense < getAttack() && name._defense > 0){
+          } else if (name._defense < getAttack() && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((getAttack() - old) > name._hp){
+            if ((getAttack() - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (name._hp - (getAttack() - old));
             }
-          } else if (name._defense == 0){
-            if (name._hp > getAttack()){
+          } else if (name._defense == 0) {
+            if (name._hp > getAttack()) {
               name._hp = (name._hp - (getAttack()));
             } else {
               name._hp = 0;
             }
           }
-        } else if(name instanceof Water){
+        } else if(name instanceof Water) {
           double newAttack = getAttack()*1.3;
-          if (name._defense >= newAttack){
+          if (name._defense >= newAttack) {
             name._defense = (int)(name._defense - (newAttack));
-          } else if (name._defense < newAttack && name._defense > 0){
+          } else if (name._defense < newAttack && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((newAttack - old) > name._hp){
+            if ((newAttack - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (int) (name._hp - (newAttack - old));
             }
           } else if (name._defense == 0){
-            if (name._hp > newAttack){
+            if (name._hp > newAttack) {
               name._hp = (int) (name._hp - (newAttack));
             } else {
               name._hp = 0;
             }
           }
-        } else if (name instanceof Fire){
+        } else if (name instanceof Fire) {
           double newAttack = getAttack()*0.7;
           if (name._defense >= newAttack){
             name._defense = (int)(name._defense - (newAttack));
-          } else if (name._defense < newAttack && name._defense > 0){
+          } else if (name._defense < newAttack && name._defense > 0) {
             int old = name._defense;
             name._defense = 0;
-            if ((newAttack - old) > name._hp){
+            if ((newAttack - old) > name._hp) {
               name._hp = 0;
             } else {
               name._hp = (int) (name._hp - (newAttack - old));
             }
-          } else if (name._defense == 0){
+          } else if (name._defense == 0) {
             if (name._hp > newAttack){
               name._hp = (int) (name._hp - (newAttack));
             } else {
@@ -316,7 +318,7 @@ static Scanner in = new Scanner(System.in);
         wait(1);
         System.out.println("A sharp-edged leaf is launched to slash at the foe.");
         wait(1);
-        if(name.isAlive() == false){
+        if(name.isAlive() == false) {
           wait(1);
           System.out.println(getName() + " has defeated their opponent!");
           System.out.println();
@@ -330,14 +332,14 @@ static Scanner in = new Scanner(System.in);
       }
     }
     // Safe Guard
-    if(moveName.equals("Safe Guard") || moveName.equals("safe guard")){
-      if(_mana < 20){
+    if (moveName.equals("Safe Guard") || moveName.equals("safe guard")) {
+      if (_mana < 20){
         wait(1);
         System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
         System.out.println();
         wait(1);
       }
-      else{
+      else {
         _mana = getMana() - 20;
         _defense += 10;
         wait(1);
@@ -353,7 +355,7 @@ static Scanner in = new Scanner(System.in);
       }
     }
     // Rest
-    if(moveName.equals("Rest") || moveName.equals("rest")){
+    if (moveName.equals("Rest") || moveName.equals("rest")) {
       _mana += 20;
       wait(1);
       System.out.println(getName() + " takes a nap.");
@@ -366,5 +368,5 @@ static Scanner in = new Scanner(System.in);
       name.displayt();
       System.out.println();
     }
-}
+  }
 }
