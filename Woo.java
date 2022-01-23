@@ -1604,7 +1604,7 @@ public class Woo {
       }
     }
     wait(2);
-    System.out.println("\nYou beat the game. Congratulations!");
+    System.out.println("You beat the game. Congratulations!");
     System.out.print("\u001b[0m");
     System.out.print("\u001B[0m");
     StdAudio.close();
