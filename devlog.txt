@@ -132,7 +132,7 @@ Lauren Lee :: Coded in toString method for Pokemon and type advantages
 
 2022-1-23
 --------------------------------------------------------------
-Diana Akhmedova :: Finished all Unicode coloring and finished formatting, ran tests in the terminal
+Diana Akhmedova :: Finished all Unicode coloring and finished formatting, added v8
 
 Lauren Lee :: Coded in user catch prompt, fix minor bugs
 
