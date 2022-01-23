@@ -23,6 +23,15 @@ public class Player {
     _gender = gender;
   }
 
+  public static void wait(int s) {
+    try {
+      Thread.sleep(s * 500);
+    }
+    catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
+  }
+
   private static void expand()
   {
     Pokemon[] temp = new Pokemon[ _pokedex.length * 2 ];
@@ -46,32 +55,44 @@ public class Player {
   }
 
   public static void displayPokedex() {
+    wait(1);
     System.out.print("\u001b[38;2;64;64;64m");
     System.out.print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    wait(1);
     System.out.print("\u001b[38;2;255;204;204m");
     for (int i = 0; i <_pokedexSize; i++) {
       System.out.println(_pokedex[i]);
       System.out.println();
       _pokedex[i].displayt();
     }
+    wait(1);
     System.out.print("\u001b[38;2;64;64;64m");
     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    System.out.println();
   }
 
   public static void displayPokemon() {
-    for (int i = 0; i <_pokedexSize; i++) {
-      System.out.println();
+    System.out.print("\u001b[38;2;64;64;64m");
+    System.out.println("\n~~~~~~~~~~~~~~~~~");
+    for (int i = 0; i <_pokedexSize - 1; i++) {
       _pokedex[i].displayt();
+      System.out.println();
     }
+    _pokedex[_pokedexSize - 1].displayt();
+    System.out.print("\u001b[38;2;64;64;64m");
+    System.out.println("~~~~~~~~~~~~~~~~~");
   }
 
   public static void displayInventory() {
+    wait(1);
     System.out.print("\u001b[38;2;64;64;64m");
     System.out.println("\n===============");
+    wait(1);
     System.out.print("\u001b[38;2;255;153;153m");
     System.out.println("In your bag...");
     System.out.println("Pokeballs: " + _numPokeball);
     System.out.println("Berries: " + _numBerries);
+    wait(1);
     System.out.print("\u001b[38;2;64;64;64m");
     System.out.println("===============");
   }

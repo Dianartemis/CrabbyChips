@@ -32,7 +32,6 @@ false -- male
     _name = name;
   }
 
-
   public boolean getGender(){
     return _gender;
   }
@@ -55,7 +54,7 @@ false -- male
     }
   }
 
-  public String getName(){
+  public String getName() {
     return _name;
   }
 
@@ -68,15 +67,17 @@ false -- male
     }
   }
 
-  public void greet(Player name){
-    wait(1);
-    System.out.println("Hello " + name._name + ", " + "my name is " + _name + ". I am a " + getRole() + ".");
-    wait(1);
+  public void greet(Player name) {
+    wait(2);
+    System.out.print("\u001b[38;2;180;180;180m");
+    System.out.println("Hello \u001b[38;2;255;255;255m" + name._name + "\u001b[38;2;180;180;180m, my name is \u001b[38;2;153;153;255m" + _name + "\u001b[38;2;180;180;180m. I am a \u001b[38;2;153;153;255m" + getRole() + "\u001b[38;2;180;180;180m.");
+    wait(2);
   }
 
-  public void goodbye(Player name){
-    wait(1);
-    System.out.println("Goodbye " + name._name + "! See you next time.");
-    wait(1);
+  public void goodbye(Player name) {
+    wait(2);
+    System.out.print("\u001b[38;2;180;180;180m");
+    System.out.println("Goodbye \u001b[38;2;255;255;255m" + name._name + "\u001b[38;2;180;180;180m! See you next time.");
+    wait(2);
   }
 }

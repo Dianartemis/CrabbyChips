@@ -26,7 +26,6 @@ static Scanner in = new Scanner(System.in);
   public void setName(String name) {
     _name = name;
   }
-  
 
   public int getDefenseMultiplier() {
     return 7;
@@ -61,7 +60,8 @@ static Scanner in = new Scanner(System.in);
     if((_exp - (_lvl*100)) == 100) {
       wait(1);
       System.out.println();
-      System.out.println(getName() + " has leveled up! " + getName() + " is now level " + (_exp / 100) + "!");
+      System.out.print("\u001b[38;2;180;180;180m");
+      System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mhas leveled up! \u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mis now level \u001b[38;2;246;209;8m" + (_exp / 100) + "\u001b[38;2;180;180;180m!");
       wait(1);
       _lvl = _exp / 100;
       _hp = getHPMultiplier() *_lvl;
@@ -76,21 +76,25 @@ static Scanner in = new Scanner(System.in);
   }
 
   public void displayt() {
+    wait(1);
     System.out.print("\u001b[38;2;204;255;255m");
     System.out.println(_name + " / Stats:");
     System.out.println("HP: " + _hp);
     System.out.println("Attack: " + _attack);
     System.out.println("Defense:" + _defense);
-    System.out.println("Mana: " + _mana);
+    System.out.println("PP: " + _mana);
   }
 
   public void displayMove() {
-    System.out.print("\u001b[38;2;204;255;255m");
-    System.out.println("Your available moves are: Water Gun, Rain Dance, and Rest.");
     wait(1);
-    System.out.println("Water Gun squirts water to attack.");
-    System.out.println("Rain Dance summons rain to increase defense.");
-    System.out.println("Rest makes the user take a nap to restore mana.");
+    System.out.print("\u001b[38;2;180;180;180m");
+    System.out.println("Your available moves are: \u001b[38;2;103;179;201mWater Gun\u001b[38;2;180;180;180m, \u001b[38;2;103;179;201mRain Dance\u001b[38;2;180;180;180m, and \u001b[38;2;103;179;201mRest\u001b[38;2;180;180;180m.");
+    wait(1);
+    System.out.println("\u001b[38;2;103;179;201mWater Gun \u001b[38;2;180;180;180msquirts water to attack.");
+    wait(1);
+    System.out.println("\u001b[38;2;103;179;201mRain Dance \u001b[38;2;180;180;180msummons rain to increase defense.");
+    wait(1);
+    System.out.println("\u001b[38;2;103;179;201mRest \u001b[38;2;180;180;180mmakes the user take a nap to restore PP.");
   }
 
 
@@ -99,7 +103,8 @@ static Scanner in = new Scanner(System.in);
     if (moveName.equals("Water Gun") || moveName.equals("water gun")) {
       if (_mana < 25) {
         wait(1);
-        System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        System.out.print("\u001b[38;2;180;180;180m");
+        System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mcannot use \u001b[38;2;103;179;201m" + moveName + "\u001b[38;2;180;180;180m because \u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mdoes not have enough PP.");
         wait(1);
       }
       else {
@@ -162,17 +167,24 @@ static Scanner in = new Scanner(System.in);
           }
         }
         wait(1);
-        System.out.println(getName() + " has casted Water Gun!");
+        System.out.print("\u001b[38;2;180;180;180m");
+        System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mhas casted Water Gun!");
         wait(1);
         System.out.println("The foe is blasted with a forceful shot of water.");
         wait(1);
-        if(name.isAlive() == false){
-          System.out.println(getName() + " has defeated their opponent!");
+        if(name.isAlive() == false) {
+          System.out.print("\u001b[38;2;180;180;180m");
+          System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mhas defeated their opponent!");
         }
-        System.out.println();
+        wait(1);
+        System.out.print("\u001b[38;2;64;64;64m");
+        System.out.println("\n~~~~~~~~~~~~~~~~~");
         displayt();
         System.out.println();
         name.displayt();
+        wait(1);
+        System.out.print("\u001b[38;2;64;64;64m");
+        System.out.println("~~~~~~~~~~~~~~~~~");
         System.out.println();
       }
     }
@@ -180,21 +192,27 @@ static Scanner in = new Scanner(System.in);
     if (moveName.equals("Rain Dance") || moveName.equals("rain dance")) {
       if (_mana < 20) {
         wait(1);
-        System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+        System.out.print("\u001b[38;2;180;180;180m");
+        System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mcannot use \u001b[38;2;103;179;201m" + moveName + "\u001b[38;2;180;180;180m because \u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mdoes not have enough PP.");
         wait(1);
       }
       else {
         _mana = getMana() - 20;
         _defense += 10;
         wait(1);
+        System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("Rain starts to fall.");
         wait(1);
         System.out.println("Defense increased by 10!");
         wait(1);
-        System.out.println();
+        System.out.print("\u001b[38;2;64;64;64m");
+        System.out.println("\n~~~~~~~~~~~~~~~~~");
         displayt();
         System.out.println();
         name.displayt();
+        wait(1);
+        System.out.print("\u001b[38;2;64;64;64m");
+        System.out.println("~~~~~~~~~~~~~~~~~");
         System.out.println();
       }
     }
@@ -202,46 +220,63 @@ static Scanner in = new Scanner(System.in);
     if(moveName.equals("Rest") || moveName.equals("rest")) {
       _mana += 20;
       wait(1);
-      System.out.println(getName() + " takes a nap.");
+      System.out.print("\u001b[38;2;180;180;180m");
+      System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mtakes a nap.");
       wait(1);
-      System.out.println("Mana increased by 20!");
+      System.out.println("PP increased by 20!");
       wait(1);
-      System.out.println();
+      System.out.print("\u001b[38;2;64;64;64m");
+      System.out.println("\n~~~~~~~~~~~~~~~~~");
       displayt();
       System.out.println();
       name.displayt();
+      wait(1);
+      System.out.print("\u001b[38;2;64;64;64m");
+      System.out.println("~~~~~~~~~~~~~~~~~");
       System.out.println();
     }
     wait(1);
-    System.out.println("Do you want to use a Berry on " + _name + "? (yes/no)");
+    System.out.print("\u001b[38;2;180;180;180m");
+    System.out.println("Do you want to use a Berry on \u001b[38;2;103;179;201m" + _name + "\u001b[38;2;180;180;180m? (yes/no)");
     String berry = "";
+    wait(1);
+    System.out.print("\u001b[38;2;255;255;255m");
+    System.out.print("> ");
     berry = in.nextLine().toLowerCase();
       if (berry.equals("yes")) {
         if (Player._numBerries <= 0) {
-          //wait(1);
+          wait(1);
+          System.out.println();
+          System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("You cannot use a Berry.");
-          //wait(1);
+          wait(1);
           System.out.println("You have no Berries left!");
-        } else {
+        }
+        else {
           Player._numBerries -= 1;
           _hp += 20;
           // probably overrides
-          //wait(1);
-          System.out.println(_name + "'s HP has been restored by 20!");
-          //wait(1);
-          System.out.println("Here is your inventory:");
-          //wait(1);
+          wait(1);
           System.out.println();
+          System.out.print("\u001b[38;2;180;180;180m");
+          System.out.println("\u001b[38;2;103;179;201m" + _name + "'s \u001b[38;2;180;180;180mHP has been restored by 20!");
+          wait(1);
+          System.out.println("Here is your Inventory:");
+          wait(1);
           Player.displayInventory();
         }
       }
       else if (berry.equals("no")) {
-        //wait(1);
-        System.out.println("You choose to not use a berry.");
+        wait(1);
+        System.out.println();
+        System.out.print("\u001b[38;2;180;180;180m");
+        System.out.println("You choose to not use a Berry.");
       }
       else {
-        //wait(1);
-        System.out.println("That is not a valid response, you do not get a berry.");
+        wait(1);
+        System.out.println();
+        System.out.print("\u001b[38;2;180;180;180m");
+        System.out.println("That is not a valid response. You do not use a Berry.");
       }
     }
 
@@ -249,7 +284,8 @@ static Scanner in = new Scanner(System.in);
       if (moveName.equals("Water Gun") || moveName.equals("water gun")) {
         if (_mana < 25){
           wait(1);
-          System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+          System.out.print("\u001b[38;2;180;180;180m");
+          System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mcannot use \u001b[38;2;103;179;201m" + moveName + "\u001b[38;2;180;180;180m because \u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mdoes not have enough PP.");
           wait(1);
         }
         else {
@@ -312,17 +348,24 @@ static Scanner in = new Scanner(System.in);
             }
           }
           wait(1);
-          System.out.println(getName() + " has casted Water Gun!");
+          System.out.print("\u001b[38;2;180;180;180m");
+          System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mhas casted Water Gun!");
           wait(1);
           System.out.println("The foe is blasted with a forceful shot of water.");
           wait(1);
           if (name.isAlive() == false) {
-            System.out.println(getName() + " has defeated their opponent!");
+            System.out.print("\u001b[38;2;180;180;180m");
+            System.out.println("\n\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mhas defeated their opponent!");
           }
-          System.out.println();
+          wait(1);
+          System.out.print("\u001b[38;2;64;64;64m");
+          System.out.println("\n~~~~~~~~~~~~~~~~~");
           displayt();
           System.out.println();
           name.displayt();
+          wait(1);
+          System.out.print("\u001b[38;2;64;64;64m");
+          System.out.println("~~~~~~~~~~~~~~~~~");
           System.out.println();
         }
       }
@@ -330,7 +373,8 @@ static Scanner in = new Scanner(System.in);
       if (moveName.equals("Rain Dance") || moveName.equals("rain dance")) {
         if (_mana < 20){
           wait(1);
-          System.out.println(getName() + " cannot use " + moveName + " because you do not have enough mana.");
+          System.out.print("\u001b[38;2;180;180;180m");
+          System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mcannot use \u001b[38;2;103;179;201m" + moveName + "\u001b[38;2;180;180;180m because \u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mdoes not have enough PP.");
           System.out.println();
           wait(1);
         }
@@ -338,14 +382,19 @@ static Scanner in = new Scanner(System.in);
           _mana = getMana() - 20;
           _defense += 10;
           wait(1);
+          System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("Rain starts to fall.");
           wait(1);
           System.out.println("Defense increased by 10!");
           wait(1);
-          System.out.println();
+          System.out.print("\u001b[38;2;64;64;64m");
+          System.out.println("\n~~~~~~~~~~~~~~~~~");
           displayt();
           System.out.println();
           name.displayt();
+          wait(1);
+          System.out.print("\u001b[38;2;64;64;64m");
+          System.out.println("~~~~~~~~~~~~~~~~~");
           System.out.println();
         }
       }
@@ -353,15 +402,19 @@ static Scanner in = new Scanner(System.in);
       if(moveName.equals("Rest") || moveName.equals("rest")) {
         _mana += 20;
         wait(1);
-        System.out.println(getName() + " takes a nap.");
+        System.out.print("\u001b[38;2;180;180;180m");
+        System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mtakes a nap.");
         wait(1);
-        System.out.println("Mana increased by 20!");
+        System.out.println("PP increased by 20!");
         wait(1);
-
-        System.out.println();
+        System.out.print("\u001b[38;2;64;64;64m");
+        System.out.println("\n~~~~~~~~~~~~~~~~~");
         displayt();
         System.out.println();
         name.displayt();
+        wait(1);
+        System.out.print("\u001b[38;2;64;64;64m");
+        System.out.println("~~~~~~~~~~~~~~~~~");
         System.out.println();
       }
     }
