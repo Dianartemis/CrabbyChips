@@ -119,7 +119,7 @@ public class Woo {
           boolean gym = goToGym(name, region);
           if (gym == false) {
             goToNurse(name, region);
-            walk(name, region);
+            return cont;
           }
           else {
             return true;
@@ -148,7 +148,7 @@ public class Woo {
           Pokemon pok = generatePokemon(name, type); // generates pokemon to battle
           boolean win = battle(name, pok, region); // battles the pokemon
           goToNurse(name, region); // is lose, go to nurse
-          walk(name, region);
+          return cont;
         }
         else {
           //wait(1);
@@ -170,7 +170,7 @@ public class Woo {
               boolean gym = goToGym(name, region);
               if (gym == false) {
                 goToNurse(name, region);
-                walk(name, region);
+                return cont;
               }
               else {
                 return true;
@@ -192,7 +192,7 @@ public class Woo {
         Pokemon pok = generatePokemon(name, type);
         boolean win = battle(name, pok, region);
         goToNurse(name, region);
-        walk(name, region);
+        return cont;
       }
       else {
         //wait(1);
@@ -203,7 +203,7 @@ public class Woo {
         Pokemon pok = generatePokemon(name, type);
         boolean win = battle(name, pok, region);
         goToNurse(name, region);
-        walk(name, region);
+        return cont;
       }
     }
     else if (random >= 5 && random <= 6) {
@@ -238,7 +238,7 @@ public class Woo {
           boolean gym = goToGym(name, region);
           if (gym == false){
             goToNurse(name, region);
-            walk(name, region);
+            return cont;
           }
           else {
             return true;
@@ -268,12 +268,12 @@ public class Woo {
           boolean win = battle(name, pok, region);
           if (win == false) {
             goToNurse(name, region);
-            walk(name, region);
+            return cont;
           }
           else {
             catchP(name, pok, region);
             goToNurse(name, region);
-            walk(name, region);
+            return cont;
           }
         }
         else {
@@ -296,7 +296,7 @@ public class Woo {
               boolean gym = goToGym(name, region);
               if (gym == false) {
                 goToNurse(name, region);
-                walk(name, region);
+                return cont;
               }
               else {
                 return true;
@@ -319,12 +319,12 @@ public class Woo {
         boolean win = battle(name, pok, region);
         if(win == false) {
           goToNurse(name, region); // if lose, go to nurse to heal
-          walk(name, region);
+          return cont;
         }
         else {
           catchP(name, pok, region); // if win, automatically try to catch, based on probability
           goToNurse(name, region);
-          walk(name, region);
+          return cont;
         }
       }
       else {
@@ -338,15 +338,14 @@ public class Woo {
         if (win == true){
           catchP(name, pok, region);
           goToNurse(name, region);
-          walk(name, region);
+          return cont;
         }
         else {
           goToNurse(name, region);
-          walk(name, region);
+          return cont;
         }
       }
     }
-    return cont;
   }
 
   public static void catchP(Player name, Pokemon pokName, String region) {
