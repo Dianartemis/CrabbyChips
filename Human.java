@@ -1,3 +1,8 @@
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+import java.io.*;
+import java.util.*;
+
 public class Human {
   String _name;
   boolean _gender;
@@ -27,6 +32,7 @@ false -- male
     _name = name;
   }
 
+
   public boolean getGender(){
     return _gender;
   }
@@ -53,11 +59,24 @@ false -- male
     return _name;
   }
 
+  public static void wait(int s) {
+    try {
+      Thread.sleep(s * 500);
+    }
+    catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
+  }
+
   public void greet(Player name){
+    wait(1);
     System.out.println("Hello " + name._name + ", " + "my name is " + _name + ". I am a " + getRole() + ".");
+    wait(1);
   }
 
   public void goodbye(Player name){
+    wait(1);
     System.out.println("Goodbye " + name._name + "! See you next time.");
+    wait(1);
   }
 }

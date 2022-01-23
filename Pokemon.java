@@ -90,6 +90,9 @@ public class Pokemon {
       }
     }
 
+    public int getManaMultiplier(){
+      return 10;
+    }
     public int getDefenseMultiplier() {
       return 0;
     }

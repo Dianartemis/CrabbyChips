@@ -26,6 +26,7 @@ static Scanner in = new Scanner(System.in);
   public void setName(String name) {
     _name = name;
   }
+  
 
   public int getDefenseMultiplier() {
     return 7;
