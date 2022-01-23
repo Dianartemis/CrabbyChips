@@ -335,6 +335,9 @@ public class Woo {
             wait(2);
             System.out.print("\u001b[38;2;180;180;180m");
             System.out.println("\nDo you want to catch the Pokemon? (yes/no)");
+            wait(1);
+            System.out.print("\u001b[38;2;255;255;255m");
+            System.out.print("> ");
             catchPokemon = in.nextLine().toLowerCase();
             if (catchPokemon.equals("yes")) {
               catchP(name, pok, region);
@@ -417,6 +420,9 @@ public class Woo {
           wait(2);
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nDo you want to catch the Pokemon? (yes/no)");
+          wait(1);
+          System.out.print("\u001b[38;2;255;255;255m");
+          System.out.print("> ");
           catchPokemon = in.nextLine().toLowerCase();
           if (catchPokemon.equals("yes")) {
             catchP(name, pok, region);
@@ -456,6 +462,9 @@ public class Woo {
           wait(1);
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nDo you want to catch the Pokemon? (yes/no)");
+          wait(1);
+          System.out.print("\u001b[38;2;255;255;255m");
+          System.out.print("> ");
           catchPokemon = in.nextLine().toLowerCase();
           if (catchPokemon.equals("yes")) {
             catchP(name, pok, region);
