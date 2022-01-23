@@ -1573,7 +1573,7 @@ public class Woo {
 
   public static void main(String[] args) {
     Player player = new Player();
-    StdAudio.loopInBackground("city.wav");
+    //StdAudio.loopInBackground("city.wav");
     gameSetup(player);
     chooseStarter(player);
     StdAudio.close();
