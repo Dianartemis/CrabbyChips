@@ -1106,7 +1106,6 @@ public class Woo {
   }
 
   public static void chooseStarter(Player player) {
-    /**
     System.out.println();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
@@ -1451,7 +1450,7 @@ public class Woo {
       System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
     }
     // Instance of Pokemon
-**/
+
     // CHOOSING POKEMON
     wait(3);
     System.out.print("\u001b[38;2;180;180;180m");
