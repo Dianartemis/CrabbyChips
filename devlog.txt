@@ -3,34 +3,54 @@ Diana Akhmedova
 Lauren Lee
 pd 8
 ---------------------
-<Project Summary / Working Title>
+Pokemon Shining Pearl
+Pokemon Shining Pearl is a roleplaying game that allows players to engage in battle, catch Pokemon, and beat gyms.
+All Pokemon, characters, and game descriptions in the game are based on the Nintendo Pokemon Shining Pearl game.
 
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+- Creating a battle method that allows the user to switch to their next Pokemon when their current Pokemon has fainted required a lot of trials/testing with loops and if statements
+- Creating a nurse method that is versatile for all uses of it
+- There was a bug that made users have to beat a gym more than once, although not in all instances. We found out that it was because instead of directly returning false/true in our walk method, we were calling another walk method that was not being returned in the walk method that was called in the while loop in our main method. We had to change this to fix the bug. Took 4+ hrs to figure out.
+- Creating seperate gyms that can be accessed based on regions
+- Making sure to account for invalid inputs
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-meaning ?
+- Whenever we copy our latest working version into a v# directory, we get some variation of this message:
 warning: LF will be replaced by CRLF in v6/Human.java.
-warning: LF will be replaced by CRLF in v6/Player.java.                                                                 The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in v6/Player.java.
+The file will have its original line endings in your working directory
+What does this mean?
+
+- How can we create a save file?
+- How do we make music work? Specifically the .close() method?
+- Unicode colors are not working on windows terminals
+-
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1 gym => multiple gym methods
-3 nurse => 1 nurse method
+-1 gym method => multiple gym methods
+-3 nurse methods that returned different things  => 1 nurse method that returned void
+- Allowing user to choose to catch Pokemon instead of automatically catching
+- playing the "do you want a berry?" option in the moves of the Pokemon instead of in the battle method where the loops made it very complicated
+- creating a different move method for opponents and users to account for certain differences when the oppponent attacks vs us
 
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tales of wisdom gained...
 ||||||||||||||||||||||||||||||||||||||||||
+- we have to make sure if we are calling a method in another method, that we can trace it. One of our problems was because we were not tracing how all the parts were moving, we missed important bugs
+- Create helper methods before the bigger methods
+- Have a clear idea of how the game should function first to make making helper methods easier.
+- If helper methods are not created first, you cannot incrementally code because the bigger method you are coding will rely on you making a ton of other methods
 
 
 
@@ -134,14 +154,14 @@ Lauren Lee :: Coded in toString method for Pokemon and type advantages
 --------------------------------------------------------------
 Diana Akhmedova :: Finished all Unicode coloring and finished formatting, added v8
 
-Lauren Lee :: Coded in user catch prompt, fix minor bugs
+Lauren Lee :: Coded in user catch prompt, fix minor bugs, updated read me
 
 ** TO DO **
 - Music !! (works in main, wont stop in battle)
 - UPDATE DEVLOG
 - Update README??
-- Add more Pokemon/elements/gyms if time
-- ASCII/text art if time
+- save file
+- hide cursor
 ** TO DO **
 ==============================================================
 

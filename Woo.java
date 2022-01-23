@@ -724,14 +724,14 @@ public class Woo {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nYou enter the gym and prepare to battle Flint's first Pokemon, Infernape.");
-      Pokemon infernape = new Fire("Infernape", 23, 2310);
+      Pokemon infernape = new Fire("Infernape", 23, 2320);
       boolean firstBattle = battle(name, infernape, region);
       if (firstBattle == true) { // if wins first battle, fights next
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nPrepare to fight Flint's next Pokemon, Rapidash!");
         wait(1);
-        Pokemon rapidash = new Fire("Rapidash", 25, 2530);
+        Pokemon rapidash = new Fire("Rapidash", 25, 2520);
         boolean secondBattle = battle(name, rapidash, region);
         if (secondBattle == true) {
           wait(2);
@@ -755,14 +755,14 @@ public class Woo {
       System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nYou enter the gym and prepare to battle Flint's first Pokemon, Infernape.");
       wait(1);
-      Pokemon infernape = new Fire("Infernape", 23, 2310);
+      Pokemon infernape = new Fire("Infernape", 23, 2320);
       boolean firstBattle = battle(name, infernape, region);
       if (firstBattle == true) { // if wins first battle, fights next
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nPrepare to fight Flint's next Pokemon, Rapidash!");
         wait(1);
-        Pokemon rapidash = new Fire("Rapidash", 25, 2530);
+        Pokemon rapidash = new Fire("Rapidash", 25, 2520);
         boolean secondBattle = battle(name, rapidash, region);
         if (secondBattle == true) {
           wait(2);
@@ -788,13 +788,13 @@ public class Woo {
         wait(2);
         System.out.println("\nYou enter the gym and prepare to battle Flint's first Pokemon, Infernape.");
         wait(1);
-        Pokemon infernape = new Fire("Infernape", 23, 2310);
+        Pokemon infernape = new Fire("Infernape", 23, 2320);
         boolean firstBattle = battle(name, infernape, region);
         if (firstBattle == true) {
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nPrepare to fight Flint's next Pokemon, Rapidash!");
           wait(1);
-          Pokemon rapidash = new Fire("Rapidash", 25, 2530);
+          Pokemon rapidash = new Fire("Rapidash", 25, 2520);
           boolean secondBattle = battle(name, rapidash, region);
           if (secondBattle == true) {
             wait(2);
@@ -841,21 +841,21 @@ public class Woo {
       System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nYou enter the gym and prepare to battle Crasher Wake's first Pokemon Gyarados.");
       wait(2);
-      Pokemon gyarados = new Water("Gyarados", 19, 1990);
+      Pokemon gyarados = new Water("Gyarados", 19, 1980);
       boolean firstBattle = battle(name, gyarados, region);
       if (firstBattle == true) {
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Quagsire!");
         wait(1);
-        Pokemon quagsire = new Water("Quagsire", 20, 2030);
+        Pokemon quagsire = new Water("Quagsire", 20, 2040);
         boolean secondBattle = battle(name, quagsire, region);
         if (secondBattle == true) {
           wait(2);
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Floatzel!");
           wait(1);
-          Pokemon floatzel = new Water("Floatzel", 21, 2150);
+          Pokemon floatzel = new Water("Floatzel", 21, 2160);
           boolean thirdBattle = battle(name, floatzel, region);
           if (thirdBattle == true) {
             wait(2);
@@ -880,21 +880,21 @@ public class Woo {
       System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nYou enter the gym and prepare to battle Crasher Wake's first Pokemon Gyarados.");
       wait(1);
-      Pokemon gyarados = new Water("Gyarados", 19, 1990);
+      Pokemon gyarados = new Water("Gyarados", 19, 1980);
       boolean firstBattle = battle(name, gyarados, region);
       if (firstBattle == true) {
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Quagsire!");
         wait(1);
-        Pokemon quagsire = new Water("Quagsire", 20, 2030);
+        Pokemon quagsire = new Water("Quagsire", 20, 2040);
         boolean secondBattle = battle(name, quagsire, region);
         if (secondBattle == true) {
           wait(2);
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Floatzel!");
           wait(1);
-          Pokemon floatzel = new Water("Floatzel", 21, 2150);
+          Pokemon floatzel = new Water("Floatzel", 21, 2160);
           boolean thirdBattle = battle(name, floatzel, region);
           if (thirdBattle == true) {
             wait(2);
@@ -921,21 +921,21 @@ public class Woo {
       wait(2);
       System.out.println("\nYou enter the gym and prepare to battle Crasher Wake's first Pokemon Gyarados.");
       wait(1);
-      Pokemon gyarados = new Water("Gyarados", 19, 1990);
+      Pokemon gyarados = new Water("Gyarados", 19, 1980);
       boolean firstBattle = battle(name, gyarados, region);
       if (firstBattle == true) {
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Quagsire!");
         wait(1);
-        Pokemon quagsire = new Water("Quagsire", 20, 2030);
+        Pokemon quagsire = new Water("Quagsire", 20, 2040);
         boolean secondBattle = battle(name, quagsire, region);
         if (secondBattle == true) {
           wait(2);
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nPrepare to fight Crasher Wake's next Pokemon, Floatzel!");
           wait(1);
-          Pokemon floatzel = new Water("Floatzel", 21, 2150);
+          Pokemon floatzel = new Water("Floatzel", 21, 2160);
           boolean thirdBattle = battle(name, floatzel, region);
           if (thirdBattle == true) {
             wait(2);
@@ -983,21 +983,21 @@ public class Woo {
       System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nYou enter the gym and prepare to battle Gardenia's first Pokemon, Cherubi.");
       wait(1);
-      Pokemon cherubi = new Grass("Cherubi", 14, 1490);
+      Pokemon cherubi = new Grass("Cherubi", 14, 1480);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         wait(1);
-        Pokemon turtwig = new Grass("Turtwig", 16, 1630);
+        Pokemon turtwig = new Grass("Turtwig", 16, 1640);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           wait(2);
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           wait(1);
-          Pokemon roserade = new Grass("Roserade",17, 1750);
+          Pokemon roserade = new Grass("Roserade",17, 1760);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             wait(2);
@@ -1022,21 +1022,21 @@ public class Woo {
       System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nYou enter the gym and prepare to battle Gardenia's First Pokemon, Cherubi.");
       wait(1);
-      Pokemon cherubi = new Grass("Cherubi", 14, 1490);
+      Pokemon cherubi = new Grass("Cherubi", 14, 1480);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         wait(1);
-        Pokemon turtwig = new Grass("Turtwig", 16, 1630);
+        Pokemon turtwig = new Grass("Turtwig", 16, 1640);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           wait(2);
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           wait(2);
-          Pokemon roserade = new Grass("Roserade",17, 1750);
+          Pokemon roserade = new Grass("Roserade",17, 1760);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             wait(2);
@@ -1063,21 +1063,21 @@ public class Woo {
       wait(2);
       System.out.println("\nYou enter the gym and prepare to battle Gardenia's first Pokemon, Cherubi.");
       wait(1);
-      Pokemon cherubi = new Water("Cherubi", 14, 1490);
+      Pokemon cherubi = new Water("Cherubi", 14, 1480);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         wait(1);
-        Pokemon turtwig = new Water("Turtwig", 16, 1630);
+        Pokemon turtwig = new Water("Turtwig", 16, 1640);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           wait(2);
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           wait(1);
-          Pokemon roserade = new Water("Roserade", 17, 1750);
+          Pokemon roserade = new Water("Roserade", 17, 1760);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             wait(2);
@@ -1122,11 +1122,11 @@ public class Woo {
     System.out.println();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("\nRING RING! Wake up " + player._name + "!" + " Your mom told you to go to Professor Rowan's clinic to get your first starter Pokemon.");
+    System.out.println("\nRING RING! Wake up " + player._name + "!" + " Your mom told you to go to Professor Rowan's Pokemon Center to get your first starter Pokemon.");
     wait(2);
     System.out.println("\nYou totally forgot. Today is your 10th birthday. You're finally old enough to become a Pokemon trainer!");
     wait(2);
-    System.out.println("\nYou rush over to the Pokemon clinic and luckily the line isn't long.");
+    System.out.println("\nYou rush over to the Pokemon Center and luckily the line isn't long.");
     wait(2);
     System.out.print("\nA");
     wait(2);
@@ -1529,7 +1529,7 @@ public class Woo {
     player.displayInventory();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("\nYou thank Professor Rowan and walk out of the clinic.");
+    System.out.println("\nYou thank Professor Rowan and walk out of the Pokemon Center.");
     wait(1);
     System.out.print("\u001b[38;2;96;96;96m");
     System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
