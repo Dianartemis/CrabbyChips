@@ -505,7 +505,7 @@ public class Woo {
         name._numPokemon = name._numPokemon + 1;
         name._numPokeball = name._numPokeball - 1;
         wait(2);
-        System.out.println("\nYou now have a " + name._numPokemon + ".");
+        System.out.println("\nYou now have " + name._numPokemon + " Pokemon.");
         System.out.println();
         name.displayPokedex(); // print out pokemon
         System.out.println();
