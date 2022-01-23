@@ -219,8 +219,14 @@ public class Woo {
         Pokemon pok = generatePokemon(name, type);
         boolean win = battle(name, pok, region);
         if (win == true){
+          wait(1);
+          System.out.println();
           System.out.println("The trainer gave you a pokeball for your amazing fighting!");
-          name._numPokeball = name._numPokemon + 1;
+          System.out.println();
+          wait(1);
+          name.displayInventory();
+          System.out.println();
+          name._numPokeball = name._numPokeball + 1;
         }
         goToNurse(name, region);
         return cont;
@@ -856,19 +862,19 @@ public class Woo {
       wait(1);
       System.out.println("\nYou enter the gym and prepare to battle Gardenia's First Pokemon, Cherubi.");
       wait(1);
-      Pokemon cherubi = new Water("Cherubi", 14, 1490);
+      Pokemon cherubi = new Grass("Cherubi", 14, 1490);
       boolean firstBattle = battle(name, cherubi, region);
       if (firstBattle == true) {
         wait(1);
         System.out.println("\nPrepare to fight Gardenia's next Pokemon, Turtwig!");
         wait(1);
-        Pokemon turtwig = new Water("Turtwig", 16, 1630);
+        Pokemon turtwig = new Grass("Turtwig", 16, 1630);
         boolean secondBattle = battle(name, turtwig, region);
         if (secondBattle == true) {
           wait(1);
           System.out.println("\nPrepare to fight Gardenia's next Pokemon, Roserade!");
           wait(1);
-          Pokemon roserade = new Water("Roserade",17, 1750);
+          Pokemon roserade = new Grass("Roserade",17, 1750);
           boolean thirdBattle = battle(name, roserade, region);
           if (thirdBattle == true) {
             wait(1);
