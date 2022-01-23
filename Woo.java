@@ -11,31 +11,31 @@ public class Woo {
   // should generate a pokemon that is an instance of the type
   public static Pokemon generatePokemon(Player name, int type) {
     int random = (int) ((Math.random() * 10)); // 0-5
-    String[] fire = new String[] { "Vulpix", "Slugma", "Numel", "Charmander", "Cyndaquil", "Torchic", "Ponyta","Growlithe","Magmar","Flareon"};
-    String[] water = new String[] { "Feebas", "Wooper", "Lotad", "Marill", "Wingull", "Poliwag", "Psyduck","Tentacool","Buizel", "Manaphy" };
-    String[] grass = new String[] { "Cherubi", "Seedot", "Bulbasaur", "Chikorita", "Treecko", "Bellsprout" , "Roselia","Burmy","Oddish","Sunkern"};
+    String[] fire = new String[] { "Vulpix", "Slugma", "Numel", "Charmander", "Cyndaquil", "Torchic", "Ponyta", "Growlithe", "Magmar", "Flareon" };
+    String[] water = new String[] { "Feebas", "Wooper", "Lotad", "Marill", "Wingull", "Poliwag", "Psyduck", "Tentacool", "Buizel", "Manaphy" };
+    String[] grass = new String[] { "Cherubi", "Seedot", "Bulbasaur", "Chikorita", "Treecko", "Bellsprout" , "Roselia", "Burmy", "Oddish", "Sunkern" };
     int level = generateLvl(name);
 
     if (type == 0) { // 0 is fire
       String pokemon = fire[random];
-      Pokemon pok = new Fire(pokemon, level, level*100);
+      Pokemon pok = new Fire(pokemon, level, level * 100);
       return pok;
     }
     else if (type == 1) { // 1 is water
       String pokemon = water[random];
-      Pokemon pok = new Water(pokemon, level, level*100);
+      Pokemon pok = new Water(pokemon, level, level * 100);
       return pok;
     }
     else { // 2 is grass
       String pokemon = grass[random];
-      Pokemon pok = new Grass(pokemon, level, level*100);
+      Pokemon pok = new Grass(pokemon, level, level * 100);
       return pok;
     }
   }
 
   // level is randomly generated. range is two levels below the starter pokemon level and two levels above
   public static int generateLvl(Player name) {
-    int random = (int) ((Math.random() * 5 )+ ((name._pokedex[0].getLvl())-2));
+    int random = (int) ((Math.random() * 5) + ((name._pokedex[0].getLvl()) - 2));
     return random;
   }
 
@@ -110,8 +110,10 @@ public class Woo {
       wait(1);
       System.out.print("\u001b[38;2;255;255;255m");
       System.out.print("> ");
+      System.out.print("\033[?25h"); // SHOW CURSOR
       String response = "";
       response = in.nextLine().toLowerCase();
+      System.out.print("\033[?25l"); // HIDE CURSOR
       if (response.equals("walk")) {
         return cont;
       }
@@ -150,8 +152,10 @@ public class Woo {
       wait(1);
       System.out.print("\u001b[38;2;255;255;255m");
       System.out.print("> ");
+      System.out.print("\033[?25h"); // SHOW CURSOR
       String runawayOr = "";
       runawayOr = in.nextLine().toLowerCase();
+      System.out.print("\033[?25l"); // HIDE CURSOR
       if (runawayOr.equals("run away")) {
         boolean run = runaway(); // runaway opporates on a probability. If it can run away, true is returned
         if (run == false) {
@@ -174,8 +178,10 @@ public class Woo {
           wait(1);
           System.out.print("\u001b[38;2;255;255;255m");
           System.out.print("> ");
+          System.out.print("\033[?25h"); // SHOW CURSOR
           String response = "";
           response = in.nextLine().toLowerCase();
+          System.out.print("\033[?25l"); // HIDE CURSOR
           if (response.equals("walk")) {
             return cont;
           }
@@ -272,8 +278,10 @@ public class Woo {
       wait(1);
       System.out.print("\u001b[38;2;255;255;255m");
       System.out.print("> ");
+      System.out.print("\033[?25h"); // SHOW CURSOR
       String res = "";
       res = in.nextLine().toLowerCase();
+      System.out.print("\033[?25l"); // HIDE CURSOR
       if (res.equals("walk")) {
         return cont;
       }
@@ -311,8 +319,10 @@ public class Woo {
       wait(1);
       System.out.print("\u001b[38;2;255;255;255m");
       System.out.print("> ");
+      System.out.print("\033[?25h"); // SHOW CURSOR
       String encounterPokemon = "";
       encounterPokemon = in.nextLine().toLowerCase();
+      System.out.print("\033[?25l"); // HIDE CURSOR
       if (encounterPokemon.equals("run away")) {
         boolean run = runaway();
         if (run == false) {
@@ -338,7 +348,9 @@ public class Woo {
             wait(1);
             System.out.print("\u001b[38;2;255;255;255m");
             System.out.print("> ");
+            System.out.print("\033[?25h"); // SHOW CURSOR
             catchPokemon = in.nextLine().toLowerCase();
+            System.out.print("\033[?25l"); // HIDE CURSOR
             if (catchPokemon.equals("yes")) {
               catchP(name, pok, region);
               wait(1);
@@ -369,8 +381,10 @@ public class Woo {
           wait(1);
           System.out.print("\u001b[38;2;255;255;255m");
           System.out.print("> ");
+          System.out.print("\033[?25h"); // SHOW CURSOR
           String response = "";
           response = in.nextLine().toLowerCase();
+          System.out.print("\033[?25l"); // HIDE CURSOR
           if (response.equals("walk")) {
             return cont;
           }
@@ -423,7 +437,9 @@ public class Woo {
           wait(1);
           System.out.print("\u001b[38;2;255;255;255m");
           System.out.print("> ");
+          System.out.print("\033[?25h"); // SHOW CURSOR
           catchPokemon = in.nextLine().toLowerCase();
+          System.out.print("\033[?25l"); // HIDE CURSOR
           if (catchPokemon.equals("yes")) {
             catchP(name, pok, region);
             wait(1);
@@ -465,7 +481,9 @@ public class Woo {
           wait(1);
           System.out.print("\u001b[38;2;255;255;255m");
           System.out.print("> ");
+          System.out.print("\033[?25h"); // SHOW CURSOR
           catchPokemon = in.nextLine().toLowerCase();
+          System.out.print("\033[?25l"); // HIDE CURSOR
           if (catchPokemon.equals("yes")) {
             catchP(name, pok, region);
             goToNurse(name, region);
@@ -572,8 +590,10 @@ public class Woo {
           wait(1);
           System.out.print("\u001b[38;2;255;255;255m");
           System.out.print("> ");
+          System.out.print("\033[?25h"); // SHOW CURSOR
           String answer = "";
           answer = in.nextLine().toLowerCase();
+          System.out.print("\033[?25l"); // HIDE CURSOR
           if (name._pokedex[i] instanceof Water) {
             while (!answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("aqua ring")) { // if input not valid, asks for another input until it is valid
               System.out.println();
@@ -583,7 +603,9 @@ public class Woo {
               wait(1);
               System.out.print("\u001b[38;2;255;255;255m");
               System.out.print("> ");
+              System.out.print("\033[?25h"); // SHOW CURSOR
               answer = in.nextLine().toLowerCase();
+              System.out.print("\033[?25l"); // HIDE CURSOR
             }
           } else if (name._pokedex[i] instanceof Fire) {
             while (!answer.equals("ember") && !answer.equals("bulk up") && !answer.equals("restore")) { // if input not valid, asks for another input until it is valid
@@ -594,7 +616,9 @@ public class Woo {
               wait(1);
               System.out.print("\u001b[38;2;255;255;255m");
               System.out.print("> ");
+              System.out.print("\033[?25h"); // SHOW CURSOR
               answer = in.nextLine().toLowerCase();
+              System.out.print("\033[?25l"); // HIDE CURSOR
             }
           } else {
             while (!answer.equals("razor leaf") && !answer.equals("safe guard") && !answer.equals("rest")) { // if input not valid, asks for another input until it is valid
@@ -605,7 +629,9 @@ public class Woo {
               wait(1);
               System.out.print("\u001b[38;2;255;255;255m");
               System.out.print("> ");
+              System.out.print("\033[?25h"); // SHOW CURSOR
               answer = in.nextLine().toLowerCase();
+              System.out.print("\033[?25l"); // HIDE CURSOR
             }
           }
           System.out.println();
@@ -652,7 +678,7 @@ public class Woo {
   // move generate depends on what type of pokemon it is
   public static String generateMove(Pokemon name) {
     String[] fireMoves = new String[] { "ember", "bulk up", "restore" };
-    String[] waterMoves = new String[] { "water gun", "rain dance", "rest" };
+    String[] waterMoves = new String[] { "water gun", "rain dance", "aqua ring" };
     String[] grassMoves = new String[] { "razor leaf", "safe guard", "rest" };
     int randMove = (int) (((Math.random()) * 3));
     if (name instanceof Fire) {
@@ -714,7 +740,9 @@ public class Woo {
     wait(1);
     System.out.print("\u001b[38;2;255;255;255m");
     System.out.print("> ");
+    System.out.print("\033[?25h"); // SHOW CURSOR
     answer = in.nextLine().toLowerCase();
+    System.out.print("\033[?25l"); // HIDE CURSOR
     if (answer.equals("yes")) {
       wait(2);
       System.out.print("\u001b[38;2;180;180;180m");
@@ -830,7 +858,9 @@ public class Woo {
     wait(1);
     System.out.print("\u001b[38;2;255;255;255m");
     System.out.print("> ");
+    System.out.print("\033[?25h"); // SHOW CURSOR
     answer = in.nextLine().toLowerCase();
+    System.out.print("\033[?25l"); // HIDE CURSOR
     if (answer.equals("yes")) {
       wait(2);
       System.out.print("\u001b[38;2;180;180;180m");
@@ -972,7 +1002,9 @@ public class Woo {
     wait(1);
     System.out.print("\u001b[38;2;255;255;255m");
     System.out.print("> ");
+    System.out.print("\033[?25h"); // SHOW CURSOR
     answer = in.nextLine().toLowerCase();
+    System.out.print("\033[?25l"); // HIDE CURSOR
     if (answer.equals("yes")) {
       wait(2);
       System.out.print("\u001b[38;2;180;180;180m");
@@ -1101,6 +1133,8 @@ public class Woo {
   }
 
   public static void gameSetup(Player player) {
+    System.out.println("\033[2J"); // CLEAR SCREEN
+    System.out.print("\033[?25l"); // HIDE CURSOR
     System.out.print("\u001b[0m");
     System.out.print("\u001B[0m");
     System.out.println();
@@ -1112,13 +1146,16 @@ public class Woo {
     wait(1);
     System.out.print("\u001b[38;2;255;255;255m");
     System.out.print("> ");
+    System.out.print("\033[?25h"); // SHOW CURSOR
     String name = "";
     name = in.nextLine();
     player._name = name;
+    System.out.print("\033[?25l"); // HIDE CURSOR
     wait(1);
   }
 
   public static void chooseStarter(Player player) {
+    System.out.print("\033[?25l"); // HIDE CURSOR
     System.out.println();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
@@ -1150,11 +1187,13 @@ public class Woo {
     wait(1);
     System.out.print("\u001b[38;2;255;255;255m");
     System.out.print("> ");
+    System.out.print("\033[?25h"); // SHOW CURSOR
     String pokemonOne = "";
-    wait(1);
 
     // POKEMON DESCRIPTIONS
     pokemonOne = in.nextLine().toLowerCase();
+    System.out.print("\033[?25l"); // HIDE CURSOR
+    wait(1);
     if (pokemonOne.equals("chimchar")) {
       Fire chimchar = new Fire("Chimchar", 5, 500);
       wait(1);
@@ -1258,10 +1297,12 @@ public class Woo {
     wait(1);
     System.out.print("\u001b[38;2;255;255;255m");
     System.out.print("> ");
+    System.out.print("\033[?25h"); // SHOW CURSOR
     String pokemonTwo = "";
-    wait(1);
 
     pokemonTwo = in.nextLine().toLowerCase();
+    System.out.print("\033[?25l"); // HIDE CURSOR
+    wait(1);
     if (pokemonTwo.equals("chimchar")) {
       Pokemon chimchar = new Fire("Chimchar", 5, 500);
       wait(1);
@@ -1362,10 +1403,12 @@ public class Woo {
     wait(1);
     System.out.print("\u001b[38;2;255;255;255m");
     System.out.print("> ");
+    System.out.print("\033[?25h"); // SHOW CURSOR
     String pokemonThree = "";
-    wait(1);
 
     pokemonThree = in.nextLine().toLowerCase();
+    System.out.print("\033[?25l"); // HIDE CURSOR
+    wait(1);
     if (pokemonThree.equals("chimchar")) {
       Pokemon chimchar = new Fire("Chimchar", 5, 500);
       wait(1);
@@ -1471,8 +1514,10 @@ public class Woo {
     wait(1);
     System.out.print("\u001b[38;2;255;255;255m");
     System.out.print("> ");
+    System.out.print("\033[?25h"); // SHOW CURSOR
     String response = "";
     response = in.nextLine().toLowerCase();
+    System.out.print("\033[?25l"); // HIDE CURSOR
     if (response.equals("chimchar")) {
       Fire starter = new Fire("Chimchar", 4, 400);
       player.add(starter);
@@ -1540,8 +1585,10 @@ public class Woo {
     wait(1);
     System.out.print("\u001b[38;2;255;255;255m");
     System.out.print("> ");
+    System.out.print("\033[?25h"); // SHOW CURSOR
     String tutorial = "";
     tutorial = in.nextLine().toLowerCase();
+    System.out.print("\033[?25l"); // HIDE CURSOR
     if (tutorial.equals("yes")) {
       wait(2);
       System.out.print("\u001b[38;2;180;180;180m");
@@ -1585,8 +1632,9 @@ public class Woo {
 
   public static void main(String[] args) {
     Player player = new Player();
-    //StdAudio.loopInBackground("city.wav");
+    StdAudio.loopInBackground("city.au");
     gameSetup(player);
+    StdAudio.close();
     chooseStarter(player);
     StdAudio.close();
 

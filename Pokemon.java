@@ -68,19 +68,19 @@ public class Pokemon {
       }
       else if (_name.equals("Ponyta")){
         wait(1);
-        return ("\nA Fire Type: \nPonyta, a Fire Horse Pokemon. \nIts mane is made of intense flames. ");
+        return ("\n\u001b[38;2;243;113;66mA Fire Type: \n\u001b[38;2;255;160;1mPonyta, a Fire Horse Pokemon. \n\u001b[38;2;255;184;79mIts mane is made of intense flames.");
       }
       else if(_name.equals("Growlithe")){
         wait(1);
-        return ("\nA Fire Type: \nGrowlithe, a Puppy Pokemon of pleasant demeanor and great diligence. \nIt drives enemies away with barks and bites. ");
+        return ("\n\u001b[38;2;243;113;66mA Fire Type: \n\u001b[38;2;255;160;1mGrowlithe, a Puppy Pokemon of pleasant demeanor and great diligence. \n\u001b[38;2;255;184;79mIt drives enemies away with barks and bites.");
       }
       else if(_name.equals("Magmar")){
         wait(1);
-        return("\nA Fire Type: \nMagmar, the Spitfire Pokemon. \nIts body is like a furnace, making Magmar a living inferno. \nIt has been discovered only near active volcanoes.");
+        return("\n\u001b[38;2;243;113;66mA Fire Type: \n\u001b[38;2;255;160;1mMagmar, the Spitfire Pokemon. \n\u001b[38;2;255;184;79mIts body is like a furnace, making Magmar a living inferno. \nIt has been discovered only near active volcanoes.");
       }
       else if(_name.equals("Flareon")){
         wait(1);
-        return ("\nA Fire Type: \nFlareon, the Flame Pokemon. \nFlareon's internal flame ignites its breath, which is exhaled as fire.");
+        return ("\n\u001b[38;2;243;113;66mA Fire Type: \n\u001b[38;2;255;160;1mFlareon, the Flame Pokemon. \n\u001b[38;2;255;184;79mFlareon's internal flame ignites its breath, which is exhaled as fire.");
       }
       else if(_name.equals("Feebas")) {
         wait(1);
@@ -108,19 +108,19 @@ public class Pokemon {
       }
       else if (_name.equals("Psyduck")){
         wait(1);
-        return("\nA Water Type: \nPsyduck, the Duck Pokemon. \nPsyduck suffers frequent headaches and can exhibit mysterious attacks when they become especially intense. ");
+        return("\n\u001b[38;2;34;130;164mA Water Type: \n\u001b[38;2;103;179;201mPsyduck, the Duck Pokemon. \n\u001b[38;2;172;229;238mPsyduck suffers frequent headaches and can exhibit mysterious attacks when they become especially intense. ");
       }
       else if (_name.equals("Tentacool")){
         wait(1);
-        return("\nA Water Type: \nTentacool, a Jellyfish Pokemon. \n99% of its body is made up of water.");
+        return("\n\u001b[38;2;34;130;164mA Water Type: \n\u001b[38;2;103;179;201mTentacool, a Jellyfish Pokemon. \n\u001b[38;2;172;229;238m99% of its body is made up of water.");
       }
       else if (_name.equals("Buizel")){
         wait(1);
-        return("\nA Water Type: \nBuizel, the Sea Weasel Pokemon. \nBuizel's collar can be used as a flotation device when inflated. \nIts head stays above water when floating. ");
+        return("\n\u001b[38;2;34;130;164mA Water Type: \n\u001b[38;2;103;179;201mBuizel, the Sea Weasel Pokemon. \n\u001b[38;2;172;229;238mBuizel's collar can be used as a flotation device when inflated. \n\u001b[38;2;216;251;255mIts head stays above water when floating. ");
       }
       else if (_name.equals("Manaphy")){
         wait(1);
-        return("\nA Water Type: \nManaphy, the Seafaring Pokemon. \nManaphy emerges from the depths of cold oceans. \nIt has the unique power to bond with any Pokemon on a heart-to-heart level. ");
+        return("\n\u001b[38;2;34;130;164mA Water Type: \n\u001b[38;2;103;179;201mManaphy, the Seafaring Pokemon. \n\u001b[38;2;172;229;238mManaphy emerges from the depths of cold oceans. \n\u001b[38;2;216;251;255mIt has the unique power to bond with any Pokemon on a heart-to-heart level. ");
       }
       else if(_name.equals("Cherubi")) {
         wait(1);
@@ -148,19 +148,19 @@ public class Pokemon {
       }
       else if(_name.equals("Roselia")){
         wait(1);
-        return ("\nA Grass Type: \nRoselia, the Thorn Pokemon. \nRoselia's aroma can bring serenity, but the thorns on its head contain a vicious poison. ");
+        return ("\\u001b[38;2;119;221;118mA Grass Type: \n\u001b[38;2;166;236;168mRoselia, the Thorn Pokemon. \n\u001b[38;2;210;253;187mRoselia's aroma can bring serenity, but the thorns on its head contain a vicious poison. ");
       }
       else if(_name.equals("Burmy")){
         wait(1);
-        return ("\nA Grass Type: \nBurmy, the Bagworm Pokemon. \nTo protect itself from the cold wind, Burmy uses leaves and branches to make a cloak around itself. ");
+        return ("\n\u001b[38;2;119;221;118mA Grass Type: \n\u001b[38;2;166;236;168mBurmy, the Bagworm Pokemon. \n\u001b[38;2;210;253;187mTo protect itself from the cold wind, Burmy uses leaves and branches to make a cloak around itself. ");
       }
       else if(_name.equals("Oddish")){
         wait(1);
-        return ("\nA Grass Type: \nOddish. \nThis Pokemon is typically found roaming the forest, scattering pollen as it walks around.");
+        return ("\n\u001b[38;2;119;221;118mA Grass Type: \n\u001b[38;2;166;236;168mOddish. \n\u001b[38;2;210;253;187mThis Pokemon is typically found roaming the forest, scattering pollen as it walks around.");
       }
       else if(_name.equals("Sunkern")){
         wait(1);
-        return ("\nA Grass Type: \nSunkern may drop out of the sky suddenly. \nIf attacked by a Spearow, it will violently shake off its leaves.");
+        return ("\n\u001b[38;2;119;221;118mA Grass Type: \n\u001b[38;2;166;236;168mSunkern may drop out of the sky suddenly. \n\u001b[38;2;210;253;187mIf attacked by a Spearow, it will violently shake off its leaves.");
       }
       else {
         return ("Mistake D:");
