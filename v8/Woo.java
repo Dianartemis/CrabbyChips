@@ -553,8 +553,8 @@ public class Woo {
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nYou take out " + name._pokedex[i]._name + "!");
-        System.out.println();
         while (name._pokedex[i].isAlive() == true) { // if the pokemon you took out is still alive, it will continue to attack
+          System.out.println();
           wait(1);
           name._pokedex[i].displayMove(); // allows user to see moves
           wait(2);
@@ -565,8 +565,9 @@ public class Woo {
           System.out.print("> ");
           String answer = "";
           answer = in.nextLine().toLowerCase();
-          if (name._pokedex[i] instanceof Water){
+          if (name._pokedex[i] instanceof Water) {
             while (!answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("rest")) { // if input not valid, asks for another input until it is valid
+              System.out.println();
               wait(2);
               System.out.print("\u001b[38;2;180;180;180m");
               System.out.println("\nInput a valid move:");
@@ -575,8 +576,9 @@ public class Woo {
               System.out.print("> ");
               answer = in.nextLine().toLowerCase();
             }
-          } else if (name._pokedex[i] instanceof Fire){
+          } else if (name._pokedex[i] instanceof Fire) {
             while (!answer.equals("ember") && !answer.equals("bulk up") && !answer.equals("restore")) { // if input not valid, asks for another input until it is valid
+              System.out.println();
               wait(2);
               System.out.print("\u001b[38;2;180;180;180m");
               System.out.println("\nInput a valid move:");
@@ -587,6 +589,7 @@ public class Woo {
             }
           } else {
             while (!answer.equals("razor leaf") && !answer.equals("safe guard") && !answer.equals("rest")) { // if input not valid, asks for another input until it is valid
+              System.out.println();
               wait(2);
               System.out.print("\u001b[38;2;180;180;180m");
               System.out.println("\nInput a valid move:");
@@ -620,6 +623,7 @@ public class Woo {
         }
         i = i + 1; // If by this time, the opponent is still alive but the battling pokemon is dead after the opponent move is case, increment to pull out new pokemon
       }
+      System.out.println();
       wait(2);
       // if there are no more pokemon left, display stats of fainted pokemon
       System.out.print("\u001b[38;2;180;180;180m");
@@ -1532,27 +1536,27 @@ public class Woo {
     if (tutorial.equals("yes")) {
       wait(2);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\n*   There are three types of Pokemon: \u001b[38;2;243;113;66mFire\u001b[38;2;180;180;180m, \u001b[38;2;103;179;201mWater\u001b[38;2;180;180;180m, and \u001b[38;2;119;221;118mGrass\u001b[38;2;180;180;180m.");
+      System.out.println("\n    * There are three types of Pokemon: \u001b[38;2;243;113;66mFire\u001b[38;2;180;180;180m, \u001b[38;2;103;179;201mWater\u001b[38;2;180;180;180m, and \u001b[38;2;119;221;118mGrass\u001b[38;2;180;180;180m.");
       wait(2);
-      System.out.println("*   Each Pokemon has three moves: one that attacks, one that defends, and one that restores your Power Points (PP).");
+      System.out.println("    * Each Pokemon has three moves: one that attacks, one that defends, and one that restores your Power Points (PP).");
       wait(2);
-      System.out.println("*   After your turn, you will be given a choice to consume a Berry.");
+      System.out.println("    * After your turn, you will be given a choice to consume a Berry.");
       wait(2);
-      System.out.println("*   Then, your opponent will be given a chance to make a move.");
+      System.out.println("    * Then, your opponent will be given a chance to make a move.");
       wait(2);
-      System.out.println("*   If all of your Pokemon faint, your opponent has won and your Pokemon will be rushed to the Nurse.");
+      System.out.println("    * If all of your Pokemon faint, your opponent has won and your Pokemon will be rushed to the Nurse.");
       wait(2);
-      System.out.println("*   If you successfully defeat your opponent, you will be either prompted to another battle, keep walking, or face a gym.");
+      System.out.println("    * If you successfully defeat your opponent, you will be either prompted to another battle, keep walking, or face a gym.");
       wait(2);
-      System.out.println("*   There are three gyms in total: \u001b[38;2;119;221;118mGrass\u001b[38;2;180;180;180m, \u001b[38;2;103;179;201mWater\u001b[38;2;180;180;180m, and \u001b[38;2;243;113;66mFire\u001b[38;2;180;180;180m, respectively.");
+      System.out.println("    * There are three gyms in total: \u001b[38;2;119;221;118mGrass\u001b[38;2;180;180;180m, \u001b[38;2;103;179;201mWater\u001b[38;2;180;180;180m, and \u001b[38;2;243;113;66mFire\u001b[38;2;180;180;180m, respectively.");
       wait(2);
-      System.out.println("*   You are currently in the region with the \u001b[38;2;119;221;118mGrass \u001b[38;2;180;180;180mgym, \u001b[38;2;119;221;118mGardenia\u001b[38;2;180;180;180m.");
+      System.out.println("    * You are currently in the region with the \u001b[38;2;119;221;118mGrass \u001b[38;2;180;180;180mgym, \u001b[38;2;119;221;118mGardenia\u001b[38;2;180;180;180m.");
       wait(2);
-      System.out.println("*   After you beat each gym, you will earn a badge of the respective region's element.");
+      System.out.println("    * After you beat each gym, you will earn a badge of the respective region's element.");
       wait(2);
-      System.out.println("*   If you conquer all three gyms, you will beat the game.");
+      System.out.println("    * If you conquer all three gyms, you will beat the game.");
       wait(2);
-      System.out.println("*   That's all you need to know! Have fun and remember to catch them all!");
+      System.out.println("    * That's all you need to know! Have fun and remember to catch them all!");
     }
     else if (tutorial.equals("no")) {
       wait(2);
