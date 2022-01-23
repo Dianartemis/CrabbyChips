@@ -69,6 +69,7 @@ Lauren Lee :: Created UML Diagrams for Pokemon, Human, and Player
 Diana Akhmedova :: Updated Fire.java and Pokemon.java with instance variables and methods
 
 Lauren Lee :: Updated Pokemon.java, Human.java, and Player.java with instance variables and methods
+==============================================================
 
 
 2022-1-18
@@ -106,27 +107,42 @@ Lauren Lee :: Augmented catchP() and lvlUp()
 
 2022-1-21
 --------------------------------------------------------------
-Diana Akhmedova ::
+Diana Akhmedova :: Fixed catching Pokemon, worked on formatting
 
 Lauren Lee :: Fixed gyms bugs, fixed defense shielding
-
-**TO DO: music (works in main, wont stop in battle), visuals, testing, gym battles, (optional: ASCII/text art)**
 ==============================================================
 
 
 2022-1-22
 --------------------------------------------------------------
-Diana Akhmedova ::
+Diana Akhmedova :: Worked on gym not incrementing and repeating
+                   Worked on code and output formatting:
+                      - Fixed all spaces
+                      - Added in more wait()'s
+                      - Worked on Unicode coloring
+                      - Tested music
 
-Lauren Lee :: Coded in toString method for pokemon and type advantages
+Lauren Lee :: Coded in toString method for Pokemon and type advantages
+              Fixed the nurse to be more efficient, fixed HP shielding
+              Worked and fixed gym not incrementing and repeating
+              Added prompt to ask if the player wants to catch a Pokemon
+              Pokemon trainers give the player a Pokeball if you defeat them
 ==============================================================
 
 
 2022-1-23
 --------------------------------------------------------------
-Diana Akhmedova ::
+Diana Akhmedova :: Finished all Unicode coloring and finished formatting, ran tests in the terminal
 
 Lauren Lee :: Coded in user catch prompt, fix minor bugs
+
+** TO DO **
+- Music !! (works in main, wont stop in battle)
+- UPDATE DEVLOG
+- Update README??
+- Add more Pokemon/elements/gyms if time
+- ASCII/text art if time
+** TO DO **
 ==============================================================
 
 
