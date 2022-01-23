@@ -108,7 +108,7 @@ Lauren Lee :: Augmented catchP() and lvlUp()
 --------------------------------------------------------------
 Diana Akhmedova ::
 
-Lauren Lee :: Fixed gyms bugs, fixed defense shielding 
+Lauren Lee :: Fixed gyms bugs, fixed defense shielding
 
 **TO DO: music (works in main, wont stop in battle), visuals, testing, gym battles, (optional: ASCII/text art)**
 ==============================================================
@@ -126,7 +126,7 @@ Lauren Lee :: Coded in toString method for pokemon and type advantages
 --------------------------------------------------------------
 Diana Akhmedova ::
 
-Lauren Lee ::
+Lauren Lee :: Coded in user catch prompt, fix minor bugs
 ==============================================================
 
 
