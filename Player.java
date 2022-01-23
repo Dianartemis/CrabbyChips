@@ -6,6 +6,7 @@ public class Player {
   static int _numBerries;
   static Pokemon[] _pokedex;
   static int _pokedexSize;
+  static int _numBadge;
 
   public Player(){
     _name = "Dawn";
@@ -15,6 +16,7 @@ public class Player {
     _numBerries = 0;
     _pokedex = new Pokemon[1];
     _pokedexSize = 0;
+    _numBadge = 0;
   }
 
   public Player(String name, boolean gender){

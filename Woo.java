@@ -110,17 +110,18 @@ public class Woo {
         return cont;
       }
       else if (response.equals("gym")) {
-        if (name._numPokemon  < 4){ // cannot go to gym if player has less than four pokemon
+        if (name._numPokemon  < 4) { // cannot go to gym if player has less than four pokemon
           //wait(1);
           System.out.println("\nYou can not go to the gym with less than four Pokemon. You walk again...");
           return cont;
         }
         else {
           boolean gym = goToGym(name, region);
-          if (gym == false){
+          if (gym == false) {
             goToNurse(name, region);
             walk(name, region);
-          } else {
+          }
+          else {
             return true;
           }
         }
@@ -228,7 +229,6 @@ public class Woo {
         return cont;
       }
       else if (res.equals("gym")) {
-        System.out.println(name._numPokemon);
         if (name._numPokemon < 4){ // cannot go to gym if player has less than four pokemon
           //wait(1);
           System.out.println("\nYou can not go to the gym with less than four Pokemon. You walk again...");
@@ -239,7 +239,8 @@ public class Woo {
           if (gym == false){
             goToNurse(name, region);
             walk(name, region);
-          } else {
+          }
+          else {
             return true;
           }
         }
@@ -286,7 +287,6 @@ public class Woo {
             return cont;
           }
           else if (response.equals("gym")) {
-            System.out.println(name._numPokemon);
             if (name._numPokemon < 4) { // cannot go to gym if player has less than four pokemon
               //wait(1);
               System.out.println("\nYou can not go to the gym with less than four Pokemon. You walk again...");
@@ -507,7 +507,7 @@ public class Woo {
   }
 
   public static boolean goToGym(Player name, String region) {
-    //gym depends on region
+    // gym depends on region
     if (region.equals("Eterna City")) {
       return gymBattleGrass(name, region);
     }
@@ -1072,7 +1072,7 @@ public class Woo {
       System.out.println("\nCongrats, you got your first Pokemon! It's a Chimchar!");
     }
     else if (response.equals("piplup")) {
-      Water starter = new Water("Piplup", 4, 400);
+      Water starter = new Water("Piplup", 100, 40000);
       player.add(starter);
       //wait(1);
       System.out.println("\nCongrats, you got your first Pokemon! It's a Piplup!");
@@ -1128,17 +1128,19 @@ public class Woo {
     String[] regions = new String[] {"Eterna City", "Pastoria City", "Sunyshore City"};
     int i = 0;
     while (i < 3) {
-      boolean nextGym = walk(player,regions[i]);
-      if (nextGym == true){
-        System.out.println();
-        //wait(1)
-        System.out.println("\nYou beat " + regions[i]);
+      System.out.println(i);
+      boolean nextGym = walk(player, regions[i]);
+      System.out.println(i);
+      if (nextGym == true) {
+        //wait(1);
+        System.out.println("\nYou beat " + regions[i] + "!");
         //wait(1);
         System.out.println();
         i++;
       }
     }
-    System.out.println("\nYou beat the game. Congragulations!");
+    //wait(1);
+    System.out.println("\nYou beat the game. Congratulations!");
     StdAudio.close();
   }
 }
