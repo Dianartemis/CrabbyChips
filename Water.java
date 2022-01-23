@@ -88,13 +88,13 @@ static Scanner in = new Scanner(System.in);
   public void displayMove() {
     wait(1);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("Your available moves are: \u001b[38;2;103;179;201mWater Gun\u001b[38;2;180;180;180m, \u001b[38;2;103;179;201mRain Dance\u001b[38;2;180;180;180m, and \u001b[38;2;103;179;201mRest\u001b[38;2;180;180;180m.");
+    System.out.println("Your available moves are: \u001b[38;2;103;179;201mWater Gun\u001b[38;2;180;180;180m, \u001b[38;2;103;179;201mRain Dance\u001b[38;2;180;180;180m, and \u001b[38;2;103;179;201mAqua Ring\u001b[38;2;180;180;180m.");
     wait(1);
     System.out.println("\u001b[38;2;103;179;201mWater Gun \u001b[38;2;180;180;180msquirts water to attack.");
     wait(1);
     System.out.println("\u001b[38;2;103;179;201mRain Dance \u001b[38;2;180;180;180msummons rain to increase defense.");
     wait(1);
-    System.out.println("\u001b[38;2;103;179;201mRest \u001b[38;2;180;180;180mmakes the user take a nap to restore PP.");
+    System.out.println("\u001b[38;2;103;179;201mAqua Ring \u001b[38;2;180;180;180mGives the user the Aqua Ring status, which restores its PP");
   }
 
 
@@ -216,12 +216,12 @@ static Scanner in = new Scanner(System.in);
         System.out.println();
       }
     }
-    // Rest
-    if(moveName.equals("Rest") || moveName.equals("rest")) {
+    // Aqua Ring
+    if(moveName.equals("Aqua Ring") || moveName.equals("aqua ring")) {
       _mana += 20;
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mtakes a nap.");
+      System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mwill get the Aqua Ring status, which keeps restoring their PP. ");
       wait(1);
       System.out.println("PP increased by 20!");
       wait(1);
@@ -398,12 +398,12 @@ static Scanner in = new Scanner(System.in);
           System.out.println();
         }
       }
-      // Rest
-      if(moveName.equals("Rest") || moveName.equals("rest")) {
+      // Aqua Ring
+      if(moveName.equals("Aqua Ring") || moveName.equals("aqua ring")) {
         _mana += 20;
         wait(1);
         System.out.print("\u001b[38;2;180;180;180m");
-        System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mtakes a nap.");
+        System.out.println("\u001b[38;2;103;179;201m" + getName() + " \u001b[38;2;180;180;180mwill get the Aqua Ring status, which keeps restoring their PP. ");
         wait(1);
         System.out.println("PP increased by 20!");
         wait(1);

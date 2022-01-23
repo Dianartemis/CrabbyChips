@@ -66,6 +66,22 @@ public class Pokemon {
         wait(1);
         return ("\n\u001b[38;2;243;113;66mA Fire Type: \n\u001b[38;2;255;160;1mA fire burns inside, so it feels very warm to hug. \n\u001b[38;2;255;184;79mIt launches fireballs of 1,800 degrees F.");
       }
+      else if (_name.equals("Ponyta")){
+        wait(1);
+        return ("\nA Fire Type: \nPonyta, a Fire Horse Pokemon. \nIts mane is made of intense flames. ");
+      }
+      else if(_name.equals("Growlithe")){
+        wait(1);
+        return ("\nA Fire Type: \nGrowlithe, a Puppy Pokemon of pleasant demeanor and great diligence. \nIt drives enemies away with barks and bites. ");
+      }
+      else if(_name.equals("Magmar")){
+        wait(1);
+        return("\nA Fire Type: \nMagmar, the Spitfire Pokemon. \nIts body is like a furnace, making Magmar a living inferno. \nIt has been discovered only near active volcanoes.");
+      }
+      else if(_name.equals("Flareon")){
+        wait(1);
+        return ("\nA Fire Type: \nFlareon, the Flame Pokemon. \nFlareon's internal flame ignites its breath, which is exhaled as fire.");
+      }
       else if(_name.equals("Feebas")) {
         wait(1);
         return ("\n\u001b[38;2;34;130;164mA Water Type: \n\u001b[38;2;103;179;201mFeebas, the Fish Pokemon. \n\u001b[38;2;172;229;238mAlthough extremely ragged, it is a tough Pokemon that can live in almost any kind of water.");
@@ -90,6 +106,22 @@ public class Pokemon {
         wait(1);
         return ("\n\u001b[38;2;34;130;164mA Water Type: \n\u001b[38;2;103;179;201mPoliwag, the Tadpole Pokemon. \n\u001b[38;2;172;229;238mIt has no arms, but its tail makes it a strong swimmer.");
       }
+      else if (_name.equals("Psyduck")){
+        wait(1);
+        return("\nA Water Type: \nPsyduck, the Duck Pokemon. \nPsyduck suffers frequent headaches and can exhibit mysterious attacks when they become especially intense. ");
+      }
+      else if (_name.equals("Tentacool")){
+        wait(1);
+        return("\nA Water Type: \nTentacool, a Jellyfish Pokemon. \n99% of its body is made up of water.");
+      }
+      else if (_name.equals("Buizel")){
+        wait(1);
+        return("\nA Water Type: \nBuizel, the Sea Weasel Pokemon. \nBuizel's collar can be used as a flotation device when inflated. \nIts head stays above water when floating. ");
+      }
+      else if (_name.equals("Manaphy")){
+        wait(1);
+        return("\nA Water Type: \nManaphy, the Seafaring Pokemon. \nManaphy emerges from the depths of cold oceans. \nIt has the unique power to bond with any Pokemon on a heart-to-heart level. ");
+      }
       else if(_name.equals("Cherubi")) {
         wait(1);
         return ("\n\u001b[38;2;119;221;118mA Grass Type: \n\u001b[38;2;166;236;168mCherubi, the Cherry Pokemon. \n\u001b[38;2;210;253;187mCherubi's attached small ball holds nutrients.");
@@ -113,6 +145,22 @@ public class Pokemon {
       else if(_name.equals("Bellsprout")) {
         wait(1);
         return ("\n\u001b[38;2;119;221;118mA Grass Type: \n\u001b[38;2;166;236;168mBellsprout, the Flower Pokemon. \n\u001b[38;2;210;253;187mBellsprout loves high temperatures and humidity. \n\u001b[38;2;227;255;212mIt can be lightning fast when it extends its vines in order to grab something.");
+      }
+      else if(_name.equals("Roselia")){
+        wait(1);
+        return ("\nA Grass Type: \nRoselia, the Thorn Pokemon. \nRoselia's aroma can bring serenity, but the thorns on its head contain a vicious poison. ");
+      }
+      else if(_name.equals("Burmy")){
+        wait(1);
+        return ("\nA Grass Type: \nBurmy, the Bagworm Pokemon. \nTo protect itself from the cold wind, Burmy uses leaves and branches to make a cloak around itself. ");
+      }
+      else if(_name.equals("Oddish")){
+        wait(1);
+        return ("\nA Grass Type: \nOddish. \nThis Pokemon is typically found roaming the forest, scattering pollen as it walks around.");
+      }
+      else if(_name.equals("Sunkern")){
+        wait(1);
+        return ("\nA Grass Type: \nSunkern may drop out of the sky suddenly. \nIf attacked by a Spearow, it will violently shake off its leaves.");
       }
       else {
         return ("Mistake D:");

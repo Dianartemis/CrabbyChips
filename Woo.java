@@ -10,10 +10,10 @@ public class Woo {
 
   // should generate a pokemon that is an instance of the type
   public static Pokemon generatePokemon(Player name, int type) {
-    int random = (int) ((Math.random() * 6)); // 0-5
-    String[] fire = new String[] { "Vulpix", "Slugma", "Numel", "Charmander", "Cyndaquil", "Torchic" };
-    String[] water = new String[] { "Feebas", "Wooper", "Lotad", "Marill", "Wingull", "Poliwag" };
-    String[] grass = new String[] { "Cherubi", "Seedot", "Bulbasaur", "Chikorita", "Treecko", "Bellsprout" };
+    int random = (int) ((Math.random() * 10)); // 0-5
+    String[] fire = new String[] { "Vulpix", "Slugma", "Numel", "Charmander", "Cyndaquil", "Torchic", "Ponyta","Growlithe","Magmar","Flareon"};
+    String[] water = new String[] { "Feebas", "Wooper", "Lotad", "Marill", "Wingull", "Poliwag", "Psyduck","Tentacool","Buizel", "Manaphy" };
+    String[] grass = new String[] { "Cherubi", "Seedot", "Bulbasaur", "Chikorita", "Treecko", "Bellsprout" , "Roselia","Burmy","Oddish","Sunkern"};
     int level = generateLvl(name);
 
     if (type == 0) { // 0 is fire
@@ -69,7 +69,7 @@ public class Woo {
 
   // generates name for civilian
   public static String generateName() {
-    String[] name = new String[] { "Dawn", "Lucas", "Barry", "Riley", "Rowen", "Cynthia" };
+    String[] name = new String[] { "Dawn", "Lucas", "Barry", "Riley", "Dr. Footstep", "Cynthia" };
     int random = (int) ((Math.random() *6));
     return name[random];
   }
@@ -575,7 +575,7 @@ public class Woo {
           String answer = "";
           answer = in.nextLine().toLowerCase();
           if (name._pokedex[i] instanceof Water) {
-            while (!answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("rest")) { // if input not valid, asks for another input until it is valid
+            while (!answer.equals("water gun") && !answer.equals("rain dance") && !answer.equals("aqua ring")) { // if input not valid, asks for another input until it is valid
               System.out.println();
               wait(2);
               System.out.print("\u001b[38;2;180;180;180m");
@@ -1122,7 +1122,7 @@ public class Woo {
     System.out.println();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("\nRING RING! Wake up " + player._name + "!" + " Your mom told you to go to Dr. Footstep's clinic to get your first starter Pokemon.");
+    System.out.println("\nRING RING! Wake up " + player._name + "!" + " Your mom told you to go to Professor Rowan's clinic to get your first starter Pokemon.");
     wait(2);
     System.out.println("\nYou totally forgot. Today is your 10th birthday. You're finally old enough to become a Pokemon trainer!");
     wait(2);
@@ -1227,7 +1227,7 @@ public class Woo {
     else {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Chimchar.");
+      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you Chimchar.");
       Pokemon chimchar = new Fire("Chimchar", 5, 500);
       wait(1);
       System.out.print("\u001b[38;2;96;96;96m");
@@ -1334,7 +1334,7 @@ public class Woo {
     else {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Piplup.");
+      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you Piplup.");
       Pokemon piplup = new Water("Piplup", 5, 500);
       wait(1);
       System.out.print("\u001b[38;2;96;96;96m");
@@ -1438,7 +1438,7 @@ public class Woo {
     else {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nThat's not exactly a Pokemon, but Dr. Footstep wants to show you Turtwig.");
+      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you Turtwig.");
       Pokemon turtwig = new Grass("Turtwig", 5, 500);
       wait(2);
       System.out.print("\u001b[38;2;96;96;96m");
@@ -1523,13 +1523,13 @@ public class Woo {
     player.displayPokedex();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("You also receive 5 Pokeballs and 5 berries from Dr. Footstep.");
+    System.out.println("You also receive 5 Pokeballs and 5 berries from Professor Rowan.");
     player._numPokeball += 5;
     player._numBerries += 5;
     player.displayInventory();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("\nYou thank Dr. Footstep and walk out of the clinic.");
+    System.out.println("\nYou thank Professor Rowan and walk out of the clinic.");
     wait(1);
     System.out.print("\u001b[38;2;96;96;96m");
     System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
@@ -1549,7 +1549,7 @@ public class Woo {
       wait(2);
       System.out.println("    * Each Pokemon has three moves: one that attacks, one that defends, and one that restores your Power Points (PP).");
       wait(2);
-      System.out.println("    * After your turn, you will be given a choice to consume a Berry.");
+      System.out.println("    * After your turn, you will be given a choice to consume a Berry. A Berry restores 20 hp.");
       wait(2);
       System.out.println("    * Then, your opponent will be given a chance to make a move.");
       wait(2);
