@@ -43,7 +43,7 @@ false -- male
   public void greet(Player name) {
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("Hello \u001b[38;2;255;255;255m" + name._name + "\u001b[38;2;180;180;180m, my name is \u001b[38;2;153;153;255m" + _name + "\u001b[38;2;180;180;180m. I am a \u001b[38;2;153;153;255mcivilian \u001b[38;2;180;180;180m.");
+    System.out.println("Hello \u001b[38;2;255;255;255m" + name._name + "\u001b[38;2;180;180;180m, my name is \u001b[38;2;153;153;255m" + _name + "\u001b[38;2;180;180;180m. I am a \u001b[38;2;153;153;255mcivilian\u001b[38;2;180;180;180m.");
     wait(2);
   }
 
