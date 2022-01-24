@@ -3,14 +3,9 @@ import java.util.concurrent.TimeUnit;
 import java.io.*;
 import java.util.*;
 
-import java.io.File;
-import java.io.IOException;
-import javax.sound.sampled.*;
-
 public class Woo {
 
   static Scanner in = new Scanner(System.in); // user inputs
-  //StdAudio: in game music
 
   // should generate a pokemon that is an instance of the type
   public static Pokemon generatePokemon(Player name, int type) {
@@ -88,13 +83,7 @@ public class Woo {
   }
 
   // to make walk invoke with the same parameteres, just return false because there is a while loop in the main method making the player walk until the gym is completed
-  public static boolean walk(Player name, String region) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-    File file = new File("city.au");
-		AudioInputStream ais = AudioSystem.getAudioInputStream(file);
-		Clip clipCity = AudioSystem.getClip();
-		clipCity.open(ais);
-    clipCity.start();
-
+  public static boolean walk(Player name, String region) {
     wait(1);
     System.out.println();
     System.out.print("\u001b[38;2;180;180;180m");
@@ -127,7 +116,6 @@ public class Woo {
         else {
           boolean gym = goToGym(name, region);
           if (gym == false) {
-            clipCity.close();
             goToNurse(name, region);
             return cont;
           }
@@ -165,7 +153,6 @@ public class Woo {
           System.out.println("\nRunning away failed. You must engage in battle.");
           int type = generateType(); // generates a type for pokemon
           Pokemon pok = generatePokemon(name, type); // generates pokemon to battle
-          clipCity.close();
           boolean win = battle(name, pok, region); // battles the pokemon
           goToNurse(name, region); // is lose, go to nurse
           return cont;
@@ -197,7 +184,6 @@ public class Woo {
             else {
               boolean gym = goToGym(name, region);
               if (gym == false) {
-                clipCity.close();
                 goToNurse(name, region);
                 return cont;
               }
@@ -221,11 +207,8 @@ public class Woo {
         System.out.println("\nYou accept the challenge and engage in battle.");
         int type = generateType();
         Pokemon pok = generatePokemon(name, type);
-        clipCity.close();
         boolean win = battle(name, pok, region);
         if (win == true) {
-          clipCity.setMicrosecondPosition(0);
-          clipCity.start();
           System.out.println();
           wait(2);
           System.out.print("\u001b[38;2;180;180;180m");
@@ -235,7 +218,6 @@ public class Woo {
           System.out.println();
           name._numPokeball = name._numPokeball + 1;
         }
-        clipCity.close();
         goToNurse(name, region);
         return cont;
       }
@@ -247,11 +229,8 @@ public class Woo {
         System.out.println("\nYou accept the challenge and engage in battle.");
         int type = generateType();
         Pokemon pok = generatePokemon(name, type);
-        clipCity.close();
         boolean win = battle(name, pok, region);
         if (win == true) {
-          clipCity.setMicrosecondPosition(0);
-          clipCity.start();
           System.out.println();
           wait(2);
           System.out.print("\u001b[38;2;180;180;180m");
@@ -261,7 +240,6 @@ public class Woo {
           System.out.println();
           name._numPokeball = name._numPokeball + 1;
         }
-        clipCity.close();
         goToNurse(name, region);
         return cont;
       }
@@ -306,7 +284,6 @@ public class Woo {
         else {
           boolean gym = goToGym(name, region);
           if (gym == false) {
-            clipCity.close();
             goToNurse(name, region);
             return cont;
           }
@@ -343,12 +320,8 @@ public class Woo {
           System.out.println("\nRunning away failed. You must engage in battle.");
           int type = generateType();
           Pokemon pok = generatePokemon(name, type);
-          clipCity.close();
           boolean win = battle(name, pok, region);
-          clipCity.setMicrosecondPosition(0);
-          clipCity.start();
           if (win == false) {
-            clipCity.close();
             goToNurse(name, region);
             return cont;
           }
@@ -370,7 +343,6 @@ public class Woo {
             if (catchPokemon.equals("yes")) {
               catchP(name, pok, region);
               wait(1);
-              clipCity.close();
               goToNurse(name, region);
               return cont;
             }
@@ -379,12 +351,10 @@ public class Woo {
               System.out.print("\u001b[38;2;180;180;180m");
               System.out.println("\nInvalid answer. You do not catch the Pokemon.");
               wait(1);
-              clipCity.close();
               goToNurse(name, region);
               return cont;
             }
             else {
-              clipCity.close();
               goToNurse(name, region);
               return cont;
             }
@@ -417,7 +387,6 @@ public class Woo {
             else {
               boolean gym = goToGym(name, region);
               if (gym == false) {
-                clipCity.close();
                 goToNurse(name, region);
                 return cont;
               }
@@ -440,12 +409,8 @@ public class Woo {
         System.out.println("\nYou accept the challenge and engage in battle.");
         int type = generateType();
         Pokemon pok = generatePokemon(name, type);
-        clipCity.close();
         boolean win = battle(name, pok, region);
-        clipCity.setMicrosecondPosition(0);
-        clipCity.start();
         if(win == false) {
-          clipCity.close();
           goToNurse(name, region); // if lose, go to nurse to heal
           return cont;
         }
@@ -467,7 +432,6 @@ public class Woo {
           if (catchPokemon.equals("yes")) {
             catchP(name, pok, region);
             wait(1);
-            clipCity.close();
             goToNurse(name, region);
             return cont;
           }
@@ -475,12 +439,10 @@ public class Woo {
             wait(2);
             System.out.print("\u001b[38;2;180;180;180m");
             System.out.println("\nInvalid answer. You do not catch the Pokemon.");
-            clipCity.close();
             goToNurse(name, region);
             return cont;
           }
           else {
-            clipCity.close();
             goToNurse(name, region);
             return cont;
           }
@@ -494,10 +456,7 @@ public class Woo {
         System.out.println("\nYou accept the challenge and engage in battle.");
         int type = generateType();
         Pokemon pok = generatePokemon(name, type);
-        clipCity.close();
         boolean win = battle(name, pok, region);
-        clipCity.setMicrosecondPosition(0);
-        clipCity.start();
         if (win == true){
           String catchPokemon = "";
           wait(2);
@@ -516,7 +475,6 @@ public class Woo {
           System.out.print("\033[?25l"); // HIDE CURSOR
           if (catchPokemon.equals("yes")) {
             catchP(name, pok, region);
-            clipCity.close();
             goToNurse(name, region);
             return cont;
           }
@@ -525,18 +483,15 @@ public class Woo {
             System.out.print("\u001b[38;2;180;180;180m");
             System.out.println("\nInvalid answer. You do not catch the Pokemon.");
             wait(1);
-            clipCity.close();
             goToNurse(name, region);
             return cont;
           }
           else {
-            clipCity.close();
             goToNurse(name, region);
             return cont;
           }
         }
         else {
-          clipCity.close();
           goToNurse(name, region);
           return cont;
         }
@@ -544,13 +499,7 @@ public class Woo {
     }
   }
 
-  public static void catchP(Player name, Pokemon pokName, String region) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-    File file = new File("battle.au");
-		AudioInputStream ais = AudioSystem.getAudioInputStream(file);
-		Clip clipCatch = AudioSystem.getClip();
-		clipCatch.open(ais);
-    clipCatch.start();
-
+  public static void catchP(Player name, Pokemon pokName, String region) {
     int random = (int) ((Math.random() * 10));
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
@@ -564,8 +513,6 @@ public class Woo {
     else {
       if (random <= 6) { // catching is very likely
         wait(2);
-        clipCatch.open(ais);
-        clipCatch.start();
         System.out.print("\u001b[38;2;180;180;180m");
         System.out.println("\nCongratulations, you successfully caught a " + pokName._name + "!");
         pokName._hp = pokName._lvl * pokName.getHPMultiplier();
@@ -581,7 +528,6 @@ public class Woo {
         name.displayInventory(); // print out inventory
         System.out.println();
         wait(1);
-        clipCatch.close();
       }
       else {
         wait(2);
@@ -596,14 +542,8 @@ public class Woo {
   }
 
   // start and end battle. If win, true; lose, false
-  public static boolean battle(Player name, Pokemon opponent, String region) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+  public static boolean battle(Player name, Pokemon opponent, String region) {
     // start some smashing battle music
-    File file = new File("battle.au");
-		AudioInputStream ais = AudioSystem.getAudioInputStream(file);
-		Clip clipBattle = AudioSystem.getClip();
-		clipBattle.open(ais);
-    clipBattle.start();
-
     boolean result = false;
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
@@ -691,7 +631,6 @@ public class Woo {
           // if level up, should make pokemon healthy again
           wait(1);
           if (opponent.isAlive() == false) {
-            clipBattle.close();
             result = true;
             return result; // if the opponent dies, battle terminated, returns true
           }
@@ -715,11 +654,9 @@ public class Woo {
       wait(2);
       System.out.println("\nYour Pokemon are rushed to the Nurse...");
       // will go to the nurse
-      clipBattle.close();
       return result;
     }
     // if pokemon is not alive, it is fainted, you go to the nurse to recover and them return true
-    clipBattle.close();
     result = true;
     return result;
   }
@@ -743,13 +680,7 @@ public class Woo {
     }
 
   // nurse heals and makes walk
-  public static void goToNurse(Player name, String region) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-    File file = new File("nurse.au");
-		AudioInputStream ais = AudioSystem.getAudioInputStream(file);
-		Clip clipNurse = AudioSystem.getClip();
-		clipNurse.open(ais);
-    clipNurse.start();
-
+  public static void goToNurse(Player name, String region) {
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
     System.out.println("\nYou arrive at the clinic.");
@@ -766,10 +697,9 @@ public class Woo {
     // displays newly healed pokemon
     name.displayPokemon();
     wait(2);
-    clipNurse.close();
   }
 
-  public static boolean goToGym(Player name, String region) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+  public static boolean goToGym(Player name, String region) {
     // gym depends on region
     if (region.equals("Eterna City")) {
       return gymBattleGrass(name, region);
@@ -782,13 +712,7 @@ public class Woo {
     }
   }
 
-  public static boolean gymBattleFire(Player name, String region) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-    File file = new File("gym.au");
-		AudioInputStream ais = AudioSystem.getAudioInputStream(file);
-		Clip clipGymFire = AudioSystem.getClip();
-		clipGymFire.open(ais);
-    clipGymFire.start();
-
+  public static boolean gymBattleFire(Player name, String region) {
     boolean badge = false;
     String answer = "";
     wait(1);
@@ -835,7 +759,6 @@ public class Woo {
           System.out.println();
           System.out.print("\u001b[38;2;180;180;180m");
           wait(1);
-          clipGymFire.close();
           badge = true; // if win both, then return true
           return badge;
         }
@@ -867,7 +790,6 @@ public class Woo {
           System.out.println();
           System.out.print("\u001b[38;2;180;180;180m");
           wait(1);
-          clipGymFire.close();
           badge = true; // if win both, then return true
           return badge;
           }
@@ -900,23 +822,15 @@ public class Woo {
             System.out.println();
             System.out.print("\u001b[38;2;180;180;180m");
             wait(1);
-            clipGymFire.close();
             badge = true;
             return badge;
           }
         }
       }
-      clipGymFire.close();
       return badge;
   }
 
-  public static boolean gymBattleWater(Player name, String region) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-    File file = new File("gym.au");
-		AudioInputStream ais = AudioSystem.getAudioInputStream(file);
-		Clip clipGymWater = AudioSystem.getClip();
-		clipGymWater.open(ais);
-    clipGymWater.start();
-
+  public static boolean gymBattleWater(Player name, String region) {
     boolean badge = false;
     String answer = "";
     wait(1);
@@ -971,7 +885,6 @@ public class Woo {
             System.out.println();
             System.out.print("\u001b[38;2;180;180;180m");
             wait(1);
-            clipGymWater.close();
             badge = true;
             return badge;
           }
@@ -1011,7 +924,6 @@ public class Woo {
             System.out.println();
             System.out.print("\u001b[38;2;180;180;180m");
             wait(1);
-            clipGymWater.close();
             badge = true;
             return badge;
           }
@@ -1053,24 +965,16 @@ public class Woo {
             System.out.println();
             System.out.print("\u001b[38;2;180;180;180m");
             wait(1);
-            clipGymWater.close();
             badge = true;
             return badge;
           }
         }
       }
     }
-    clipGymWater.close();
     return badge;
   }
 
-  public static boolean gymBattleGrass(Player name, String region) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-    File file = new File("gym.au");
-		AudioInputStream ais = AudioSystem.getAudioInputStream(file);
-		Clip clipGymGrass = AudioSystem.getClip();
-		clipGymGrass.open(ais);
-    clipGymGrass.start();
-
+  public static boolean gymBattleGrass(Player name, String region) {
     boolean badge = false;
     String answer = "";
     wait(1);
@@ -1125,7 +1029,6 @@ public class Woo {
             System.out.println();
             System.out.print("\u001b[38;2;180;180;180m");
             wait(1);
-            clipGymGrass.close();
             badge = true;
             return badge;
           }
@@ -1165,7 +1068,6 @@ public class Woo {
             System.out.println();
             System.out.print("\u001b[38;2;180;180;180m");
             wait(1);
-            clipGymGrass.close();
             badge = true;
             return badge;
           }
@@ -1207,24 +1109,16 @@ public class Woo {
             System.out.println();
             System.out.print("\u001b[38;2;180;180;180m");
             wait(1);
-            clipGymGrass.close();
             badge = true;
             return badge;
           }
         }
       }
     }
-    clipGymGrass.close();
     return badge;
   }
 
-  public static void gameSetup(Player player) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-    File file1 = new File("begin.au");
-		AudioInputStream ais = AudioSystem.getAudioInputStream(file1);
-		Clip clipBegin = AudioSystem.getClip();
-		clipBegin.open(ais);
-    clipBegin.start();
-
+  public static void gameSetup(Player player) {
     System.out.println("\033[2J"); // CLEAR SCREEN
     System.out.print("\033[?25l"); // HIDE CURSOR
     System.out.print("\u001b[0m");
@@ -1244,18 +1138,9 @@ public class Woo {
     player._name = name;
     System.out.print("\033[?25l"); // HIDE CURSOR
     wait(1);
-		clipBegin.stop();
-		clipBegin.flush();
-		clipBegin.close();
   }
 
-  public static void chooseStarter(Player player) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-    File file = new File("starter.wav");
-		AudioInputStream ais = AudioSystem.getAudioInputStream(file);
-		Clip clipStarter = AudioSystem.getClip();
-		clipStarter.open(ais);
-    clipStarter.start();
-
+  public static void chooseStarter(Player player) {
     System.out.print("\033[?25l"); // HIDE CURSOR
     System.out.println();
     wait(2);
@@ -1729,12 +1614,9 @@ public class Woo {
     System.out.print("\u001b[38;2;96;96;96m");
     System.out.print("\n---------------------------------------------------------------------------------------------------------------------------------");
     System.out.print("\u001b[38;2;180;180;180m");
-    clipStarter.stop();
-		clipStarter.flush();
-		clipStarter.close();
   }
 
-  public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+  public static void main(String[] args) {
     Player player = new Player();
 
     gameSetup(player);
@@ -1757,6 +1639,5 @@ public class Woo {
     System.out.println("You beat the game. Congratulations!");
     System.out.print("\u001b[0m");
     System.out.print("\u001B[0m");
-    StdAudio.close();
   }
 }
