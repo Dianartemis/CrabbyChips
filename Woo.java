@@ -60,16 +60,6 @@ public class Woo {
     }
   }
 
-  // 50% male and 50% female gender for civilian
-  public static boolean generateGender() {
-    int random = (int) (Math.random() * 10);
-    if (random <= 5) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
 
   // generates name for civilian
   public static String generateName() {
@@ -275,7 +265,7 @@ public class Woo {
     }
     else if (random >= 5 && random <= 6) {
       // meeting a civilian is probability of 20%
-      Human civilian = new Human(generateGender(), 3, generateName()); // civilian randomly generated
+      Human civilian = new Human(generateName()); // civilian randomly generated
       wait(2);
       System.out.print("\u001b[38;2;180;180;180m");
       System.out.println("\nYou encounter a civilian.");

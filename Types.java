@@ -4,11 +4,11 @@ public interface Types {
   public int getDefense();
   public int getMana();
   public boolean isAlive();
+  public int getDefenseMultiplier();
   public void lvlUp();
   public int getHPMultiplier();
   public void displayt();
   public void displayMove();
   public void move(String moveName, Pokemon name);
   public void moveOther(String moveName, Pokemon name);
-  public int getDefenseMultiplier();
 }
