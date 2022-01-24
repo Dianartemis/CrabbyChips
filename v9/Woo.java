@@ -1581,7 +1581,7 @@ public class Woo {
       wait(2);
       System.out.println("    * Each Pokemon has three moves: one that attacks, one that defends, and one that restores your Power Points (PP).");
       wait(2);
-      System.out.println("    * After your turn, you will be given a choice to consume a Berry. A Berry restores 20 hp.");
+      System.out.println("    * After your turn, you will be given a choice to consume a Berry. A Berry restores 20 Hit Points (HP).");
       wait(2);
       System.out.println("    * Then, your opponent will be given a chance to make a move.");
       wait(2);
