@@ -1252,7 +1252,7 @@ public class Woo {
     else {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you Chimchar.");
+      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you \u001b[38;2;243;113;66mChimchar\u001b[38;2;180;180;180m.");
       Pokemon chimchar = new Fire("Chimchar", 5, 500);
       wait(1);
       System.out.print("\u001b[38;2;96;96;96m");
@@ -1361,7 +1361,7 @@ public class Woo {
     else {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you Piplup.");
+      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you \u001b[38;2;103;179;201mPiplup\u001b[38;2;180;180;180m.");
       Pokemon piplup = new Water("Piplup", 5, 500);
       wait(1);
       System.out.print("\u001b[38;2;96;96;96m");
@@ -1467,7 +1467,7 @@ public class Woo {
     else {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you Turtwig.");
+      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you \u001b[38;2;119;221;118mTurtwig\u001b[38;2;180;180;180m.");
       Pokemon turtwig = new Grass("Turtwig", 5, 500);
       wait(2);
       System.out.print("\u001b[38;2;96;96;96m");
