@@ -58,14 +58,15 @@ public class Player {
     wait(1);
     System.out.print("\u001b[38;2;64;64;64m");
     System.out.print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    wait(1);
+    wait(2);
     System.out.print("\u001b[38;2;255;204;204m");
     for (int i = 0; i <_pokedexSize; i++) {
       System.out.println(_pokedex[i]);
       System.out.println();
       _pokedex[i].displayt();
+      wait(1);
     }
-    wait(1);
+    wait(2);
     System.out.print("\u001b[38;2;64;64;64m");
     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     System.out.println();

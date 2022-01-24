@@ -94,7 +94,7 @@ static Scanner in = new Scanner(System.in);
     wait(1);
     System.out.println("\u001b[38;2;103;179;201mRain Dance \u001b[38;2;180;180;180msummons rain to increase defense.");
     wait(1);
-    System.out.println("\u001b[38;2;103;179;201mAqua Ring \u001b[38;2;180;180;180mGives the user the Aqua Ring status, which restores its PP.");
+    System.out.println("\u001b[38;2;103;179;201mAqua Ring \u001b[38;2;180;180;180mgives the user the Aqua Ring status, which restores its PP.");
   }
 
 
