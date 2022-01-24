@@ -524,7 +524,6 @@ public class Woo {
         System.out.println("\nYou now have " + name._numPokemon + " Pokemon.");
         System.out.println();
         name.displayPokedex(); // print out pokemon
-        System.out.println();
         name.displayInventory(); // print out inventory
         System.out.println();
         wait(1);
@@ -1145,7 +1144,7 @@ public class Woo {
     System.out.println();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("\nRING RING! Wake up " + player._name + "!" + " Your mom told you to go to Professor Rowan's Pokemon Center to get your first starter Pokemon.");
+    System.out.println("\nRING RING! Wake up " + player._name + "!" + " Your mom told you to go to \u001b[38;2;153;153;255mProfessor Rowan's \u001b[38;2;180;180;180mPokemon Center to get your first starter Pokemon.");
     wait(2);
     System.out.println("\nYou totally forgot. Today is your 10th birthday. You're finally old enough to become a Pokemon trainer!");
     wait(2);
@@ -1214,7 +1213,7 @@ public class Woo {
       System.out.println("\n  * A Penguin Pokemon.");
       wait(2);
       System.out.print("\u001b[38;2;172;229;238m");
-      System.out.println("  * It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.println("  * It's one of the starter Pokemon received from \u001b[38;2;153;153;255mProfessor Rowan \u001b[38;2;172;229;238mwhen the player departs from the Sinnoh region.");
       wait(2);
       System.out.print("\u001b[38;2;103;179;201m");
       System.out.println("  * It's a Water type, so it's strong versus Rock and Grounds.");
@@ -1252,7 +1251,7 @@ public class Woo {
     else {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you \u001b[38;2;243;113;66mChimchar\u001b[38;2;180;180;180m.");
+      System.out.println("\nThat's not exactly a Pokemon, but \u001b[38;2;153;153;255mProfessor Rowan \u001b[38;2;180;180;180mwants to show you \u001b[38;2;243;113;66mChimchar\u001b[38;2;180;180;180m.");
       Pokemon chimchar = new Fire("Chimchar", 5, 500);
       wait(1);
       System.out.print("\u001b[38;2;96;96;96m");
@@ -1323,7 +1322,7 @@ public class Woo {
       System.out.println("\n  * A Penguin Pokemon.");
       wait(2);
       System.out.print("\u001b[38;2;172;229;238m");
-      System.out.println("  * It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.println("  * It's one of the starter Pokemon received from \u001b[38;2;153;153;255mProfessor Rowan \u001b[38;2;172;229;238mwhen the player departs from the Sinnoh region.");
       wait(2);
       System.out.print("\u001b[38;2;103;179;201m");
       System.out.println("  * It's a Water type, so it's strong versus Rock and Grounds.");
@@ -1361,7 +1360,7 @@ public class Woo {
     else {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you \u001b[38;2;103;179;201mPiplup\u001b[38;2;180;180;180m.");
+      System.out.println("\nThat's not exactly a Pokemon, but \u001b[38;2;153;153;255mProfessor Rowan \u001b[38;2;180;180;180mwants to show you \u001b[38;2;103;179;201mPiplup\u001b[38;2;180;180;180m.");
       Pokemon piplup = new Water("Piplup", 5, 500);
       wait(1);
       System.out.print("\u001b[38;2;96;96;96m");
@@ -1371,7 +1370,7 @@ public class Woo {
       System.out.println("\n  * A Penguin Pokemon.");
       wait(2);
       System.out.print("\u001b[38;2;172;229;238m");
-      System.out.println("  * It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.println("  * It's one of the starter Pokemon received from \u001b[38;2;153;153;255mProfessor Rowan \u001b[38;2;172;229;238mwhen the player departs from the Sinnoh region.");
       wait(2);
       System.out.print("\u001b[38;2;103;179;201m");
       System.out.println("  * It's a Water type, so it's strong versus Rock and Grounds.");
@@ -1429,7 +1428,7 @@ public class Woo {
       System.out.println("\n  * A Penguin Pokemon.");
       wait(2);
       System.out.print("\u001b[38;2;172;229;238m");
-      System.out.println("  * It's one of the starter Pokemon received from Professor Rowan when the player departs from the Sinnoh region.");
+      System.out.println("  * It's one of the starter Pokemon received from \u001b[38;2;153;153;255mProfessor Rowan \u001b[38;2;172;229;238mwhen the player departs from the Sinnoh region.");
       wait(2);
       System.out.print("\u001b[38;2;103;179;201m");
       System.out.println("  * It's a Water type, so it's strong versus Rock and Grounds.");
@@ -1467,7 +1466,7 @@ public class Woo {
     else {
       wait(1);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nThat's not exactly a Pokemon, but Professor Rowan wants to show you \u001b[38;2;119;221;118mTurtwig\u001b[38;2;180;180;180m.");
+      System.out.println("\nThat's not exactly a Pokemon, but \u001b[38;2;153;153;255mProfessor Rowan \u001b[38;2;180;180;180mwants to show you \u001b[38;2;119;221;118mTurtwig\u001b[38;2;180;180;180m.");
       Pokemon turtwig = new Grass("Turtwig", 5, 500);
       wait(2);
       System.out.print("\u001b[38;2;96;96;96m");
@@ -1509,21 +1508,21 @@ public class Woo {
       player.add(starter);
       wait(2);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nCongrats, you got your first Pokemon! It's a \u001b[38;2;243;113;66mChimchar!");
+      System.out.println("\nCongrats, you got your first Pokemon! It's a \u001b[38;2;243;113;66mChimchar\u001b[38;2;180;180;180m!");
     }
     else if (response.equals("piplup")) {
       Water starter = new Water("Piplup", 4, 400);
       player.add(starter);
       wait(2);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nCongrats, you got your first Pokemon! It's a \u001b[38;2;103;179;201mPiplup!");
+      System.out.println("\nCongrats, you got your first Pokemon! It's a \u001b[38;2;103;179;201mPiplup\u001b[38;2;180;180;180m!");
     }
     else if (response.equals("turtwig")) {
       Grass starter = new Grass("Turtwig", 4, 400);
       player.add(starter);
       wait(2);
       System.out.print("\u001b[38;2;180;180;180m");
-      System.out.println("\nCongrats, you got your first Pokemon! It's a \u001b[38;2;119;221;118mTurtwig!");
+      System.out.println("\nCongrats, you got your first Pokemon! It's a \u001b[38;2;119;221;118mTurtwig\u001b[38;2;180;180;180m!");
     }
     else if (!response.equals("chimchar") && !response.equals("piplup") && !response.equals("turtwig")) {
       int random = (int) ((Math.random() * 3));
@@ -1532,21 +1531,21 @@ public class Woo {
         player.add(starter);
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
-        System.out.println("\nYou responded too late! The only Pokemon left is \u001b[38;2;243;113;66mChimchar!");
+        System.out.println("\nYou responded too late! The only Pokemon left is \u001b[38;2;243;113;66mChimchar\u001b[38;2;180;180;180m!");
       }
       else if (random == 1) {
         Water starter = new Water("Piplup", 4, 400);
         player.add(starter);
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
-        System.out.println("\nYou responded too late! The only Pokemon left is \u001b[38;2;103;179;201mPiplup!");
+        System.out.println("\nYou responded too late! The only Pokemon left is \u001b[38;2;103;179;201mPiplup\u001b[38;2;180;180;180m!");
       }
       else if (random == 2) {
         Grass starter = new Grass("Turtwig", 4, 400);
         player.add(starter);
         wait(2);
         System.out.print("\u001b[38;2;180;180;180m");
-        System.out.println("\nYou responded too late! The only Pokemon left is \u001b[38;2;119;221;118mTurtwig!");
+        System.out.println("\nYou responded too late! The only Pokemon left is \u001b[38;2;119;221;118mTurtwig\u001b[38;2;180;180;180m!");
       }
     }
     wait(2);
@@ -1554,13 +1553,13 @@ public class Woo {
     player.displayPokedex();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("You also receive 5 Pokeballs and 5 berries from Professor Rowan.");
+    System.out.println("You also receive 5 Pokeballs and 5 berries from \u001b[38;2;153;153;255mProfessor Rowan\u001b[38;2;180;180;180m.");
     player._numPokeball += 5;
     player._numBerries += 5;
     player.displayInventory();
     wait(2);
     System.out.print("\u001b[38;2;180;180;180m");
-    System.out.println("\nYou thank Professor Rowan and walk out of the Pokemon Center.");
+    System.out.println("\nYou thank \u001b[38;2;153;153;255mProfessor Rowan \u001b[38;2;180;180;180mand walk out of the Pokemon Center.");
     wait(1);
     System.out.print("\u001b[38;2;96;96;96m");
     System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
