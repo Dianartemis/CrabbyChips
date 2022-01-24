@@ -33,6 +33,7 @@ UNRESOLVED ISSUES
 - How do we make music work? Specifically the .close() method?
 - Unicode colors do not work on some Windows terminals.
 - How do we implement music without having it take up a lot of space?
+- How do we create and implement a save file?
 
 
 COOL STUFF LEARNED
@@ -169,5 +170,5 @@ Diana Akhmedova :: Finished all Unicode coloring and finished formatting, added 
 
 Lauren Lee :: Coded in user catch prompt, fix minor bugs, updated README.
               Added in more Pokemon, changed Rest in Water.java to Aqua Ring.
-              Cleaned up methods not used, updated UML diagram
+              Cleaned up methods not used, updated UML diagram.
 ==============================================================
