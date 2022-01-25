@@ -214,9 +214,9 @@ public class Woo {
           System.out.print("\u001b[38;2;180;180;180m");
           System.out.println("\nThe trainer gave you a Pokeball for your amazing fighting!");
           wait(1);
+          name._numPokeball = name._numPokeball + 1;
           name.displayInventory();
           System.out.println();
-          name._numPokeball = name._numPokeball + 1;
         }
         goToNurse(name, region);
         return cont;
